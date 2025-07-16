@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Comprehensive Fire Extinguisher Safety Guide - Types, classifications, maintenance, and emergency procedures for South African vehicles">
+  <title>Fire Extinguisher Safety Guide - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --fire-red: #dc3545;
+      --fire-orange: #fd7e14;
+      --fire-yellow: #ffc107;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark-secondary: #222;
+      --bg-dark-tertiary: #333;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-light: #fff;
+      --text-muted: #6c757d;
+      --border-color: #333;
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --border-radius: 0.375rem;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    main {
+      padding-top: 60px;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
+                  url('assets/images/MainPic.jpg') center/cover;
+      min-height: calc(100vh - 300px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+          radial-gradient(circle at 20% 80%, rgba(220, 53, 69, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(253, 126, 20, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .hero-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      transition: all 0.3s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .fire-icon {
+      font-size: 3rem;
+      color: var(--fire-red);
+    }
+
+    .rating-badge {
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    .class-a { background: linear-gradient(45deg, #28a745, #20c997); }
+    .class-b { background: linear-gradient(45deg, #17a2b8, #6f42c1); }
+    .class-c { background: linear-gradient(45deg, #ffc107, #fd7e14); }
+    .class-d { background: linear-gradient(45deg, #dc3545, #e83e8c); }
+    .class-k { background: linear-gradient(45deg, #6c757d, #495057); }
+
+    .vehicle-tab {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .vehicle-tab.active {
+      background: var(--fire-red);
+      border-color: var(--fire-red);
+    }
+
+    .fire-class-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin: 0 auto 1rem;
+    }
+
+    .emergency-alert {
+      background: linear-gradient(135deg, var(--fire-red) 0%, var(--fire-orange) 100%);
+      border: none;
+      color: white;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+    }
+
+    /* Additional standardized styles for buttons and icons */
+    .btn-outline-light {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+      background: #ffffff;
+      color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Social links styling */
+    .social-links a {
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
+
+    /* Font Awesome icon fixes */
+    .fab, .fas {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+      font-weight: 900;
+      display: inline-block;
+    }
+
+    .fab {
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation - same as index.html -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <i class="fas fa-fire-extinguisher fire-icon me-3"></i>
+                        Fire Extinguisher Safety
+                    </h1>
+                    <p class="lead mb-4">
+                        Essential fire safety knowledge for South African drivers. Understanding fire classes, 
+                        extinguisher types, and emergency procedures can save lives and property on our roads.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#fire-classes" class="btn btn-danger btn-lg">Fire Classes</a>
+                        <a href="#vehicle-specific" class="btn btn-outline-warning btn-lg">Vehicle Guide</a>
+                        <a href="#emergency-procedures" class="btn emergency-alert btn-lg">
+                            <i class="fas fa-exclamation-triangle me-2"></i>Emergency
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <img src="assets/images/Fire-Extinguishers.png" alt="Fire Extinguisher Types" class="img-fluid" style="max-height: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="py-4" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <a href="#fire-classes" class="btn w-100 rating-badge class-a text-decoration-none">
+                        <i class="fas fa-leaf me-2"></i>Fire Classes
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#extinguisher-types" class="btn w-100 rating-badge class-b text-decoration-none">
+                        <i class="fas fa-spray-can me-2"></i>Extinguisher Types
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#maintenance" class="btn w-100 rating-badge class-c text-decoration-none">
+                        <i class="fas fa-tools me-2"></i>Maintenance
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#emergency-procedures" class="btn w-100 rating-badge class-d text-decoration-none">
+                        <i class="fas fa-ambulance me-2"></i>Emergency
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Sections will be added in next step -->
+    <div id="main-content">
+        <!-- Fire Classes Section -->
+        <section id="fire-classes" class="py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-5 text-center">
+                    <i class="fas fa-fire me-3" style="color: var(--fire-red);"></i>
+                    Fire Classifications
+                </h2>
+                
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="alert alert-danger emergency-alert">
+                            <h5><i class="fas fa-exclamation-triangle me-2"></i>Critical for Vehicle Safety</h5>
+                            <p class="mb-0">Different fire types require different extinguishing methods. Using the wrong type can spread the fire or cause injury!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-2-4 col-md-6">
+                        <div class="section-card p-4 h-100 text-center">
+                            <div class="fire-class-icon class-a">A</div>
+                            <h4>Class A Fires</h4>
+                            <p class="text-success fw-bold">ORDINARY COMBUSTIBLES</p>
+                            <ul class="text-start">
+                                <li>Paper, wood, fabric</li>
+                                <li>Upholstery, carpets</li>
+                                <li>Cardboard packaging</li>
+                                <li>Rubber materials</li>
+                            </ul>
+                            <div class="mt-3">
+                                <small class="text-success">✓ Water, foam, dry chemical</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2-4 col-md-6">
+                        <div class="section-card p-4 h-100 text-center">
+                            <div class="fire-class-icon class-b">B</div>
+                            <h4>Class B Fires</h4>
+                            <p class="text-info fw-bold">FLAMMABLE LIQUIDS</p>
+                            <ul class="text-start">
+                                <li>Petrol, diesel</li>
+                                <li>Oil, grease</li>
+                                <li>Paint, solvents</li>
+                                <li>Hydraulic fluids</li>
+                            </ul>
+                            <div class="mt-3">
+                                <small class="text-info">✓ Foam, CO₂, dry chemical</small><br>
+                                <small class="text-danger">✗ Never use water</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2-4 col-md-6">
+                        <div class="section-card p-4 h-100 text-center">
+                            <div class="fire-class-icon class-c">C</div>
+                            <h4>Class C Fires</h4>
+                            <p class="text-warning fw-bold">ELECTRICAL EQUIPMENT</p>
+                            <ul class="text-start">
+                                <li>Vehicle wiring</li>
+                                <li>Electrical panels</li>
+                                <li>Motors, alternators</li>
+                                <li>Electronic devices</li>
+                            </ul>
+                            <div class="mt-3">
+                                <small class="text-warning">✓ CO₂, dry chemical</small><br>
+                                <small class="text-danger">✗ Never use water/foam</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2-4 col-md-6">
+                        <div class="section-card p-4 h-100 text-center">
+                            <div class="fire-class-icon class-d">D</div>
+                            <h4>Class D Fires</h4>
+                            <p class="text-danger fw-bold">COMBUSTIBLE METALS</p>
+                            <ul class="text-start">
+                                <li>Magnesium wheels</li>
+                                <li>Aluminum parts</li>
+                                <li>Lithium batteries</li>
+                                <li>Metal powders</li>
+                            </ul>
+                            <div class="mt-3">
+                                <small class="text-danger">✓ Special dry powder</small><br>
+                                <small class="text-danger">✗ Water makes it worse</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2-4 col-md-6">
+                        <div class="section-card p-4 h-100 text-center">
+                            <div class="fire-class-icon class-k">K</div>
+                            <h4>Class K Fires</h4>
+                            <p class="text-secondary fw-bold">COOKING OILS</p>
+                            <ul class="text-start">
+                                <li>Cooking oils</li>
+                                <li>Animal fats</li>
+                                <li>Vegetable oils</li>
+                                <li>Food service areas</li>
+                            </ul>
+                            <div class="mt-3">
+                                <small class="text-secondary">✓ Wet chemical</small><br>
+                                <small class="text-muted">Rare in vehicles</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="section-card p-4">
+                            <h4><i class="fas fa-car me-2"></i>Common Vehicle Fire Scenarios</h4>
+                            <div class="row g-3 mt-3">
+                                <div class="col-md-6">
+                                    <h6>🔥 Engine Bay Fires</h6>
+                                    <p><strong>Usually Class B & C:</strong> Fuel leaks, electrical shorts, oil fires</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>⚡ Electrical Fires</h6>
+                                    <p><strong>Class C:</strong> Wiring problems, alternator, battery issues</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>🛞 Wheel/Brake Fires</h6>
+                                    <p><strong>Class A & D:</strong> Overheated brakes, magnesium wheels</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>💺 Interior Fires</h6>
+                                    <p><strong>Class A & C:</strong> Upholstery, cigarettes, electrical</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extinguisher Types Section -->
+        <section id="extinguisher-types" class="py-5" style="background: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-5 text-center">
+                    <i class="fas fa-spray-can me-3" style="color: var(--warning-color);"></i>
+                    Extinguisher Types & Applications
+                </h2>
+
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="section-card p-4 h-100">
+                            <h4><i class="fas fa-tint me-2 text-primary"></i>Water Extinguishers</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-success">✓ Effective Against:</h6>
+                                    <ul>
+                                        <li>Class A fires only</li>
+                                        <li>Paper, wood, fabric</li>
+                                        <li>Interior upholstery</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-danger">✗ Never Use On:</h6>
+                                    <ul>
+                                        <li>Electrical fires</li>
+                                        <li>Fuel/oil fires</li>
+                                        <li>Grease fires</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="alert alert-info mt-3">
+                                <small><strong>Vehicle Use:</strong> Limited application. Mainly for interior fires when electrical power is disconnected.</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="section-card p-4 h-100">
+                            <h4><i class="fas fa-cloud me-2 text-secondary"></i>CO₂ Extinguishers</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-success">✓ Effective Against:</h6>
+                                    <ul>
+                                        <li>Class B & C fires</li>
+                                        <li>Electrical equipment</li>
+                                        <li>Fuel fires</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-warning">⚠️ Limitations:</h6>
+                                    <ul>
+                                        <li>Can re-ignite</li>
+                                        <li>No cooling effect</li>
+                                        <li>Displaces oxygen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="alert alert-success mt-3">
+                                <small><strong>Vehicle Use:</strong> Excellent for engine bay electrical fires. Clean, no residue.</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="section-card p-4 h-100">
+                            <h4><i class="fas fa-powerpuff me-2 text-warning"></i>Dry Chemical (ABC)</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-success">✓ Effective Against:</h6>
+                                    <ul>
+                                        <li>Class A, B, C fires</li>
+                                        <li>Most versatile</li>
+                                        <li>Quick knockdown</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-warning">⚠️ Considerations:</h6>
+                                    <ul>
+                                        <li>Corrosive residue</li>
+                                        <li>Can damage electronics</li>
+                                        <li>Messy cleanup</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="alert alert-primary mt-3">
+                                <small><strong>Vehicle Use:</strong> Most recommended for general vehicle use. Handles multiple fire types.</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="section-card p-4 h-100">
+                            <h4><i class="fas fa-soap me-2 text-info"></i>Foam Extinguishers</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-success">✓ Effective Against:</h6>
+                                    <ul>
+                                        <li>Class A & B fires</li>
+                                        <li>Fuel spill fires</li>
+                                        <li>Oil/grease fires</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-danger">✗ Never Use On:</h6>
+                                    <ul>
+                                        <li>Electrical fires</li>
+                                        <li>Class C fires</li>
+                                        <li>Live electrical equipment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="alert alert-info mt-3">
+                                <small><strong>Vehicle Use:</strong> Good for fuel fires. Forms barrier to prevent re-ignition.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Vehicle Extinguishers -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="text-center mb-4">Recommended Vehicle Extinguishers</h3>
+                        <div class="row g-4">
+                            <div class="col-lg-4">
+                                <div class="section-card p-4 text-center border-success">
+                                    <h5 class="text-success">🥇 Best Choice</h5>
+                                    <h4>2kg ABC Dry Chemical</h4>
+                                    <ul class="text-start mt-3">
+                                        <li>Handles Class A, B, C fires</li>
+                                        <li>Compact size for vehicles</li>
+                                        <li>Quick deployment</li>
+                                        <li>Widely available in SA</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <span class="badge bg-success">Passenger Cars</span>
+                                        <span class="badge bg-success">Light Trucks</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="section-card p-4 text-center border-warning">
+                                    <h5 class="text-warning">🥈 Alternative</h5>
+                                    <h4>2kg CO₂</h4>
+                                    <ul class="text-start mt-3">
+                                        <li>Clean, no residue</li>
+                                        <li>Excellent for electrical</li>
+                                        <li>Won't damage engine</li>
+                                        <li>Professional grade</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <span class="badge bg-warning text-dark">Luxury Vehicles</span>
+                                        <span class="badge bg-warning text-dark">Electronics</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="section-card p-4 text-center border-danger">
+                                    <h5 class="text-danger">🏭 Commercial</h5>
+                                    <h4>6kg ABC + 2kg CO₂</h4>
+                                    <ul class="text-start mt-3">
+                                        <li>Multiple extinguishers</li>
+                                        <li>Larger capacity</li>
+                                        <li>Professional setup</li>
+                                        <li>Fleet requirements</li>
+                                    </ul>
+                                    <div class="mt-3">
+                                        <span class="badge bg-danger">Trucks</span>
+                                        <span class="badge bg-danger">Buses</span>
+                                        <span class="badge bg-danger">Commercial</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maintenance Section -->
+        <section id="maintenance" class="py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-5 text-center">
+                    <i class="fas fa-tools me-3" style="color: var(--success-color);"></i>
+                    Maintenance & Inspection
+                </h2>
+
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="section-card p-4">
+                            <h4>Monthly Inspection Checklist</h4>
+                            
+                            <div class="row g-3 mt-3">
+                                <div class="col-md-6">
+                                    <h6 class="text-primary">Visual Inspection</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check1">
+                                        <label class="form-check-label" for="check1">
+                                            Gauge shows green (adequate pressure)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check2">
+                                        <label class="form-check-label" for="check2">
+                                            No visible damage to body/nozzle
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check3">
+                                        <label class="form-check-label" for="check3">
+                                            Safety pin and tamper seal intact
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check4">
+                                        <label class="form-check-label" for="check4">
+                                            Instruction label readable
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-warning">Physical Checks</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check5">
+                                        <label class="form-check-label" for="check5">
+                                            Proper mounting/bracket secure
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check6">
+                                        <label class="form-check-label" for="check6">
+                                            No corrosion or dents
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check7">
+                                        <label class="form-check-label" for="check7">
+                                            Hose and nozzle undamaged
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check8">
+                                        <label class="form-check-label" for="check8">
+                                            Easy access (not blocked)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning mt-4">
+                                <h6><i class="fas fa-calendar-alt me-2"></i>Professional Service Required</h6>
+                                <ul class="mb-0">
+                                    <li><strong>Annual:</strong> Professional inspection and recharge if needed</li>
+                                    <li><strong>5 Years:</strong> Hydrostatic testing for most extinguishers</li>
+                                    <li><strong>12 Years:</strong> Replacement for most portable units</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="section-card p-4 h-100">
+                            <h4>Storage Guidelines</h4>
+                            
+                            <h6 class="mt-3 text-success">✓ Proper Storage</h6>
+                            <ul>
+                                <li>Secure mounting bracket</li>
+                                <li>Protected from weather</li>
+                                <li>Easily accessible</li>
+                                <li>Away from heat sources</li>
+                                <li>Upright position</li>
+                            </ul>
+
+                            <h6 class="mt-3 text-danger">✗ Avoid</h6>
+                            <ul>
+                                <li>Loose in boot/trunk</li>
+                                <li>Direct sunlight</li>
+                                <li>Extreme temperatures</li>
+                                <li>Moisture/humidity</li>
+                                <li>Vibration damage</li>
+                            </ul>
+
+                            <div class="alert alert-info mt-3">
+                                <small><strong>SA Climate:</strong> Extreme heat can affect pressure. Check gauge more frequently in summer.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Replacement Indicators -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="section-card p-4">
+                            <h4><i class="fas fa-exclamation-triangle me-2 text-danger"></i>Replace Immediately If:</h4>
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <div class="text-center p-3 border border-danger rounded">
+                                        <i class="fas fa-tachometer-alt text-danger" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Pressure Loss</h6>
+                                        <p class="small">Gauge in red zone</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="text-center p-3 border border-danger rounded">
+                                        <i class="fas fa-broken-image text-danger" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Physical Damage</h6>
+                                        <p class="small">Dents, cracks, corrosion</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="text-center p-3 border border-danger rounded">
+                                        <i class="fas fa-unlink text-danger" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Missing Parts</h6>
+                                        <p class="small">Pin, seal, hose damage</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="text-center p-3 border border-danger rounded">
+                                        <i class="fas fa-calendar-times text-danger" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Expired</h6>
+                                        <p class="small">Beyond service life</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vehicle-Specific Section -->
+        <section id="vehicle-specific" class="py-5" style="background: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-5 text-center">
+                    <i class="fas fa-cars me-3" style="color: var(--secondary-color);"></i>
+                    Vehicle-Specific Requirements
+                </h2>
+
+                <!-- Tab Navigation -->
+                <div class="row justify-content-center mb-4">
+                    <div class="col-lg-8">
+                        <nav>
+                            <div class="nav nav-pills justify-content-center" id="nav-tab" role="tablist">
+                                <button class="nav-link vehicle-tab active" id="passenger-tab" data-bs-toggle="tab" data-bs-target="#passenger" type="button">
+                                    <i class="fas fa-car me-2"></i>Passenger Cars
+                                </button>
+                                <button class="nav-link vehicle-tab" id="commercial-tab" data-bs-toggle="tab" data-bs-target="#commercial" type="button">
+                                    <i class="fas fa-truck me-2"></i>Commercial
+                                </button>
+                                <button class="nav-link vehicle-tab" id="motorcycle-tab" data-bs-toggle="tab" data-bs-target="#motorcycle" type="button">
+                                    <i class="fas fa-motorcycle me-2"></i>Motorcycles
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content" id="nav-tabContent">
+                    <!-- Passenger Cars Tab -->
+                    <div class="tab-pane fade show active" id="passenger" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-lg-8">
+                                <div class="section-card p-4">
+                                    <h4><i class="fas fa-car me-2"></i>Passenger Vehicle Requirements</h4>
+                                    
+                                    <div class="row g-3 mt-3">
+                                        <div class="col-md-6">
+                                            <h6 class="text-primary">Recommended Setup</h6>
+                                            <ul>
+                                                <li><strong>Type:</strong> 2kg ABC Dry Chemical</li>
+                                                <li><strong>Location:</strong> Driver's side, accessible</li>
+                                                <li><strong>Mounting:</strong> Secure bracket system</li>
+                                                <li><strong>Backup:</strong> Fire blanket for small fires</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="text-success">Best Mounting Locations</h6>
+                                            <ul>
+                                                <li>Under driver's seat (if space)</li>
+                                                <li>Boot/trunk (secured)</li>
+                                                <li>Behind driver's seat</li>
+                                                <li>Door panel mount (SUVs)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="text-warning">SA Legal Requirements</h6>
+                                            <ul>
+                                                <li>Not mandatory for private cars</li>
+                                                <li>Highly recommended</li>
+                                                <li>Insurance benefits possible</li>
+                                                <li>Fleet policies may require</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="text-info">Cost Considerations</h6>
+                                            <ul>
+                                                <li>2kg ABC: R200-400</li>
+                                                <li>Mounting bracket: R50-100</li>
+                                                <li>Annual service: R100-200</li>
+                                                <li>Much cheaper than vehicle loss</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="section-card p-4 h-100">
+                                    <h5>Quick Access Guide</h5>
+                                    <div class="mt-3">
+                                        <h6>🚗 Sedan/Hatchback</h6>
+                                        <p class="small">Boot mount with quick-release. Keep key accessible.</p>
+                                        
+                                        <h6>🚙 SUV/4x4</h6>
+                                        <p class="small">Rear cargo area or door panel mount. Consider dual units.</p>
+                                        
+                                        <h6>🚐 MPV/Van</h6>
+                                        <p class="small">Multiple mounting points. Ensure all passengers know locations.</p>
+                                    </div>
+
+                                    <div class="alert alert-warning mt-3">
+                                        <small><strong>Remember:</strong> Seconds count in a fire. Practice accessing your extinguisher.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Commercial Vehicles Tab -->
+                    <div class="tab-pane fade" id="commercial" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="section-card p-4">
+                                    <h4><i class="fas fa-truck me-2"></i>Commercial Vehicle Requirements</h4>
+                                    
+                                    <div class="row g-4 mt-3">
+                                        <div class="col-lg-3">
+                                            <h6 class="text-primary">Light Commercial (Bakkies)</h6>
+                                            <ul>
+                                                <li>2kg ABC minimum</li>
+                                                <li>Cab and cargo area access</li>
+                                                <li>Weather protection</li>
+                                                <li>Tool compatibility</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h6 class="text-success">Medium Trucks</h6>
+                                            <ul>
+                                                <li>6kg ABC + 2kg CO₂</li>
+                                                <li>Engine bay access</li>
+                                                <li>Cab and cargo protection</li>
+                                                <li>Driver training required</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h6 class="text-warning">Heavy Trucks</h6>
+                                            <ul>
+                                                <li>Multiple extinguishers</li>
+                                                <li>Automatic systems available</li>
+                                                <li>Specialized hazmat requirements</li>
+                                                <li>Professional maintenance</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h6 class="text-danger">Passenger Transport</h6>
+                                            <ul>
+                                                <li>Legal requirements strict</li>
+                                                <li>Regular inspections</li>
+                                                <li>Emergency procedures</li>
+                                                <li>Passenger safety briefing</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="alert alert-danger mt-4">
+                                        <h6><i class="fas fa-gavel me-2"></i>SA Commercial Vehicle Laws</h6>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p class="mb-2"><strong>Mandatory for:</strong></p>
+                                                <ul class="mb-0">
+                                                    <li>Public transport vehicles</li>
+                                                    <li>Hazardous goods transport</li>
+                                                    <li>Vehicles over 3.5 tons GVM</li>
+                                                    <li>Passenger vehicles (>9 seats)</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="mb-2"><strong>Requirements:</strong></p>
+                                                <ul class="mb-0">
+                                                    <li>SABS approved extinguishers</li>
+                                                    <li>Annual certification</li>
+                                                    <li>Driver training records</li>
+                                                    <li>Maintenance documentation</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-md-6">
+                                            <h6>Fleet Management Tips</h6>
+                                            <ul>
+                                                <li>Standardize extinguisher types</li>
+                                                <li>Bulk purchasing discounts</li>
+                                                <li>Scheduled maintenance program</li>
+                                                <li>Driver training schedule</li>
+                                                <li>Insurance compliance</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Cost-Benefit Analysis</h6>
+                                            <ul>
+                                                <li>Vehicle replacement: R500k+</li>
+                                                <li>Cargo loss: R50k-500k</li>
+                                                <li>Extinguisher system: R2k-10k</li>
+                                                <li>Insurance premiums reduced</li>
+                                                <li>Downtime prevention</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Motorcycles Tab -->
+                    <div class="tab-pane fade" id="motorcycle" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-lg-8">
+                                <div class="section-card p-4">
+                                    <h4><i class="fas fa-motorcycle me-2"></i>Motorcycle Fire Safety</h4>
+                                    
+                                    <div class="row g-3 mt-3">
+                                        <div class="col-md-6">
+                                            <h6 class="text-primary">Portable Options</h6>
+                                            <ul>
+                                                <li>500g ABC aerosol extinguisher</li>
+                                                <li>Compact fire blanket</li>
+                                                <li>Tool kit integration</li>
+                                                <li>Touring case mounting</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="text-warning">Motorcycle Risks</h6>
+                                            <ul>
+                                                <li>Fuel tank proximity</li>
+                                                <li>Hot exhaust systems</li>
+                                                <li>Electrical shorts</li>
+                                                <li>Limited storage space</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="text-success">Prevention Focus</h6>
+                                            <ul>
+                                                <li>Regular maintenance critical</li>
+                                                <li>Electrical system checks</li>
+                                                <li>Fuel line inspections</li>
+                                                <li>Heat shield maintenance</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="text-info">Emergency Strategy</h6>
+                                            <ul>
+                                                <li>Get away from bike quickly</li>
+                                                <li>Call for help immediately</li>
+                                                <li>Use extinguisher if safe</li>
+                                                <li>Don't risk injury for bike</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="section-card p-4 h-100">
+                                    <h5>Motorcycle Products</h5>
+                                    
+                                    <div class="mb-3">
+                                        <h6>🧯 Mini Extinguishers</h6>
+                                        <p class="small">500g-1kg ABC units. Fit in tool rolls or side cases.</p>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <h6>🔥 Fire Blankets</h6>
+                                        <p class="small">Compact, lightweight. Good for clothing fires too.</p>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <h6>💧 Aerosol Units</h6>
+                                        <p class="small">Easy to use, one-handed operation. Limited capacity.</p>
+                                    </div>
+
+                                    <div class="alert alert-info mt-3">
+                                        <small><strong>Adventure Riders:</strong> Consider larger capacity for remote areas.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Procedures Section -->
+        <section id="emergency-procedures" class="py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-5 text-center">
+                    <i class="fas fa-ambulance me-3" style="color: var(--fire-red);"></i>
+                    Emergency Procedures
+                </h2>
+
+                <!-- PASS Technique -->
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="section-card p-4 text-center border-danger">
+                            <h3 class="text-danger mb-4">PASS Technique</h3>
+                            <div class="row g-4">
+                                <div class="col-md-3">
+                                    <div class="p-3">
+                                        <i class="fas fa-unlock-alt text-danger" style="font-size: 3rem;"></i>
+                                        <h5 class="mt-2">PULL</h5>
+                                        <p>Remove safety pin</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="p-3">
+                                        <i class="fas fa-crosshairs text-warning" style="font-size: 3rem;"></i>
+                                        <h5 class="mt-2">AIM</h5>
+                                        <p>At base of fire</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="p-3">
+                                        <i class="fas fa-hand-paper text-info" style="font-size: 3rem;"></i>
+                                        <h5 class="mt-2">SQUEEZE</h5>
+                                        <p>Handle firmly</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="p-3">
+                                        <i class="fas fa-arrows-alt-h text-success" style="font-size: 3rem;"></i>
+                                        <h5 class="mt-2">SWEEP</h5>
+                                        <p>Side to side</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step-by-step procedures -->
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="section-card p-4 h-100">
+                            <h4><i class="fas fa-fire text-danger me-2"></i>Vehicle Fire Response</h4>
+                            
+                            <h6 class="text-danger">1. IMMEDIATE ACTIONS (First 30 seconds)</h6>
+                            <ul>
+                                <li>🛑 Pull over safely - hazards on</li>
+                                <li>🚪 Turn off engine - keys out</li>
+                                <li>👥 Get everyone out - move upwind</li>
+                                <li>📞 Call 10111 immediately</li>
+                            </ul>
+
+                            <h6 class="text-warning">2. ASSESSMENT (30-60 seconds)</h6>
+                            <ul>
+                                <li>🔍 Identify fire location and size</li>
+                                <li>💨 Check wind direction</li>
+                                <li>🧯 Locate fire extinguisher</li>
+                                <li>🚶 Ensure escape route clear</li>
+                            </ul>
+
+                            <h6 class="text-success">3. FIRE FIGHTING (If safe)</h6>
+                            <ul>
+                                <li>🎯 Approach from upwind side</li>
+                                <li>🧯 Use PASS technique</li>
+                                <li>🔥 Attack base of flames</li>
+                                <li>↩️ Be ready to retreat</li>
+                            </ul>
+
+                            <div class="alert alert-danger mt-3">
+                                <strong>NEVER fight fires that are:</strong>
+                                <ul class="mb-0">
+                                    <li>Larger than you are tall</li>
+                                    <li>Spreading rapidly</li>
+                                    <li>Blocking your escape route</li>
+                                    <li>Near fuel tank</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="section-card p-4 h-100">
+                            <h4><i class="fas fa-phone-alt text-success me-2"></i>Emergency Contacts</h4>
+                            
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="p-3 bg-danger rounded text-center">
+                                        <h5 class="text-white mb-2">🚨 EMERGENCY SERVICES</h5>
+                                        <h3 class="text-white">10111</h3>
+                                        <p class="text-white mb-0">Fire, Police, Medical</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-warning rounded text-center">
+                                        <h6 class="text-dark">🚗 AA Emergency</h6>
+                                        <strong>0861 000 234</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-info rounded text-center">
+                                        <h6 class="text-white">🏥 ER24</h6>
+                                        <strong>084 124</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h6 class="mt-4">📍 Location Information</h6>
+                            <ul>
+                                <li>Highway name and direction</li>
+                                <li>Nearest kilometer marker</li>
+                                <li>GPS coordinates if available</li>
+                                <li>Landmarks (bridges, off-ramps)</li>
+                            </ul>
+
+                            <h6 class="mt-3">📢 What to Tell Dispatcher</h6>
+                            <ul>
+                                <li>"Vehicle fire on [location]"</li>
+                                <li>Number of people involved</li>
+                                <li>Any injuries</li>
+                                <li>Fire size and spread</li>
+                                <li>Traffic hazards</li>
+                            </ul>
+
+                            <div class="alert alert-info mt-3">
+                                <small><strong>Tip:</strong> Save emergency numbers in your phone with location shortcuts.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning signs -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="section-card p-4">
+                            <h4><i class="fas fa-exclamation-triangle me-2 text-warning"></i>Early Warning Signs</h4>
+                            <div class="row g-4">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-burn text-danger" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Smell</h6>
+                                        <ul class="text-start small">
+                                            <li>Burning plastic</li>
+                                            <li>Hot oil/rubber</li>
+                                            <li>Electrical burning</li>
+                                            <li>Fuel vapors</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-eye text-warning" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Visual</h6>
+                                        <ul class="text-start small">
+                                            <li>Smoke from hood</li>
+                                            <li>Steam/vapor</li>
+                                            <li>Sparks/arcing</li>
+                                            <li>Glowing components</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-thermometer-full text-info" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Temperature</h6>
+                                        <ul class="text-start small">
+                                            <li>Engine overheating</li>
+                                            <li>Hot floor/pedals</li>
+                                            <li>Burning dashboard</li>
+                                            <li>Excessive heat</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-volume-up text-success" style="font-size: 2rem;"></i>
+                                        <h6 class="mt-2">Sounds</h6>
+                                        <ul class="text-start small">
+                                            <li>Electrical crackling</li>
+                                            <li>Hissing/popping</li>
+                                            <li>Engine knocking</li>
+                                            <li>Unusual noises</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert alert-warning mt-3">
+                                <strong>Action:</strong> If you notice any of these signs, pull over immediately and investigate safely. Early detection saves lives and property.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Modern JavaScript for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Phone number reveal functionality
+    const phoneSpan = document.getElementById('phone-number');
+    if (phoneSpan) {
+        phoneSpan.addEventListener('click', function() {
+            const phoneNumber = this.getAttribute('data-number');
+            if (phoneNumber) {
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.removeAttribute('title');
+            }
+        });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

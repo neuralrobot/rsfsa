@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Let's Talk - Road Safety Foundation Community Forum powered by Discourse">
+  <title>Let's Talk - Road Safety Foundation Community Forum</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    /* Font Awesome icon fix */
+    .fas, .fab, .far, .fal, .fad, .fa-solid, .fa-regular, .fa-light, .fa-thin, .fa-duotone, .fa-brands {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+      font-weight: 900;
+    }
+
+    .fab {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+
+    body {
+      padding-top: 80px;
+    }
+
+    /* Static Navigation Styles */
+    .modern-nav {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+
+    .navbar-brand {
+      font-size: 1.1rem;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .navbar-nav {
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-item {
+      margin: 0;
+    }
+
+    .nav-link {
+      padding: 0.75rem 1rem !important;
+      border-radius: 0;
+      transition: all 0.3s ease;
+      position: relative;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      background: rgba(42, 159, 214, 0.1);
+      border-bottom-color: var(--primary-color);
+      color: var(--text-light) !important;
+    }
+
+    .nav-link.active {
+      background: rgba(42, 159, 214, 0.15);
+      color: var(--primary-color) !important;
+      border-bottom-color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 1400px) {
+      .nav-link {
+        padding: 0.6rem 0.8rem !important;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .nav-link {
+        padding: 0.5rem 0.6rem !important;
+        font-size: 0.8rem;
+      }
+
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .navbar-brand img {
+        height: 35px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .nav-link {
+        padding: 0.4rem 0.5rem !important;
+        font-size: 0.75rem;
+      }
+
+      .navbar-brand {
+        font-size: 0.9rem;
+      }
+
+      .navbar-brand img {
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-link {
+        padding: 0.3rem 0.4rem !important;
+        font-size: 0.7rem;
+      }
+
+      .navbar-brand span {
+        display: none;
+      }
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
+                  url('assets/images/lets-talk.png') center/cover;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(153, 51, 204, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .forum-card, .topic-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .forum-card:hover, .topic-card:hover {
+      transform: translateY(-5px);
+      border-color: #2a9fd6 !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .forum-card img, .topic-card img {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .discussion-item {
+      background: #1a1a1a !important;
+      border: 1px solid #444 !important;
+      transition: all 0.3s ease;
+    }
+
+    .discussion-item:hover {
+      border-color: #ff8800 !important;
+      box-shadow: 0 5px 20px rgba(255, 136, 0, 0.2);
+    }
+
+    .stats-card {
+      background: #333 !important;
+      border: 1px solid #555 !important;
+      transition: all 0.3s ease;
+    }
+
+    .stats-card:hover {
+      border-color: #77b300 !important;
+      box-shadow: 0 5px 20px rgba(119, 179, 0, 0.2);
+    }
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2a9fd6, #1a7aa8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .forum-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="#vrt">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header" id="hero">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7 text-lg-start text-center mb-3 mb-lg-0">
+                <span class="badge bg-info text-white px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Community Forum
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Let's <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Talk</span></h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Join our community forum powered by Discourse - the world's most secure and user-friendly forum platform. Connect with road safety advocates across South Africa.</p>
+            </div>
+            <div class="col-lg-5 text-lg-end text-center">
+                <img src="assets/images/lets-talk.png" alt="Let's Talk" style="width: 455px; height: auto; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); object-fit: contain;" class="ms-lg-3 mt-4 mt-lg-0">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Women in Road Safety Forum Detail -->
+<section id="women-forum" class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card forum-card">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-5">
+                            <div class="forum-icon bg-info bg-opacity-25">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-info">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h2 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Women in Road Safety</h2>
+                            <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem;">Empowering women to lead the change in road safety across South Africa</p>
+                        </div>
+
+                        <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">In her role as Road Safety Ambassador Clare will be creating awareness about the road safety challenges in South Africa and offer education and advice, which is vital to change the road safety situation in South Africa. One of the main focus areas will be road safety awareness among female road users under the banner of <strong style="color: #2a9fd6;">Women in Road Safety</strong>, a forum of the RSF.</p>
+
+                            <blockquote style="background: rgba(42, 159, 214, 0.1); border-left: 4px solid #2a9fd6; padding: 20px; margin: 2rem 0; border-radius: 4px;">
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-style: italic; margin-bottom: 1rem;">"We need to get the right messages to road users and through our Road Safety Ambassadors we will be able to extend our reach. We look forward to working with Clare and sharing her expertise with SA road users."</p>
+                                <footer style="color: #2a9fd6; font-weight: 600;">— RSF Director, Petro Kruger</footer>
+                            </blockquote>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">"Road safety is an issue of critical importance in South Africa," said Clare. "I'm totally committed to supporting the RSF and I am looking forward to making a contribution in any way I can."</p>
+
+                            <div style="background: rgba(119, 179, 0, 0.1); border: 1px solid #77b300; border-radius: 8px; padding: 20px; margin-top: 2rem;">
+                                <h4 style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">Join Our Community</h4>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">Be part of the Women in Road Safety forum and help create positive change:</p>
+                                <ul style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">
+                                    <li>Share your road safety experiences and challenges</li>
+                                    <li>Learn from other women road users across South Africa</li>
+                                    <li>Access exclusive educational resources and tips</li>
+                                    <li>Participate in awareness campaigns and initiatives</li>
+                                    <li>Connect with road safety professionals and advocates</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Discussions -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center mb-5">
+                    <h2 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Recent Discussions</h2>
+                    <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem;">Join the conversation and share your insights</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card discussion-item">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="user-avatar me-3">CK</div>
+                                    <div class="flex-grow-1">
+                                        <h6 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 0.5rem;">Safety Tips for Female Drivers</h6>
+                                        <p class="small mb-2" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">by Clare K. • 2 hours ago</p>
+                                        <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">Essential safety tips every woman should know when driving alone...</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex gap-2">
+                                        <span class="badge bg-info text-dark">Safety Tips</span>
+                                        <span class="badge bg-warning text-dark">Popular</span>
+                                    </div>
+                                    <small style="color: #888;">12 replies</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card discussion-item">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="user-avatar me-3" style="background: linear-gradient(135deg, #77b300, #5a8a00);">MJ</div>
+                                    <div class="flex-grow-1">
+                                        <h6 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 0.5rem;">Night Driving Challenges</h6>
+                                        <p class="small mb-2" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">by Maria J. • 5 hours ago</p>
+                                        <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">Discussing the unique challenges women face when driving at night...</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex gap-2">
+                                        <span class="badge bg-danger text-light">Night Driving</span>
+                                        <span class="badge bg-success text-dark">Discussion</span>
+                                    </div>
+                                    <small style="color: #888;">8 replies</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card discussion-item">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="user-avatar me-3" style="background: linear-gradient(135deg, #ff8800, #cc6600);">SN</div>
+                                    <div class="flex-grow-1">
+                                        <h6 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 0.5rem;">Child Safety in Vehicles</h6>
+                                        <p class="small mb-2" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">by Sarah N. • 1 day ago</p>
+                                        <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">Best practices for keeping children safe while traveling...</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex gap-2">
+                                        <span class="badge bg-warning text-dark">Child Safety</span>
+                                        <span class="badge bg-info text-dark">Guide</span>
+                                    </div>
+                                    <small style="color: #888;">15 replies</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card discussion-item">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="user-avatar me-3" style="background: linear-gradient(135deg, #dc3545, #a02834);">LM</div>
+                                    <div class="flex-grow-1">
+                                        <h6 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 0.5rem;">Emergency Preparedness</h6>
+                                        <p class="small mb-2" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">by Linda M. • 2 days ago</p>
+                                        <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">What every woman should have in her car for emergencies...</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex gap-2">
+                                        <span class="badge bg-danger text-light">Emergency</span>
+                                        <span class="badge bg-success text-dark">Preparedness</span>
+                                    </div>
+                                    <small style="color: #888;">6 replies</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Forum Categories Section -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Main Forum Category -->
+            <div class="col-lg-8">
+                <div class="card forum-card">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-md-5">
+                            <img src="assets/images/news-road-safety-ambassador-1400x2271-13.jpg" class="img-fluid h-100" style="object-fit: cover; border-radius: 0.5rem 0 0 0.5rem;" alt="Women in Road Safety">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-4">
+                                <span class="badge bg-info text-dark px-3 py-2 rounded-pill mb-3 fw-semibold">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Featured Forum
+                                </span>
+                                <h3 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Women in Road Safety</h3>
+                                <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.05rem; line-height: 1.6;">A dedicated forum for female road users to discuss safety challenges, share experiences, and support each other in creating safer roads for everyone.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <div class="d-flex gap-3">
+                                        <span class="badge bg-success text-dark">Active</span>
+                                        <span class="badge bg-warning text-dark">Featured</span>
+                                    </div>
+                                    <a href="#women-forum" class="btn btn-outline-info">
+                                        Join Discussion
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="ms-2">
+                                            <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                                            <polyline points="12,5 19,12 12,19" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forum Stats -->
+            <div class="col-lg-4">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="card stats-card">
+                            <div class="card-body p-4 text-center">
+                                <h5 class="fw-semibold mb-4" style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Community Stats</h5>
+
+                                <div class="row g-3">
+                                    <div class="col-6">
+                                        <div class="text-center">
+                                            <h4 style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1,247</h4>
+                                            <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">Members</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-center">
+                                            <h4 style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">3,456</h4>
+                                            <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">Posts</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-center">
+                                            <h4 style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">89</h4>
+                                            <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">Topics</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-center">
+                                            <h4 style="color: #dc3545; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">24</h4>
+                                            <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">Online</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="card" style="background: linear-gradient(135deg, #ff8800 0%, #cc6600 100%); border: none;">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Ready to Join the Conversation?</h3>
+                        <p class="mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem; opacity: 0.95;">Connect with fellow road safety advocates, share your experiences, and help create safer roads for everyone.</p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="ContactUs.html" class="btn btn-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="20" y1="8" x2="20" y2="14" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="23" y1="11" x2="17" y2="11" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Join Community
+                            </a>
+                            <a href="BLOG.html" class="btn btn-outline-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Read Stories
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Discourse Platform Information -->
+<section class="py-5" style="background: linear-gradient(135deg, #2a9fd6 0%, #1a7aa8 100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="mb-5">
+                    <span class="badge bg-white text-primary px-3 py-2 rounded-pill mb-3 fw-semibold">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Powered by Discourse
+                    </span>
+                    <h2 class="display-4 fw-bold mb-4 text-white">The Most Secure Forum Platform</h2>
+                    <p class="lead text-white mb-4" style="opacity: 0.95;">
+                        Our forum will be powered by Discourse - the world's most trusted forum software used by major organizations for secure, engaging community discussions.
+                    </p>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <div class="card h-100" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);">
+                            <div class="card-body p-4 text-center">
+                                <div class="mb-3">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="text-white">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h5 class="text-white mb-3">Enterprise Security</h5>
+                                <p class="text-white" style="opacity: 0.9; font-size: 0.9rem;">Built-in spam protection, advanced authentication, and regular security updates ensure your discussions are safe.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);">
+                            <div class="card-body p-4 text-center">
+                                <div class="mb-3">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="text-white">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h5 class="text-white mb-3">Modern Features</h5>
+                                <p class="text-white" style="opacity: 0.9; font-size: 0.9rem;">Real-time notifications, mobile responsiveness, and intuitive user experience that encourages participation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);">
+                            <div class="card-body p-4 text-center">
+                                <div class="mb-3">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="text-white">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h5 class="text-white mb-3">Community Building</h5>
+                                <p class="text-white" style="opacity: 0.9; font-size: 0.9rem;">Advanced moderation tools, user trust levels, and gamification features foster healthy community growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+                            <div class="card-body p-4">
+                                <h4 class="text-white mb-3">Why We Chose Discourse</h4>
+                                <div class="row g-3 text-start">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><span class="text-white">Unhackable by design</span></li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><span class="text-white">Trusted by Stack Overflow, Mozilla</span></li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><span class="text-white">99.9% uptime guarantee</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><span class="text-white">Advanced spam protection</span></li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><span class="text-white">Mobile-first design</span></li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i><span class="text-white">SEO optimized</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h3 class="text-white mb-4">Forum Coming Soon!</h3>
+                    <p class="text-white mb-4" style="opacity: 0.9;">
+                        We're currently setting up our Discourse-powered community forum. Join our mailing list to be notified when we launch.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center">
+                        <a href="https://discourse.org" target="_blank" class="btn btn-light btn-lg">
+                            <i class="fab fa-discourse me-2"></i>Learn About Discourse
+                        </a>
+                        <a href="ContactUs.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-bell me-2"></i>Notify Me When Ready
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Phone number reveal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

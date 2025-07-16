@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Terms of Service - Road Safety Foundation of South Africa website usage terms and conditions">
+  <title>Terms of Service - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    /* Font Awesome Icon Fix - Override global font-family rule */
+    .fas, .far, .fal, .fab, .fa {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", FontAwesome !important;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+    .fab {
+      font-family: "Font Awesome 6 Brands", "Font Awesome 5 Brands" !important;
+      font-weight: 400 !important;
+    }
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+
+    body {
+      padding-top: 60px;
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
+                  url('assets/images/terms_of_service_2.png') center/cover;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(153, 51, 204, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .content-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      margin-bottom: 2rem;
+    }
+
+    .section-card {
+      background: rgba(42, 159, 214, 0.05) !important;
+      border: 1px solid rgba(42, 159, 214, 0.2) !important;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .warning-box {
+      background: rgba(255, 136, 0, 0.1) !important;
+      border: 1px solid #ff8800 !important;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .info-box {
+      background: rgba(153, 51, 204, 0.1) !important;
+      border: 1px solid #9933cc !important;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    /* Enhanced text contrast */
+    .text-light {
+      color: #ffffff !important;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .text-muted {
+      color: #e0e0e0 !important;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #ffffff !important;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .section-title {
+      color: var(--primary-color) !important;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .toc-link:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .last-updated {
+      background: rgba(119, 179, 0, 0.1);
+      border: 1px solid #77b300;
+      border-radius: 5px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      color: #77b300;
+      font-weight: 500;
+    }
+
+    ol li, ul li {
+      margin-bottom: 0.5rem;
+      color: #f8f9fa;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    }
+
+    .contact-info {
+      background: rgba(42, 159, 214, 0.1);
+      border: 1px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="#evolve">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="#vrt">VRT</a></li>
+                            <li><a class="dropdown-item" href="#our-story">Our Story</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="#vrt">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#my-gift">My Gift</a></li>
+                            <li><a class="dropdown-item" href="#tyre-safety">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="#fire-extinguishers">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="#fleet-watch">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="News.html">View and Comments</a></li>
+                            <li><a class="dropdown-item" href="#submissions">Submissions</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#did-you-know">Did You Know</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-center text-lg-start">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Legal Document
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Terms of <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Service</span></h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Website usage terms and conditions for the Road Safety Foundation of South Africa</p>
+            </div>
+            <div class="col-lg-5 text-center">
+                <img src="assets/images/terms_of_service_2.png" alt="Terms of Service" class="img-fluid rounded-4 shadow-lg" style="max-height: 260px; object-fit: cover; background: rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Terms of Service Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="content-card card">
+                    <div class="card-body p-5">
+                        <!-- Last Updated -->
+                        <div class="last-updated">
+                            <i class="fas fa-clock me-2"></i>
+                            <strong>Last Updated:</strong> July 14, 2025
+                        </div>
+
+                        <!-- Introduction -->
+                        <div class="mb-5">
+                            <h2 class="section-title">Welcome to the Road Safety Foundation</h2>
+                            <p class="text-light">These Terms of Service ("Terms") govern your use of the Road Safety Foundation of South Africa website ("Website") operated by the Road Safety Foundation of South Africa ("we," "us," or "our"). By accessing or using our Website, you agree to be bound by these Terms.</p>
+                            
+                            <div class="warning-box">
+                                <h5 style="color: #ff8800; margin-bottom: 1rem;">
+                                    <i class="fas fa-exclamation-triangle me-2"></i>
+                                    Important Notice
+                                </h5>
+                                <p class="mb-0" style="color: #ffffff;">Please read these Terms carefully before using our Website. If you do not agree with any part of these Terms, you must not use our Website.</p>
+                            </div>
+                        </div>
+
+                        <!-- Table of Contents -->
+                        <div class="section-card">
+                            <h3 class="mb-4">Table of Contents</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ol class="text-light">
+                                        <li><a href="#acceptance" class="toc-link">Acceptance of Terms</a></li>
+                                        <li><a href="#description" class="toc-link">Description of Service</a></li>
+                                        <li><a href="#user-conduct" class="toc-link">User Conduct</a></li>
+                                        <li><a href="#content-policy" class="toc-link">Content Policy</a></li>
+                                        <li><a href="#intellectual-property" class="toc-link">Intellectual Property</a></li>
+                                        <li><a href="#privacy" class="toc-link">Privacy</a></li>
+                                    </ol>
+                                </div>
+                                <div class="col-md-6">
+                                    <ol start="7" class="text-light">
+                                        <li><a href="#disclaimers" class="toc-link">Disclaimers</a></li>
+                                        <li><a href="#limitation-liability" class="toc-link">Limitation of Liability</a></li>
+                                        <li><a href="#indemnification" class="toc-link">Indemnification</a></li>
+                                        <li><a href="#termination" class="toc-link">Termination</a></li>
+                                        <li><a href="#governing-law" class="toc-link">Governing Law</a></li>
+                                        <li><a href="#contact" class="toc-link">Contact Information</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1. Acceptance of Terms -->
+                        <div id="acceptance" class="mb-5">
+                            <h3 class="section-title">1. Acceptance of Terms</h3>
+                            <p class="text-light">By accessing and using this Website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+                            <p class="text-light">We reserve the right to update or modify these Terms at any time without prior notice. Your continued use of the Website after any such changes constitutes acceptance of the new Terms.</p>
+                        </div>
+
+                        <!-- 2. Description of Service -->
+                        <div id="description" class="mb-5">
+                            <h3 class="section-title">2. Description of Service</h3>
+                            <p class="text-light">The Road Safety Foundation of South Africa Website provides:</p>
+                            <ul class="text-light">
+                                <li>Road safety education and awareness information</li>
+                                <li>News and updates on road safety initiatives</li>
+                                <li>Resources for drivers, pedestrians, and road safety professionals</li>
+                                <li>Information about our programs and partnerships</li>
+                                <li>Access to research and statistical data on road safety</li>
+                                <li>Community forums and discussion platforms</li>
+                                <li>Educational videos and multimedia content</li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. User Conduct -->
+                        <div id="user-conduct" class="mb-5">
+                            <h3 class="section-title">3. User Conduct</h3>
+                            <p class="text-light">You agree to use the Website only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+                            <ul class="text-light">
+                                <li>Post, transmit, or share content that is illegal, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, or racially offensive</li>
+                                <li>Impersonate any person or entity or misrepresent your affiliation with any person or entity</li>
+                                <li>Upload, post, or transmit any content that infringes upon intellectual property rights</li>
+                                <li>Attempt to gain unauthorized access to any portion of the Website or any other systems</li>
+                                <li>Interfere with or disrupt the Website or servers connected to the Website</li>
+                                <li>Use the Website to distribute spam, viruses, or other harmful code</li>
+                                <li>Collect or harvest personal information about other users</li>
+                            </ul>
+                        </div>
+
+                        <!-- 4. Content Policy -->
+                        <div id="content-policy" class="mb-5">
+                            <h3 class="section-title">4. Content Policy</h3>
+                            <div class="info-box">
+                                <h5 style="color: #9933cc; margin-bottom: 1rem;">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    User-Generated Content
+                                </h5>
+                                <p class="mb-0" style="color: #ffffff;">You retain ownership of content you post, but grant us a non-exclusive license to use, display, and distribute such content on our Website.</p>
+                            </div>
+                            <p class="text-light">All content posted to forums, comments sections, or submitted through forms must:</p>
+                            <ul class="text-light">
+                                <li>Be relevant to road safety topics</li>
+                                <li>Be respectful and constructive</li>
+                                <li>Not contain personal attacks or offensive language</li>
+                                <li>Not promote dangerous driving practices</li>
+                                <li>Comply with South African laws and regulations</li>
+                            </ul>
+                            <p class="text-light">We reserve the right to remove any content that violates these guidelines without notice.</p>
+                        </div>
+
+                        <!-- 5. Intellectual Property -->
+                        <div id="intellectual-property" class="mb-5">
+                            <h3 class="section-title">5. Intellectual Property</h3>
+                            <p class="text-light">The Website and its original content, features, and functionality are owned by the Road Safety Foundation of South Africa and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+                            <p class="text-light">You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Website, except as permitted for personal, non-commercial use.</p>
+                            <div class="section-card">
+                                <h5 class="mb-3" style="color: #2a9fd6;">Educational Use Exception</h5>
+                                <p class="mb-0" style="color: #ffffff;">Educational institutions and road safety organizations may use our content for non-commercial educational purposes with proper attribution to the Road Safety Foundation of South Africa.</p>
+                            </div>
+                        </div>
+
+                        <!-- 6. Privacy -->
+                        <div id="privacy" class="mb-5">
+                            <h3 class="section-title">6. Privacy</h3>
+                            <p class="text-light">Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the Website, to understand our practices.</p>
+                            <p class="text-light">By using our Website, you consent to the collection and use of information as outlined in our Privacy Policy.</p>
+                            <a href="privacy-policy.html" class="btn btn-outline-primary">
+                                <i class="fas fa-shield-alt me-2"></i>Read Privacy Policy
+                            </a>
+                        </div>
+
+                        <!-- 7. Disclaimers -->
+                        <div id="disclaimers" class="mb-5">
+                            <h3 class="section-title">7. Disclaimers</h3>
+                            <div class="warning-box">
+                                <h5 style="color: #ff8800; margin-bottom: 1rem;">
+                                    <i class="fas fa-exclamation-triangle me-2"></i>
+                                    Important Disclaimer
+                                </h5>
+                                <p class="mb-0" style="color: #ffffff;">The information on this Website is provided on an "as is" basis. We make no warranties, expressed or implied, and hereby disclaim all other warranties including implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+                            </div>
+                            <p class="text-light">We do not warrant that:</p>
+                            <ul class="text-light">
+                                <li>The Website will be constantly available, or available at all</li>
+                                <li>The information on this Website is complete, true, accurate, or non-misleading</li>
+                                <li>The Website will be free from errors, viruses, or other harmful components</li>
+                            </ul>
+                            <p class="text-light">Road safety advice and information should always be supplemented with official driving instruction and current traffic laws.</p>
+                        </div>
+
+                        <!-- 8. Limitation of Liability -->
+                        <div id="limitation-liability" class="mb-5">
+                            <h3 class="section-title">8. Limitation of Liability</h3>
+                            <p class="text-light">To the fullest extent permitted by applicable law, the Road Safety Foundation of South Africa shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Website.</p>
+                            <p class="text-light">Our total liability shall not exceed the amount you paid us, if any, for accessing the Website.</p>
+                        </div>
+
+                        <!-- 9. Indemnification -->
+                        <div id="indemnification" class="mb-5">
+                            <h3 class="section-title">9. Indemnification</h3>
+                            <p class="text-light">You agree to defend, indemnify, and hold harmless the Road Safety Foundation of South Africa from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including but not limited to attorney's fees) resulting from or arising out of your use and access of the Website or your violation of these Terms.</p>
+                        </div>
+
+                        <!-- 10. Termination -->
+                        <div id="termination" class="mb-5">
+                            <h3 class="section-title">10. Termination</h3>
+                            <p class="text-light">We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+                            <p class="text-light">Upon termination, your right to use the Website will cease immediately. If you wish to terminate your account, you may simply discontinue using the Website.</p>
+                        </div>
+
+                        <!-- 11. Governing Law -->
+                        <div id="governing-law" class="mb-5">
+                            <h3 class="section-title">11. Governing Law</h3>
+                            <p class="text-light">These Terms shall be interpreted and governed by the laws of the Republic of South Africa, without regard to its conflict of law provisions.</p>
+                            <p class="text-light">Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+                        </div>
+
+                        <!-- 12. Contact Information -->
+                        <div id="contact" class="mb-5">
+                            <h3 class="section-title">12. Contact Information</h3>
+                            <p class="text-light">If you have any questions about these Terms of Service, please contact us:</p>
+                            
+                            <div class="contact-info">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 style="color: #2a9fd6; margin-bottom: 1rem;">
+                                            <i class="fas fa-envelope me-2"></i>
+                                            Email Contact
+                                        </h5>
+                                        <p class="mb-0">
+                                            <strong>General Inquiries:</strong><br>
+                                            <a href="mailto:info@rsfsa.co.za" class="text-light">info@rsfsa.co.za</a>
+                                        </p>
+                                        <p class="mb-0">
+                                            <strong>Legal Matters:</strong><br>
+                                            <a href="mailto:legal@roadsafetyfoundation.co.za" class="text-light">legal@roadsafetyfoundation.co.za</a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 style="color: #2a9fd6; margin-bottom: 1rem;">
+                                            <i class="fas fa-map-marker-alt me-2"></i>
+                                            Postal Address
+                                        </h5>
+                                        <p class="mb-0">
+                                            Road Safety Foundation of South Africa<br>
+                                            Legal Department<br>
+                                            South Africa
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Changes to Terms -->
+                        <div class="section-card">
+                            <h4 class="mb-3" style="color: #77b300;">
+                                <i class="fas fa-edit me-2"></i>
+                                Changes to These Terms
+                            </h4>
+                            <p class="mb-3" style="color: #ffffff;">We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect.</p>
+                            <p class="mb-0" style="color: #ffffff;">What constitutes a material change will be determined at our sole discretion. By continuing to access or use our Website after those revisions become effective, you agree to be bound by the revised terms.</p>
+                        </div>
+
+                        <!-- Effective Date -->
+                        <div class="text-center mt-5 pt-4" style="border-top: 1px solid #333;">
+                            <p class="text-muted mb-0">
+                                <i class="fas fa-calendar-alt me-2"></i>
+                                These Terms of Service are effective as of January 1, 2024
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Smooth scrolling for table of contents links
+document.querySelectorAll('.toc-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Highlight current section in table of contents
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('[id]');
+    const scrollPosition = window.scrollY + 100;
+
+    sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        
+        if (scrollPosition >= top && scrollPosition < top + height) {
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + id) {
+                    link.style.color = '#ffffff';
+                    link.style.fontWeight = 'bold';
+                } else {
+                    link.style.color = '#2a9fd6';
+                    link.style.fontWeight = 'normal';
+                }
+            });
+        }
+    });
+});
+
+// Phone number protection - reveal on click to prevent scraping
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>

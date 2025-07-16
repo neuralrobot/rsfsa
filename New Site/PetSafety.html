@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Pet Safety in Vehicles - Comprehensive guide to keeping pets safe during car travel with proper restraints, carriers, and safety practices">
+  <title>Pet Safety in Vehicles - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Pet Safety Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+      padding-top: 60px;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
+                  url('assets/images/pet-safety.png') center/cover;
+      min-height: calc(100vh - 400px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+          radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(119, 179, 0, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .hero-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      background: linear-gradient(45deg, var(--secondary-color), #5a8a00);
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Card Styles */
+    .pet-safety-card {
+      background: var(--bg-secondary) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--border-radius);
+      transition: all 0.3s ease;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .pet-safety-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color) !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .pet-safety-card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+
+    .pet-safety-card .card-body h5 {
+      margin-bottom: 10px !important;
+      color: var(--text-primary);
+    }
+
+    .pet-safety-card .card-body p {
+      color: #ffffff !important;
+      margin-bottom: 1rem;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background: var(--gradient-primary);
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Content Sections */
+    .content-section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Pet Safety Info Boxes */
+    .pet-tip-box {
+      background: rgba(119, 179, 0, 0.1) !important;
+      border: 1px solid var(--secondary-color) !important;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      height: 100%;
+    }
+
+    .pet-warning-box {
+      background: rgba(220, 53, 69, 0.1) !important;
+      border: 1px solid var(--danger-color) !important;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      height: 100%;
+    }
+
+    .pet-info-box {
+      background: rgba(42, 159, 214, 0.1) !important;
+      border: 1px solid var(--primary-color) !important;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      height: 100%;
+    }
+
+    .pet-safety-info-grid .text-light,
+    .pet-safety-info-grid p,
+    .pet-safety-info-grid li {
+      color: #ffffff !important;
+      font-weight: 500;
+    }
+
+    .pet-safety-info-grid h5 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    /* Call to Action */
+    .cta-section {
+      background: linear-gradient(135deg, var(--secondary-color) 0%, #5a8a00 100%);
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .cta-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+    }
+
+    /* Social Media Icons */
+    .social-links a {
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    .social-links i {
+      display: inline-block;
+      width: 1.5em;
+      text-align: center;
+    }
+
+    /* Ensure FontAwesome icons load properly */
+    .fab {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .nav-link {
+        padding: 0.4rem 0.6rem !important;
+        font-size: 0.8rem;
+      }
+
+      .content-section {
+        padding: 2rem 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      
+      .nav-link {
+        padding: 0.3rem 0.5rem !important;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item active" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-badge mb-3">
+            <i class="fas fa-paw me-2"></i>
+            Pet Safety Excellence
+          </div>
+          <h1 class="hero-title mb-4" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Pet <span class="text-success" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Safety</span> in Vehicles</h1>
+          <p class="hero-subtitle lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Protecting your furry family members during vehicle travel through proper restraints, secure carriers, and safe travel practices.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-image d-flex align-items-end h-100">
+            <div class="hero-card w-100 p-4">
+              <img src="assets/images/pet-safety.png" alt="Pet Safety" class="img-fluid rounded-4 shadow-lg" style="width: 100%; height: auto; min-height: 120px; min-width: 350px; object-fit: contain;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Pet Safety Cards Section -->
+<section class="content-section" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Keeping Your Pets <span class="text-success">Safe</span></h2>
+            <p class="section-subtitle">Essential equipment and practices for pet safety during vehicle travel.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="pet-safety-card">
+                    <img src="assets/images/pet-safety1-600x600-39.jpg" alt="Pet Safety Harness" class="card-img-top">
+                    <div class="card-body p-3">
+                        <h5 class="text-success mb-3"><i class="fas fa-heart me-2"></i>Pet Restraint Systems</h5>
+                        <p class="text-light mb-2">Essential safety harnesses that work with existing seatbelts to protect pets and passengers during travel, emergency stops, or collisions.</p>
+                        <small class="text-muted fst-italic">A properly fitted pet harness prevents your pet from becoming a projectile during sudden stops, protecting both your pet and all passengers.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="pet-safety-card">
+                    <img src="assets/images/pet-safety2-600x600-61.jpg" alt="Pet Travel Carriers" class="card-img-top">
+                    <div class="card-body p-3">
+                        <h5 class="text-success mb-3"><i class="fas fa-box me-2"></i>Travel Carriers & Crates</h5>
+                        <p class="text-light mb-2">Secure carriers and crates provide safe environments for smaller pets, properly secured to prevent movement during sudden stops or accidents.</p>
+                        <small class="text-muted fst-italic">Well-ventilated carriers should be secured with seatbelts and positioned where your pet can see you, reducing travel anxiety.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="pet-safety-card">
+                    <img src="assets/images/dog-in-car-seat-belt-600x450-84.jpg" alt="Dog with Seatbelt" class="card-img-top">
+                    <div class="card-body p-3">
+                        <h5 class="text-success mb-3"><i class="fas fa-check-circle me-2"></i>Proper Installation</h5>
+                        <p class="text-light mb-2">Correct installation and usage of pet restraints is crucial for maximum protection during travel, emergency braking, and collision scenarios.</p>
+                        <small class="text-muted fst-italic">Always test restraint systems before traveling and ensure your pet is comfortable through gradual introduction.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pet Safety Guidelines Section -->
+<section class="content-section" style="background: var(--bg-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h3 class="mb-5 text-center" style="color: #ffffff; font-weight: 700;">Pet Travel Safety Guidelines</h3>
+
+                <div class="pet-safety-info-grid">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="pet-info-box">
+                                <h5 class="text-primary mb-3"><i class="fas fa-info-circle me-2"></i>Why Pet Restraints Matter</h5>
+                                <p class="text-light">Pets are often considered family members and travel with us in our vehicles. As with children or anything else not safely secured, they too can be injured or cause injury to other passengers in the vehicle. Unrestrained pets can become dangerous projectiles during sudden stops or collisions.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="pet-tip-box">
+                                <h5 class="text-success mb-3"><i class="fas fa-lightbulb me-2"></i>Choosing the Right Restraint</h5>
+                                <ul class="text-light">
+                                    <li><strong>For Large Dogs:</strong> Use crash-tested harnesses that attach to existing seatbelt systems</li>
+                                    <li><strong>For Small Dogs & Cats:</strong> Secure carriers or travel crates that can be strapped in place</li>
+                                    <li><strong>Size Matters:</strong> Ensure proper fit - restraints should be snug but comfortable</li>
+                                    <li><strong>Test First:</strong> Introduce restraints gradually to reduce pet anxiety</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="pet-warning-box">
+                                <h5 class="text-danger mb-3"><i class="fas fa-exclamation-triangle me-2"></i>Never Allow Unrestrained Pets</h5>
+                                <p class="text-light">An unrestrained 60-pound dog in a car traveling 35 mph can exert 2,700 pounds of force in a collision - enough to seriously injure or kill passengers. Never allow pets to ride in the front seat, stick their heads out windows, or roam freely in the vehicle.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="pet-tip-box">
+                                <h5 class="text-success mb-3"><i class="fas fa-route me-2"></i>Travel Preparation Tips</h5>
+                                <ul class="text-light">
+                                    <li>Take short practice trips to get your pet used to restraints</li>
+                                    <li>Never leave pets unattended in vehicles, especially in hot weather</li>
+                                    <li>Bring water, favorite toys, and familiar blankets for comfort</li>
+                                    <li>Plan regular stops for bathroom breaks and exercise</li>
+                                    <li>Keep vaccination records and ID tags current</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5" style="background: linear-gradient(135deg, var(--secondary-color) 0%, #5a8a00 100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--border-radius); padding: 2rem;">
+                    <h3 class="text-white mb-3">Safety First: Every Journey Matters</h3>
+                    <p class="text-white mb-4 opacity-90">Protecting your pets during travel is just as important as protecting your family. Explore our other safety resources for comprehensive protection.</p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center">
+                        <a href="BabySafety.html" class="btn btn-lg" style="background: var(--gradient-primary); border: none; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: var(--border-radius); transition: all 0.3s ease;">
+                            <i class="fas fa-baby me-2"></i>
+                            Baby Safety
+                        </a>
+                        <a href="General.html" class="btn btn-lg" style="background: transparent; border: 2px solid white; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: var(--border-radius); transition: all 0.3s ease;">
+                            <i class="fas fa-car me-2"></i>
+                            General Safety
+                        </a>
+                        <a href="Trucking.html" class="btn btn-lg" style="background: transparent; border: 2px solid white; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: var(--border-radius); transition: all 0.3s ease;">
+                            <i class="fas fa-truck me-2"></i>
+                            Trucking Safety
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Modern JavaScript for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Phone number reveal functionality
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add hover effects to cards
+    const cards = document.querySelectorAll('.pet-safety-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});
+</script>
+</body>
+</html>

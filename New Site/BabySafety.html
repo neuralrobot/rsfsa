@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Baby & Child Safety in Vehicles - Essential information for protecting children with proper car seats, restraints, and safety practices">
+  <title>Baby & Child Safety - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+      padding-top: 60px;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
+                  url('assets/images/MainPic.jpg') center/cover;
+      min-height: calc(100vh - 400px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+          radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(119, 179, 0, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .safety-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .safety-card:hover {
+      transform: translateY(-5px);
+      border-color: #2a9fd6 !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .safety-card img {
+      border-radius: 0.5rem 0.5rem 0 0;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .warning-box {
+      background: rgba(220, 53, 69, 0.1) !important;
+      border: 1px solid #dc3545 !important;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .danger-box {
+      background: rgba(255, 0, 0, 0.15) !important;
+      border: 2px solid #ff0000 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .tip-box {
+      background: rgba(255, 136, 0, 0.1) !important;
+      border-left: 4px solid #ff8800 !important;
+      border-radius: 4px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .info-box {
+      background: rgba(42, 159, 214, 0.1) !important;
+      border: 1px solid #2a9fd6 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      border: none;
+      color: white;
+    }
+
+    .age-group-card {
+      background: #2a2a2a;
+      border: 2px solid #77b300;
+      transition: all 0.3s ease;
+    }
+
+    .age-group-card:hover {
+      border-color: #2a9fd6;
+      transform: translateY(-3px);
+    }
+
+    /* Fix overlapping issues */
+    section {
+      position: relative;
+      z-index: 1;
+      clear: both;
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 2rem;
+    }
+
+    .card-body {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Ensure proper spacing between sections */
+    .py-5 {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    /* Fix any potential floating issues */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background: var(--gradient-primary);
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Social Media Icons */
+    .social-links a {
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    .social-links i {
+      display: inline-block;
+      width: 1.5em;
+      text-align: center;
+    }
+
+    /* Ensure FontAwesome icons load properly */
+    .fab {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+
+    /* Hero Image Styles */
+    .hero-image {
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+    }
+
+    .hero-card {
+      width: 100%;
+      padding: 15%;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: auto;
+      min-height: 300px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item active" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <span class="badge bg-danger text-white px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Critical Safety Information
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Baby & Child<br><span style="color: #77b300; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Vehicle Safety</span></h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Protecting our most precious passengers with proper restraints, car seats, and safety practices that save lives.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <img src="assets/images/KiddieSeat.png" alt="Child Car Seat Safety" class="img-fluid rounded-4 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Critical Statistics Section -->
+<section class="py-5 bg-dark clearfix">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-12 text-center mb-4">
+                <h2 class="display-4 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">The <span style="color: #dc3545; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Facts</span> About Child Safety</h2>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card stat-card text-center p-4">
+                    <h3 class="display-6 fw-bold mb-2">71%</h3>
+                    <p class="mb-0">Reduction in death risk for infants with proper car seats</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card stat-card text-center p-4">
+                    <h3 class="display-6 fw-bold mb-2">54%</h3>
+                    <p class="mb-0">Reduction in death risk for toddlers (1-4 years) with proper seats</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card stat-card text-center p-4">
+                    <h3 class="display-6 fw-bold mb-2">45%</h3>
+                    <p class="mb-0">Reduction in injury risk with booster seats (4-8 years)</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card stat-card text-center p-4">
+                    <h3 class="display-6 fw-bold mb-2">5x</h3>
+                    <p class="mb-0">Higher risk of serious injury for unrestrained children</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dangerous Practices Warning Section -->
+<section class="py-5 clearfix" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="display-4 fw-normal mb-5 text-center" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                    <span style="color: #dc3545; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">DANGEROUS</span> Practices That Kill
+                </h2>
+
+                <!-- Child on Lap Warning -->
+                <div class="danger-box">
+                    <div class="d-flex align-items-start">
+                        <div class="me-4">
+                            <i class="fas fa-skull-crossbones fa-3x text-danger"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-semibold mb-3" style="color: #ff0000; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                                Child Sitting on Parent's Lap - A DEADLY Practice
+                            </h3>
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-size: 1.1rem; line-height: 1.7;">
+                                <strong>In a collision at just 50 km/h, a 7kg baby becomes a 140kg projectile.</strong> When a child sits on a parent's lap:
+                            </p>
+                            <ul style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-size: 1.05rem; line-height: 1.6;">
+                                <li><strong>The parent's body weight crushes the child</strong> - Even at low speeds, the parent becomes a deadly force crushing the child against the dashboard or seat in front</li>
+                                <li><strong>No protection from airbags</strong> - Airbags deploy at 300 km/h and can seriously injure or kill small children</li>
+                                <li><strong>Child becomes a projectile</strong> - The forward force can launch the child through the windscreen or into other passengers</li>
+                                <li><strong>Parent cannot hold on</strong> - No human arm strength can hold a child during a collision impact</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standing on Seats Warning -->
+                <div class="danger-box">
+                    <div class="d-flex align-items-start">
+                        <div class="me-4">
+                            <i class="fas fa-exclamation-triangle fa-3x text-warning"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-semibold mb-3" style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                                Children Standing or Moving in Vehicle
+                            </h3>
+                            <ul style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-size: 1.05rem; line-height: 1.6;">
+                                <li><strong>Head and neck injuries</strong> - Standing children can be thrown against the roof, windows, or other hard surfaces</li>
+                                <li><strong>Ejection risk</strong> - Unrestrained children can be thrown from the vehicle in rollover crashes</li>
+                                <li><strong>Distraction to driver</strong> - Moving children distract the driver, increasing crash risk for everyone</li>
+                                <li><strong>No protection in sudden stops</strong> - Even emergency braking can seriously injure a standing child</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Incorrect Restraint Warning -->
+                <div class="warning-box">
+                    <h4 style="color: #dc3545; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">
+                        <i class="fas fa-times-circle me-2"></i>Other Fatal Mistakes:
+                    </h4>
+                    <ul style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.6;">
+                        <li><strong>Adult seatbelts on young children</strong> - Can cause internal injuries and "seat belt syndrome"</li>
+                        <li><strong>Forward-facing too early</strong> - Children under 2 years should be rear-facing</li>
+                        <li><strong>Loose straps</strong> - Should not be able to pinch webbing between fingers</li>
+                        <li><strong>Coat under harness</strong> - Creates dangerous slack in restraint system</li>
+                        <li><strong>Car seat in front seat</strong> - Airbags can be deadly to children</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Age-Appropriate Car Seats Section -->
+<section class="py-5 bg-dark clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="display-4 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Choosing the <span style="color: #77b300; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Right</span> Car Seat</h2>
+                <p class="lead" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-size: 1.1rem;">Age, weight, and height determine the safest restraint for your child</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Rear-Facing Infant Seat -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card age-group-card h-100">
+                    <div class="card-header bg-info text-white text-center py-3">
+                        <h5 class="mb-0">Birth - 2 Years</h5>
+                        <small>Up to 13kg</small>
+                    </div>
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-3 text-info">Rear-Facing Infant Seat</h6>
+                        <ul style="color: #ffffff; font-size: 0.9rem;">
+                            <li>MUST face backward until at least 2 years old</li>
+                            <li>5-point harness system</li>
+                            <li>Install in back seat only</li>
+                            <li>45-degree recline angle</li>
+                            <li>Carrier-style or convertible</li>
+                        </ul>
+                        <div class="tip-box mt-3">
+                            <small style="color: #ff8800; font-weight: 600;">
+                                <i class="fas fa-lightbulb me-1"></i>
+                                Extended rear-facing to 4 years is even safer!
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forward-Facing Car Seat -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card age-group-card h-100">
+                    <div class="card-header bg-warning text-dark text-center py-3">
+                        <h5 class="mb-0">2 - 4 Years</h5>
+                        <small>9kg - 18kg</small>
+                    </div>
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-3 text-warning">Forward-Facing Car Seat</h6>
+                        <ul style="color: #ffffff; font-size: 0.9rem;">
+                            <li>5-point harness required</li>
+                            <li>Top tether attachment</li>
+                            <li>Back seat installation</li>
+                            <li>Upright position</li>
+                            <li>Keep rear-facing as long as possible</li>
+                        </ul>
+                        <div class="tip-box mt-3">
+                            <small style="color: #ff8800; font-weight: 600;">
+                                <i class="fas fa-lightbulb me-1"></i>
+                                Don't rush to forward-facing - rear-facing is 5x safer!
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booster Seat -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card age-group-card h-100">
+                    <div class="card-header bg-success text-white text-center py-3">
+                        <h5 class="mb-0">4 - 8 Years</h5>
+                        <small>15kg - 36kg</small>
+                    </div>
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-3 text-success">Booster Seat</h6>
+                        <ul style="color: #ffffff; font-size: 0.9rem;">
+                            <li>Uses vehicle's seat belt</li>
+                            <li>Positions belt correctly</li>
+                            <li>High-back or backless</li>
+                            <li>Back seat recommended</li>
+                            <li>Until 145cm tall</li>
+                        </ul>
+                        <div class="tip-box mt-3">
+                            <small style="color: #ff8800; font-weight: 600;">
+                                <i class="fas fa-lightbulb me-1"></i>
+                                Belt should cross chest and hips, not neck or stomach!
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seat Belt -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card age-group-card h-100">
+                    <div class="card-header bg-primary text-white text-center py-3">
+                        <h5 class="mb-0">8+ Years</h5>
+                        <small>Over 36kg / 145cm</small>
+                    </div>
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-3 text-primary">Adult Seat Belt</h6>
+                        <ul style="color: #ffffff; font-size: 0.9rem;">
+                            <li>Lap belt across hip bones</li>
+                            <li>Shoulder belt across chest</li>
+                            <li>Back against vehicle seat</li>
+                            <li>Knees bend over seat edge</li>
+                            <li>Feet flat on floor</li>
+                        </ul>
+                        <div class="tip-box mt-3">
+                            <small style="color: #ff8800; font-weight: 600;">
+                                <i class="fas fa-lightbulb me-1"></i>
+                                All children under 12 should ride in the back seat!
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Installation Guidelines Section -->
+<section class="py-5 clearfix" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="display-4 fw-normal mb-5 text-center" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                    Proper <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Installation</span> Saves Lives
+                </h2>
+
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="info-box">
+                            <h4 style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">
+                                <i class="fas fa-cog me-2"></i>Installation Checklist:
+                            </h4>
+                            <ul style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.6;">
+                                <li><strong>Read all manuals</strong> - Both car seat and vehicle manual</li>
+                                <li><strong>Use ISOFIX if available</strong> - Rigid anchor points reduce installation errors</li>
+                                <li><strong>Check tightness</strong> - Seat should not move more than 2.5cm in any direction</li>
+                                <li><strong>Correct angle</strong> - Follow manufacturer's angle indicators</li>
+                                <li><strong>Harness height</strong> - At or below shoulders for rear-facing, at or above for forward-facing</li>
+                                <li><strong>Professional check</strong> - Have installation checked by certified technician</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="warning-box">
+                            <h4 style="color: #dc3545; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">
+                                <i class="fas fa-exclamation-triangle me-2"></i>Common Installation Errors:
+                            </h4>
+                            <ul style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.6;">
+                                <li><strong>Loose installation</strong> - 73% of car seats are installed incorrectly</li>
+                                <li><strong>Wrong angle</strong> - Can cause airway obstruction or head/neck injury</li>
+                                <li><strong>Twisted straps</strong> - Reduces effectiveness and can cause injury</li>
+                                <li><strong>Incorrect harness height</strong> - Child can be ejected from seat</li>
+                                <li><strong>Aftermarket accessories</strong> - Most void safety certification</li>
+                                <li><strong>Expired seats</strong> - Plastic degrades over time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- South African Legal Requirements -->
+<section class="py-5" style="background: var(--bg-dark-secondary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="display-4 fw-normal mb-5 text-center" style="color: var(--text-primary); text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                    South African <span style="color: var(--secondary-color); text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Legal Requirements</span>
+                </h2>
+
+                <div style="background: rgba(42, 159, 214, 0.1); border: 1px solid var(--primary-color); border-radius: 8px; padding: 25px; margin: 2rem 0;">
+                    <h4 style="color: var(--primary-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1.5rem;">
+                        <i class="fas fa-gavel me-2"></i>National Road Traffic Act Regulations:
+                    </h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul style="color: var(--text-primary); text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.6; font-size: 1.05rem;">
+                                <li><strong>Children under 3 years</strong> must be in appropriate child restraint</li>
+                                <li><strong>Children 3-14 years</strong> must wear seat belts or use appropriate restraint</li>
+                                <li><strong>All restraints</strong> must be properly secured and manufactured to approved standards</li>
+                                <li><strong>Driver responsibility</strong> to ensure all passengers under 14 are properly restrained</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul style="color: var(--text-primary); text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.6; font-size: 1.05rem;">
+                                <li><strong>Fines</strong> up to R1,500 for non-compliance</li>
+                                <li><strong>Criminal charges</strong> possible if child is injured due to improper restraint</li>
+                                <li><strong>Insurance implications</strong> - Claims may be reduced or denied</li>
+                                <li><strong>SABS approved</strong> restraints recommended (look for SABS mark)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency Situations -->
+<section class="py-5 clearfix" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="display-4 fw-normal mb-5 text-center" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                    <span style="color: #dc3545; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Emergency</span> Preparedness
+                </h2>
+
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card safety-card">
+                            <div class="card-body p-4">
+                                <h5 class="fw-semibold mb-3 text-warning">
+                                    <i class="fas fa-fire me-2"></i>Vehicle Fire
+                                </h5>
+                                <ul style="color: #ffffff; font-size: 0.9rem; line-height: 1.5;">
+                                    <li>Practice quick-release techniques</li>
+                                    <li>Keep seat belt cutter accessible</li>
+                                    <li>Know your car seat's release mechanism</li>
+                                    <li>Exit immediately if safe</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card safety-card">
+                            <div class="card-body p-4">
+                                <h5 class="fw-semibold mb-3 text-info">
+                                    <i class="fas fa-water me-2"></i>Water Submersion
+                                </h5>
+                                <ul style="color: #ffffff; font-size: 0.9rem; line-height: 1.5;">
+                                    <li>Children first in evacuation</li>
+                                    <li>Release restraints underwater if necessary</li>
+                                    <li>Exit through windows if possible</li>
+                                    <li>Call emergency services: 10111</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card safety-card">
+                            <div class="card-body p-4">
+                                <h5 class="fw-semibold mb-3 text-success">
+                                    <i class="fas fa-medkit me-2"></i>Medical Emergency
+                                </h5>
+                                <ul style="color: #ffffff; font-size: 0.9rem; line-height: 1.5;">
+                                    <li>Keep child restrained during transport</li>
+                                    <li>Call paramedics: 10177</li>
+                                    <li>Only remove restraints if life-threatening</li>
+                                    <li>Have emergency contacts ready</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5 clearfix" style="background: #333;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="card" style="background: linear-gradient(135deg, #77b300 0%, #5a8a00 100%); border: none;">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <i class="fas fa-child me-2"></i>Protect Your Most Precious Cargo
+                        </h3>
+                        <p class="mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem; opacity: 0.95;">
+                            Every journey matters. Proper child restraints are not just legal requirements – they're the difference between life and death. 
+                            <strong>Your child's safety is in your hands.</strong>
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="ContactUs.html" class="btn btn-lg" style="background: var(--gradient-primary); border: none; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: var(--border-radius); transition: all 0.3s ease;">
+                                <i class="fas fa-phone me-2"></i>
+                                Get Safety Advice
+                            </a>
+                            <a href="Videos.html" class="btn btn-lg" style="background: transparent; border: 2px solid white; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: var(--border-radius); transition: all 0.3s ease;">
+                                <i class="fas fa-play me-2"></i>
+                                Watch Safety Videos
+                            </a>
+                            <a href="legislation.html" class="btn btn-lg" style="background: transparent; border: 2px solid white; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: var(--border-radius); transition: all 0.3s ease;">
+                                <i class="fas fa-book me-2"></i>
+                                Legal Requirements
+                            </a>
+                        </div>
+
+                        <div class="mt-4 p-3" style="background: rgba(255,255,255,0.1); border-radius: 8px;">
+                            <p style="color: #ffffff; margin-bottom: 0; font-weight: 600;">
+                                <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                                Remember: A properly installed car seat reduces the risk of death by up to 71% for infants and 54% for toddlers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Phone number reveal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

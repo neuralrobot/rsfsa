@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Used vehicle safety reviews and ratings from the Road Safety Foundation of South Africa. Find safe, reliable, and high-value used cars.">
+  <meta name="keywords" content="used cars, vehicle safety, car reviews, South Africa, road safety, value retention, bargain cars">
+  <meta name="author" content="Road Safety Foundation of South Africa">
+
+  <title>Used Vehicle Safety Reviews | Road Safety Foundation SA</title>
+
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+
+  <!-- Modern Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Modern Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Ensure main content doesn't get hidden behind fixed nav */
+    main {
+      padding-top: 60px;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    /* Hero Section */
+    .used-vehicles-hero {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
+                  url('assets/images/Used-Vehicle-Safety.png') center/cover;
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .used-vehicles-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+          radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(119, 179, 0, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .used-vehicles-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .used-vehicles-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      color: #fff;
+      margin-bottom: 0;
+      line-height: 1.1;
+      /* Add color to part of the title */
+      /* See markup below for span usage */
+    }
+
+    .used-vehicles-hero p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin: 1rem auto 0;
+    }
+
+    /* Filter & Search Section */
+    .filter-section {
+      background: var(--bg-secondary);
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .form-control, .form-select {
+      background: var(--bg-tertiary);
+      border-color: var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .form-control:focus, .form-select:focus {
+      background: var(--bg-tertiary);
+      border-color: var(--primary-color);
+      color: var(--text-primary);
+      box-shadow: none;
+    }
+
+    /* Vehicle Review Grid */
+    .vehicle-grid {
+      padding: 4rem 0;
+    }
+
+    .vehicle-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      transition: all 0.3s ease;
+      height: 100%;
+      padding: 10px;
+    }
+
+    .vehicle-card .card-img-top {
+      border-radius: var(--border-radius);
+    }
+
+    .vehicle-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-title {
+        font-weight: 700;
+    }
+
+    .card-subtitle {
+        color: var(--text-muted);
+    }
+
+    .card-tags {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    .card-tags .badge {
+      font-size: 0.8rem;
+      padding: 0.4em 0.8em;
+    }
+    
+    /* Button Styles */
+    .btn-primary {
+      background: var(--gradient-primary);
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Footer */
+    footer {
+        background: var(--bg-dark-secondary);
+        border-top: 1px solid var(--bg-dark-tertiary);
+    }
+
+    /* Font Awesome Icon Fix - Override global font-family rule */
+    .fas, .far, .fal, .fab, .fa {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", FontAwesome !important;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .fab {
+      font-family: "Font Awesome 6 Brands", "Font Awesome 5 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="used-vehicles-hero">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7 text-lg-start text-center mb-3 mb-lg-0">
+              <h1 class="mb-0" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-size: 3.5rem; font-weight: 800;">
+                Used Vehicle <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Safety</span> Reviews
+              </h1>
+              <p class="text-white-50 mt-3" style="font-size: 1.25rem; color: #adafae; max-width: 800px;">Informed decisions for safer journeys. We review used vehicles up to 12 years old for safety, technology, and value.</p>
+            </div>
+            <div class="col-lg-5 text-lg-end text-center">
+              <img src="assets/images/Used-Vehicle-Safety.png" alt="Used Vehicle Safety" style="width: 400px; height: auto; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); object-fit: contain;" class="ms-lg-3 mt-4 mt-lg-0">
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Filter and Search Section -->
+    <section class="filter-section">
+        <div class="container">
+            <form>
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-3">
+                        <select class="form-select">
+                            <option selected>Any Make</option>
+                            <option value="1">Toyota</option>
+                            <option value="2">Volkswagen</option>
+                            <option value="3">Ford</option>
+                            <option value="4">BMW</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                            <option selected>Any Model</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-select">
+                            <option selected>Max Price</option>
+                            <option value="1">R 100,000</option>
+                            <option value="2">R 200,000</option>
+                            <option value="3">R 300,000</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                         <select class="form-select">
+                            <option selected>Max Year</option>
+                            <option value="1">2013</option>
+                            <option value="2">2015</option>
+                            <option value="3">2018</option>
+                            <option value="4">2020+</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary w-100">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Vehicle Review Grid -->
+    <section class="vehicle-grid">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Sample Vehicle Card 1: Bargain Buy -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="vehicle-card">
+                        <img src="assets/images/vehicles/polo.png" class="card-img-top" alt="Volkswagen Polo" onerror="this.src='assets/images/vehicles/placeholder.svg'">
+                        <div class="card-body">
+                            <h5 class="card-title">2015 Volkswagen Polo 1.2 TSI</h5>
+                            <h6 class="card-subtitle mb-2">R 150,000 - R 180,000</h6>
+                            <p class="card-text small">A perennial favorite, the Polo offers a solid build, good standard safety features for its time, and excellent value retention.</p>
+                            <div class="card-tags">
+                                <span class="badge bg-success">Bargain Buy</span>
+                                <span class="badge bg-info">Good Value</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Vehicle Card 2: Safety Pick -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="vehicle-card">
+                        <img src="assets/images/vehicles/volvo.png" class="card-img-top" alt="Volvo V40" onerror="this.src='assets/images/vehicles/placeholder.svg'">
+                        <div class="card-body">
+                            <h5 class="card-title">2014 Volvo V40 D4</h5>
+                            <h6 class="card-subtitle mb-2">R 190,000 - R 220,000</h6>
+                            <p class="card-text small">A standout for safety, featuring City Safety auto-braking as standard. A used V40 is one of the safest cars in its price bracket.</p>
+                            <div class="card-tags">
+                                <span class="badge bg-primary">Safety Pick</span>
+                                <span class="badge bg-warning">High Tech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Vehicle Card 3: Tech Leader -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="vehicle-card">
+                        <img src="assets/images/vehicles/bmw f30.png" class="card-img-top" alt="BMW 3 Series" onerror="this.src='assets/images/vehicles/placeholder.svg'">
+                        <div class="card-body">
+                            <h5 class="card-title">2016 BMW 320i (F30)</h5>
+                            <h6 class="card-subtitle mb-2">R 250,000 - R 300,000</h6>
+                            <p class="card-text small">The F30 3 Series brought modern tech like the iDrive infotainment system and optional driver aids to a wider audience.</p>
+                            <div class="card-tags">
+                                <span class="badge bg-warning">Tech Leader</span>
+                                <span class="badge bg-info">Good Value</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Modern JavaScript for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Phone number protection - reveal on click to prevent scraping
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>

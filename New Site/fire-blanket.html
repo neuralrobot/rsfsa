@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Fire Blanket Safety - Essential fire safety equipment for vehicles and homes">
+  <title>Fire Blanket Safety - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Ensure main content doesn't get hidden behind fixed nav */
+    main {
+      padding-top: 60px;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .dropdown-menu {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .dropdown-item {
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background: var(--bg-tertiary);
+      color: var(--primary-color);
+    }
+
+    .dropdown-item.active {
+      background: var(--bg-tertiary);
+      color: var(--primary-color);
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('assets/images/MainPic.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(220, 53, 69, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 136, 0, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .fire-card, .safety-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .fire-card:hover, .safety-card:hover {
+      transform: translateY(-5px);
+      border-color: #dc3545 !important;
+      box-shadow: 0 10px 30px rgba(220, 53, 69, 0.2);
+    }
+
+    .fire-safety-box {
+      background: rgba(220, 53, 69, 0.1) !important;
+      border: 1px solid #dc3545 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .emergency-box {
+      background: rgba(255, 136, 0, 0.1) !important;
+      border: 1px solid #ff8800 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .tips-box {
+      background: rgba(42, 159, 214, 0.1) !important;
+      border-left: 4px solid #2a9fd6 !important;
+      border-radius: 4px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .warning-box {
+      background: rgba(255, 193, 7, 0.1) !important;
+      border: 1px solid #ffc107 !important;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      overflow: hidden;
+      border-radius: 0.5rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Fix overlapping issues */
+    section {
+      position: relative;
+      z-index: 1;
+      clear: both;
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 2rem;
+    }
+
+    .card-body {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Ensure proper spacing between sections */
+    .py-5 {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    /* Fix any potential floating issues */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .step-number {
+      background: var(--danger-color);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background: var(--gradient-primary);
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease;
+      color: #fff !important;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      color: #fff !important;
+    }
+
+    .btn-secondary {
+      background: var(--secondary-color);
+      border: none;
+      color: #fff !important;
+    }
+
+    .btn-secondary:hover {
+      background: #6fa300;
+      color: #fff !important;
+    }
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Font Awesome Icon Fixes */
+    .fas, .fab, .far {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+      font-weight: 900;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+
+    .fab {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400;
+    }
+
+    /* Additional standardized styles for buttons and icons */
+    .btn-outline-light {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+      background: #ffffff;
+      color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item active" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+                <span class="badge bg-danger text-white px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M4 22v-7" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Fire Safety Equipment
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Fire <span style="color: #dc3545; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Blanket</span> Safety</h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Essential fire safety equipment for vehicles and homes. Learn how to use fire blankets effectively to suppress small fires and protect lives.</p>
+            </div>
+            <div class="col-lg-4">
+                <div class="hero-image text-center">
+                    <img src="assets/images/Fire-Blanket.png" alt="Fire Blanket Safety" class="img-fluid" style="max-height: 300px; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content Section -->
+<section class="py-5 bg-dark clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card fire-card">
+                    <div class="card-body p-5">
+                        <h2 class="fw-semibold mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">What is a Fire Blanket?</h2>
+
+                        <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">A fire blanket is a safety device designed to extinguish incipient (starting) fires by smothering them. It consists of fire-resistant materials that cut off the oxygen supply to the fire, effectively suppressing it before it can spread.</p>
+
+                            <div class="fire-safety-box">
+                                <h4 style="color: #dc3545; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1.5rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Critical for Vehicle Safety
+                                </h4>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Fire blankets are particularly important for vehicle safety as they can quickly suppress small engine fires, electrical fires, or clothing fires. They're easy to use, require no training, and don't leave residue like chemical extinguishers.</p>
+                            </div>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Unlike fire extinguishers, fire blankets don't require maintenance, don't expire (when stored properly), and can be used multiple times if not damaged. They're also safe to use on electrical fires without the risk of electric shock.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fire Blanket Video Section -->
+<section class="py-5 clearfix" style="background: #222;">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="card safety-card">
+                    <div class="card-body p-4">
+                        <h3 class="fw-semibold mb-4" style="color: #dc3545; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <polygon points="23 7 16 12 23 17 23 7" stroke="currentColor" stroke-width="2"/>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Fire Blanket Demonstration
+                        </h3>
+                        <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.6;">Watch this essential demonstration on how to properly use a fire blanket. Understanding the correct technique can make the difference between containing a small fire and facing a major emergency.</p>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 0.95rem;">Learn the proper deployment method, safety considerations, and when to use a fire blanket versus other fire suppression methods.</p>
+                    </div>
+                </div>
+            </div>            <div class="col-lg-7">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/sNniVIXrHUI?rel=0&showinfo=0&autoplay=0&loop=0"
+                            title="Fire Blanket Safety Demonstration"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How to Use Section -->
+<section class="py-5 bg-dark clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card fire-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-4 text-center" style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            How to Use a Fire Blanket
+                        </h3>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="d-flex mb-4">
+                                    <div class="step-number">1</div>
+                                    <div>
+                                        <h5 style="color: #ffffff;">Turn off heat source</h5>
+                                        <p style="color: #f8f9fa;">If possible, turn off the heat source (stove, engine, etc.) before deploying the fire blanket.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex mb-4">
+                                    <div class="step-number">2</div>
+                                    <div>
+                                        <h5 style="color: #ffffff;">Pull down sharply</h5>
+                                        <p style="color: #f8f9fa;">Grab the tabs and pull the fire blanket down sharply to release it from its container.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex mb-4">
+                                    <div class="step-number">3</div>
+                                    <div>
+                                        <h5 style="color: #ffffff;">Protect your hands</h5>
+                                        <p style="color: #f8f9fa;">Wrap the corners around your hands to protect them from heat and flames.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="d-flex mb-4">
+                                    <div class="step-number">4</div>
+                                    <div>
+                                        <h5 style="color: #ffffff;">Place over fire</h5>
+                                        <p style="color: #f8f9fa;">Carefully place the blanket over the fire, starting from the near edge and working away.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex mb-4">
+                                    <div class="step-number">5</div>
+                                    <div>
+                                        <h5 style="color: #ffffff;">Leave in place</h5>
+                                        <p style="color: #f8f9fa;">Leave the blanket in place for at least 15 minutes to ensure the fire is completely extinguished.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex mb-4">
+                                    <div class="step-number">6</div>
+                                    <div>
+                                        <h5 style="color: #ffffff;">Monitor area</h5>
+                                        <p style="color: #f8f9fa;">Monitor the area for re-ignition and have a backup fire suppression method ready.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Safety Tips Section -->
+<section class="py-5 clearfix" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card safety-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-4" style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Safety Tips and Best Practices
+                        </h3>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tips-box">
+                                    <h5 style="color: #2a9fd6; margin-bottom: 1rem;">✓ Do's</h5>
+                                    <ul style="color: #ffffff; line-height: 1.8;">
+                                        <li>Keep fire blankets in easily accessible locations</li>
+                                        <li>Check the blanket annually for damage</li>
+                                        <li>Use on small fires only (less than 1 meter)</li>
+                                        <li>Turn off heat source before using if possible</li>
+                                        <li>Call emergency services for larger fires</li>
+                                        <li>Have an escape route planned</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="warning-box">
+                                    <h5 style="color: #ffc107; margin-bottom: 1rem;">✗ Don'ts</h5>
+                                    <ul style="color: #ffffff; line-height: 1.8;">
+                                        <li>Don't use on large or spreading fires</li>
+                                        <li>Don't remove immediately after deployment</li>
+                                        <li>Don't use on person unless trained</li>
+                                        <li>Don't attempt to fight fire if escape route blocked</li>
+                                        <li>Don't reuse damaged blankets</li>
+                                        <li>Don't store in damp conditions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="emergency-box mt-4">
+                            <h4 style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1.5rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="12" y1="8" x2="12" y2="12" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="12" y1="16" x2="12.01" y2="16" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                When NOT to Use a Fire Blanket
+                            </h4>
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Do not use fire blankets on large fires, fires involving gas under pressure, electrical installations above 1000V, or when the fire involves volatile substances like petrol. In these cases, evacuate immediately and call emergency services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5 bg-dark clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="card" style="background: linear-gradient(135deg, #dc3545 0%, #a71e2a 100%); border: none;">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Fire Safety Saves Lives</h3>
+                        <p class="mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem; opacity: 0.95;">Every vehicle and home should have proper fire safety equipment. Fire blankets are an essential part of your emergency preparedness.</p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="Videos.html" class="btn btn-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                                </svg>
+                                More Safety Videos
+                            </a>
+                            <a href="ContactUs.html" class="btn btn-outline-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Modern JavaScript for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Phone number protection - reveal on click to prevent scraping
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>

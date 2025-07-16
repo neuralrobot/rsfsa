@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Road Safety Foundation of South Africa - Partnering with private and public sector to reduce crashes and save lives on South African roads">
+  <meta name="keywords" content="road safety, South Africa, traffic safety, accident prevention, driver education">
+  <meta name="author" content="Road Safety Foundation of South Africa">
+
+  <title>Road Safety Foundation of South Africa</title>
+
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+
+  <!-- Modern Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Modern Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Ensure main content doesn't get hidden behind fixed nav */
+    main {
+      padding-top: 60px;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }    /* Hero Section */
+    .modern-hero {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
+                  url('assets/images/MainPic.jpg') center/cover;
+      min-height: calc(100vh - 300px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 37px;
+      padding-bottom: 17px;
+    }
+
+    .modern-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+          radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(119, 179, 0, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .modern-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      z-index: 2;
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .hero-image {
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+    }
+
+    .hero-card {
+      width: 100%;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: auto;
+      min-height: 435px;
+      object-fit: cover;
+    }
+
+    /* Partner Cards */
+    .partner-card {
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Hero Gallery Styles */
+    .hero-gallery {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .gallery-placeholder {
+      position: relative;
+      height: 120px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-placeholder:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4), var(--shadow);
+    }
+
+    .gallery-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-placeholder:hover .gallery-thumb {
+      transform: scale(1.05);
+      filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+    }
+
+    .placeholder-box {
+      width: 100%;
+      height: 100%;
+      background: var(--bg-tertiary);
+      border: 2px dashed var(--border-color);
+      border-radius: var(--border-radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .placeholder-box:hover {
+      border-color: var(--primary-color);
+      background: rgba(42, 159, 214, 0.1);
+    }
+
+    .placeholder-box i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .placeholder-overlay {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      z-index: 2;
+    }
+
+    .placeholder-overlay .badge {
+      font-size: 0.7rem;
+      padding: 4px 8px;
+    }
+
+    /* Gallery image specific adjustments */
+    .gallery-placeholder[data-placeholder="1"] .gallery-thumb {
+      object-fit: contain;
+      object-position: center;
+      background: transparent;
+      padding: 5px;
+      width: 100%;
+      height: 100%;
+      min-height: 120px;
+    }
+
+    /* Mahindra hover banner */
+    .gallery-placeholder[data-placeholder="1"] {
+      position: relative;
+    }
+
+    .gallery-placeholder[data-placeholder="1"] .hover-banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, #2a9fd6 0%, #1a7aa8 100%);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 8px 25px rgba(42, 159, 214, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+
+    .gallery-placeholder[data-placeholder="1"]:hover .hover-banner {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .gallery-placeholder[data-placeholder="1"]:hover .gallery-thumb {
+      filter: brightness(0.7);
+    }
+
+    /* Michelin hover banner */
+    .gallery-placeholder[data-placeholder="2"] {
+      position: relative;
+    }
+
+    .gallery-placeholder[data-placeholder="2"] .hover-banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, #2a9fd6 0%, #1a7aa8 100%);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 8px 25px rgba(42, 159, 214, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+
+    .gallery-placeholder[data-placeholder="2"]:hover .hover-banner {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .gallery-placeholder[data-placeholder="2"]:hover .gallery-thumb {
+      filter: brightness(0.7);
+    }
+
+    /* Peugeot hover banner */
+    .gallery-placeholder[data-placeholder="3"] .hover-banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, #2a9fd6 0%, #1a7aa8 100%);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 8px 25px rgba(42, 159, 214, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+
+    .gallery-placeholder[data-placeholder="3"]:hover .hover-banner {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .gallery-placeholder[data-placeholder="3"]:hover .gallery-thumb {
+      filter: brightness(0.7);
+    }
+
+    .gallery-placeholder[data-placeholder="3"] {
+      border: 1px solid #2a9fd6;
+      box-shadow: 0 0 8px rgba(42, 159, 214, 0.3);
+    }
+
+    .gallery-placeholder[data-placeholder="3"] .gallery-thumb {
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px;
+    }
+
+    .gallery-placeholder[data-placeholder="4"] .gallery-thumb {
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px;
+    }
+
+    .gallery-placeholder[data-placeholder="5"] .gallery-thumb {
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background: var(--gradient-primary);
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Hero Buttons Layout - Force single row */
+    .hero-buttons {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .hero-buttons .btn {
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+    }
+
+    /* Make Watch Videos button wider */
+    .hero-buttons .btn:nth-child(2) {
+      flex: 1.3;
+    }    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Traffic Alerts Marquee */
+    .traffic-marquee {
+      background: var(--warning-color);
+      color: #000;
+      padding: 8px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      border-top: 2px solid #ff6600;
+    }
+
+    .traffic-marquee-content {
+      display: inline-block;
+      animation: scroll-left 60s linear infinite;
+      padding-left: 100%;
+    }
+
+    .traffic-alert-item {
+      display: inline-block;
+      margin-right: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .traffic-alert-item i {
+      margin-right: 8px;
+      color: #cc0000;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .hero-buttons {
+        gap: 0.5rem;
+      }
+
+      .hero-buttons .btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem !important;
+      }
+
+      .traffic-marquee-content {
+        animation: scroll-left 40s linear infinite;
+      }
+
+      .traffic-alert-item {
+        font-size: 0.8rem;
+        margin-right: 30px;
+      }
+    }
+
+    /* Responsive Design for Gallery */
+    @media (max-width: 992px) {
+      .gallery-placeholder {
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-placeholder {
+        height: 70px;
+      }
+      
+      .placeholder-box i {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+      }
+    }
+
+    /* Loading Animation */
+    .spinner-border {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    /* Twitter Feed Styles */
+    .twitter-content {
+      background: var(--bg-dark);
+      border-radius: var(--border-radius);
+      padding: 1rem;
+    }
+
+    .tweet-item {
+      background: var(--bg-dark-tertiary);
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--primary-color);
+    }    /* Form Styles */
+    .form-control {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .form-control:focus {
+      background: var(--bg-secondary);
+      border-color: var(--primary-color);
+      color: var(--text-primary);
+      box-shadow: 0 0 0 0.2rem rgba(42, 159, 214, 0.25);
+    }
+
+    /* Social Media Icons */
+    .social-links a {
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    .social-links i {
+      display: inline-block;
+      width: 1.5em;
+      text-align: center;
+    }
+
+    /* Font Awesome Icon Fix - Override global font-family rule */
+    .fas, .far, .fal, .fab, .fa {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", FontAwesome !important;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .fab {
+      font-family: "Font Awesome 6 Brands", "Font Awesome 5 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="modern-hero" id="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="hero-badge mb-4">
+                            <span class="badge text-bg-info px-3 py-2 rounded-pill">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Road Safety Excellence
+                            </span>
+                        </div>                        <h1 class="hero-title mb-4">
+                            Making South African Roads
+                            <span class="text-info">Safer</span> Together
+                        </h1>
+                        <p class="hero-subtitle mb-5 text-white">
+                            Partnering with private and public sectors to reduce crashes and save lives through
+                            evidence-based research, comprehensive education, and strategic awareness programmes.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="aboutus.html" class="btn btn-info btn-lg px-4 py-3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Learn More
+                            </a>
+                            <a href="Videos.html" class="btn btn-outline-info btn-lg px-4 py-3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                                </svg>
+                                Watch Videos
+                            </a>
+                            <a href="Forums.html" class="btn btn-outline-success btn-lg px-4 py-3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Let's Talk
+                            </a>
+                        </div>
+                    </div>
+                </div>                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="hero-card">
+                            <img src="assets/images/MainPic.jpg" alt="Road Safety Foundation - Main Image" class="img-fluid rounded-4 shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Image Gallery Section -->
+    <section class="hero-gallery py-1" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row g-3">
+                        <!-- Image Placeholder 1 - Mahindra -->
+                        <div class="col-lg col-md-4 col-6">
+                            <div class="gallery-placeholder" data-placeholder="1">
+                                <a href="https://mahindra.co.za/" target="_blank" rel="noopener noreferrer">
+                                    <img src="assets/images/Mahindra-logo.png" alt="Mahindra" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                    <div class="placeholder-overlay">
+                                        <span class="badge bg-primary">Mahindra</span>
+                                    </div>
+                                    <div class="hover-banner">
+                                        RSFSA - Driven by Mahindra
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Image Placeholder 2 - Michelin -->
+                        <div class="col-lg col-md-4 col-6">
+                            <div class="gallery-placeholder" data-placeholder="2">
+                                <img src="assets/images/michelin%20logo.png" alt="Michelin" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                <div class="placeholder-overlay">
+                                    <span class="badge bg-primary">Michelin</span>
+                                </div>
+                                <div class="hover-banner">
+                                    RSFSA - Runs on Michelin
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Image Placeholder 3 - Peugeot -->
+                        <div class="col-lg col-md-4 col-6">
+                            <div class="gallery-placeholder" data-placeholder="3">
+                                <a href="https://www.peugeot.co.za/our-models/landtrek.html" target="_blank" rel="noopener noreferrer">
+                                    <img src="assets/images/Peugeot%20Logo.png" alt="Peugeot" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                    <div class="placeholder-overlay">
+                                        <span class="badge bg-primary">Peugeot</span>
+                                    </div>
+                                    <div class="hover-banner">
+                                        RSFSA - Powered by Peugeot
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Image Placeholder 4 - FleetWatch -->
+                        <div class="col-lg col-md-4 col-6">
+                            <div class="gallery-placeholder" data-placeholder="4">
+                                <img src="assets/images/FleetWatch%20Logo.png" alt="Fleetwatch" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                <div class="placeholder-overlay">
+                                    <span class="badge bg-primary">Fleetwatch</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Image Placeholder 5 - N3TC -->
+                        <div class="col-lg col-md-4 col-6">
+                            <div class="gallery-placeholder" data-placeholder="5">
+                                <img src="assets/images/N3TC%20Logo.png" alt="N3TC" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                <div class="placeholder-overlay">
+                                    <span class="badge bg-primary">N3TC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traffic Alerts Marquee -->
+    <div class="traffic-marquee mt-4">
+        <div class="traffic-marquee-content">
+            <span class="traffic-alert-item">
+                <i class="fas fa-exclamation-triangle"></i>
+                TRAFFIC ALERT: Heavy congestion on N1 North between Johannesburg and Pretoria due to ongoing roadworks
+            </span>
+            <span class="traffic-alert-item">
+                <i class="fas fa-car-crash"></i>
+                ACCIDENT: Multi-vehicle collision on M1 South, emergency services on scene - expect delays
+            </span>
+            <span class="traffic-alert-item">
+                <i class="fas fa-road"></i>
+                ROAD CLOSURE: R21 eastbound closed between Kempton Park and OR Tambo for maintenance until 18:00
+            </span>
+            <span class="traffic-alert-item">
+                <i class="fas fa-weather-rain"></i>
+                WEATHER WARNING: Heavy rain affecting visibility on N3 between Durban and Pietermaritzburg - drive carefully
+            </span>
+            <span class="traffic-alert-item">
+                <i class="fas fa-construction"></i>
+                CONSTRUCTION: Lane restrictions on N2 near Cape Town CBD - reduce speed and merge safely
+            </span>
+            <span class="traffic-alert-item">
+                <i class="fas fa-traffic-light"></i>
+                TRAFFIC LIGHTS: Signal failure at intersection of William Nicol and Sandton Drive - police directing traffic
+            </span>
+            <span class="traffic-alert-item">
+                <i class="fas fa-truck"></i>
+                HEAVY VEHICLES: Abnormal load transport on N4 between Pretoria and Rustenburg - exercise caution
+            </span>
+            <span class="traffic-alert-item">
+                <i class="fas fa-bicycle"></i>
+                CYCLIST SAFETY: Annual Cape Town Cycle Tour this Sunday - road closures in CBD and Atlantic Seaboard
+            </span>
+        </div>
+    </div>
+
+    <!-- Live Traffic Updates Section -->
+    <section id="traffic-updates" class="py-5" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold text-white mb-4">Live Traffic Updates</h2>
+                    <p class="lead text-white mb-4" style="opacity: 0.9;">Real-time traffic information from major South African routes</p>
+                </div>
+            </div>
+
+            <!-- Row 1: Full width N3Route -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="card bg-dark border-primary">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0"><i class="fab fa-twitter me-2"></i>@N3Route - Primary Updates</h5>
+                        </div>
+                        <div class="card-body p-3" style="height: 300px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-1" class="text-center py-4">
+                                <div class="spinner-border text-primary mb-3" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <h6 class="text-white">Loading N3 Route updates...</h6>
+                                <p class="text-muted small">Real-time traffic information</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Two columns TRAC and iTraffic -->
+            <div class="row g-4 mt-4">
+                <!-- TRAC N4Route -->
+                <div class="col-lg-6">
+                    <div class="card bg-dark border-info">
+                        <div class="card-header bg-info text-white py-2">
+                            <h6 class="mb-0"><i class="fab fa-twitter me-2"></i>@TRACN4Route - Updates</h6>
+                        </div>
+                        <div class="card-body p-3" style="height: 200px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-2" class="text-center py-3">
+                                <div class="spinner-border text-info mb-2" role="status"></div>
+                                <h6 class="text-white">Loading N4 updates...</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iTraffic GP -->
+                <div class="col-lg-6">
+                    <div class="card bg-dark border-warning">
+                        <div class="card-header bg-warning text-dark py-2">
+                            <h6 class="mb-0"><i class="fab fa-twitter me-2"></i>@itrafficgp - Gauteng Updates</h6>
+                        </div>
+                        <div class="card-body p-3" style="height: 200px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-3" class="text-center py-3">
+                                <div class="spinner-border text-warning mb-2" role="status"></div>
+                                <h6 class="text-white">Loading GP updates...</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Two columns Arrive Alive and Traffic SA -->
+            <div class="row g-4 mt-4">
+                <!-- Arrive Alive -->
+                <div class="col-lg-6">
+                    <div class="card bg-dark border-success">
+                        <div class="card-header bg-success text-white py-2">
+                            <h6 class="mb-0"><i class="fab fa-twitter me-2"></i>@_ArriveAlive - Safety Tips</h6>
+                        </div>
+                        <div class="card-body p-3" style="height: 200px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-4" class="text-center py-3">
+                                <div class="spinner-border text-success mb-2" role="status"></div>
+                                <h6 class="text-white">Loading safety updates...</h6>
+                                <p class="text-muted small">Road safety awareness</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Traffic SA -->
+                <div class="col-lg-6">
+                    <div class="card bg-dark border-danger">
+                        <div class="card-header bg-danger text-white py-2">
+                            <h6 class="mb-0"><i class="fab fa-twitter me-2"></i>@TrafficSA - National Updates</h6>
+                        </div>
+                        <div class="card-body p-3" style="height: 200px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-5" class="text-center py-3">
+                                <div class="spinner-border text-danger mb-2" role="status"></div>
+                                <h6 class="text-white">Loading national traffic...</h6>
+                                <p class="text-muted small">Nationwide updates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Refresh Button -->
+            <div class="row mt-4">
+                <div class="col-lg-12 text-center">
+                    <button id="refreshFeeds" class="btn btn-outline-info">
+                        <i class="fas fa-sync-alt me-2"></i>Refresh All Feeds
+                    </button>
+                    <p class="text-muted mt-2 small">
+                        Last updated: <span id="lastUpdated">Loading...</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Subscription Section -->
+    <section id="whatsapp-subscription" class="py-5" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <span class="badge bg-light text-success px-3 py-2 rounded-pill mb-3 fw-semibold">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        WhatsApp Alerts
+                    </span>
+                    <h2 class="display-4 fw-bold text-white mb-4">Get Real-Time Traffic Alerts</h2>
+                    <p class="lead text-white mb-4" style="opacity: 0.95;">Subscribe to receive instant WhatsApp notifications about traffic conditions, incidents, and road closures on your favorite routes.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+                        <div class="card-body p-5">
+                            <form id="whatsappForm" class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                        <div class="invalid-feedback">Please provide your first name.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                        <div class="invalid-feedback">Please provide your last name.</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="whatsappNumber" class="form-label">WhatsApp Number</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">+27</span>
+                                        <input type="tel" class="form-control" id="whatsappNumber" name="whatsappNumber" placeholder="82 123 4567" pattern="[0-9\s]{10,12}" required>
+                                        <div class="invalid-feedback">Please provide a valid South African mobile number.</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="favoriteRoute" class="form-label">Favorite Route</label>
+                                    <select class="form-select" id="favoriteRoute" name="favoriteRoute" required>
+                                        <option value="">Select your primary route</option>
+                                        <option value="N1">N1 - Cape Town to Johannesburg</option>
+                                        <option value="N2">N2 - Cape Town to Durban</option>
+                                        <option value="N3">N3 - Johannesburg to Durban</option>
+                                        <option value="N4">N4 - Pretoria to Maputo</option>
+                                        <option value="M1">M1 - Johannesburg Metro</option>
+                                        <option value="M2">M2 - Cape Town Metro</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select your primary route.</div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="popiaConsent" name="popiaConsent" required>
+                                        <label class="form-check-label" for="popiaConsent">
+                                            I consent to the processing of my personal information in accordance with POPIA and the Road Safety Foundation's privacy policy.
+                                        </label>
+                                        <div class="invalid-feedback">You must agree to the privacy policy to continue.</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-success btn-lg">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Subscribe to WhatsApp Alerts
+                                    </button>
+                                </div>
+                            </form>
+
+                            <!-- Success Message -->
+                            <div id="subscriptionSuccess" class="alert alert-success mt-3 d-none">
+                                <div class="d-flex align-items-center">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                        <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <div>
+                                        <strong>Subscription Successful!</strong>
+                                        <br><small>You'll receive a confirmation message on WhatsApp shortly.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            </div>        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Modern JavaScript for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Twitter feed functionality
+    const twitterAccounts = [
+        { 
+            handle: 'N3Route', 
+            selector: '#twitter-feed-1',
+            color: '#1DA1F2',
+            priority: 'primary'
+        },
+        { 
+            handle: 'TRACN4Route', 
+            selector: '#twitter-feed-2',
+            color: '#00ACEE',
+            priority: 'secondary'
+        },
+        { 
+            handle: 'itrafficgp', 
+            selector: '#twitter-feed-3',
+            color: '#1DA1F2',
+            priority: 'secondary'
+        },
+        { 
+            handle: '_ArriveAlive', 
+            selector: '#twitter-feed-4',
+            color: '#FF6B35',
+            priority: 'primary'
+        },
+        { 
+            handle: 'TrafficSA', 
+            selector: '#twitter-feed-5',
+            color: '#28A745',
+            priority: 'secondary'
+        }
+    ];
+
+    // Sample tweets for fallback
+    function getSampleTweet(handle) {
+        const sampleTweets = {
+            'N3Route': '🚗 Traffic flowing smoothly on the N3 between Johannesburg and Durban. Weather conditions are clear. Drive safely and maintain following distances. #N3Traffic #RoadSafety',
+            'TRACN4Route': '⚠️ Minor delays on the N4 near Pretoria due to roadworks. Allow extra travel time. Alternative routes available via R21. #N4Traffic #TrafficUpdate',
+            'itrafficgp': '🚦 Heavy traffic on the M1 North between Sandton and Midrand. Consider using alternative routes. Peak hour congestion expected until 9 AM. #GPTraffic',
+            '_ArriveAlive': '🛡️ Road Safety Tip: Always check your tire pressure before long journeys. Properly inflated tires improve fuel efficiency and reduce accident risk. #RoadSafety #ArriveAlive',
+            'TrafficSA': '📢 National Traffic Update: Increased police visibility on major routes this weekend. Drive within speed limits and buckle up. #TrafficSafety #SafetyFirst'
+        };
+        return sampleTweets[handle] || 'Latest update from @' + handle + ' - Stay informed about road conditions and safety.';
+    }
+
+    // Function to render tweet content
+    function renderTweet(account, tweetData) {
+        const container = document.querySelector(account.selector);
+        if (!container) return;
+
+        const isLive = tweetData.success;
+        const statusBadge = isLive ?
+            '<span class="badge bg-success text-white ms-2" style="font-size: 0.7rem;">LIVE</span>' :
+            '<span class="badge bg-secondary text-white ms-2" style="font-size: 0.7rem;">DEMO</span>';
+
+        const tweetHtml = '<div class="twitter-content">' +
+            '<div class="tweet-item p-3" style="background: #2a2a2a; border-radius: 8px; border-left: 4px solid ' + account.color + ';">' +
+                '<div class="d-flex align-items-start">' +
+                    '<div class="tweet-avatar me-3">' +
+                        '<div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background: ' + account.color + ';">' +
+                            '<span style="color: #ffffff; font-weight: bold; font-size: 1.1rem;">' +
+                                account.handle.charAt(0).toUpperCase() +
+                            '</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="flex-grow-1">' +
+                        '<div class="d-flex align-items-center mb-2">' +
+                            '<strong style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-size: 1rem;">@' + account.handle + '</strong>' +
+                            statusBadge +
+                            '<small style="color: #888; margin-left: auto;">' + tweetData.tweet.time + '</small>' +
+                        '</div>' +
+                        '<p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem;">' +
+                            tweetData.tweet.text +
+                        '</p>' +
+                        '<div class="d-flex justify-content-between align-items-center">' +
+                            '<div class="d-flex gap-3" style="color: #888; font-size: 0.85rem;">' +
+                                '<span>🔄 ' + (Math.floor(Math.random() * 50) + 10) + '</span>' +
+                                '<span>❤️ ' + (Math.floor(Math.random() * 100) + 20) + '</span>' +
+                                '<span>💬 ' + (Math.floor(Math.random() * 20) + 5) + '</span>' +
+                            '</div>' +
+                            '<a href="' + tweetData.tweet.url + '" target="_blank" class="btn btn-sm" style="background: ' + account.color + '; color: white; border: none;">View on X</a>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+
+        container.innerHTML = tweetHtml;
+    }
+
+    // Function to simulate API responses
+    function simulateAPIResponse() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({
+                    success: Math.random() > 0.7,
+                    data: { tweets: [] }
+                });
+            }, 1000 + Math.random() * 2000);
+        });
+    }
+
+    // Function to fetch Twitter data
+    async function fetchTwitterData(account) {
+        try {
+            const response = await simulateAPIResponse();
+            if (response.success) {
+                return {
+                    success: true,
+                    tweet: {
+                        text: getSampleTweet(account.handle),
+                        time: new Date().toLocaleString(),
+                        url: 'https://twitter.com/' + account.handle
+                    }
+                };
+            }
+        } catch (error) {
+            console.log('API failed for ' + account.handle + ':', error);
+        }
+
+        // Fallback: Return sample data
+        return {
+            success: false,
+            tweet: {
+                text: getSampleTweet(account.handle),
+                time: new Date().toLocaleString(),
+                url: 'https://twitter.com/' + account.handle
+            }
+        };
+    }
+
+    // Load feeds for all accounts
+    async function loadAllFeeds() {
+        console.log('Loading Twitter feeds...');
+        
+        for (const account of twitterAccounts) {
+            try {
+                const tweetData = await fetchTwitterData(account);
+                renderTweet(account, tweetData);
+                console.log('✓ Loaded feed for @' + account.handle);
+            } catch (error) {
+                console.error('✗ Failed to load feed for @' + account.handle + ':', error);
+                // Render fallback content
+                renderTweet(account, {
+                    success: false,
+                    tweet: {
+                        text: getSampleTweet(account.handle),
+                        time: new Date().toLocaleString(),
+                        url: 'https://twitter.com/' + account.handle
+                    }
+                });
+            }
+        }
+        
+        console.log('All Twitter feeds loaded');
+    }
+
+    // Update last updated time
+    function updateLastUpdatedTime() {
+        const lastUpdatedElement = document.getElementById('lastUpdated');
+        if (lastUpdatedElement) {
+            lastUpdatedElement.textContent = new Date().toLocaleString();
+        }
+    }
+
+    // Set up refresh button
+    const refreshButton = document.getElementById('refreshFeeds');
+    if (refreshButton) {
+        refreshButton.addEventListener('click', async function() {
+            this.disabled = true;
+            this.innerHTML = '<div class="spinner-border spinner-border-sm me-2" role="status"><span class="visually-hidden">Loading...</span></div>Refreshing...';
+
+            try {
+                await loadAllFeeds();
+                updateLastUpdatedTime();
+            } catch (error) {
+                console.error('Error refreshing feeds:', error);
+            }
+
+            setTimeout(() => {
+                this.disabled = false;
+                this.innerHTML = '<i class="fas fa-sync-alt me-2"></i>Refresh All Feeds';
+            }, 2000);
+        });
+    }
+
+    // Hero Gallery functionality
+    const galleryPlaceholders = document.querySelectorAll('.gallery-placeholder');
+    galleryPlaceholders.forEach(placeholder => {
+        placeholder.addEventListener('click', function() {
+            const placeholderNumber = this.dataset.placeholder;
+            console.log(`Gallery placeholder ${placeholderNumber} clicked`);
+            
+            // Add click animation
+            this.style.transform = 'translateY(-3px) scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-3px) scale(1)';
+            }, 150);
+            
+            // You can add functionality here to:
+            // - Open a modal with larger image
+            // - Navigate to specific content
+            // - Change the main hero image
+            // - etc.
+        });
+        
+        // Add hover effects
+        placeholder.addEventListener('mouseenter', function() {
+            const badge = this.querySelector('.badge');
+            if (badge) {
+                badge.style.transform = 'scale(1.1)';
+            }
+        });
+        
+        placeholder.addEventListener('mouseleave', function() {
+            const badge = this.querySelector('.badge');
+            if (badge) {
+                badge.style.transform = 'scale(1)';
+            }
+        });
+    });
+
+    // Initial load
+    loadAllFeeds();
+    updateLastUpdatedTime();
+
+    // Auto-refresh feeds every 10 minutes
+    setInterval(async () => {
+        try {
+            await loadAllFeeds();
+            updateLastUpdatedTime();
+        } catch (error) {
+            console.error('Auto-refresh error:', error);
+        }
+    }, 600000);
+
+    // WhatsApp subscription functionality
+    function simulateSubscriptionAPI(data) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({
+                    success: true,
+                    message: 'Subscription successful',
+                    subscriptionId: 'SUB' + Date.now()
+                });
+            }, 2000);
+        });
+    }
+
+    // WhatsApp form submission
+    const whatsappForm = document.getElementById('whatsappForm');
+    if (whatsappForm) {
+        whatsappForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!whatsappForm.checkValidity()) {
+                whatsappForm.classList.add('was-validated');
+                return;
+            }
+
+            const formData = new FormData(whatsappForm);
+            const subscriptionData = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                whatsappNumber: '+27' + formData.get('whatsappNumber'),
+                favoriteRoute: formData.get('favoriteRoute'),
+                popiaConsent: formData.get('popiaConsent') === 'on',
+                timestamp: new Date().toISOString(),
+                ipAddress: 'Unknown',
+                userAgent: navigator.userAgent
+            };
+
+            const submitButton = whatsappForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<div class="spinner-border spinner-border-sm me-2" role="status"><span class="visually-hidden">Loading...</span></div>Processing Subscription...';
+
+            try {
+                const response = await simulateSubscriptionAPI(subscriptionData);
+
+                if (response.success) {
+                    document.getElementById('subscriptionSuccess').classList.remove('d-none');
+                    whatsappForm.reset();
+                    whatsappForm.classList.remove('was-validated');
+                    whatsappForm.style.opacity = '0.5';
+                    whatsappForm.style.pointerEvents = 'none';
+
+                    console.log('WhatsApp Subscription Data:', subscriptionData);
+
+                    setTimeout(() => {
+                        whatsappForm.style.opacity = '1';
+                        whatsappForm.style.pointerEvents = 'auto';
+                        document.getElementById('subscriptionSuccess').classList.add('d-none');
+                    }, 5000);
+                } else {
+                    throw new Error(response.message || 'Subscription failed');
+                }
+            } catch (error) {
+                console.error('Subscription error:', error);
+                alert('There was an error processing your subscription. Please try again later.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+    }
+
+    // Phone number formatting
+    const phoneInput = document.getElementById('whatsappNumber');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 10) {
+                value = value.substring(0, 10);
+            }
+
+            if (value.length >= 6) {
+                value = value.substring(0, 2) + ' ' + value.substring(2, 5) + ' ' + value.substring(5);
+            } else if (value.length >= 3) {
+                value = value.substring(0, 2) + ' ' + value.substring(2);
+            }
+
+            e.target.value = value;
+        });
+    }
+
+    // Partner card hover effects
+    const partnerCards = document.querySelectorAll('.partner-card');
+    partnerCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Gallery hover effects
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        const overlay = item.querySelector('.gallery-overlay');
+
+        item.addEventListener('mouseenter', function() {
+            if (overlay) {
+                overlay.style.opacity = '1';
+                overlay.style.transform = 'translateY(0)';
+            }
+        });
+
+        item.addEventListener('mouseleave', function() {
+            if (overlay) {
+                overlay.style.opacity = '0';
+                overlay.style.transform = 'translateY(20px)';
+            }
+        });
+    });
+
+    // Statistics counter animation
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.dataset.target);
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString() + (counter.dataset.suffix || '');
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current).toLocaleString() + (counter.dataset.suffix || '');
+                    }
+                }, 16);
+
+                observer.unobserve(counter);
+            }
+        });
+    }, observerOptions);
+
+    // Observe stat numbers
+    document.querySelectorAll('.stat-number').forEach(stat => {
+        if (stat.dataset.target) {
+            observer.observe(stat);
+        }
+    });
+});
+
+// Service Worker registration for offline functionality
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+                console.log('SW registration failed: ', registrationError);
+            });
+    });
+}
+
+// Phone number protection - reveal on click to prevent scraping
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

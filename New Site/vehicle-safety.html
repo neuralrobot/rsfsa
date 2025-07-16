@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Safety Features - Road Safety Foundation</title>
+    <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+    <meta name="description" content="Comprehensive safety features and ratings for this vehicle.">
+    
+    <!-- Modern Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Cyborg Theme Colors */
+            --primary-color: #2a9fd6;
+            --secondary-color: #77b300;
+            --success-color: #77b300;
+            --info-color: #9933cc;
+            --warning-color: #ff8800;
+            --danger-color: #cc0000;
+            --light-color: #222;
+            --dark-color: #adafae;
+            --bg-primary: #060606;
+            --bg-secondary: #222;
+            --bg-tertiary: #333;
+            --bg-dark: #1a1a1a;
+            --bg-dark-secondary: #0a0a0a;
+            --bg-dark-tertiary: #2a2a2a;
+            --text-primary: #fff;
+            --text-secondary: #adafae;
+            --text-muted: #888;
+            --text-light: #f8f9fa;
+            --border-color: #333;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+            --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+            --border-radius: 0.375rem;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* Navigation Styles */
+        .modern-nav {
+            background: rgba(6, 6, 6, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            height: 60px !important;
+            min-height: 60px !important;
+        }
+
+        .modern-nav.scrolled {
+            background: rgba(6, 6, 6, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        main {
+            padding-top: 60px;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-primary) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Dropdown Styles */
+        .dropdown-menu {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            padding: 0.5rem 0;
+            margin-top: 0.125rem;
+        }
+
+        .dropdown-item {
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: var(--bg-tertiary);
+            color: var(--primary-color);
+        }
+
+        .dropdown-divider {
+            border-top: 1px solid var(--border-color);
+            margin: 0.5rem 0;
+        }
+
+        /* Submenu Styles */
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+            margin-left: -1px;
+        }
+
+        .safety-hero {
+            background: linear-gradient(135deg, var(--danger-color) 0%, #ff4444 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .safety-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .safety-rating-display {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .safety-stars {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .feature-category {
+            margin-bottom: 40px;
+        }
+
+        .feature-category h4 {
+            color: var(--success-color);
+            border-bottom: 2px solid var(--success-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: var(--bg-tertiary);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .safety-comparison {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            background: var(--bg-secondary);
+        }
+        
+        .safety-tips {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 4px solid var(--warning-color);
+            box-shadow: var(--shadow);
+            color: var(--text-primary);
+        }
+        
+        .safety-tips h4 {
+            color: var(--warning-color);
+            margin-bottom: 1rem;
+        }
+        
+        .safety-tips ul li {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            padding: 0.75rem 0;
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: var(--text-muted);
+        }
+
+        .breadcrumb-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: var(--text-secondary);
+        }
+        
+        .loading, .error {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-outline-primary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-secondary {
+            border-color: var(--text-secondary);
+            color: var(--text-secondary);
+        }
+        
+        .btn-outline-secondary:hover {
+            background-color: var(--text-secondary);
+            border-color: var(--text-secondary);
+            color: var(--bg-primary);
+        }
+        
+        .error {
+            text-align: center;
+            padding: 60px 20px;
+            color: #d32f2f;
+        }
+        
+        .btn-back {
+            background: linear-gradient(45deg, #1976d2, #2196f3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+        .safety-comparison h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+<body>
+
+<!-- Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="#vrt">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="#vrt">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="News.html">View and Comments</a></li>
+                            <li><a class="dropdown-item" href="#submissions">Submissions</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#did-you-know">Did You Know</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Torque</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Loading/Error States -->
+    <div id="loading" class="loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <p class="mt-3">Loading safety information...</p>
+    </div>
+    
+    <div id="error" class="error" style="display: none;">
+        <i class="mbri-sad-face mbr-iconfont" style="font-size: 4rem;"></i>
+        <h4 class="mt-3">Vehicle Not Found</h4>
+        <p>The requested vehicle could not be found.</p>
+        <a href="NewVehicles.html" class="btn btn-primary">Back to Vehicles</a>
+    </div>
+
+    <!-- Safety Content (hidden initially) -->
+    <div id="safetyContent" style="display: none;">
+        <!-- Hero Section -->
+        <section class="safety-hero">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="NewVehicles.html">New Vehicles</a></li>
+                        <li class="breadcrumb-item"><a href="#" id="vehicleDetailsLink">Vehicle</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Safety Features</li>
+                    </ol>
+                </nav>
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-3 font-weight-bold mb-4" id="safetyTitle">Vehicle Safety Features</h1>
+                        <p class="lead">Comprehensive safety analysis and features overview</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="safety-rating-display">
+                            <span id="safetyStars" class="safety-stars">★★★★★</span>
+                            <h3 class="mb-0" id="safetyRating">5/5</h3>
+                            <small>Safety Rating</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Features Details -->
+        <section class="features1 cid-siEkXlJqyE" id="features1-10">
+            <div class="container">
+                <div class="row">
+                    <!-- Main Safety Features -->
+                    <div class="col-lg-8">
+                        <div class="safety-card">
+                            <h3 class="mb-4">Active Safety Systems</h3>
+                            <div id="activeSafety" class="feature-category">
+                                <!-- Active safety features will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="safety-card">
+                            <h3 class="mb-4">Passive Safety Systems</h3>
+                            <div id="passiveSafety" class="feature-category">
+                                <!-- Passive safety features will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="safety-card">
+                            <h3 class="mb-4">Driver Assistance Technologies</h3>
+                            <div id="driverAssistance" class="feature-category">
+                                <!-- Driver assistance features will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Safety Information -->
+                    <div class="col-lg-4">
+                        <div class="safety-comparison">
+                            <h4 class="mb-3">Safety Standards</h4>
+                            <table class="comparison-table">
+                                <tr>
+                                    <th>Standard</th>
+                                    <th>Rating</th>
+                                </tr>
+                                <tr>
+                                    <td>NCAP Rating</td>
+                                    <td id="ncapRating">5 Stars</td>
+                                </tr>
+                                <tr>
+                                    <td>Adult Protection</td>
+                                    <td id="adultProtection">Excellent</td>
+                                </tr>
+                                <tr>
+                                    <td>Child Protection</td>
+                                    <td id="childProtection">Good</td>
+                                </tr>
+                                <tr>
+                                    <td>Pedestrian Safety</td>
+                                    <td id="pedestrianSafety">Good</td>
+                                </tr>
+                                <tr>
+                                    <td>Safety Assist</td>
+                                    <td id="safetyAssist">Excellent</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="safety-tips">
+                            <h4 class="mb-3">🛡️ Safety Tips</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">• Always ensure safety systems are enabled</li>
+                                <li class="mb-2">• Regular maintenance improves safety system performance</li>
+                                <li class="mb-2">• Familiarize yourself with all safety features before driving</li>
+                                <li class="mb-2">• Safety systems assist but don't replace careful driving</li>
+                                <li class="mb-2">• Check child seat compatibility with ISOFIX points</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Safety Information -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="safety-card">
+                            <h3 class="mb-4">Understanding Your Vehicle's Safety Features</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Active Safety</h5>
+                                    <p>These systems work to prevent accidents before they happen. They monitor your driving and the environment around your vehicle, providing warnings or taking action when necessary.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Passive Safety</h5>
+                                    <p>These systems protect occupants when an accident occurs. They include structural design elements and restraint systems that minimize injury during a collision.</p>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <h5>Driver Assistance</h5>
+                                    <p>These technologies help reduce driver fatigue and improve convenience while maintaining safety. They can assist with parking, lane keeping, and cruise control.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>South African Context</h5>
+                                    <p>All safety ratings and features are relevant to South African road conditions and regulatory requirements. Ensure your vehicle meets local safety standards.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="#" id="backToVehicle" class="btn btn-outline-primary me-3">← Back to Vehicle Details</a>
+                    <a href="NewVehicles.html" class="btn btn-outline-secondary">← Back to All Vehicles</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="text-light me-3" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-light me-3" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b" target="_blank" class="text-light me-3" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="text-light" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Torque</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2"></i>
+                    info@roadsafetyfoundation.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2"></i>
+                    +27 (0) 11 123 4567
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Modern JavaScript for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Handle dropdown submenus
+    document.querySelectorAll('.dropdown-submenu > a').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const submenu = this.nextElementSibling;
+            if (submenu) {
+                // Close other submenus
+                document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function(menu) {
+                    if (menu !== submenu) {
+                        menu.style.display = 'none';
+                    }
+                });
+                
+                // Toggle current submenu
+                if (submenu.style.display === 'block') {
+                    submenu.style.display = 'none';
+                } else {
+                    submenu.style.display = 'block';
+                }
+            }
+        });
+    });
+
+    // Close submenus when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown-submenu')) {
+            document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function(menu) {
+                menu.style.display = 'none';
+            });
+        }
+    });
+
+    // Safety feature descriptions
+    const safetyFeatureDescriptions = {
+            "Toyota Safety Sense 2.0": "Advanced driver assistance package including collision avoidance and lane keeping systems.",
+            "Pre-collision System": "Detects potential frontal collisions and applies brakes automatically if needed.",
+            "Lane Departure Alert": "Warns when vehicle drifts out of lane without signaling.",
+            "Automatic High Beam": "Automatically switches between high and low beam based on traffic conditions.",
+            "Dynamic Radar Cruise Control": "Maintains set speed and following distance from vehicles ahead.",
+            "Vehicle Stability Control": "Helps maintain control during sudden maneuvers or slippery conditions.",
+            "Anti-lock Braking System": "Prevents wheel lockup during emergency braking for better steering control.",
+            "Front Assist with City Emergency Braking": "Monitors traffic ahead and can brake automatically in city traffic.",
+            "Blind Spot Monitor": "Alerts driver to vehicles in blind spots when changing lanes.",
+            "Rear Traffic Alert": "Warns of approaching traffic when reversing out of parking spaces.",
+            "Electronic Stability Control": "Computer-controlled system that improves vehicle stability.",
+            "ISOFIX Child Seat Anchors": "Universal attachment system for child safety seats.",
+            "Tyre Pressure Monitoring": "Alerts driver when tire pressure is below safe levels.",
+            "Co-Pilot360 Technology": "Ford's suite of driver assistance technologies.",
+            "Blind Spot Information System": "Visual and audible warnings for vehicles in blind spots.",
+            "Lane Keeping Aid": "Gently steers vehicle back into lane if drifting without signaling.",
+            "Traffic Sign Recognition": "Reads and displays speed limits and traffic signs.",
+            "Roll Stability Control": "Reduces risk of rollover in SUVs and trucks.",
+            "BMW Active Driving Assistant": "BMW's comprehensive driver assistance package.",
+            "Forward Collision Warning": "Alerts driver to potential frontal collisions.",
+            "Automatic Emergency Braking": "Applies brakes automatically to prevent or reduce collision severity.",
+            "Blind Spot Detection": "Monitors blind spots and alerts driver to nearby vehicles.",
+            "BMW Intelligent Emergency Call": "Automatically contacts emergency services after serious accident.",
+            "Dynamic Stability Control": "BMW's advanced stability control system.",
+            "Hyundai SmartSense": "Hyundai's advanced driver assistance technology suite.",
+            "Forward Collision-Avoidance Assist": "Detects vehicles, pedestrians, and cyclists ahead.",
+            "Blind-Spot Collision Warning": "Warns of vehicles approaching in adjacent lanes.",
+            "Rear Cross-Traffic Collision Warning": "Alerts to traffic approaching from sides when reversing.",
+            "Lane Keeping Assist": "Actively helps keep vehicle centered in lane.",
+            "Hill-start Assist Control": "Prevents vehicle from rolling backward on inclines.",
+            "Nissan Intelligent Mobility": "Nissan's vision for safer, more efficient driving.",
+            "Intelligent Emergency Braking": "Automatically applies brakes to avoid or reduce collisions.",
+            "Lane Departure Warning": "Alerts when vehicle leaves lane without signaling.",
+            "Hill Start Assist": "Prevents rollback when starting on hills.",
+            "Vehicle Dynamic Control": "Nissan's stability and traction control system.",
+            "Suzuki Safety Support": "Suzuki's driver assistance technology package.",
+            "Dual Sensor Brake Support": "Uses camera and laser to detect obstacles ahead.",
+            "Weaving Alert": "Warns if vehicle is weaving due to driver fatigue.",
+            "Electronic Stability Programme": "Helps maintain vehicle stability and control.",
+            "Hill Hold Control": "Prevents vehicle from rolling when stopped on hills.",
+            "Kia Drive Wise": "Kia's advanced driver assistance system package.",
+            "Lane Following Assist": "Helps keep vehicle centered in lane during highway driving.",
+            "Smart Cruise Control": "Adaptive cruise control with stop-and-go capability."
+        };
+        
+        // Get vehicle ID from URL parameters
+        function getVehicleIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+        
+        // Load vehicle safety data
+        async function loadSafetyFeatures() {
+            const vehicleId = getVehicleIdFromUrl();
+            
+            if (!vehicleId) {
+                showError();
+                return;
+            }
+            
+            try {
+                const response = await fetch('data/vehicles.json');
+                const data = await response.json();
+                const vehicle = data.vehicles.find(v => v.id === vehicleId);
+                
+                if (!vehicle) {
+                    showError();
+                    return;
+                }
+                
+                displaySafetyFeatures(vehicle);
+                
+            } catch (error) {
+                console.error('Error loading safety features:', error);
+                showError();
+            }
+        }
+        
+        function displaySafetyFeatures(vehicle) {
+            // Update page title
+            document.title = `${vehicle.make} ${vehicle.model} Safety Features - Road Safety Foundation`;
+            
+            // Update hero section
+            document.getElementById('safetyTitle').textContent = `${vehicle.make} ${vehicle.model} Safety Features`;
+            
+            // Update breadcrumb link
+            document.getElementById('vehicleDetailsLink').href = `vehicle-details.html?id=${vehicle.id}`;
+            document.getElementById('vehicleDetailsLink').textContent = `${vehicle.make} ${vehicle.model}`;
+            
+            // Update back button
+            document.getElementById('backToVehicle').href = `vehicle-details.html?id=${vehicle.id}`;
+            
+            // Update safety rating
+            const safetyStars = '★'.repeat(vehicle.safetyRating) + '☆'.repeat(5 - vehicle.safetyRating);
+            document.getElementById('safetyStars').textContent = safetyStars;
+            document.getElementById('safetyRating').textContent = `${vehicle.safetyRating}/5`;
+            
+            // Categorize safety features
+            const activeSafetyFeatures = [];
+            const passiveSafetyFeatures = [];
+            const driverAssistanceFeatures = [];
+            
+            vehicle.safetyFeatures.forEach(feature => {
+                if (feature.includes('Airbag') || feature.includes('Control') || feature.includes('Seat') || feature.includes('ISOFIX')) {
+                    passiveSafetyFeatures.push(feature);
+                } else if (feature.includes('Assist') || feature.includes('Warning') || feature.includes('Alert') || feature.includes('Cruise') || feature.includes('Lane')) {
+                    driverAssistanceFeatures.push(feature);
+                } else {
+                    activeSafetyFeatures.push(feature);
+                }
+            });
+            
+            // Display categorized features
+            displayFeatureCategory('activeSafety', activeSafetyFeatures);
+            displayFeatureCategory('passiveSafety', passiveSafetyFeatures);
+            displayFeatureCategory('driverAssistance', driverAssistanceFeatures);
+            
+            // Update safety standards (example data)
+            document.getElementById('ncapRating').textContent = vehicle.safetyRating === 5 ? '5 Stars' : `${vehicle.safetyRating} Stars`;
+            document.getElementById('adultProtection').textContent = vehicle.safetyRating >= 4 ? 'Excellent' : 'Good';
+            document.getElementById('childProtection').textContent = vehicle.safetyRating >= 4 ? 'Good' : 'Average';
+            document.getElementById('pedestrianSafety').textContent = vehicle.safetyRating >= 4 ? 'Good' : 'Average';
+            document.getElementById('safetyAssist').textContent = vehicle.safetyRating >= 4 ? 'Excellent' : 'Good';
+            
+            // Show content and hide loading
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('safetyContent').style.display = 'block';
+        }
+        
+        function displayFeatureCategory(containerId, features) {
+            const container = document.getElementById(containerId);
+            
+            if (features.length === 0) {
+                container.innerHTML = '<p class="text-muted">No specific features in this category.</p>';
+                return;
+            }
+            
+            const featureList = document.createElement('ul');
+            featureList.className = 'feature-list';
+            
+            features.forEach(feature => {
+                const listItem = document.createElement('li');
+                const description = safetyFeatureDescriptions[feature] || 'Advanced safety feature for enhanced protection.';
+                
+                listItem.innerHTML = `
+                    <div class="feature-icon">
+                        <i class="mbri-shield mbr-iconfont"></i>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">${feature}</div>
+                        <div class="feature-description">${description}</div>
+                    </div>
+                `;
+                
+                featureList.appendChild(listItem);
+            });
+            
+            container.appendChild(featureList);
+        }
+        
+        function showError() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+        }
+        
+        // Load safety features when page loads
+        loadSafetyFeatures();
+    });
+</script>
+</body>
+</html>

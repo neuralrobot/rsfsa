@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="General Driver Safety - Essential road safety information for all drivers in South Africa">
+  <title>General Driver Safety - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Ensure main content doesn't get hidden behind fixed nav */
+    main {
+      padding-top: 60px;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
+                  url('assets/images/General-Driver-Safety.png') center/cover;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(153, 51, 204, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.225);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .safety-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .safety-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color) !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .safety-tip-box {
+      background: rgba(42, 159, 214, 0.1) !important;
+      border: 1px solid var(--primary-color) !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .warning-box {
+      background: rgba(255, 136, 0, 0.1) !important;
+      border: 1px solid var(--warning-color) !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .success-box {
+      background: rgba(119, 179, 0, 0.1) !important;
+      border: 1px solid var(--secondary-color) !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .safety-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    /* Override Bootstrap Cyborg Theme Colors with Corporate Identity */
+    .text-danger {
+      color: #cc0000 !important;
+    }
+
+    .text-warning {
+      color: #ff8800 !important;
+    }
+
+    .text-success {
+      color: #77b300 !important;
+    }
+
+    .text-info {
+      color: #2a9fd6 !important;
+    }
+
+    /* Social Media Icons */
+    .social-links a {
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    .social-links i {
+      display: inline-block;
+      width: 1.5em;
+      text-align: center;
+    }
+
+    /* Ensure FontAwesome icons load properly */
+    .fab {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto d-flex align-items-center justify-content-center">
+                <div class="me-4 text-center">
+                    <span class="badge bg-light text-info px-3 py-2 rounded-pill mb-3 fw-semibold">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        General Driver Safety
+                    </span>
+                    <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Essential <span style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Driver</span> Safety</h1>
+                    <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Fundamental road safety principles and best practices for all drivers to ensure safer journeys on South African roads.</p>
+                </div>
+                <div class="ms-4 d-flex align-items-center">
+                    <img src="assets/images/General-Driver-Safety.png" alt="General Driver Safety" style="width: 469px; height: auto; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); background: rgba(255,255,255,0.03);" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card safety-card">
+                    <div class="card-body p-5">
+                        <h2 class="fw-semibold mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">General Driver Safety Guidelines</h2>
+
+                        <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Every driver on South African roads has the responsibility to prioritize safety for themselves, their passengers, and other road users. These fundamental principles apply to all vehicle types and driving conditions.</p>
+
+                            <div class="safety-tip-box">
+                                <h4 style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1.5rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                        <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M21 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M15.5 7.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5.224-.5.5-.5.5.224.5.5z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Core Safety Principles
+                                </h4>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The foundation of safe driving starts with proper preparation, defensive driving techniques, and constant awareness of road conditions and other traffic participants.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Safety Guidelines -->
+<section class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="display-4 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Essential <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Safety Guidelines</span></h2>
+                <p class="lead" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-size: 1.1rem;">Fundamental practices every driver should follow</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Pre-Drive Inspection -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card safety-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="safety-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="color: white;">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Pre-Drive Inspection</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Check tyres, lights, mirrors, brakes, and fluid levels before every journey. Ensure your vehicle is roadworthy and safe to operate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Defensive Driving -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card safety-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="safety-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="color: white;">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Defensive Driving</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Anticipate potential hazards, maintain safe following distances, and be prepared to react to unexpected situations on the road.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speed Management -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card safety-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="safety-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="color: white;">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Speed Management</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Drive according to conditions, not just speed limits. Adjust speed for weather, traffic, and road conditions to maintain control.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distraction-Free Driving -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card safety-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="safety-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="color: white;">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Focus & Attention</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Avoid distractions like mobile phones, eating, or adjusting controls while driving. Keep your full attention on the road.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Following Distance -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card safety-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="safety-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="color: white;">
+                                <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
+                                <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Safe Following Distance</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Maintain at least a 3-second following distance. Increase this in poor weather or heavy traffic conditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Preparedness -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card safety-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="safety-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="color: white;">
+                                <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 11l-5-5-5 5v6l5 5 5-5v-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Emergency Kit</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Carry emergency supplies including spare tyre, jack, warning triangles, first aid kit, and emergency contact numbers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Safety Tips -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card safety-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-4" style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <path d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Essential Safety Reminders
+                        </h3>
+
+                        <div style="color: #f8f9fa; font-size: 1.05rem; line-height: 1.8;">
+                            <div class="warning-box">
+                                <h5 style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1.5rem;">Remember:</h5>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <ul style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.8;">
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #ff8800;">Seatbelts:</strong> Always wear your seatbelt and ensure all passengers do the same</li>
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #ff8800;">Alcohol:</strong> Never drive under the influence - use designated drivers or alternative transport</li>
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #ff8800;">Fatigue:</strong> Take breaks every 2 hours on long journeys</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.8;">
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #ff8800;">Weather:</strong> Reduce speed and increase following distance in rain</li>
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #ff8800;">Indicators:</strong> Signal your intentions early and clearly</li>
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #ff8800;">Patience:</strong> Stay calm and courteous - road rage helps no one</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Best Practices -->
+<section class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card safety-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-4" style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Best Practices for Safe Driving
+                        </h3>
+
+                        <div style="color: #f8f9fa; font-size: 1.05rem; line-height: 1.8;">
+                            <div class="success-box">
+                                <h5 style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1.5rem;">Professional Tips:</h5>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <ul style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.8;">
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #77b300;">Mirror Check:</strong> Check mirrors every 5-8 seconds</li>
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #77b300;">Blind Spots:</strong> Always check blind spots before changing lanes</li>
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #77b300;">Smooth Actions:</strong> Accelerate, brake, and steer smoothly</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.8;">
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #77b300;">Planning:</strong> Plan your route and allow extra time</li>
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #77b300;">Communication:</strong> Use horn and lights to communicate safely</li>
+                                            <li style="margin-bottom: 0.8rem;"><strong style="color: #77b300;">Continuous Learning:</strong> Stay updated on road rules and safety techniques</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Remember, every trip is an opportunity to practice and improve your driving skills. Safe driving protects not only you but also contributes to making South African roads safer for everyone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="card" style="background: linear-gradient(135deg, #2a9fd6 0%, #1a7aa8 100%); border: none;">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Drive Safely, Arrive Safely</h3>
+                        <p class="mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem; opacity: 0.95;">Every journey matters. Practice these safety principles to protect yourself and others on South African roads.</p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="DriverWellness.html" class="btn btn-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Driver Wellness
+                            </a>
+                            <a href="Videos.html" class="btn btn-outline-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <polygon points="23 7 16 12 23 17 23 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Safety Videos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Modern JavaScript for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Phone number reveal functionality
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        phoneElement.addEventListener('click', function() {
+            const phoneNumber = this.getAttribute('data-number');
+            this.textContent = phoneNumber;
+            this.style.cursor = 'default';
+            this.title = phoneNumber;
+        });
+    }
+});
+</script>
+</body>
+</html>

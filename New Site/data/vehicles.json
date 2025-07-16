@@ -1,0 +1,319 @@
+{
+  "vehicles": [
+    {
+      "id": "toyota-corolla-2024",
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2024,
+      "category": "Sedan",
+      "priceRange": {
+        "min": 450000,
+        "max": 580000,
+        "currency": "ZAR"
+      },
+      "engineOptions": ["1.2T", "1.8", "2.0"],
+      "fuelType": ["Petrol", "Hybrid"],
+      "transmission": ["Manual", "CVT"],
+      "manufacturerUrl": "https://www.toyota.co.za/models/corolla",
+      "financeCalculatorUrl": "https://www.wesbank.co.za/home/calculate",
+      "roadTestUrl": "https://www.cars.co.za/motoring_news/toyota-corolla-2024-review/",
+      "safetyRating": 5,
+      "safetyFeatures": [
+        "Toyota Safety Sense 2.0",
+        "Pre-collision System",
+        "Lane Departure Alert",
+        "Automatic High Beam",
+        "Dynamic Radar Cruise Control",
+        "7 Airbags",
+        "Vehicle Stability Control",
+        "Anti-lock Braking System"
+      ],
+      "keySpecs": {
+        "fuelConsumption": "5.2-6.8L/100km",
+        "topSpeed": "180-200km/h",
+        "acceleration": "8.1-10.8s (0-100km/h)",
+        "bootSpace": "470L",
+        "warranty": "3 years/100,000km"
+      },
+      "image": "assets/images/vehicles/placeholder.svg",
+      "description": "The Toyota Corolla remains one of South Africa's most popular sedans, offering excellent fuel economy, proven reliability, and comprehensive safety features."
+    },
+    {
+      "id": "volkswagen-polo-2024",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "year": 2024,
+      "category": "Hatchback",
+      "priceRange": {
+        "min": 320000,
+        "max": 450000,
+        "currency": "ZAR"
+      },
+      "engineOptions": ["1.0 TSI", "1.5 TSI"],
+      "fuelType": ["Petrol"],
+      "transmission": ["Manual", "DSG"],
+      "manufacturerUrl": "https://www.volkswagen.co.za/models/polo",
+      "financeCalculatorUrl": "https://www.wesbank.co.za/home/calculate",
+      "roadTestUrl": "https://www.cars.co.za/motoring_news/volkswagen-polo-2024-review/",
+      "safetyRating": 5,
+      "safetyFeatures": [
+        "Front Assist with City Emergency Braking",
+        "Blind Spot Monitor",
+        "Rear Traffic Alert",
+        "6 Airbags",
+        "Electronic Stability Control",
+        "Anti-lock Braking System",
+        "ISOFIX Child Seat Anchors",
+        "Tyre Pressure Monitoring"
+      ],
+      "keySpecs": {
+        "fuelConsumption": "4.9-5.8L/100km",
+        "topSpeed": "185-220km/h",
+        "acceleration": "7.8-9.9s (0-100km/h)",
+        "bootSpace": "351L",
+        "warranty": "3 years/120,000km"
+      },
+      "image": "assets/images/vehicles/placeholder.svg",
+      "description": "The VW Polo offers German engineering excellence in a compact package, perfect for South African conditions with excellent build quality and safety features."
+    },
+    {
+      "id": "ford-ranger-2024",
+      "make": "Ford",
+      "model": "Ranger",
+      "year": 2024,
+      "category": "Bakkie",
+      "priceRange": {
+        "min": 550000,
+        "max": 850000,
+        "currency": "ZAR"
+      },
+      "engineOptions": ["2.0L Bi-Turbo", "3.0L V6 Turbo"],
+      "fuelType": ["Diesel"],
+      "transmission": ["Manual", "Automatic"],
+      "manufacturerUrl": "https://www.ford.co.za/trucks/ranger/",
+      "financeCalculatorUrl": "https://www.wesbank.co.za/home/calculate",
+      "roadTestUrl": "https://www.cars.co.za/motoring_news/ford-ranger-2024-review/",
+      "safetyRating": 5,
+      "safetyFeatures": [
+        "Co-Pilot360 Technology",
+        "Pre-Collision Assist",
+        "Blind Spot Information System",
+        "Lane Keeping Aid",
+        "Traffic Sign Recognition",
+        "6 Airbags",
+        "Electronic Stability Control",
+        "Roll Stability Control"
+      ],
+      "keySpecs": {
+        "fuelConsumption": "7.5-9.2L/100km",
+        "topSpeed": "180-190km/h",
+        "acceleration": "7.8-10.2s (0-100km/h)",
+        "payloadCapacity": "1052kg",
+        "towingCapacity": "3500kg",
+        "warranty": "4 years/120,000km"
+      },
+      "image": "assets/images/vehicles/placeholder.svg",
+      "description": "South Africa's favourite bakkie, the Ford Ranger combines rugged capability with modern safety technology, perfect for work and leisure."
+    },
+    {
+      "id": "bmw-3-series-2024",
+      "make": "BMW",
+      "model": "3 Series",
+      "year": 2024,
+      "category": "Sedan",
+      "priceRange": {
+        "min": 750000,
+        "max": 1200000,
+        "currency": "ZAR"
+      },
+      "engineOptions": ["2.0L Turbo", "3.0L Turbo"],
+      "fuelType": ["Petrol"],
+      "transmission": ["Automatic"],
+      "manufacturerUrl": "https://www.bmw.co.za/models/3-series",
+      "financeCalculatorUrl": "https://www.wesbank.co.za/home/calculate",
+      "roadTestUrl": "https://www.cars.co.za/motoring_news/bmw-3-series-2024-review/",
+      "safetyRating": 5,
+      "safetyFeatures": [
+        "BMW Active Driving Assistant",
+        "Lane Departure Warning",
+        "Forward Collision Warning",
+        "Automatic Emergency Braking",
+        "Blind Spot Detection",
+        "8 Airbags",
+        "Dynamic Stability Control",
+        "BMW Intelligent Emergency Call"
+      ],
+      "keySpecs": {
+        "fuelConsumption": "6.1-7.9L/100km",
+        "topSpeed": "250km/h (limited)",
+        "acceleration": "5.6-7.1s (0-100km/h)",
+        "bootSpace": "480L",
+        "warranty": "2 years/unlimited km"
+      },
+      "image": "assets/images/vehicles/placeholder.svg",
+      "description": "The BMW 3 Series sets the benchmark for executive sedans, offering luxury, performance, and cutting-edge safety technology."
+    },
+    {
+      "id": "hyundai-creta-2024",
+      "make": "Hyundai",
+      "model": "Creta",
+      "year": 2024,
+      "category": "SUV",
+      "priceRange": {
+        "min": 420000,
+        "max": 580000,
+        "currency": "ZAR"
+      },
+      "engineOptions": ["1.5L", "1.5L Turbo"],
+      "fuelType": ["Petrol"],
+      "transmission": ["Manual", "CVT", "DCT"],
+      "manufacturerUrl": "https://www.hyundai.co.za/models/creta",
+      "financeCalculatorUrl": "https://www.wesbank.co.za/home/calculate",
+      "roadTestUrl": "https://www.cars.co.za/motoring_news/hyundai-creta-2024-review/",
+      "safetyRating": 4,
+      "safetyFeatures": [
+        "Hyundai SmartSense",
+        "Forward Collision-Avoidance Assist",
+        "Blind-Spot Collision Warning",
+        "Rear Cross-Traffic Collision Warning",
+        "Lane Keeping Assist",
+        "6 Airbags",
+        "Electronic Stability Control",
+        "Hill-start Assist Control"
+      ],
+      "keySpecs": {
+        "fuelConsumption": "6.5-7.2L/100km",
+        "topSpeed": "180-190km/h",
+        "acceleration": "9.8-11.2s (0-100km/h)",
+        "bootSpace": "433L",
+        "warranty": "7 years/200,000km"
+      },
+      "image": "assets/images/vehicles/placeholder.svg",
+      "description": "The Hyundai Creta offers excellent value in the compact SUV segment with a comprehensive warranty and modern safety features."
+    },
+    {
+      "id": "nissan-navara-2024",
+      "make": "Nissan",
+      "model": "Navara",
+      "year": 2024,
+      "category": "Bakkie",
+      "priceRange": {
+        "min": 520000,
+        "max": 750000,
+        "currency": "ZAR"
+      },
+      "engineOptions": ["2.3L Twin Turbo Diesel"],
+      "fuelType": ["Diesel"],
+      "transmission": ["Manual", "Automatic"],
+      "manufacturerUrl": "https://www.nissan.co.za/vehicles/navara",
+      "financeCalculatorUrl": "https://www.wesbank.co.za/home/calculate",
+      "roadTestUrl": "https://www.cars.co.za/motoring_news/nissan-navara-2024-review/",
+      "safetyRating": 4,
+      "safetyFeatures": [
+        "Nissan Intelligent Mobility",
+        "Intelligent Emergency Braking",
+        "Blind Spot Warning",
+        "Lane Departure Warning",
+        "Traffic Sign Recognition",
+        "6 Airbags",
+        "Vehicle Dynamic Control",
+        "Hill Start Assist"
+      ],
+      "keySpecs": {
+        "fuelConsumption": "7.8-8.5L/100km",
+        "topSpeed": "175km/h",
+        "acceleration": "9.9s (0-100km/h)",
+        "payloadCapacity": "1021kg",
+        "towingCapacity": "3500kg",
+        "warranty": "3 years/100,000km"
+      },
+      "image": "assets/images/vehicles/placeholder.svg",
+      "description": "The Nissan Navara combines rugged reliability with intelligent safety technology, ideal for South African work and leisure needs."
+    },
+    {
+      "id": "suzuki-swift-2024",
+      "make": "Suzuki",
+      "model": "Swift",
+      "year": 2024,
+      "category": "Hatchback",
+      "priceRange": {
+        "min": 250000,
+        "max": 350000,
+        "currency": "ZAR"
+      },
+      "engineOptions": ["1.2L", "1.2L DualJet"],
+      "fuelType": ["Petrol"],
+      "transmission": ["Manual", "CVT"],
+      "manufacturerUrl": "https://www.suzuki.co.za/models/swift",
+      "financeCalculatorUrl": "https://www.wesbank.co.za/home/calculate",
+      "roadTestUrl": "https://www.cars.co.za/motoring_news/suzuki-swift-2024-review/",
+      "safetyRating": 4,
+      "safetyFeatures": [
+        "Suzuki Safety Support",
+        "Dual Sensor Brake Support",
+        "Blind Spot Monitor",
+        "Lane Departure Warning",
+        "Weaving Alert",
+        "2 Airbags (standard), 6 Airbags (higher grades)",
+        "Electronic Stability Programme",
+        "Hill Hold Control"
+      ],
+      "keySpecs": {
+        "fuelConsumption": "4.9-5.3L/100km",
+        "topSpeed": "165-175km/h",
+        "acceleration": "11.5-12.2s (0-100km/h)",
+        "bootSpace": "268L",
+        "warranty": "5 years/200,000km"
+      },
+      "image": "assets/images/vehicles/placeholder.svg",
+      "description": "The Suzuki Swift offers outstanding fuel economy and reliability in an affordable package, perfect for budget-conscious South African drivers."
+    },
+    {
+      "id": "kia-sportage-2024",
+      "make": "Kia",
+      "model": "Sportage",
+      "year": 2024,
+      "category": "SUV",
+      "priceRange": {
+        "min": 550000,
+        "max": 750000,
+        "currency": "ZAR"
+      },
+      "engineOptions": ["1.6L Turbo", "2.0L"],
+      "fuelType": ["Petrol"],
+      "transmission": ["Manual", "Automatic"],
+      "manufacturerUrl": "https://www.kia.co.za/models/sportage",
+      "financeCalculatorUrl": "https://www.wesbank.co.za/home/calculate",
+      "roadTestUrl": "https://www.cars.co.za/motoring_news/kia-sportage-2024-review/",
+      "safetyRating": 5,
+      "safetyFeatures": [
+        "Kia Drive Wise",
+        "Forward Collision-Avoidance Assist",
+        "Blind-Spot Collision Warning",
+        "Rear Cross-Traffic Collision Warning",
+        "Lane Following Assist",
+        "Smart Cruise Control",
+        "8 Airbags",
+        "Electronic Stability Control"
+      ],
+      "keySpecs": {
+        "fuelConsumption": "7.2-8.5L/100km",
+        "topSpeed": "190-200km/h",
+        "acceleration": "8.5-10.1s (0-100km/h)",
+        "bootSpace": "543L",
+        "warranty": "5 years/150,000km"
+      },
+      "image": "assets/images/vehicles/placeholder.svg",
+      "description": "The Kia Sportage offers bold styling, comprehensive safety features, and excellent warranty coverage in the competitive SUV segment."
+    }
+  ],
+  "categories": ["Sedan", "Hatchback", "SUV", "Bakkie"],
+  "makes": ["Toyota", "Volkswagen", "Ford", "BMW", "Hyundai", "Nissan", "Suzuki", "Kia"],
+  "priceRanges": [
+    {"label": "Under R300,000", "min": 0, "max": 300000},
+    {"label": "R300,000 - R500,000", "min": 300000, "max": 500000},
+    {"label": "R500,000 - R750,000", "min": 500000, "max": 750000},
+    {"label": "R750,000 - R1,000,000", "min": 750000, "max": 1000000},
+    {"label": "Over R1,000,000", "min": 1000000, "max": 999999999}
+  ]
+}

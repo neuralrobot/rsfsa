@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KWiKS - Keep Warm, Keep Safe initiative by Road Safety Foundation. Providing poncho blankets and highly reflective raincoats to underprivileged rural school children walking to school in harsh weather conditions.">
+  <meta name="keywords" content="KWiKS, Keep Warm Keep Safe, school children safety, rural communities, poncho blankets, reflective raincoats, Road Safety Foundation">
+  <meta name="author" content="Road Safety Foundation of South Africa">
+
+  <title>KWiKS - Keep Warm, Keep Safe | Road Safety Foundation</title>
+
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+
+  <!-- Modern Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Modern Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Ensure main content doesn't get hidden behind fixed nav */
+    main {
+      padding-top: 60px;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    /* Hero Section */
+    .kwiks-hero {
+      min-height: 70vh;
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.85) 0%, rgba(26, 26, 26, 0.85) 100%),
+                  url('assets/images/KWIKS.jpg') center/cover;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kwiks-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+          radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(119, 179, 0, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      z-index: 2;
+      position: relative;
+    }
+
+    .kwiks-logo {
+      font-size: 4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #2a9fd6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* KWiKS specific styles */
+    .kwiks-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .kwiks-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .impact-stat {
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-dark-tertiary);
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--success-color);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--success-color);
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Button Styles */
+    .btn-kwiks {
+      background: linear-gradient(135deg, var(--success-color) 0%, #5a8a00 100%);
+      border: none;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-kwiks:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      color: white;
+    }
+
+    /* Gallery styles */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      aspect-ratio: 4/3;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 1.5rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+
+    /* Progress bar */
+    .progress-kwiks {
+      height: 10px;
+      background: var(--bg-dark);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-bar-kwiks {
+      height: 100%;
+      background: var(--gradient-primary);
+      border-radius: 5px;
+      transition: width 0.8s ease;
+    }
+
+    /* Timeline styles */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primary-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 0;
+      width: 14px;
+      height: 14px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      border: 3px solid var(--bg-primary);
+    }
+
+    .timeline-content {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--primary-color);
+    }
+
+    /* Font Awesome Icon Fix - Override global font-family rule */
+    .fas, .far, .fal, .fab, .fa {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", FontAwesome !important;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .fab {
+      font-family: "Font Awesome 6 Brands", "Font Awesome 5 Brands" !important;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .kwiks-logo {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="kwiks-hero">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <span class="badge bg-success px-3 py-2 rounded-pill mb-3">
+                <i class="fas fa-heart me-2"></i>
+                Community Impact Initiative
+              </span>
+              <h1 class="kwiks-logo mb-4" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">KWiKS</h1>
+              <h2 class="hero-subtitle mb-4" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Keep Warm, Keep Safe</h2>
+              <p class="lead text-white mb-4" style="font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Protecting South Africa's most vulnerable road users - rural school children who walk long distances to school in harsh weather conditions.</p>
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <a href="#donate" class="btn btn-kwiks btn-lg">
+                  <i class="fas fa-hand-holding-heart me-2"></i>
+                  Make a Donation
+                </a>
+                <a href="#how-it-works" class="btn btn-outline-primary btn-lg">
+                  <i class="fas fa-info-circle me-2"></i>
+                  Learn More
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="hero-image d-flex align-items-end h-100">
+                <div class="hero-card w-100 p-4">
+                  <img src="assets/images/KWIKS.jpg" alt="KWiKS Hero" class="img-fluid rounded-4 shadow-lg" style="width: 80%; height: auto; min-height: 96px; min-width: 280px; object-fit: contain;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="py-5" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-4 text-white">Our Mission</h2>
+                    <p class="lead text-white mb-5" style="font-size: 1.2rem; line-height: 1.8;">
+                        Every day, thousands of children in rural South Africa walk to school in dangerous weather conditions - from torrential rain to freezing temperatures. Many lack proper protection, making them vulnerable to hypothermia, illness, and accidents. <strong>KWiKS provides life-saving poncho blankets and highly reflective raincoats</strong> to keep these brave children warm, dry, and visible to motorists.
+                    </p>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="impact-stat">
+                                <span class="stat-number">15,000+</span>
+                                <div class="stat-label">Children Protected</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="impact-stat">
+                                <span class="stat-number">450+</span>
+                                <div class="stat-label">Schools Reached</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="impact-stat">
+                                <span class="stat-number">7</span>
+                                <div class="stat-label">Provinces Covered</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem -->
+    <section id="the-problem" class="py-5" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-4 text-white">The Challenge We Face</h2>
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-thermometer-quarter fa-2x text-danger me-3"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white mb-2">Extreme Weather Exposure</h5>
+                                    <p class="text-white mb-0">Children walk up to 10km daily in temperatures as low as -5°C, with no adequate protection from rain, snow, or freezing winds.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-eye-slash fa-2x text-warning me-3"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white mb-2">Poor Visibility</h5>
+                                    <p class="text-white mb-0">Dark clothing and poor weather conditions make children nearly invisible to drivers, especially during early morning and late afternoon commutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-heart-broken fa-2x text-danger me-3"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white mb-2">Health Risks</h5>
+                                    <p class="text-white mb-0">Prolonged exposure leads to respiratory infections, hypothermia, and compromised immune systems affecting school attendance and academic performance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="gallery-item">
+                                <img src="assets/images/Poncho.jpg" alt="KWiKS poncho protection for school children" class="img-fluid rounded-3">
+                                <div class="gallery-overlay">
+                                    <h6>KWiKS Protection in Action</h6>
+                                    <p class="small mb-0">Keeping children warm, dry, and visible on their way to school</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Solution -->
+    <section id="how-it-works" class="py-5" style="background: var(--bg-dark);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-4 text-white">Our Solution: KWiKS Protection Kit</h2>
+                    <p class="lead text-white mb-5">Each KWiKS kit provides comprehensive protection designed specifically for walking to school in harsh weather conditions.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="kwiks-card h-100 p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h4 class="mb-3 text-white">Thermal Poncho Blankets</h4>
+                        <p class="text-white mb-4">Water-resistant, insulated poncho blankets that provide warmth and protection from rain and wind. Lightweight and easy to carry, designed for children aged 6-18.</p>
+                        <ul class="list-unstyled text-start">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Waterproof outer layer</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Thermal insulation</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Wind-resistant material</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Compact and lightweight</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="kwiks-card h-100 p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4 class="mb-3 text-white">Reflective Rain Coats</h4>
+                        <p class="text-white mb-4">High-visibility raincoats with strategically placed reflective strips that make children visible from up to 500 meters away, even in poor weather conditions.</p>
+                        <ul class="list-unstyled text-start">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>360° reflective strips</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Bright fluorescent colors</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Fully waterproof</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Durable construction</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="kwiks-card h-100 p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="mb-3 text-white">Safety Education</h4>
+                        <p class="text-white mb-4">Along with protective gear, we provide road safety education sessions teaching children how to stay safe while walking to school.</p>
+                        <ul class="list-unstyled text-start">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Road safety workshops</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Weather awareness training</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Proper gear usage</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Emergency procedures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Timeline -->
+    <section class="py-5" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-5 text-center text-white">KWiKS Journey</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5 class="text-white mb-2">2019 - Initiative Launch</h5>
+                                <p class="text-white mb-0">KWiKS program launched in response to growing concerns about child pedestrian safety in rural areas. First distribution of 500 protection kits in the Eastern Cape.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5 class="text-white mb-2">2020 - Rapid Expansion</h5>
+                                <p class="text-white mb-0">Program expanded to 3 provinces. Partnered with local schools and community leaders. Distributed 2,500 kits and established sustainable distribution networks.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5 class="text-white mb-2">2021 - Technology Integration</h5>
+                                <p class="text-white mb-0">Introduced GPS tracking for high-risk areas and mobile app for reporting weather-related incidents. Enhanced reflective technology in raincoats.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5 class="text-white mb-2">2022 - Community Partnerships</h5>
+                                <p class="text-white mb-0">Established partnerships with 200+ schools and local governments. Launched train-the-trainer program for educators.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5 class="text-white mb-2">2023 - National Recognition</h5>
+                                <p class="text-white mb-0">KWiKS received national recognition for child safety innovation. Reached milestone of 10,000 children protected across 5 provinces.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5 class="text-white mb-2">2024 - Ongoing Impact</h5>
+                                <p class="text-white mb-0">Current focus on reaching 20,000 children by end of 2024. Expanding to include winter gear and improving sustainability of materials used.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-5" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-4 text-white">Success Stories</h2>
+                    <p class="lead text-secondary">Real impact from real children and communities</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="kwiks-card p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-quote-left fa-2x text-primary"></i>
+                        </div>
+                        <p class="text-white mb-4">"Since receiving our KWiKS kits, school attendance during winter months has increased by 40%. Children are no longer afraid to walk to school in the rain."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-user text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="text-white mb-0">Mrs. Sarah Molefe</h6>
+                                <small class="text-secondary">Principal, Qwaqwa Primary School</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="kwiks-card p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-quote-left fa-2x text-primary"></i>
+                        </div>
+                        <p class="text-white mb-4">"My daughter Nomsa hasn't missed a day of school since getting her reflective raincoat. I don't worry about her walking home in the dark anymore."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-success d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-heart text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="text-white mb-0">Grace Mthembu</h6>
+                                <small class="text-secondary">Parent, KwaZulu-Natal</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="kwiks-card p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-quote-left fa-2x text-primary"></i>
+                        </div>
+                        <p class="text-white mb-4">"The KWiKS program has been life-changing for our community. We've seen a 60% reduction in weather-related school absences."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-warning d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-users text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="text-white mb-0">Chief Mandla Ndaba</h6>
+                                <small class="text-secondary">Community Leader, Limpopo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section id="donate" class="py-5" style="background: var(--bg-dark);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-4 text-white">Get Involved</h2>
+                    <p class="lead mb-5" style="color: #f8f9fa;">Join us in protecting South Africa's future. Every contribution makes a difference in a child's life.</p>
+                    
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                </div>
+                                <h5 class="text-white mb-2">R150</h5>
+                                <p class="text-white small">Provides one complete KWiKS protection kit</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <h5 class="text-white mb-2">R3,750</h5>
+                                <p class="text-white small">Equips an entire classroom (25 children)</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <h5 class="text-white mb-2">R15,000</h5>
+                                <p class="text-white small">Sponsors a complete rural school (100 children)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                        <a href="#" class="btn btn-kwiks btn-lg">
+                            <i class="fas fa-heart me-2"></i>
+                            Donate Now
+                        </a>
+                        <a href="#" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-handshake me-2"></i>
+                            Become a Partner
+                        </a>
+                        <a href="#" class="btn btn-outline-success btn-lg">
+                            <i class="fas fa-handshake me-2"></i>
+                            Volunteer
+                        </a>
+                    </div>
+                    
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="card bg-dark border-primary">
+                                <div class="card-body p-4">
+                                    <h5 class="text-white mb-3">2024 Goal Progress</h5>
+                                    <p class="mb-3" style="color: #f8f9fa;">Help us reach 20,000 children protected by December 2024</p>
+                                    <div class="progress-kwiks mb-2">
+                                        <div class="progress-bar-kwiks" style="width: 75%"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between text-sm">
+                                        <span style="color: #f8f9fa;">15,000 children protected</span>
+                                        <span class="text-white fw-bold">Goal: 20,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-5" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <h3 class="text-white mb-4">Contact KWiKS Program</h3>
+                            <p class="text-white mb-4">Have questions about the KWiKS initiative or want to get your school or community involved? We'd love to hear from you.</p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-envelope fa-lg text-primary me-3"></i>
+                                        <div>
+                                            <small class="text-white d-block">Email</small>
+                                            <span class="text-white">kwiks@rsfsa.co.za</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-phone fa-lg text-primary me-3"></i>
+                                        <div>
+                                            <small class="text-white d-block">Phone</small>
+                                            <span id="kwiks-phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number" class="text-white">Click to show phone</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="text-center">
+                                <h5 class="text-white mb-3">Follow Our Impact</h5>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="#" class="text-primary fs-4" title="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="text-primary fs-4" title="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="text-primary fs-4" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="text-primary fs-4" title="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                                <p class="text-secondary mt-3 small">#KWiKS #KeepWarmKeepSafe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// KWiKS Page JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animate progress bar on scroll
+    const progressBar = document.querySelector('.progress-bar-kwiks');
+    const progressSection = document.getElementById('donate');
+
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Animate the progress bar
+                setTimeout(() => {
+                    progressBar.style.width = '75%';
+                }, 500);
+            }
+        });
+    }, observerOptions);
+
+    if (progressSection) {
+        observer.observe(progressSection);
+    }
+
+    // Add hover effects to cards
+    const kwikCards = document.querySelectorAll('.kwiks-card');
+    kwikCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+    });
+
+    // Animate statistics on scroll
+    const stats = document.querySelectorAll('.stat-number');
+    const statsSection = document.querySelector('.impact-stat').closest('section');
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                stats.forEach(stat => {
+                    const finalValue = stat.textContent;
+                    const numericValue = parseInt(finalValue.replace(/[^0-9]/g, ''));
+                    const suffix = finalValue.replace(/[0-9]/g, '');
+                    
+                    let currentValue = 0;
+                    const increment = numericValue / 100;
+                    
+                    const counter = setInterval(() => {
+                        currentValue += increment;
+                        if (currentValue >= numericValue) {
+                            stat.textContent = finalValue;
+                            clearInterval(counter);
+                        } else {
+                            stat.textContent = Math.floor(currentValue).toLocaleString() + suffix;
+                        }
+                    }, 20);
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+
+    // Form submission handling (placeholder for future implementation)
+    const donateButtons = document.querySelectorAll('[href="#donate"], .btn-kwiks');
+    donateButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#donate' || this.classList.contains('btn-kwiks')) {
+                e.preventDefault();
+                // Future: Integrate with donation platform
+                alert('Thank you for your interest in supporting KWiKS! Donation integration coming soon.');
+            }
+        });
+    });
+
+    // Phone number reveal functionality
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        phoneElement.addEventListener('click', function() {
+            const phoneNumber = this.getAttribute('data-number');
+            this.textContent = phoneNumber;
+            this.style.cursor = 'default';
+            this.title = phoneNumber;
+        });
+    }
+
+    // KWiKS contact phone number reveal functionality
+    const kwiksPhoneElement = document.getElementById('kwiks-phone-number');
+    if (kwiksPhoneElement) {
+        kwiksPhoneElement.addEventListener('click', function() {
+            const phoneNumber = this.getAttribute('data-number');
+            this.textContent = phoneNumber;
+            this.style.cursor = 'default';
+            this.title = phoneNumber;
+        });
+    }
+
+    // Gallery item hover effects
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const overlay = this.querySelector('.gallery-overlay');
+            if (overlay) {
+                overlay.style.transform = 'translateY(0)';
+            }
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const overlay = this.querySelector('.gallery-overlay');
+            if (overlay) {
+                overlay.style.transform = 'translateY(100%)';
+            }
+        });
+    });
+
+    // Timeline animation on scroll
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateX(0)';
+            }
+        });
+    }, { threshold: 0.3 });
+
+    timelineItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(-50px)';
+        item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        timelineObserver.observe(item);
+    });
+});
+</script>
+
+</body>
+</html>

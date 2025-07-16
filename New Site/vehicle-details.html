@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Details - Road Safety Foundation</title>
+    <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+    <meta name="description" content="Detailed information about this vehicle including specifications, pricing, and safety features.">
+    
+    <!-- Modern Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Cyborg Theme Colors */
+            --primary-color: #2a9fd6;
+            --secondary-color: #77b300;
+            --success-color: #77b300;
+            --info-color: #9933cc;
+            --warning-color: #ff8800;
+            --danger-color: #cc0000;
+            --light-color: #222;
+            --dark-color: #adafae;
+            --bg-primary: #060606;
+            --bg-secondary: #222;
+            --bg-tertiary: #333;
+            --bg-dark: #1a1a1a;
+            --bg-dark-secondary: #0a0a0a;
+            --bg-dark-tertiary: #2a2a2a;
+            --text-primary: #fff;
+            --text-secondary: #adafae;
+            --text-muted: #888;
+            --text-light: #f8f9fa;
+            --border-color: #333;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+            --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+            --border-radius: 0.375rem;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* Navigation Styles */
+        .modern-nav {
+            background: rgba(6, 6, 6, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            height: 60px !important;
+            min-height: 60px !important;
+        }
+
+        .modern-nav.scrolled {
+            background: rgba(6, 6, 6, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        main {
+            padding-top: 60px;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-primary) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Dropdown Styles */
+        .dropdown-menu {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            padding: 0.5rem 0;
+            margin-top: 0.125rem;
+        }
+
+        .dropdown-item {
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: var(--bg-tertiary);
+            color: var(--primary-color);
+        }
+
+        .dropdown-divider {
+            border-top: 1px solid var(--border-color);
+            margin: 0.5rem 0;
+        }
+
+        /* Submenu Styles */
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+            margin-left: -1px;
+        }
+
+        .vehicle-hero {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .vehicle-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .info-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .spec-item {
+            background: var(--bg-tertiary);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .spec-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .spec-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .price-display {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .safety-features {
+            background: linear-gradient(135deg, rgba(119, 179, 0, 0.1), rgba(119, 179, 0, 0.2));
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: var(--success-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn-action {
+            padding: 15px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary-action {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .btn-secondary-action {
+            background: var(--gradient-accent);
+            color: white;
+        }
+        
+        .btn-success-action {
+            background: linear-gradient(45deg, var(--success-color), #8bc34a);
+            color: white;
+        }
+        
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-primary);
+        }
+        
+        .error {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--danger-color);
+        }
+        
+        .breadcrumb {
+            background: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb-item a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="#vrt">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="#vrt">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="News.html">View and Comments</a></li>
+                            <li><a class="dropdown-item" href="#submissions">Submissions</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#did-you-know">Did You Know</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Loading/Error States -->
+    <div id="loading" class="loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <p class="mt-3">Loading vehicle details...</p>
+    </div>
+    
+    <div id="error" class="error" style="display: none;">
+        <i class="mbri-sad-face mbr-iconfont" style="font-size: 4rem;"></i>
+        <h4 class="mt-3">Vehicle Not Found</h4>
+        <p>The requested vehicle could not be found.</p>
+        <a href="NewVehicles.html" class="btn btn-primary">Back to Vehicles</a>
+    </div>
+
+    <!-- Vehicle Content (hidden initially) -->
+    <div id="vehicleContent" style="display: none;">
+        <!-- Hero Section -->
+        <section class="vehicle-hero">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="NewVehicles.html">New Vehicles</a></li>
+                        <li class="breadcrumb-item active" aria-current="page" id="breadcrumbVehicle">Vehicle</li>
+                    </ol>
+                </nav>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-3 font-weight-bold mb-4" id="vehicleTitle">Vehicle Name</h1>
+                        <p class="lead mb-4" id="vehicleDescription">Vehicle description</p>
+                        <div class="price-display">
+                            <h3 class="mb-0" id="vehiclePrice">Price Range</h3>
+                            <small>Starting from</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img id="vehicleImage" src="" alt="Vehicle" class="vehicle-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vehicle Details -->
+        <section class="features1 cid-siEkXlJqyE" id="features1-10">
+            <div class="container">
+                <div class="row">
+                    <!-- Specifications -->
+                    <div class="col-lg-8">
+                        <div class="info-card">
+                            <h3 class="mb-4">Specifications</h3>
+                            <div id="specificationsGrid" class="spec-grid">
+                                <!-- Specifications will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3 class="mb-4">Engine & Performance</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li><strong>Engine Options:</strong> <span id="engineOptions"></span></li>
+                                        <li><strong>Fuel Type:</strong> <span id="fuelType"></span></li>
+                                        <li><strong>Transmission:</strong> <span id="transmission"></span></li>
+                                        <li><strong>Fuel Consumption:</strong> <span id="fuelConsumption"></span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li><strong>Top Speed:</strong> <span id="topSpeed"></span></li>
+                                        <li><strong>Acceleration:</strong> <span id="acceleration"></span></li>
+                                        <li><strong>Warranty:</strong> <span id="warranty"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Safety & Actions -->
+                    <div class="col-lg-4">
+                        <div class="info-card safety-features">
+                            <h4 class="mb-3">Safety Rating</h4>
+                            <div class="text-center mb-3">
+                                <span id="safetyStars" style="font-size: 2rem; color: #ffd700;"></span>
+                                <div><span id="safetyRating"></span>/5 Stars</div>
+                            </div>
+                            <h5 class="mb-3">Key Safety Features</h5>
+                            <ul id="safetyFeaturesList" class="feature-list">
+                                <!-- Safety features will be populated by JavaScript -->
+                            </ul>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <a id="safetyFeaturesBtn" href="#" class="btn-action btn-primary-action">
+                                Detailed Safety Features
+                            </a>
+                            <a id="financeCalculatorBtn" href="#" target="_blank" class="btn-action btn-secondary-action">
+                                Finance Calculator
+                            </a>
+                            <a id="manufacturerBtn" href="#" target="_blank" class="btn-action btn-success-action">
+                                Manufacturer Website
+                            </a>
+                            <a id="roadTestBtn" href="#" target="_blank" class="btn-action btn-primary-action">
+                                Read Road Test
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/smooth-scroll/smooth-scroll.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+    
+    <script>
+        // Get vehicle ID from URL parameters
+        function getVehicleIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+        
+        // Load vehicle data
+        async function loadVehicleDetails() {
+            const vehicleId = getVehicleIdFromUrl();
+            
+            if (!vehicleId) {
+                showError();
+                return;
+            }
+            
+            try {
+                const response = await fetch('data/vehicles.json');
+                const data = await response.json();
+                const vehicle = data.vehicles.find(v => v.id === vehicleId);
+                
+                if (!vehicle) {
+                    showError();
+                    return;
+                }
+                
+                displayVehicleDetails(vehicle);
+                
+            } catch (error) {
+                console.error('Error loading vehicle details:', error);
+                showError();
+            }
+        }
+        
+        function displayVehicleDetails(vehicle) {
+            // Update page title
+            document.title = `${vehicle.make} ${vehicle.model} ${vehicle.year} - Road Safety Foundation`;
+            
+            // Update breadcrumb
+            document.getElementById('breadcrumbVehicle').textContent = `${vehicle.make} ${vehicle.model}`;
+            
+            // Update hero section
+            document.getElementById('vehicleTitle').textContent = `${vehicle.make} ${vehicle.model} ${vehicle.year}`;
+            document.getElementById('vehicleDescription').textContent = vehicle.description;
+            document.getElementById('vehicleImage').src = vehicle.image;
+            document.getElementById('vehicleImage').alt = `${vehicle.make} ${vehicle.model}`;
+            
+            // Update price
+            const formattedMinPrice = new Intl.NumberFormat('en-ZA', {
+                style: 'currency',
+                currency: 'ZAR',
+                minimumFractionDigits: 0
+            }).format(vehicle.priceRange.min);
+            
+            const formattedMaxPrice = new Intl.NumberFormat('en-ZA', {
+                style: 'currency',
+                currency: 'ZAR',
+                minimumFractionDigits: 0
+            }).format(vehicle.priceRange.max);
+            
+            const priceText = vehicle.priceRange.min === vehicle.priceRange.max 
+                ? formattedMinPrice 
+                : `${formattedMinPrice} - ${formattedMaxPrice}`;
+            
+            document.getElementById('vehiclePrice').textContent = priceText;
+            
+            // Update specifications grid
+            const specsGrid = document.getElementById('specificationsGrid');
+            const specs = [
+                { label: 'Category', value: vehicle.category },
+                { label: 'Boot Space', value: vehicle.keySpecs.bootSpace || 'N/A' },
+                { label: 'Payload', value: vehicle.keySpecs.payloadCapacity || 'N/A' },
+                { label: 'Towing', value: vehicle.keySpecs.towingCapacity || 'N/A' }
+            ];
+            
+            specsGrid.innerHTML = specs.map(spec => `
+                <div class="spec-item">
+                    <span class="spec-value">${spec.value}</span>
+                    <div class="spec-label">${spec.label}</div>
+                </div>
+            `).join('');
+            
+            // Update engine & performance
+            document.getElementById('engineOptions').textContent = vehicle.engineOptions.join(', ');
+            document.getElementById('fuelType').textContent = vehicle.fuelType.join(', ');
+            document.getElementById('transmission').textContent = vehicle.transmission.join(', ');
+            document.getElementById('fuelConsumption').textContent = vehicle.keySpecs.fuelConsumption;
+            document.getElementById('topSpeed').textContent = vehicle.keySpecs.topSpeed;
+            document.getElementById('acceleration').textContent = vehicle.keySpecs.acceleration;
+            document.getElementById('warranty').textContent = vehicle.keySpecs.warranty;
+            
+            // Update safety rating
+            const safetyStars = '★'.repeat(vehicle.safetyRating) + '☆'.repeat(5 - vehicle.safetyRating);
+            document.getElementById('safetyStars').textContent = safetyStars;
+            document.getElementById('safetyRating').textContent = vehicle.safetyRating;
+            
+            // Update safety features list
+            const safetyList = document.getElementById('safetyFeaturesList');
+            safetyList.innerHTML = vehicle.safetyFeatures.slice(0, 6).map(feature => 
+                `<li>${feature}</li>`
+            ).join('');
+            
+            // Update action buttons
+            document.getElementById('safetyFeaturesBtn').href = `vehicle-safety.html?id=${vehicle.id}`;
+            document.getElementById('financeCalculatorBtn').href = vehicle.financeCalculatorUrl;
+            document.getElementById('manufacturerBtn').href = vehicle.manufacturerUrl;
+            document.getElementById('roadTestBtn').href = vehicle.roadTestUrl;
+            
+            // Show content and hide loading
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('vehicleContent').style.display = 'block';
+        }
+        
+        function showError() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+        }
+        
+        // Load vehicle details when page loads
+        document.addEventListener('DOMContentLoaded', loadVehicleDetails);
+    </script>
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="text-light me-3" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-light me-3" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b" target="_blank" class="text-light me-3" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="text-light" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Torque</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2"></i>
+                    info@roadsafetyfoundation.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2"></i>
+                    +27 (0) 11 123 4567
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Modern JavaScript for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Handle dropdown submenus
+    document.querySelectorAll('.dropdown-submenu > a').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const submenu = this.nextElementSibling;
+            if (submenu) {
+                // Close other submenus
+                document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function(menu) {
+                    if (menu !== submenu) {
+                        menu.style.display = 'none';
+                    }
+                });
+                
+                // Toggle current submenu
+                if (submenu.style.display === 'block') {
+                    submenu.style.display = 'none';
+                } else {
+                    submenu.style.display = 'block';
+                }
+            }
+        });
+    });
+
+    // Close submenus when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown-submenu')) {
+            document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function(menu) {
+                menu.style.display = 'none';
+            });
+        }
+    });
+});
+</script>
+
+<script>
+        // Get vehicle ID from URL parameters
+        function getVehicleIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // Load vehicle details
+        async function loadVehicleDetails() {
+            const vehicleId = getVehicleIdFromUrl();
+            
+            if (!vehicleId) {
+                showError();
+                return;
+            }
+            
+            try {
+                const response = await fetch('data/vehicles.json');
+                const data = await response.json();
+                const vehicle = data.vehicles.find(v => v.id === vehicleId);
+                
+                if (!vehicle) {
+                    showError();
+                    return;
+                }
+                
+                displayVehicleDetails(vehicle);
+                
+            } catch (error) {
+                console.error('Error loading vehicle details:', error);
+                showError();
+            }
+        }
+
+        function displayVehicleDetails(vehicle) {
+            // Update page title
+            document.title = `${vehicle.make} ${vehicle.model} - Road Safety Foundation`;
+            
+            // Update breadcrumb
+            document.getElementById('vehicleName').textContent = `${vehicle.make} ${vehicle.model}`;
+            
+            // Update hero section
+            document.getElementById('vehicleTitle').textContent = `${vehicle.make} ${vehicle.model}`;
+            document.getElementById('vehicleDescription').textContent = vehicle.description;
+            document.getElementById('vehicleImage').src = vehicle.image;
+            document.getElementById('vehicleImage').alt = `${vehicle.make} ${vehicle.model}`;
+            document.getElementById('vehiclePrice').textContent = `From R${vehicle.price.toLocaleString()}`;
+            
+            // Update specifications grid
+            const specsGrid = document.getElementById('specificationsGrid');
+            const specs = [
+                { label: 'Category', value: vehicle.category },
+                { label: 'Boot Space', value: vehicle.keySpecs.bootSpace || 'N/A' },
+                { label: 'Payload', value: vehicle.keySpecs.payloadCapacity || 'N/A' },
+                { label: 'Towing', value: vehicle.keySpecs.towingCapacity || 'N/A' }
+            ];
+            
+            specsGrid.innerHTML = specs.map(spec => `
+                <div class="spec-item">
+                    <span class="spec-value">${spec.value}</span>
+                    <div class="spec-label">${spec.label}</div>
+                </div>
+            `).join('');
+            
+            // Update engine & performance
+            document.getElementById('engineOptions').textContent = vehicle.engineOptions.join(', ');
+            document.getElementById('fuelType').textContent = vehicle.fuelType.join(', ');
+            document.getElementById('transmission').textContent = vehicle.transmission.join(', ');
+            document.getElementById('fuelConsumption').textContent = vehicle.keySpecs.fuelConsumption;
+            document.getElementById('topSpeed').textContent = vehicle.keySpecs.topSpeed;
+            document.getElementById('acceleration').textContent = vehicle.keySpecs.acceleration;
+            document.getElementById('warranty').textContent = vehicle.keySpecs.warranty;
+            
+            // Update safety rating
+            const safetyStars = '★'.repeat(vehicle.safetyRating) + '☆'.repeat(5 - vehicle.safetyRating);
+            document.getElementById('safetyStars').textContent = safetyStars;
+            document.getElementById('safetyRating').textContent = vehicle.safetyRating;
+            
+            // Update safety features list
+            const safetyList = document.getElementById('safetyFeaturesList');
+            safetyList.innerHTML = vehicle.safetyFeatures.slice(0, 6).map(feature => 
+                `<li>${feature}</li>`
+            ).join('');
+            
+            // Update action buttons
+            document.getElementById('safetyFeaturesBtn').href = `vehicle-safety.html?id=${vehicle.id}`;
+            document.getElementById('financeCalculatorBtn').href = vehicle.financeCalculatorUrl;
+            document.getElementById('manufacturerBtn').href = vehicle.manufacturerUrl;
+            document.getElementById('roadTestBtn').href = vehicle.roadTestUrl;
+            
+            // Show content and hide loading
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('vehicleContent').style.display = 'block';
+        }
+        
+        function showError() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+        }
+        
+        // Load vehicle details when page loads
+        document.addEventListener('DOMContentLoaded', loadVehicleDetails);
+</script>
+</body>
+</html>

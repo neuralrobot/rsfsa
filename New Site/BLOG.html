@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Road Safety Foundation Blog - Stories, insights and experiences from the field">
+  <title>Blog - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      padding-top: 80px;
+    }
+
+    /* Static Navigation Styles */
+    .modern-nav {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+
+    .navbar-brand {
+      font-size: 1.1rem;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .navbar-nav {
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-item {
+      margin: 0;
+    }
+
+    .nav-link {
+      padding: 0.75rem 1rem !important;
+      border-radius: 0;
+      transition: all 0.3s ease;
+      position: relative;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      background: rgba(42, 159, 214, 0.1);
+      border-bottom-color: var(--primary-color);
+      color: var(--text-light) !important;
+    }
+
+    .nav-link.active {
+      background: rgba(42, 159, 214, 0.15);
+      color: var(--primary-color) !important;
+      border-bottom-color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 1400px) {
+      .nav-link {
+        padding: 0.6rem 0.8rem !important;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .nav-link {
+        padding: 0.5rem 0.6rem !important;
+        font-size: 0.8rem;
+      }
+
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .navbar-brand img {
+        height: 35px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .nav-link {
+        padding: 0.4rem 0.5rem !important;
+        font-size: 0.75rem;
+      }
+
+      .navbar-brand {
+        font-size: 0.9rem;
+      }
+
+      .navbar-brand img {
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-link {
+        padding: 0.3rem 0.4rem !important;
+        font-size: 0.7rem;
+      }
+
+      .navbar-brand span {
+        display: none;
+      }
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(153, 51, 204, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .blog-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      border-color: #2a9fd6 !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .blog-card img {
+      border-radius: 0.5rem 0.5rem 0 0;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .blog-meta {
+      font-size: 0.875rem;
+      color: #888;
+    }
+
+    .read-more-btn {
+      transition: all 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body>
+<header>
+    <nav class="modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                    <span class="fw-bold text-primary">Road Safety Foundation</span>
+                </a>
+
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Videos.html">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="legislation.html">Legislation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PetSafety.html">Motor Vehicles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="DriverWellness.html">Driver Wellness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Pedestrians.html">Pedestrians</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Trucking.html">Trucking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="News.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="BLOG.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Stories & Insights
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Road Safety <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Blog</span></h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">Real stories, experiences and insights from the field of road safety in South Africa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts Section -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Featured Blog Post -->
+            <div class="col-lg-8">
+                <article class="card blog-card h-100">
+                    <img src="assets/images/van-reenen-pic-1-1400x940-44.jpg" class="card-img-top" alt="Van Reenen Pass">
+                    <div class="card-body">
+                        <div class="blog-meta mb-3">
+                            <span class="text-info">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-1">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                December 2023
+                            </span>
+                            <span class="text-muted mx-2">•</span>
+                            <span class="text-success">Featured Story</span>
+                        </div>
+                        <h2 class="card-title fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">A Typical Night on the "Hill"</h2>
+                        <p class="card-text mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.05rem; line-height: 1.6;">Monday, a quiet day over the festive season period at Van Reenens Pass on the N3, a welcome respite after Sunday morning's horror crash outside Harrismith which claimed thirty lives, ten of them children...</p>
+                        <a href="#story1" class="btn btn-outline-info read-more-btn">
+                            Read Full Story
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="ms-2">
+                                <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12,5 19,12 12,19" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="row g-4">
+                    <!-- Recent Posts -->
+                    <div class="col-12">
+                        <div class="card blog-card">
+                            <div class="card-body">
+                                <h5 class="card-title text-success fw-semibold mb-3">Recent Posts</h5>
+                                <div class="list-group list-group-flush">
+                                    <a href="#story2" class="list-group-item list-group-item-action bg-transparent border-secondary text-light">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">The Saga Continues</h6>
+                                            <small class="text-muted">Dec 2023</small>
+                                        </div>
+                                        <p class="mb-1 small">Continuing the story from Van Reenen Pass...</p>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action bg-transparent border-secondary text-light">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Highway Safety Tips</h6>
+                                            <small class="text-muted">Nov 2023</small>
+                                        </div>
+                                        <p class="mb-1 small">Essential safety tips for highway driving...</p>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action bg-transparent border-secondary text-light">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Truck Driver Fatigue</h6>
+                                            <small class="text-muted">Nov 2023</small>
+                                        </div>
+                                        <p class="mb-1 small">Addressing the critical issue of driver fatigue...</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="col-12">
+                        <div class="card blog-card">
+                            <div class="card-body">
+                                <h5 class="card-title text-warning fw-semibold mb-3">Categories</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-info text-dark">Field Stories</span>
+                                    <span class="badge bg-success text-dark">Safety Tips</span>
+                                    <span class="badge bg-warning text-dark">Research</span>
+                                    <span class="badge bg-danger text-light">Emergency Response</span>
+                                    <span class="badge bg-secondary text-light">Education</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Full Story Section -->
+<section id="story1" class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <article class="card blog-card">
+                    <img src="assets/images/van-reenen-pic-1-1400x940-44.jpg" class="card-img-top" alt="Van Reenen Pass">
+                    <div class="card-body">
+                        <div class="blog-meta mb-3">
+                            <span class="text-info">December 2023</span>
+                            <span class="text-muted mx-2">•</span>
+                            <span class="text-success">Field Report</span>
+                        </div>
+                        <h2 class="text-light fw-semibold mb-4">A Typical Night on the "Hill"</h2>
+
+                        <div style="line-height: 1.8; color: #f8f9fa; font-size: 1.1rem;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Monday, a quiet day over the festive season period at Van Reenens Pass on the N3, a welcome respite after Sunday morning's horror crash outside Harrismith which claimed thirty lives, ten of them children. A day where vehicles and equipment are washed and checked and medical consumables are replaced in each vehicle, a period where the members of the Community Medical Services Team can relax and spend some healing time after this recent tragedy.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"><strong style="color: #2a9fd6; background: rgba(42, 159, 214, 0.2); padding: 2px 6px; border-radius: 4px;">18:35</strong> – A call comes through advising of an obstruction between ourselves and Montrose, approximately 6kms north of our base. A vehicle is despatched to assist with scene safety.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">On arrival, we find a heavy truck that has damaged its propshaft, and is obstructing the slow northbound lane. A call is placed to the operator in Johannesburg to advise him of the trucks situation. Now normally the sequence of events in a case like this, would be a call to the operator to advise him of the situation, a call to a towing service to remove the vehicle to a safe position, thereby opening the road and removing a potentially dangerous obstruction, and releasing those emergency personnel that are assisting. However in this case, the operator refuses to accept liability for any towing costs, and instead despatches another horse from Johannesburg. This horse eventually arrives around 01:00 on Tuesday morning. In the meantime, the 'traditional' mist had covered the entire area, and attempts to manage and maintain an element of safety had become dangerously difficult. Apart from the lives of those tasked with protecting the scene, the chances of secondary crashes became a real issue as visibility reduced to less than 30 metres.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Second Story Section -->
+<section id="story2" class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <article class="card blog-card">
+                    <img src="assets/images/van-reenen-pic-2-1400x940-37.jpg" class="card-img-top" alt="Van Reenen Pass Continued">
+                    <div class="card-body">
+                        <div class="blog-meta mb-3">
+                            <span class="text-info">December 2023</span>
+                            <span class="text-muted mx-2">•</span>
+                            <span class="text-warning">Continuation</span>
+                        </div>
+                        <h2 class="text-light fw-semibold mb-4">The Saga Continues</h2>
+
+                        <div style="line-height: 1.8; color: #f8f9fa; font-size: 1.1rem;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Whilst we all accept the economics and increasing costs of operating a transport and distribution company, what happened here in our opinion was unacceptable.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">In KwaZulu Natal, south of our position, there is no option – if a vehicle is causing an obstruction and cannot be repaired within approximately 30 minutes, a tow truck is authorised by the Road Traffic Inspectorate, the vehicle is removed and the costs are forwarded to the operator. Personally, I believe this to be the correct and most efficient method of dealing with such a situation – <strong style="color: #77b300; background: rgba(119, 179, 0, 0.2); padding: 2px 6px; border-radius: 4px;">lives and safety come first !!!</strong></p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"><strong style="color: #2a9fd6; background: rgba(42, 159, 214, 0.2); padding: 2px 6px; border-radius: 4px;">05:10</strong> – After a couple of hours sleep, another call for an obstruction to the northbound slow lane some 20 kms north of our position. A vehicle is despatched in thick mist to assist.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">On arrival, we're greeted by two tired N3 Toll Concessions patrol personnel who are already on scene, who advise us that this heavy truck has run out of diesel. Once again, a dangerous situation has now developed, as at this time of the morning, large volumes of trucks are once again on the move, and with the mist reducing visibility once again to around 30 metres, combined with some drivers that are not yet fully awake, our lives and those of other road users becomes seriously prejudiced. What was incredibly frustrating, was that this driver had passed a fuel station less than 5kms previously !!!</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The N3 Toll Concessions patrol vehicle, assists by taking the driver to purchase 40 litres of diesel, sufficient to get the vehicle to Harrismith. The patrol vehicle returned with the diesel, and attempts to restart the truck were initiated. Fortunately, at this point, the mist had started to dissipate, and visibility was improving.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Next minute, the terrifying sound of tyres squealing, we all swung around and about 200 metres away, a heavy truck travelling south had lost control and was in the process of rolling. The end result – <strong style="color: #cc0000; background: rgba(204, 0, 0, 0.2); padding: 2px 6px; border-radius: 4px;">one person killed and one critically injured</strong>, one destroyed truck, trailer and contents and more devastated family members of those killed and injured.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">What caused this particular accident – we can only guess, however a combination of speed and fatigue would be my guess.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Statistically there is a marked increase in the number of truck accidents that take place early in the morning, and from 29 years of personal observations on the N3 over peak traffic periods, fatigue has got to be a major role player in these crashes.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); background: rgba(255, 136, 0, 0.1); padding: 15px; border-left: 4px solid #ff8800; border-radius: 4px;"><strong style="color: #ff8800;">Why can we not increase tolls by a few cents, and allow access by truckers to free truck stops that offer security, a safe place to sleep, decent ablutions and good meals.</strong> Those hundreds of truckers who choose not to utilise the current truck stops and who park on the side of the road, not only are illegal and create a dangerous environment, but also run the risk of losing wheels and whatever product they may be transporting. It must be impossible to have a good night's sleep, when you have to keep one ear open for criminals that may be tampering with your vehicle!</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Phone number reveal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

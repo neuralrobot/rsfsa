@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Associate Partners - Road Safety Foundation partnerships with associate organizations">
+  <title>Associate Partners - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+    }
+
+    /* Modern Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      height: 60px;
+      transition: all 0.3s ease;
+    }
+
+    .modern-nav .navbar-brand {
+      color: var(--text-primary) !important;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .modern-nav .navbar-nav .nav-link {
+      color: var(--text-secondary) !important;
+      font-weight: 500;
+      padding: 0.5rem 1rem !important;
+      transition: all 0.3s ease;
+      border-radius: 6px;
+      margin: 0 0.2rem;
+    }
+
+    .modern-nav .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+      background: rgba(42, 159, 214, 0.1);
+    }
+
+    .modern-nav .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+      background: rgba(42, 159, 214, 0.15);
+    }
+
+    .modern-nav .dropdown-menu {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      box-shadow: var(--shadow-lg);
+      margin-top: 0.5rem;
+    }
+
+    .modern-nav .dropdown-item {
+      color: var(--text-secondary);
+      padding: 0.6rem 1.2rem;
+      font-weight: 400;
+      transition: all 0.3s ease;
+    }
+
+    .modern-nav .dropdown-item:hover {
+      background: rgba(42, 159, 214, 0.1);
+      color: var(--primary-color);
+    }
+
+    .modern-nav .dropdown-item.active {
+      background: rgba(42, 159, 214, 0.2);
+      color: var(--primary-color);
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(153, 51, 204, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .partner-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+      border-color: #2a9fd6 !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .partner-logo {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .partner-logo img {
+      max-height: 60px;
+      max-width: 100%;
+      object-fit: contain;
+      filter: brightness(0.8);
+      transition: all 0.3s ease;
+    }
+
+    .partner-card:hover .partner-logo img {
+      filter: brightness(1);
+      transform: scale(1.05);
+    }
+
+    .partnership-box {
+      background: rgba(42, 159, 214, 0.1) !important;
+      border: 1px solid #2a9fd6 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .benefits-box {
+      background: rgba(119, 179, 0, 0.1) !important;
+      border: 1px solid #77b300 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .contact-box {
+      background: rgba(255, 136, 0, 0.1) !important;
+      border: 1px solid #ff8800 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    /* Fix overlapping issues */
+    section {
+      position: relative;
+      z-index: 1;
+      clear: both;
+    }
+
+    body {
+      padding-top: 60px;
+      background-color: #060606;
+      color: #fff;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #fff;
+    }
+
+    .text-white {
+      color: #fff !important;
+    }
+
+    .bg-dark {
+      background-color: #222 !important;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 80px 0;
+      }
+      
+      .modern-nav .navbar-nav .nav-link {
+        margin: 0.2rem 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="menu">
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="#vrt">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Partners
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="founding-partners.html">Founding</a></li>
+                            <li><a class="dropdown-item active" href="associate-partners.html">Associates</a></li>
+                            <li><a class="dropdown-item" href="operational-partners.html">Operational</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="#vrt">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#my-gift">My Gift</a></li>
+                            <li><a class="dropdown-item" href="#tyre-safety">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="#fire-extinguishers">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="#fleet-watch">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="News.html">View and Comments</a></li>
+                            <li><a class="dropdown-item" href="#submissions">Submissions</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#did-you-know">Did You Know</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </section>
+
+  <div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="display-4 text-white">Associate Partners</h1>
+          <p class="lead text-white">Strategic collaborations driving road safety awareness and education</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="partners1 mbr-fullscreen" id="partners1-1a">
+    <div class="mbr-overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="partnership-box">
+            <h2 class="text-center mb-4">
+              <i class="fas fa-handshake text-primary me-3"></i>
+              Associate Partnership Program
+            </h2>
+            <p class="text-center">
+              Our Associate Partners are organizations that share our commitment to road safety and work with us to create awareness, educate communities, and implement safety initiatives. These partnerships allow us to extend our reach and amplify our impact across different sectors and communities.
+            </p>
+            
+            <div class="text-center mt-4">
+              <a href="ContactUs.html" class="btn btn-primary btn-lg px-5 py-3">
+                <i class="fas fa-handshake me-2"></i>
+                Become a Partner
+              </a>
+              <p class="text-muted mt-3 mb-0">
+                <small>Ready to join our mission? Contact us to learn more about partnership opportunities.</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">          <h3 class="text-center mb-5">Our Associate Partners</h3>
+          <div class="row">
+            <!-- Fleet Watch -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card partner-card h-100">
+                <div class="card-body text-center">
+                  <div class="partner-logo">
+                    <img src="assets/images/Fleetwatch Logo.png" alt="Fleet Watch Logo" class="img-fluid" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <h5 class="card-title">Fleet Watch</h5>
+                  <p class="card-text">A community-driven initiative promoting road safety awareness and responsible driving behavior through social media engagement and public reporting.</p>
+                  <div class="mt-3">
+                    <a href="https://www.facebook.com/onlineFW/" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <i class="fab fa-facebook me-2"></i>Visit Page
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Master Drive -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card partner-card h-100">
+                <div class="card-body text-center">
+                  <div class="partner-logo">
+                    <img src="assets/images/MasterDrive.jpg" alt="MasterDrive Logo" class="img-fluid" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <h5 class="card-title">MasterDrive</h5>
+                  <p class="card-text">Leading provider of advanced driver training programs including defensive driving, truck roll-over prevention, and motorcycle safety training across South Africa.</p>
+                  <div class="mt-3">
+                    <a href="https://www.masterdrive.co.za/" target="_blank" class="btn btn-outline-success btn-sm">
+                      <i class="fas fa-globe me-2"></i>Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FleetMax Africa -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card partner-card h-100">
+                <div class="card-body text-center">
+                  <div class="partner-logo">
+                    <img src="assets/images/FleetMax.png" alt="FleetMax Africa Logo" class="img-fluid" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <h5 class="card-title">FleetMax Africa</h5>
+                  <p class="card-text">Fleet management and logistics solutions provider focused on improving commercial vehicle safety and operational efficiency across Africa.</p>
+                  <div class="mt-3">
+                    <a href="https://www.facebook.com/p/Fleetmax-Africa-Pty-Ltd-100064799053281/" target="_blank" class="btn btn-outline-info btn-sm">
+                      <i class="fab fa-facebook me-2"></i>Visit Page
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- N3TC -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card partner-card h-100">
+                <div class="card-body text-center">
+                  <div class="partner-logo">
+                    <img src="assets/images/N3TC Logo.png" alt="N3TC Logo" class="img-fluid" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <h5 class="card-title">N3 Toll Concession</h5>
+                  <p class="card-text">Operates and maintains the N3 Toll Route, connecting major provinces and promoting road safety along one of South Africa's busiest transport corridors.</p>
+                  <div class="mt-3">
+                    <a href="http://www.n3tc.co.za/" target="_blank" class="btn btn-outline-warning btn-sm">
+                      <i class="fas fa-globe me-2"></i>Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SANRAL -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card partner-card h-100">
+                <div class="card-body text-center">
+                  <div class="partner-logo">
+                    <img src="assets/images/Sanral.jpg" alt="SANRAL Logo" class="img-fluid" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <h5 class="card-title">SANRAL</h5>
+                  <p class="card-text">South African National Roads Agency responsible for the planning, design, construction, maintenance and management of the national road network.</p>
+                  <div class="mt-3">
+                    <a href="https://www.nra.co.za/" target="_blank" class="btn btn-outline-danger btn-sm">
+                      <i class="fas fa-globe me-2"></i>Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RTMC -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card partner-card h-100">
+                <div class="card-body text-center">
+                  <div class="partner-logo">
+                    <img src="assets/images/RTMC.png" alt="RTMC Logo" class="img-fluid" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <h5 class="card-title">RTMC</h5>
+                  <p class="card-text">Road Traffic Management Corporation - the lead road safety agency in South Africa, coordinating strategic planning and law enforcement across all levels of government.</p>
+                  <div class="mt-3">
+                    <a href="https://www.rtmc.co.za/" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <i class="fas fa-globe me-2"></i>Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Partner Row -->
+          <div class="row">
+            <!-- Mercedes-Benz SA -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card partner-card h-100">
+                <div class="card-body text-center">
+                  <div class="partner-logo">
+                    <img src="assets/images/mbsa.jpg" alt="Mercedes-Benz SA Logo" class="img-fluid" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <h5 class="card-title">Mercedes-Benz SA</h5>
+                  <p class="card-text">Leading luxury automotive manufacturer committed to advancing vehicle safety technologies and supporting road safety initiatives across South Africa.</p>
+                  <div class="mt-3">
+                    <a href="https://www.mercedes-benz.co.za/" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <i class="fas fa-globe me-2"></i>Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Old Mutual Insure -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card partner-card h-100">
+                <div class="card-body text-center">
+                  <div class="partner-logo">
+                    <img src="assets/images/Old Mutual Logo.png" alt="Old Mutual Insure Logo" class="img-fluid" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <h5 class="card-title">Old Mutual Insure</h5>
+                  <p class="card-text">Leading insurance provider committed to road safety through comprehensive vehicle insurance solutions and driver safety education programs.</p>
+                  <div class="mt-3">
+                    <a href="https://www.oldmutual.co.za/" target="_blank" class="btn btn-outline-warning btn-sm">
+                      <i class="fas fa-globe me-2"></i>Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Michelin -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card partner-card h-100">
+                <div class="card-body text-center">
+                  <div class="partner-logo">
+                    <img src="assets/images/michelin logo.png" alt="Michelin Logo" class="img-fluid" style="max-height: 60px; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <h5 class="card-title">Michelin</h5>
+                  <p class="card-text">Global tire manufacturer focused on mobility safety, providing high-quality tires and supporting road safety education worldwide.</p>
+                  <div class="mt-3">
+                    <a href="https://www.michelin.com/" target="_blank" class="btn btn-outline-info btn-sm">
+                      <i class="fas fa-globe me-2"></i>Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3x1 Information Cards Section -->
+      <div class="row mt-5">
+        <!-- Partnership Benefits -->
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="benefits-box h-100">
+            <h3 class="text-center mb-4">
+              <i class="fas fa-star text-success me-3"></i>
+              Partnership Benefits
+            </h3>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Access to road safety educational resources and materials
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Joint awareness campaign opportunities
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Training and capacity building programs
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Networking with other safety-focused organizations
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Recognition and visibility for safety initiatives
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Become an Associate Partner -->
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="contact-box h-100">
+            <h3 class="text-center mb-4">
+              <i class="fas fa-envelope text-warning me-3"></i>
+              Become an Associate Partner
+            </h3>
+            <p class="text-center mb-4">
+              Are you interested in joining our Associate Partner network? We welcome organizations that share our vision of safer roads for everyone.
+            </p>
+            
+            <div class="text-center">
+              <h5>Partnership Criteria:</h5>
+              <ul class="list-unstyled mt-3">
+                <li class="mb-2">
+                  <i class="fas fa-arrow-right text-warning me-2"></i>
+                  Commitment to road safety values
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-arrow-right text-warning me-2"></i>
+                  Willingness to collaborate on initiatives
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-arrow-right text-warning me-2"></i>
+                  Ability to reach and engage communities
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-arrow-right text-warning me-2"></i>
+                  Alignment with our mission and values
+                </li>
+              </ul>
+            </div>
+
+            <div class="text-center mt-4">
+              <p><strong>Contact us to explore partnership opportunities:</strong></p>
+              <p>
+                <i class="fas fa-envelope me-2"></i>
+                <a href="mailto:partnerships@roadsafetyfoundation.co.za" class="text-primary">partnerships@roadsafetyfoundation.co.za</a>
+              </p>
+              <p>
+                <i class="fas fa-phone me-2"></i>
+                <a href="tel:+27123456789" class="text-primary">+27 12 345 6789</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Billboard Programme -->
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="benefits-box h-100" style="border: 2px solid #ff8800; background: linear-gradient(135deg, rgba(255, 136, 0, 0.1) 0%, rgba(255, 136, 0, 0.05) 100%);">
+            <h3 class="text-center mb-4">
+              <i class="fas fa-bullhorn text-warning me-3"></i>
+              Billboard Programme
+            </h3>
+            <div class="text-center mb-4">
+              <p class="text-white mb-3">
+                Strategic billboard placements near Van Reenen's Pass on the N3 route - deliver your road safety message to thousands of motorists daily.
+              </p>
+            </div>
+            
+            <div class="mb-3">
+              <h6 class="text-warning mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i>Prime Location
+              </h6>
+              <ul class="list-unstyled small">
+                <li class="mb-1"><i class="fas fa-road text-warning me-2"></i>Van Reenen's Pass - N3 corridor</li>
+                <li class="mb-1"><i class="fas fa-eye text-warning me-2"></i>High visibility positioning</li>
+                <li class="mb-1"><i class="fas fa-truck text-warning me-2"></i>Major freight route</li>
+              </ul>
+            </div>
+            
+            <div class="mb-3">
+              <h6 class="text-warning mb-2">
+                <i class="fas fa-handshake me-2"></i>Benefits
+              </h6>
+              <ul class="list-unstyled small">
+                <li class="mb-1"><i class="fas fa-dollar-sign text-warning me-2"></i>Cost-effective solution</li>
+                <li class="mb-1"><i class="fas fa-heart text-warning me-2"></i>Show safety commitment</li>
+                <li class="mb-1"><i class="fas fa-users text-warning me-2"></i>Reach diverse demographics</li>
+              </ul>
+            </div>
+            
+            <div class="text-center mt-auto">
+              <a href="ContactUs.html" class="btn btn-warning btn-sm px-3">
+                <i class="fas fa-bullhorn me-2"></i>Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+<script>
+// Phone number reveal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>

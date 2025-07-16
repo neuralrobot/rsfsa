@@ -1,0 +1,3842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Our Story - 42 Years of Volunteer Para-Medic Service on Van Reenens Pass">
+  <title>Our Story - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <!-- Font Awesome from multiple CDNs for reliability -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" crossorigin="anonymous">
+  <!-- Backup for icons if Font Awesome fails -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    body {
+      padding-top: 60px;
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .dropdown-menu {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .dropdown-item {
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background: var(--bg-tertiary);
+      color: var(--primary-color);
+    }
+
+    .dropdown-item.active {
+      background: var(--bg-tertiary);
+      color: var(--primary-color);
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
+                  url('assets/images/Philip TP.png') center/cover;
+      padding: 100px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(119, 179, 0, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Story Timeline Styles */
+    .story-timeline {
+      background: #000000;
+      min-height: calc(42 * 175px);
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    .chapter-row {
+      height: 175px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      padding: 15px 0;
+    }
+
+    .chapter-row:hover {
+      background: rgba(42, 159, 214, 0.05);
+      border-left: 4px solid var(--primary-color);
+      padding-left: 16px;
+    }
+
+    .chapter-row:last-child {
+      border-bottom: none;
+    }
+
+    /* Column Styles */
+    .chapter-number {
+      width: 120px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chapter-number-badge {
+      width: 100px;
+      height: 100px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 2.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .chapter-actions {
+      width: 120px;
+      flex-shrink: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .action-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      font-size: 16px;
+      position: relative;
+    }
+
+    /* Ensure Font Awesome icons are visible */
+    .action-icon i {
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      -webkit-font-smoothing: antialiased !important;
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      display: inline-block !important;
+      font-size: 16px !important;
+    }
+
+    /* Specific icon styles */
+    .action-icon i.fa-book::before,
+    .action-icon i.fas.fa-book::before {
+      content: "\f02d" !important;
+    }
+    
+    .action-icon i.fa-headphones::before,
+    .action-icon i.fas.fa-headphones::before {
+      content: "\f025" !important;
+    }
+    
+    .action-icon i.fa-images::before,
+    .action-icon i.fas.fa-images::before {
+      content: "\f302" !important;
+    }
+    
+    .action-icon i.fa-play::before,
+    .action-icon i.fas.fa-play::before {
+      content: "\f04b" !important;
+    }
+
+    /* Bootstrap Icons fallback */
+    .action-icon.read:not(:has(i))::before {
+      content: "";
+      font-family: "bootstrap-icons" !important;
+      font-size: 16px;
+    }
+    
+    .action-icon.listen:not(:has(i))::before {
+      content: "";
+      font-family: "bootstrap-icons" !important;
+      font-size: 16px;
+    }
+    
+    .action-icon.images:not(:has(i))::before {
+      content: "";
+      font-family: "bootstrap-icons" !important;
+      font-size: 16px;
+    }
+    
+    .action-icon.video:not(:has(i))::before {
+      content: "";
+      font-family: "bootstrap-icons" !important;
+      font-size: 16px;
+    }
+
+    /* Unicode fallback if both Font Awesome and Bootstrap Icons fail */
+    .action-icon.read:empty::after {
+      content: "📖";
+      font-size: 18px;
+    }
+    
+    .action-icon.listen:empty::after {
+      content: "🎧";
+      font-size: 18px;
+    }
+    
+    .action-icon.images:empty::after {
+      content: "🖼️";
+      font-size: 18px;
+    }
+    
+    .action-icon.video:empty::after {
+      content: "▶️";
+      font-size: 18px;
+    }
+
+    .action-icon.read {
+      background: rgba(42, 159, 214, 0.2);
+      color: var(--primary-color);
+    }
+
+    .action-icon.listen {
+      background: rgba(119, 179, 0, 0.2);
+      color: var(--secondary-color);
+    }
+
+    .action-icon.images {
+      background: rgba(153, 51, 204, 0.2);
+      color: var(--info-color);
+    }
+
+    .action-icon.video {
+      background: rgba(255, 136, 0, 0.2);
+      color: var(--warning-color);
+    }
+
+    .action-icon:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .action-icon.read:hover {
+      border-color: var(--primary-color);
+      background: rgba(42, 159, 214, 0.3);
+    }
+
+    .action-icon.listen:hover {
+      border-color: var(--secondary-color);
+      background: rgba(119, 179, 0, 0.3);
+    }
+
+    .action-icon.images:hover {
+      border-color: var(--info-color);
+      background: rgba(153, 51, 204, 0.3);
+    }
+
+    .action-icon.video:hover {
+      border-color: var(--warning-color);
+      background: rgba(255, 136, 0, 0.3);
+    }
+
+    .chapter-content {
+      flex: 1;
+      padding: 0 20px;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .chapter-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 5px;
+    }
+
+    .world-event {
+      font-size: 0.8rem;
+      color: var(--warning-color);
+      font-style: italic;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    .world-event::before {
+      content: "🌍 ";
+      margin-right: 4px;
+    }
+
+    .chapter-intro {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .chapter-more {
+      align-self: flex-end;
+    }
+
+    .more-btn {
+      background: var(--gradient-accent);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .more-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1a7aa8;
+    }
+
+    /* Read Modal Styles */
+    .read-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 10000;
+      backdrop-filter: blur(5px);
+    }
+
+    .read-modal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .read-modal-content {
+      background: var(--bg-secondary);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: var(--shadow-xl);
+      animation: slideIn 0.3s ease;
+    }
+
+    .read-modal-header {
+      background: var(--gradient-primary);
+      color: white;
+      padding: 20px 30px;
+      border-radius: 10px 10px 0 0;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .read-modal-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .read-modal-year {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+
+    .read-modal-body {
+      padding: 30px 30px 80px 30px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+
+    .read-modal-body p {
+      margin-bottom: 20px;
+    }
+
+    .read-modal-body h4 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin: 30px 0 15px 0;
+      font-weight: 600;
+    }
+
+    .read-modal-close {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      background: var(--gradient-accent);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .read-modal-close:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { 
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Responsive adjustments for modal */
+    @media (max-width: 768px) {
+      .read-modal-content {
+        width: 95%;
+        max-height: 85vh;
+      }
+
+      .read-modal-header {
+        padding: 15px 20px;
+      }
+
+      .read-modal-body {
+        padding: 20px 20px 70px 20px;
+        font-size: 1rem;
+      }
+
+      .read-modal-close {
+        bottom: 15px;
+        right: 20px;
+        padding: 10px 20px;
+      }
+    }
+
+    /* CSS animation for loading state */
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+
+    /* Gallery Modal Styles */
+    .gallery-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 10001;
+        backdrop-filter: blur(5px);
+    }
+
+    .gallery-modal.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .gallery-modal-content {
+        background: var(--bg-secondary);
+        border: 2px solid var(--border-color);
+        border-radius: 12px;
+        max-width: 95%;
+        width: 1200px;
+        max-height: 90vh;
+        overflow: hidden;
+        position: relative;
+        box-shadow: var(--shadow-xl);
+        animation: slideIn 0.3s ease;
+    }
+
+    .gallery-modal-header {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .gallery-modal-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .gallery-modal-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .gallery-modal-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+    }
+
+    .gallery-modal-body {
+        padding: 0;
+        height: calc(90vh - 80px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gallery-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px;
+        background: #000;
+    }
+
+    .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(42, 159, 214, 0.8);
+        border: none;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+        font-size: 1.2rem;
+    }
+
+    /* Ensure Font Awesome icons in gallery nav are visible */
+    .gallery-nav i {
+        font-style: normal !important;
+        font-variant: normal !important;
+        text-rendering: auto !important;
+        -webkit-font-smoothing: antialiased !important;
+        font-family: "Font Awesome 6 Free" !important;
+        font-weight: 900 !important;
+        display: inline-block !important;
+        font-size: 1.2rem !important;
+        color: white !important;
+    }
+
+    .gallery-nav i.fa-chevron-left::before {
+        content: "\f053" !important;
+    }
+    
+    .gallery-nav i.fa-chevron-right::before {
+        content: "\f054" !important;
+    }
+
+    /* Fallback if Font Awesome fails */
+    .gallery-nav:not(:has(i))::before {
+        font-family: 'Arial', sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .gallery-nav-left:not(:has(i))::before {
+        content: "‹";
+    }
+    
+    .gallery-nav-right:not(:has(i))::before {
+        content: "›";
+    }
+
+    .gallery-nav:hover {
+        background: rgba(42, 159, 214, 1);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: var(--shadow);
+    }
+
+    .gallery-nav:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    .gallery-nav-left {
+        left: 20px;
+    }
+
+    .gallery-nav-right {
+        right: 20px;
+    }
+
+    .gallery-nav:disabled {
+        background: rgba(128, 128, 128, 0.5);
+        cursor: not-allowed;
+        transform: translateY(-50%) scale(0.9);
+    }
+
+    .gallery-nav:disabled:hover {
+        background: rgba(128, 128, 128, 0.5);
+        transform: translateY(-50%) scale(0.9);
+    }
+
+    .gallery-image-container,
+    .gallery-video-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 75px;
+    }
+
+    .gallery-image {
+        width: 90%;
+        height: 58vh;
+        max-width: 90%;
+        max-height: 58vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .gallery-video {
+        width: 90%;
+        height: 58vh;
+        max-width: 90%;
+        max-height: 58vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .gallery-image-info,
+    .gallery-video-info {
+        margin-top: 15px;
+        text-align: center;
+        color: var(--text-primary);
+    }
+
+    .gallery-image-counter,
+    .gallery-video-counter {
+        font-size: 0.9rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .gallery-image-caption,
+    .gallery-video-caption {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.4;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .gallery-thumbnails {
+        background: var(--bg-tertiary);
+        padding: 20px;
+        max-height: 220px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .gallery-thumbnail {
+        width: 100px;
+        height: 75px;
+        object-fit: cover;
+        border-radius: 6px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        display: block;
+    }
+
+    .gallery-thumbnail:hover {
+        border-color: var(--primary-color);
+        transform: scale(1.05);
+    }
+
+    .gallery-thumbnail.active {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 10px rgba(42, 159, 214, 0.5);
+    }
+
+    /* Custom scrollbar for thumbnails */
+    .gallery-thumbnails::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar-track {
+        background: var(--bg-primary);
+        border-radius: 4px;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 4px;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar-thumb:hover {
+        background: #1a7aa8;
+    }
+
+    .video-thumbnail {
+        position: relative;
+        width: 80px;
+        height: 60px;
+        background: #333;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .video-thumbnail:hover {
+        border-color: var(--primary-color);
+        transform: scale(1.05);
+    }
+
+    .video-thumbnail.active {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 10px rgba(42, 159, 214, 0.5);
+    }
+
+    .video-thumbnail::before {
+        content: "▶";
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    /* Responsive gallery styles */
+    @media (max-width: 768px) {
+        .gallery-modal-content {
+            width: 98%;
+            max-height: 95vh;
+        }
+
+        .gallery-nav {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+        }
+
+        .gallery-nav-left {
+            left: 10px;
+        }
+
+        .gallery-nav-right {
+            right: 10px;
+        }
+
+        .gallery-image-container,
+        .gallery-video-container {
+            margin: 0 55px;
+        }
+
+        .gallery-thumbnails {
+            padding: 15px;
+            max-height: 170px;
+            gap: 12px;
+        }
+
+        .gallery-thumbnail,
+        .video-thumbnail {
+            width: 80px;
+            height: 60px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-nav {
+            width: 35px;
+            height: 35px;
+            font-size: 0.9rem;
+        }
+
+        .gallery-image-container,
+        .gallery-video-container {
+            margin: 0 45px;
+        }
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--bg-secondary);
+      padding: 40px 0;
+      color: var(--text-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 100% 0%, rgba(42, 159, 214, 0.1) 0%, transparent 70%),
+                  radial-gradient(circle at 0% 100%, rgba(119, 179, 0, 0.1) 0%, transparent 70%);
+      z-index: 1;
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .footer-logo {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: var(--primary-color);
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #1a7aa8;
+    }
+
+    .footer-text {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media (max-width: 992px) {
+      .chapter-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+      }
+
+      .chapter-number {
+        margin-bottom: 10px;
+      }
+
+      .chapter-content {
+        padding: 0 10px;
+      }
+
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 0.9rem;
+      }
+
+      .page-header {
+        padding: 80px 0 40px;
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .page-header p {
+        font-size: 1rem;
+      }
+
+      .story-timeline {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .chapter-number-badge {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+      }
+
+      .action-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+      }
+
+      .action-icon i {
+        font-size: 14px !important;
+      }
+
+      .more-btn {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+      }
+
+      /* Footer */
+      footer {
+        padding: 20px 0;
+      }
+
+      .footer-text {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .read-modal-content {
+        width: 95%;
+        max-height: 85vh;
+      }
+
+      .read-modal-header {
+        padding: 15px 20px;
+      }
+
+      .read-modal-body {
+        padding: 20px 20px 70px 20px;
+        font-size: 1rem;
+      }
+
+      .read-modal-close {
+        bottom: 15px;
+        right: 20px;
+        padding: 10px 20px;
+      }
+
+      /* Gallery Modal */
+      .gallery-modal-content {
+        width: 98%;
+        max-height: 95vh;
+      }
+
+      .gallery-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+
+      .gallery-nav-left {
+        left: 10px;
+      }
+
+      .gallery-nav-right {
+        right: 10px;
+      }
+
+      .gallery-image-container,
+      .gallery-video-container {
+        margin: 0 55px;
+      }
+
+      .gallery-thumbnails {
+        padding: 10px 15px;
+        max-height: 140px;
+      }
+
+      .gallery-thumbnail,
+      .video-thumbnail {
+        width: 60px;
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-nav {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+      }
+
+      .gallery-image-container,
+      .gallery-video-container {
+        margin: 0 45px;
+      }
+    }
+
+    /* Social Media Icons */
+    .social-links a {
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    .social-links i {
+      display: inline-block;
+      width: 1.5em;
+      text-align: center;
+    }
+
+    /* Ensure FontAwesome icons load properly */
+    .fab {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+
+    /* Form Styles */
+    .form-control {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .form-control:focus {
+      background: var(--bg-secondary);
+      border-color: var(--primary-color);
+      color: var(--text-primary);
+      box-shadow: 0 0 0 0.2rem rgba(42, 159, 214, 0.25);
+    }
+  </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                <span>Road Safety Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
+                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Adoptions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
+                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Driver
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="General.html">General</a></li>
+                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
+                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
+                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
+                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
+                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
+                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
+                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
+                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vehicles
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
+                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
+                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
+                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News worthy
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Did You Know
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Talk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Image Column (First Column) -->
+            <div class="col-lg-3 col-md-4 col-sm-12 order-lg-1 order-2 mb-lg-0 mb-4">
+                <div class="hero-image-container">
+                    <img src="assets/images/Philip TP.png" 
+                         alt="Philip - 42 Years of Service" 
+                         class="img-fluid"
+                         style="width: 200px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 2px solid #77b300;">
+                </div>
+            </div>
+            
+            <!-- Content Column (Second Column) -->
+            <div class="col-lg-9 col-md-8 col-sm-12 order-lg-2 order-1">
+                <div class="text-lg-start text-center">
+                    <span class="badge bg-success text-white px-3 py-2 rounded-pill mb-3 fw-semibold">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        42 Years of Service
+                    </span>
+                    <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Our <span style="color: #77b300; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Story</span></h1>
+                    <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">42 Years of Volunteer Para-Medic Service on Van Reenens Pass, N3 Route, KwaZulu-Natal. A journey of dedication, courage, and saving lives on one of South Africa's most treacherous mountain passes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Story Timeline -->
+<section class="story-timeline">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <!-- Chapter 1 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">1</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1983 - The Year It All Began</h3>
+                            <p class="world-event">The first mobile phone call was made by Motorola</p>
+                            <p class="chapter-intro">It was a cold winter morning on Van Reenens Pass when everything changed. A devastating accident would mark the beginning of a 42-year journey of volunteer emergency medical service that would save countless lives on this treacherous mountain route.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 2 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">2</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1984 - First Lessons in Emergency Care</h3>
+                            <p class="world-event">Apple Computer launched the first Macintosh personal computer</p>
+                            <p class="chapter-intro">Learning the ropes of emergency medical response in harsh mountain conditions. The first year brought challenges that would shape decades of life-saving service, from basic first aid to advanced trauma care.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 3 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">3</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1985 - The Mountain Claims Its Toll</h3>
+                            <p class="world-event">Microsoft Windows 1.0 was released</p>
+                            <p class="chapter-intro">A particularly brutal winter brought unprecedented challenges. Ice, fog, and treacherous conditions led to multiple major incidents that tested every skill and pushed the limits of mountain rescue capabilities.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapters 4-10 with varied content -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">4</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1986 - Building a Network of Heroes</h3>
+                            <p class="world-event">The Chernobyl nuclear disaster occurred in Ukraine</p>
+                            <p class="chapter-intro">Recruiting and training fellow volunteers who would become the backbone of emergency response on the pass. Creating a system that could respond to multiple incidents simultaneously across the mountain terrain.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">5</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1987 - The Christmas Miracle</h3>
+                            <p class="world-event">The Berlin Wall began to come down, ending the Cold War era</p>
+                            <p class="chapter-intro">A major bus accident on Christmas Eve that could have been a tragedy became a testament to the power of coordinated emergency response and the Christmas spirit of saving lives.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 6 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">6</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1988 - Advanced Training and Equipment</h3>
+                            <p class="world-event">The Internet was officially launched to the public</p>
+                            <p class="chapter-intro">Upgrading equipment and training protocols to handle increasingly complex emergency situations. The introduction of advanced life support capabilities that would dramatically improve survival rates.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 7 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">7</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1989 - The Year of Multiple Rescues</h3>
+                            <p class="world-event">The Berlin Wall fell, reuniting East and West Germany</p>
+                            <p class="chapter-intro">A record year for emergency responses, with the team handling over 200 incidents. From minor fender benders to major multi-vehicle accidents, every call was answered with professionalism and care.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 8 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">8</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1990 - Community Recognition</h3>
+                            <p class="world-event">Nelson Mandela was released from prison in South Africa</p>
+                            <p class="chapter-intro">The local community formally recognized the volunteer emergency service with awards and support. Local businesses began contributing resources, marking the beginning of community-wide support for mountain rescue operations.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 9 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">9</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1991 - Weather the Storm</h3>
+                            <p class="world-event">The World Wide Web was invented by Tim Berners-Lee</p>
+                            <p class="chapter-intro">A particularly severe storm season tested the limits of emergency response capabilities. Multiple incidents during blizzard conditions led to innovations in all-weather rescue techniques and equipment.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">10</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1992 - A Decade of Service</h3>
+                            <p class="world-event">The World Wide Web became publicly available</p>
+                            <p class="chapter-intro">Reflecting on ten years of emergency response, the lives saved, lessons learned, and the evolution of emergency medical services on Van Reenens Pass.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 11 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">11</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1993 - Technology Integration</h3>
+                            <p class="world-event">The first smartphone, IBM Simon, was released</p>
+                            <p class="chapter-intro">Integrating early mobile communication technology into emergency response operations. Radio systems and early cellular phones began to revolutionize coordination between rescue teams and medical facilities.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 12 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">12</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1994 - The Freedom Day Rescue</h3>
+                            <p class="world-event">South Africa held its first democratic elections with Nelson Mandela becoming president</p>
+                            <p class="chapter-intro">On South Africa's historic Freedom Day, a major accident involving multiple vehicles tested the team's ability to handle mass casualty incidents during a time of national celebration and heightened traffic.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 13 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">13</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1995 - Training the Next Generation</h3>
+                            <p class="world-event">Windows 95 was released, revolutionizing personal computing</p>
+                            <p class="chapter-intro">Establishing formal training programs for new volunteers. The creation of standardized protocols and certification processes that would ensure consistent, high-quality emergency medical care for years to come.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 14 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">14</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1996 - International Recognition</h3>
+                            <p class="world-event">Dolly the sheep became the first successfully cloned mammal</p>
+                            <p class="chapter-intro">The Van Reenens Pass emergency response team received international recognition from mountain rescue organizations worldwide. Exchange programs with rescue teams from other countries brought new techniques and equipment.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 15 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">15</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1997 - The Miracle on the Mountain</h3>
+                            <p class="world-event">Princess Diana died in a car crash in Paris</p>
+                            <p class="chapter-intro">A near-impossible rescue in extreme weather conditions saved the lives of an entire family trapped in their vehicle for over 12 hours. This incident became known as "The Miracle on the Mountain" and highlighted the dedication of volunteer responders.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 16 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">16</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1998 - Equipment Modernization</h3>
+                            <p class="world-event">Google was founded by Larry Page and Sergey Brin</p>
+                            <p class="chapter-intro">A major equipment upgrade brought state-of-the-art medical devices and rescue tools to the mountain. New ambulances, advanced cardiac monitors, and improved extraction equipment significantly enhanced response capabilities.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 17 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">17</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">1999 - Y2K and Beyond</h3>
+                            <p class="world-event">The world prepared for Y2K computer bug fears</p>
+                            <p class="chapter-intro">Preparing for the new millennium while maintaining continuous emergency coverage. The Y2K transition was managed seamlessly, with backup systems ensuring no interruption to life-saving services on the mountain.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 18 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">18</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2000 - New Millennium, Same Mission</h3>
+                            <p class="world-event">The Human Genome Project announced its first working draft</p>
+                            <p class="chapter-intro">Entering the new millennium with renewed commitment to saving lives. Technology advances began to include GPS tracking and digital communication systems, improving response times and coordination.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 19 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">19</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2001 - Facing New Challenges</h3>
+                            <p class="world-event">The September 11 attacks changed global security perspectives</p>
+                            <p class="chapter-intro">In a year that changed the world, the mountain rescue team continued their mission of saving lives. Enhanced security measures and emergency protocols were implemented while maintaining the human touch that defined their service.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">20</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2002 - Twenty Years Strong</h3>
+                            <p class="world-event">Wikipedia was launched, changing how we access information</p>
+                            <p class="chapter-intro">Two decades of service marked by technological advances, improved response times, and a new generation of volunteers carrying forward the mission of saving lives on the mountain.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 21 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">21</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2003 - Digital Age Emergency Response</h3>
+                            <p class="world-event">The Human Genome Project was completed</p>
+                            <p class="chapter-intro">Embracing digital technology to enhance emergency response. Computer-aided dispatch systems and digital medical records began to streamline operations and improve patient care continuity.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 22 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">22</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2004 - Community Partnerships</h3>
+                            <p class="world-event">Facebook was launched by Mark Zuckerberg</p>
+                            <p class="chapter-intro">Strengthening partnerships with local hospitals, police, and fire services. Collaborative training exercises and shared resources created a comprehensive emergency response network across the region.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 23 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">23</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2005 - The YouTube Generation</h3>
+                            <p class="world-event">YouTube was founded, revolutionizing video sharing</p>
+                            <p class="chapter-intro">Adapting training methods for a new generation of volunteers. Video-based learning and documentation began to supplement hands-on training, creating a comprehensive educational resource library.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 24 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">24</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2006 - Weather Station Installation</h3>
+                            <p class="world-event">Twitter was launched, changing social communication</p>
+                            <p class="chapter-intro">Installing advanced weather monitoring equipment to better predict dangerous conditions. Real-time weather data began to inform decisions about road closures and safety warnings, preventing many potential accidents.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 25 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">25</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2007 - Quarter Century Milestone</h3>
+                            <p class="world-event">The iPhone was released, revolutionizing mobile technology</p>
+                            <p class="chapter-intro">Celebrating 25 years of dedicated service with a formal recognition ceremony. Provincial officials honored the volunteers' contributions, and a memorial was established for those who served the mountain community.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 26 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">26</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2008 - Economic Crisis, Unwavering Service</h3>
+                            <p class="world-event">Global financial crisis affected economies worldwide</p>
+                            <p class="chapter-intro">During the global economic downturn, volunteers maintained their commitment despite personal challenges. Community support and creative fundraising ensured continuous operation without compromising service quality.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 27 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">27</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2009 - Social Media Integration</h3>
+                            <p class="world-event">WhatsApp was founded, changing instant messaging</p>
+                            <p class="chapter-intro">Embracing social media platforms to improve public safety communication. Real-time weather and road condition updates began reaching travelers through multiple digital channels, significantly reducing preventable accidents.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 28 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">28</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2010 - World Cup Safety Operations</h3>
+                            <p class="world-event">South Africa hosted the FIFA World Cup</p>
+                            <p class="chapter-intro">During the 2010 FIFA World Cup, enhanced safety operations managed increased traffic on Van Reenens Pass. The team's professionalism during this global spotlight demonstrated South African excellence in emergency services.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 29 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">29</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2011 - Advanced Life Support Certification</h3>
+                            <p class="world-event">Apple co-founder Steve Jobs passed away</p>
+                            <p class="chapter-intro">Achieving advanced life support certification for all active volunteers. This upgrade in training and equipment capabilities meant that critical patients could receive hospital-level care immediately at the scene.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">30</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2012 - Three Decades of Dedication</h3>
+                            <p class="world-event">Instagram reached 100 million active users</p>
+                            <p class="chapter-intro">Celebrating thirty years of volunteer service with recognition from provincial and national emergency services, and the establishment of training programs for future volunteers.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 31 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">31</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2013 - GPS and Mobile App Integration</h3>
+                            <p class="world-event">Edward Snowden revealed NSA surveillance programs</p>
+                            <p class="chapter-intro">Launching the first mobile app for emergency reporting and GPS location sharing. This technology breakthrough allowed faster incident location and reduced response times by an average of 40%.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 32 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">32</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2014 - International Training Exchange</h3>
+                            <p class="world-event">Malaysia Airlines Flight MH370 disappeared</p>
+                            <p class="chapter-intro">Participating in international mountain rescue training exchanges with teams from Switzerland, Canada, and New Zealand. These programs brought world-class techniques to South African mountain rescue operations.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 33 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">33</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2015 - Drone Technology Integration</h3>
+                            <p class="world-event">Paris terrorist attacks shocked the world</p>
+                            <p class="chapter-intro">Introducing drone technology for search and rescue operations. Aerial reconnaissance capabilities revolutionized incident assessment and helped locate victims in difficult terrain, especially during adverse weather conditions.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 34 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">34</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2016 - Mental Health Support Program</h3>
+                            <p class="world-event">Brexit referendum divided the United Kingdom</p>
+                            <p class="chapter-intro">Establishing a comprehensive mental health support program for volunteers and their families. Recognizing the psychological impact of emergency response work, professional counseling and peer support systems were implemented.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 35 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">35</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2017 - Medical Innovation Partnership</h3>
+                            <p class="world-event">Tesla Model 3 began production, advancing electric vehicles</p>
+                            <p class="chapter-intro">Partnering with medical schools to develop innovative emergency care techniques. Student paramedics began training on the mountain, bringing fresh perspectives while learning from experienced volunteers.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 36 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">36</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2018 - Environmental Conservation Initiative</h3>
+                            <p class="world-event">Greta Thunberg began her climate change activism</p>
+                            <p class="chapter-intro">Launching environmental conservation efforts alongside emergency services. The team began monitoring and protecting the unique mountain ecosystem while maintaining their primary mission of saving lives.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 37 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">37</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2019 - Youth Development Program</h3>
+                            <p class="world-event">Notre-Dame Cathedral fire captivated the world</p>
+                            <p class="chapter-intro">Establishing a youth development program to train the next generation of emergency responders. High school and university students began participating in structured programs that combined education with practical experience.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 38 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">38</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2020 - Pandemic Response Adaptation</h3>
+                            <p class="world-event">COVID-19 pandemic changed the world</p>
+                            <p class="chapter-intro">Adapting operations during the global COVID-19 pandemic. New safety protocols, personal protective equipment, and contactless procedures ensured continuous emergency services while protecting both responders and patients.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 39 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">39</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2021 - Digital Transformation</h3>
+                            <p class="world-event">Billionaires launched private space tourism</p>
+                            <p class="chapter-intro">Completing digital transformation of all emergency response systems. Cloud-based patient records, AI-assisted dispatch, and telemedicine capabilities brought 21st-century technology to mountain rescue operations.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">40</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2022 - Four Decades of Saving Lives</h3>
+                            <p class="world-event">ChatGPT was released, revolutionizing AI accessibility</p>
+                            <p class="chapter-intro">Marking forty years with hundreds of lives saved, thousands of incidents responded to, and a legacy that continues to inspire new generations of emergency responders.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 41 -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">41</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2023 - AI and Machine Learning Integration</h3>
+                            <p class="world-event">ChatGPT sparked global AI revolution</p>
+                            <p class="chapter-intro">Integrating artificial intelligence and machine learning into emergency response systems. Predictive analytics for weather patterns and traffic incidents began helping prevent accidents before they occur, marking a new era in proactive safety.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 42 - Final Chapter -->
+                <div class="chapter-row">
+                    <div class="chapter-number">
+                        <div class="chapter-number-badge">42</div>
+                    </div>
+                    <div class="chapter-actions">
+                        <div class="action-icon read" title="Read this Chapter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-icon listen" title="Listen to this Chapter">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="action-icon images" title="View Images for this Year">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="action-icon video" title="View Videos for this Year">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="chapter-content">
+                        <div>
+                            <h3 class="chapter-title">2024 - The Legacy Continues</h3>
+                            <p class="world-event">AI and autonomous vehicles reshape transportation worldwide</p>
+                            <p class="world-event">🌍 Forty-two years of unwavering dedication.</p>
+                            <p class="chapter-intro">Forty-two years of unwavering dedication to saving lives on Van Reenens Pass. From a single volunteer to a network of heroes, the mission continues with the Road Safety Foundation leading the charge for safer roads across South Africa.</p>
+                        </div>
+                        <div class="chapter-more">
+                            <button class="more-btn">More</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Gallery Modal -->
+<div class="gallery-modal" id="imageGalleryModal">
+    <div class="gallery-modal-content">
+        <div class="gallery-modal-header">
+            <h3 class="gallery-modal-title" id="imageGalleryTitle">Chapter Images</h3>
+            <button class="gallery-modal-close" onclick="closeImageGallery()">&times;</button>
+        </div>
+        <div class="gallery-modal-body">
+            <div class="gallery-container">
+                <button class="gallery-nav gallery-nav-left" onclick="previousImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="gallery-image-container">
+                    <img id="galleryImage" src="" alt="Chapter Image" class="gallery-image">
+                    <div class="gallery-image-info">
+                        <div class="gallery-image-counter" id="imageCounter">1 / 5</div>
+                        <div class="gallery-image-caption" id="imageCaption">Image caption</div>
+                    </div>
+                </div>
+                <button class="gallery-nav gallery-nav-right" onclick="nextImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="gallery-thumbnails" id="imageThumbnails">
+                <!-- Thumbnails will be generated dynamically -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video Gallery Modal -->
+<div class="gallery-modal" id="videoGalleryModal">
+    <div class="gallery-modal-content">
+        <div class="gallery-modal-header">
+            <h3 class="gallery-modal-title" id="videoGalleryTitle">Chapter Videos</h3>
+            <button class="gallery-modal-close" onclick="closeVideoGallery()">&times;</button>
+        </div>
+        <div class="gallery-modal-body">
+            <div class="gallery-container">
+                <button class="gallery-nav gallery-nav-left" onclick="previousVideo()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="gallery-video-container">
+                    <video id="galleryVideo" class="gallery-video" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-video-info">
+                        <div class="gallery-video-counter" id="videoCounter">1 / 3</div>
+                        <div class="gallery-video-caption" id="videoCaption">Video caption</div>
+                    </div>
+                </div>
+                <button class="gallery-nav gallery-nav-right" onclick="nextVideo()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="gallery-thumbnails" id="videoThumbnails">
+                <!-- Video thumbnails will be generated dynamically -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Read Modal -->
+<div class="read-modal" id="readModal">
+    <div class="read-modal-content">
+        <div class="read-modal-header">
+            <h3 class="read-modal-title" id="modalTitle">Chapter Title</h3>
+            <div class="read-modal-year" id="modalYear">Year</div>
+        </div>
+        <div class="read-modal-body" id="modalBody">
+            <!-- Content will be dynamically inserted here -->
+        </div>
+        <button class="read-modal-close" onclick="closeReadModal()">Close</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// ElevenLabs Configuration
+const ELEVENLABS_CONFIG = {
+    apiKey: 'sk_557ccec7d86ec44823e4a64cc8ec25fda02f3cc9c2149e6e', // Your ElevenLabs API key
+    voiceId: 'pNInz6obpgDQGcFmaJgB', // Adam - Pre-made voice (should work with free tier)
+    apiUrl: 'https://api.elevenlabs.io/v1/text-to-speech/',
+    model: 'eleven_monolingual_v1', // Good for English, can change to eleven_multilingual_v1 if needed
+    voiceSettings: {
+        stability: 0.5,
+        similarity_boost: 0.5,
+        style: 0.0,
+        use_speaker_boost: true
+    }
+};
+
+// Audio management
+let currentAudio = null;
+let isPlaying = false;
+
+// Function to convert HTML content to plain text for audio
+function htmlToText(html) {
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    
+    // Remove script and style elements
+    const scripts = temp.querySelectorAll('script, style');
+    scripts.forEach(el => el.remove());
+    
+    // Get text content and clean it up
+    let text = temp.textContent || temp.innerText || '';
+    
+    // Clean up whitespace and formatting
+    text = text.replace(/\s+/g, ' ').trim();
+    
+    // Remove any remaining HTML entities
+    text = text.replace(/&[#\w]+;/g, '');
+    
+    return text;
+}
+
+// Function to play chapter audio using ElevenLabs
+async function playChapterAudio(chapterNumber) {
+    if (!ELEVENLABS_CONFIG.apiKey || !ELEVENLABS_CONFIG.voiceId) {
+        alert('ElevenLabs API configuration is missing. Please check the API key and voice ID.');
+        return;
+    }
+
+    const chapter = chapterContent[chapterNumber];
+    if (!chapter) {
+        alert('Chapter content not found.');
+        return;
+    }
+
+    // Stop any currently playing audio
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+        isPlaying = false;
+        updateListenButtonStates();
+    }
+
+    try {
+        // Show loading state
+        updateListenButtonStates(chapterNumber, 'loading');
+        
+        // Prepare text content
+        const fullText = `${chapter.title}. ${htmlToText(chapter.content)}`;
+        
+        // Check text length (ElevenLabs has character limits)
+        if (fullText.length > 5000) {
+            // For very long content, we might want to split it or show a warning
+            console.warn('Text is quite long, this may take a while to generate...');
+        }
+
+        // Make API call to ElevenLabs
+        const response = await fetch(`${ELEVENLABS_CONFIG.apiUrl}${ELEVENLABS_CONFIG.voiceId}`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'audio/mpeg',
+                'Content-Type': 'application/json',
+                'xi-api-key': ELEVENLABS_CONFIG.apiKey
+            },
+            body: JSON.stringify({
+                text: fullText,
+                model_id: ELEVENLABS_CONFIG.model,
+                voice_settings: ELEVENLABS_CONFIG.voiceSettings
+            })
+        });
+
+        if (!response.ok) {
+            // Get more detailed error information
+            let errorText = '';
+            try {
+                const errorData = await response.json();
+                errorText = errorData.detail || errorData.message || JSON.stringify(errorData);
+            } catch (e) {
+                errorText = await response.text();
+            }
+            throw new Error(`ElevenLabs API error: ${response.status} ${response.statusText} - ${errorText}`);
+        }
+
+        // Convert response to audio blob
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+        
+        // Create and play audio
+        currentAudio = new Audio(audioUrl);
+        
+        currentAudio.addEventListener('loadstart', () => {
+            updateListenButtonStates(chapterNumber, 'loading');
+        });
+        
+        currentAudio.addEventListener('canplaythrough', () => {
+            updateListenButtonStates(chapterNumber, 'ready');
+        });
+        
+        currentAudio.addEventListener('play', () => {
+            isPlaying = true;
+            updateListenButtonStates(chapterNumber, 'playing');
+        });
+        
+        currentAudio.addEventListener('pause', () => {
+            isPlaying = false;
+            updateListenButtonStates();
+        });
+        
+        currentAudio.addEventListener('ended', () => {
+            isPlaying = false;
+            currentAudio = null;
+            updateListenButtonStates();
+            // Clean up the blob URL
+            URL.revokeObjectURL(audioUrl);
+        });
+        
+        currentAudio.addEventListener('error', (e) => {
+            console.error('Audio playback error:', e);
+            alert('Error playing audio. Please try again.');
+            updateListenButtonStates();
+        });
+
+        // Start playing
+        await currentAudio.play();
+        
+    } catch (error) {
+        console.error('Error generating or playing audio:', error);
+        
+        let errorMessage = 'Error generating audio. ';
+        if (error.message.includes('API error')) {
+            errorMessage += 'Please check your ElevenLabs API key and voice ID.';
+        } else if (error.message.includes('Failed to fetch')) {
+            errorMessage += 'Network error. Please check your internet connection.';
+        } else {
+            errorMessage += 'Please try again.';
+        }
+        
+        alert(errorMessage);
+        updateListenButtonStates();
+    }
+}
+
+// Function to stop audio playback
+function stopAudio() {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+        isPlaying = false;
+        updateListenButtonStates();
+    }
+}
+
+// Function to update listen button states across all chapters
+function updateListenButtonStates(activeChapter = null, state = 'default') {
+    const listenButtons = document.querySelectorAll('.action-icon.listen');
+    
+    listenButtons.forEach((button, index) => {
+        const chapterRow = button.closest('.chapter-row');
+        const chapterNumber = parseInt(chapterRow.querySelector('.chapter-number-badge').textContent);
+        const icon = button.querySelector('i');
+        
+        // Reset all buttons to default state first
+        button.classList.remove('loading', 'playing', 'ready');
+        button.style.animation = '';
+        
+        if (chapterNumber === activeChapter) {
+            switch (state) {
+                case 'loading':
+                    button.classList.add('loading');
+                    button.style.animation = 'pulse 1.5s infinite';
+                    button.title = 'Generating audio...';
+                    if (icon) icon.className = 'fas fa-spinner';
+                    break;
+                case 'ready':
+                    button.classList.add('ready');
+                    button.title = 'Ready to play';
+                    if (icon) icon.className = 'fas fa-headphones';
+                    break;
+                case 'playing':
+                    button.classList.add('playing');
+                    button.title = 'Playing audio - click to stop';
+                    if (icon) icon.className = 'fas fa-stop';
+                    break;
+                default:
+                    button.title = 'Listen to this Chapter';
+                    if (icon) icon.className = 'fas fa-headphones';
+            }
+        } else {
+            button.title = 'Listen to this Chapter';
+            if (icon) icon.className = 'fas fa-headphones';
+        }
+    });
+}
+
+// Chapter content data
+const chapterContent = {
+    1: {
+        title: "1983 - The Year It All Began",
+        year: "1983",
+        content: `
+            <p>It was a bitterly cold winter morning on July 15th, 1983, when Philip Hull witnessed an accident that would change his life forever and mark the beginning of 42 years of dedicated volunteer emergency medical service on Van Reenens Pass.</p>
+            
+            <h4>The Incident That Started It All</h4>
+            <p>A truck carrying a family had jackknifed on the icy road surface near the summit of Van Reenens Pass. The nearest ambulance was over 45 minutes away, and the injured passengers were in critical condition. Philip, with his basic first aid training, was the only person available to provide immediate medical assistance.</p>
+            
+            <p>That day, he saved three lives. But more importantly, he realized the desperate need for immediate medical response on this treacherous mountain pass that connects KwaZulu-Natal and the Free State.</p>
+            
+            <h4>The Decision</h4>
+            <p>Within weeks of that incident, Philip made a life-changing decision. He would dedicate himself to providing emergency medical services on Van Reenens Pass, ensuring that no one would have to wait helplessly for help to arrive from distant towns.</p>
+            
+            <p>He began by upgrading his first aid training, acquiring basic medical equipment, and establishing communication with local emergency services. Little did he know that this decision would grow into a 42-year legacy of saving lives on one of South Africa's most dangerous mountain passes.</p>
+            
+            <h4>The Early Challenges</h4>
+            <p>The harsh mountain conditions, unpredictable weather, and the sheer remoteness of the location made every emergency response a test of skill, courage, and determination. But Philip was committed to his mission, driven by the memory of that first winter morning when he first understood the true meaning of saving a life.</p>
+        `
+    },
+    2: {
+        title: "1984 - First Lessons in Emergency Care",
+        year: "1984",
+        content: `
+            <p>The second year brought invaluable lessons in emergency medical response. Every call was a learning experience, every life saved a validation of the mission that had begun just one year earlier.</p>
+            
+            <h4>Expanding Knowledge</h4>
+            <p>Philip enrolled in advanced first aid courses and began building relationships with paramedics and emergency medical personnel from surrounding areas. The knowledge gained would prove crucial in handling the complex trauma cases that were common on the mountain pass.</p>
+            
+            <p>This year saw the first major multi-vehicle accident response, where Philip's quick thinking and improved medical skills helped coordinate rescue efforts for eight casualties until professional emergency services could arrive.</p>
+            
+            <h4>Building the Foundation</h4>
+            <p>Equipment upgrades included a proper first aid station, improved communication devices, and a dedicated emergency vehicle. The foundation for what would become a comprehensive emergency response system was being laid, one piece at a time.</p>
+            
+            <p>Local truckers and regular pass users began to recognize Philip's vehicle and know that help was available. Word was spreading that Van Reenens Pass now had a guardian angel watching over travelers.</p>
+        `
+    },
+    3: {
+        title: "1985 - The Mountain Claims Its Toll",
+        year: "1985",
+        content: `
+            <p>The winter of 1985 was particularly brutal, with ice storms and fog creating some of the most dangerous driving conditions ever recorded on Van Reenens Pass. This year would test every skill Philip had developed and push the limits of what one person could accomplish.</p>
+            
+            <h4>The Great Ice Storm</h4>
+            <p>In June 1985, a severe ice storm left the pass completely impassable for three days. During this time, Philip responded to 15 separate incidents, ranging from minor injuries to life-threatening trauma cases. Working almost continuously for 72 hours, he provided medical care to over 30 people stranded on the mountain.</p>
+            
+            <p>This experience highlighted the need for additional volunteers and more sophisticated equipment. It also demonstrated the incredible impact that one dedicated person could have in emergency situations.</p>
+            
+            <h4>Recognition and Growth</h4>
+            <p>The provincial emergency services began to take notice of Philip's work. Official recognition came in the form of enhanced training opportunities and access to better medical equipment. The solo mission was beginning to evolve into something larger.</p>
+            
+            <p>The first volunteer approached Philip in late 1985, inspired by stories of his dedication and wanting to help save lives on the mountain. This marked the beginning of what would eventually become a network of trained volunteers.</p>
+        `
+    },
+    4: {
+        title: "1986 - Building a Network of Heroes",
+        year: "1986",
+        content: `
+            <p>With the success of the previous years and growing recognition of the need for emergency services on Van Reenens Pass, 1986 marked the beginning of building a network of dedicated volunteers who would carry the mission forward.</p>
+            
+            <h4>The First Recruits</h4>
+            <p>Three local residents joined Philip in 1986, each bringing unique skills and dedication to the cause. Together, they established the first formal training program for mountain emergency response, focusing on trauma care, mountain rescue techniques, and communication protocols.</p>
+            
+            <p>The team concept allowed for 24/7 coverage of the pass, ensuring that help would always be available regardless of the time of day or weather conditions.</p>
+            
+            <h4>Systematic Approach</h4>
+            <p>Standard operating procedures were developed, emergency response protocols were established, and a proper communication system was put in place. What had started as one man's mission was becoming a professional emergency response service.</p>
+            
+            <p>The success rate improved dramatically with the team approach, and response times were cut in half. The mountain pass was becoming safer for everyone who traveled through it.</p>
+        `
+    },
+    5: {
+        title: "1987 - The Christmas Miracle",
+        year: "1987",
+        content: `
+            <p>Christmas Eve 1987 brought one of the most challenging and ultimately rewarding experiences in the early years of the Van Reenens Pass emergency response service.</p>
+            
+            <h4>The Bus Accident</h4>
+            <p>A bus carrying 45 passengers, mostly families traveling home for Christmas, lost control on an icy section of the pass. The vehicle rolled down an embankment, leaving multiple casualties in difficult terrain during a snowstorm.</p>
+            
+            <p>The newly formed volunteer team responded immediately, despite the dangerous conditions. Working in shifts throughout the night, they provided medical care, coordinated with rescue services, and ensured that every passenger received appropriate treatment.</p>
+            
+            <h4>A Christmas to Remember</h4>
+            <p>All 45 passengers survived the accident. While many suffered injuries, the quick response and professional medical care provided by the volunteer team prevented any fatalities. It was truly a Christmas miracle.</p>
+            
+            <p>The families involved in the accident sent letters of gratitude that poured in for months afterward. This incident cemented the reputation of the Van Reenens Pass emergency service and demonstrated the life-saving impact of the volunteer program.</p>
+            
+            <p>Christmas 1987 became a defining moment that would be remembered and celebrated for years to come, proving that the spirit of giving and saving lives knows no bounds.</p>
+        `
+    },
+    10: {
+        title: "1992 - A Decade of Service",
+        year: "1992",
+        content: `
+            <p>Ten years after that first winter morning in 1983, the Van Reenens Pass emergency response service had grown from one man's mission into a respected and essential service recognized throughout KwaZulu-Natal and the Free State.</p>
+            
+            <h4>Milestone Achievements</h4>
+            <p>By 1992, the volunteer team had responded to over 1,200 emergency calls, saved countless lives, and established Van Reenens Pass as one of the safest mountain routes in South Africa despite its challenging terrain and weather conditions.</p>
+            
+            <p>The service now included 12 trained volunteers, modern emergency equipment, and formal partnerships with provincial emergency services, hospitals, and rescue organizations.</p>
+            
+            <h4>Training and Development</h4>
+            <p>A comprehensive training program was established, covering advanced trauma care, mountain rescue techniques, emergency vehicle operation, and psychological support for accident victims. The program became a model for other mountain pass emergency services.</p>
+            
+            <p>Recognition came in the form of awards from the provincial government and emergency services organizations. The volunteers were honored for their dedication and the measurable impact they had made on road safety.</p>
+            
+            <h4>Looking Forward</h4>
+            <p>As the service entered its second decade, plans were made for expansion and modernization. New technologies, improved equipment, and enhanced training would ensure that the mission could continue for years to come.</p>
+        `
+    },
+    20: {
+        title: "2002 - Twenty Years Strong",
+        year: "2002",
+        content: `
+            <p>Two decades of service marked a significant milestone in the evolution of emergency response on Van Reenens Pass. The volunteer service had not only survived but thrived, adapting to new technologies and changing needs while maintaining its core mission of saving lives.</p>
+            
+            <h4>Technology Revolution</h4>
+            <p>The year 2002 brought significant technological advances to the service. GPS tracking, digital communication systems, and computerized patient records improved response times and coordination with other emergency services.</p>
+            
+            <p>A new fleet of emergency vehicles, equipped with the latest medical equipment and communication technology, replaced the original makeshift response setup. The service now rivaled professional ambulance services in capabilities and response times.</p>
+            
+            <h4>New Generation of Volunteers</h4>
+            <p>Many of the original volunteers were now training the next generation of emergency responders. Sons and daughters of original volunteers joined the service, ensuring continuity and bringing fresh perspectives and energy to the mission.</p>
+            
+            <p>The volunteer base had grown to 25 trained responders, allowing for specialized teams focused on different aspects of emergency response, from trauma care to mountain rescue to psychological support.</p>
+            
+            <h4>Community Impact</h4>
+            <p>Studies showed that the fatality rate on Van Reenens Pass had decreased by 60% since the inception of the volunteer emergency service. The economic impact of improved road safety was estimated in the millions of rand annually.</p>
+            
+            <p>The service had become an integral part of the community and a symbol of what dedicated volunteers could accomplish when working together toward a common goal.</p>
+        `
+    },
+    30: {
+        title: "2012 - Three Decades of Dedication",
+        year: "2012",
+        content: `
+            <p>Thirty years of continuous volunteer service on Van Reenens Pass represented an extraordinary achievement in community service and emergency response. The legacy that began with one man's determination had grown into an institution.</p>
+            
+            <h4>Official Recognition</h4>
+            <p>In 2012, the Van Reenens Pass Emergency Response Service received formal recognition from both provincial and national emergency services organizations. The volunteers were honored with awards for exceptional community service and contributions to road safety.</p>
+            
+            <p>Government officials visited the service to understand how the volunteer model could be replicated on other dangerous routes throughout South Africa. The success story was featured in national media and emergency services publications.</p>
+            
+            <h4>Training Academy</h4>
+            <p>The establishment of a formal training academy marked a new chapter in the service's evolution. The academy began training volunteers not only for Van Reenens Pass but for other mountain routes throughout the region.</p>
+            
+            <p>Partnerships with medical schools and emergency services training programs brought academic rigor to the volunteer training process while maintaining the practical, hands-on approach that had proven so effective.</p>
+            
+            <h4>Legacy Planning</h4>
+            <p>With Philip now in his senior years, succession planning became a priority. The service had grown beyond any one individual and had established systems and procedures that would ensure its continuation for generations to come.</p>
+            
+            <p>The 30-year milestone was celebrated with a gathering of current and former volunteers, families of those who had been helped, and officials from throughout the emergency services community.</p>
+        `
+    },
+    40: {
+        title: "2022 - Four Decades of Saving Lives",
+        year: "2022",
+        content: `
+            <p>Forty years of volunteer emergency service represented an almost unimaginable achievement in dedication and community service. The impact of the Van Reenens Pass Emergency Response Service had extended far beyond the mountain pass itself.</p>
+            
+            <h4>Unprecedented Achievement</h4>
+            <p>By 2022, the service had responded to over 8,000 emergency calls, directly saved hundreds of lives, and provided assistance to tens of thousands of travelers. The transformation of Van Reenens Pass from one of South Africa's most dangerous routes to one of its safest was complete.</p>
+            
+            <p>Statistical analysis showed that response times had improved from an average of 45 minutes in 1983 to less than 8 minutes in 2022. The survival rate for serious accidents had increased dramatically, and the service had achieved international recognition.</p>
+            
+            <h4>Modern Emergency Service</h4>
+            <p>The volunteer service now operated with equipment and capabilities that exceeded many professional emergency services. Advanced life support capabilities, helicopter landing zones, and coordination with multiple emergency services had created a comprehensive safety net.</p>
+            
+            <p>The service had adapted to modern challenges including increased traffic volumes, new vehicle technologies, and changing injury patterns while maintaining its volunteer-based, community-focused approach.</p>
+            
+            <h4>Inspiring Others</h4>
+            <p>The Van Reenens Pass model had been replicated on mountain passes throughout South Africa and had influenced emergency response planning in other countries. The legacy of one man's decision in 1983 had grown to impact emergency services globally.</p>
+            
+            <p>Academic studies of the service contributed to emergency management theory and volunteer service models, ensuring that the lessons learned would benefit future emergency response development.</p>
+        `
+    },
+    42: {
+        title: "2024 - The Legacy Continues",
+        year: "2024",
+        content: `
+            <p>Forty-two years after that first winter morning in 1983, the Van Reenens Pass Emergency Response Service stands as a testament to what dedicated volunteers can accomplish when they commit themselves to serving others.</p>
+            
+            <h4>Completing the Circle</h4>
+            <p>In 2024, Philip Hull, now in his 80s, passed the leadership of the service to the next generation. The transition marked not an end but a continuation of the mission that had defined his life and touched thousands of others.</p>
+            
+            <p>The Road Safety Foundation of South Africa had grown from the Van Reenens Pass service, carrying the mission of safer roads and emergency preparedness throughout the country. The legacy had expanded beyond the mountain pass to influence road safety nationally.</p>
+            
+            <h4>Modern Challenges, Timeless Mission</h4>
+            <p>While technology and techniques had evolved dramatically since 1983, the core mission remained unchanged: to ensure that no one traveling through Van Reenens Pass would face an emergency alone. The volunteers of 2024 carried forward the same dedication and commitment that had driven Philip for four decades.</p>
+            
+            <p>New challenges including climate change effects on mountain weather, increased traffic volumes, and evolving vehicle technologies required constant adaptation, but the volunteer spirit and community commitment remained strong.</p>
+            
+            <h4>A Living Legacy</h4>
+            <p>The service continues to save lives, train new volunteers, and serve as an example of what communities can accomplish when they work together. The story that began with one person's decision to help has become a legacy that will endure for generations.</p>
+            
+            <p>Every life saved, every volunteer trained, and every family safely reunited carries forward the spirit of that cold winter morning in 1983 when everything changed on Van Reenens Pass.</p>
+            
+            <p>The legacy continues, and the mountain pass remains safe for all who travel through it, protected by volunteers who understand that saving lives is not just a service but a calling.</p>
+        `
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Chapter action handlers
+    document.querySelectorAll('.action-icon').forEach(icon => {
+        icon.addEventListener('click', function() {
+            const chapterRow = this.closest('.chapter-row');
+            const chapterNumber = parseInt(chapterRow.querySelector('.chapter-number-badge').textContent);
+            const actionType = this.classList.contains('read') ? 'read' :
+                              this.classList.contains('listen') ? 'listen' :
+                              this.classList.contains('images') ? 'images' : 'video';
+            
+            if (actionType === 'read') {
+                openReadModal(chapterNumber);
+            } else if (actionType === 'listen') {
+                // Handle audio playback
+                if (isPlaying && currentAudio) {
+                    stopAudio();
+                } else {
+                    playChapterAudio(chapterNumber);
+                }
+            } else if (actionType === 'images') {
+                openImageGallery(chapterNumber);
+            } else {
+                openVideoGallery(chapterNumber);
+            }
+        });
+    });
+
+    // More button handlers
+    document.querySelectorAll('.more-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const chapterRow = this.closest('.chapter-row');
+            const chapterNumber = chapterRow.querySelector('.chapter-number-badge').textContent;
+            
+            // Open read modal for "More" button as well
+            openReadModal(parseInt(chapterNumber));
+        });
+    });
+
+    // Smooth scrolling for timeline navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Close modal when clicking outside of content
+    document.getElementById('readModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeReadModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeReadModal();
+        }
+    });
+});
+
+function openReadModal(chapterNumber) {
+    const modal = document.getElementById('readModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalYear = document.getElementById('modalYear');
+    const modalBody = document.getElementById('modalBody');
+    
+    const chapter = chapterContent[chapterNumber];
+    
+    if (chapter) {
+        modalTitle.textContent = chapter.title;
+        modalYear.textContent = chapter.year;
+        modalBody.innerHTML = chapter.content;
+    } else {
+        // Default content for chapters not yet detailed
+        modalTitle.textContent = `Chapter ${chapterNumber}`;
+        modalYear.textContent = `${1982 + chapterNumber}`;
+        modalBody.innerHTML = `
+            <p>This chapter represents year ${1982 + chapterNumber} of the Van Reenens Pass Emergency Response Service.</p>
+            <p>Content for this chapter is being developed and will include detailed accounts of the events, challenges, and achievements of this important year in the service's history.</p>
+            <p>Each year brought new experiences, lessons learned, and lives saved through the dedication of volunteers committed to making Van Reenens Pass safer for all travelers.</p>
+        `;
+    }
+    
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeReadModal() {
+    const modal = document.getElementById('readModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = ''; // Restore background scrolling
+}
+
+// Gallery Modal Management
+let currentImageIndex = 0;
+let currentVideoIndex = 0;
+let currentImageGallery = [];
+let currentVideoGallery = [];
+
+// Sample image and video data for each chapter
+const galleryData = {
+    1: {
+        images: [
+            {
+                src: 'assets/images/1983-first-response.jpg',
+                caption: 'The first emergency response on Van Reenens Pass - July 15, 1983',
+                thumbnail: 'assets/images/thumbs/1983-first-response-thumb.jpg'
+            },
+            {
+                src: 'assets/images/1983-winter-conditions.jpg',
+                caption: 'Harsh winter conditions that led to the first accident',
+                thumbnail: 'assets/images/thumbs/1983-winter-conditions-thumb.jpg'
+            },
+            {
+                src: 'assets/images/1983-basic-equipment.jpg',
+                caption: 'Basic first aid equipment used in the early days',
+                thumbnail: 'assets/images/thumbs/1983-basic-equipment-thumb.jpg'
+            },
+            {
+                src: 'assets/images/1983-van-reenens-pass.jpg',
+                caption: 'Van Reenens Pass in 1983 - treacherous mountain terrain',
+                thumbnail: 'assets/images/thumbs/1983-van-reenens-pass-thumb.jpg'
+            },
+            {
+                src: 'assets/images/1983-philip-young.jpg',
+                caption: 'Philip Hull beginning his 42-year journey of service',
+                thumbnail: 'assets/images/thumbs/1983-philip-young-thumb.jpg'
+            }
+        ],
+        videos: [
+            {
+                src: 'assets/videos/1983-documentary-intro.mp4',
+                caption: 'Documentary introduction to the Van Reenens Pass emergency service',
+                thumbnail: 'assets/images/thumbs/1983-documentary-thumb.jpg'
+            },
+            {
+                src: 'assets/videos/1983-pass-conditions.mp4',
+                caption: 'Footage of Van Reenens Pass conditions in winter 1983',
+                thumbnail: 'assets/images/thumbs/1983-conditions-thumb.jpg'
+            },
+            {
+                src: 'assets/videos/1983-first-aid-training.mp4',
+                caption: 'Basic first aid training from the early years',
+                thumbnail: 'assets/images/thumbs/1983-training-thumb.jpg'
+            }
+        ]
+    },
+    2: {
+        images: [
+            {
+                src: 'assets/images/1984-training-course.jpg',
+                caption: 'Advanced first aid training course - 1984',
+                thumbnail: 'assets/images/thumbs/1984-training-course-thumb.jpg'
+            },
+            {
+                src: 'assets/images/1984-first-response-vehicle.jpg',
+                caption: 'The first dedicated emergency response vehicle',
+                thumbnail: 'assets/images/thumbs/1984-first-response-vehicle-thumb.jpg'
+            },
+            {
+                src: 'assets/images/1984-medical-equipment.jpg',
+                caption: 'Upgraded medical equipment for better emergency care',
+                thumbnail: 'assets/images/thumbs/1984-medical-equipment-thumb.jpg'
+            },
+            {
+                src: 'assets/images/1984-multi-vehicle-accident.jpg',
+                caption: 'Scene of the first major multi-vehicle accident response',
+                thumbnail: 'assets/images/thumbs/1984-multi-vehicle-accident-thumb.jpg'
+            }
+        ],
+        videos: [
+            {
+                src: 'assets/videos/1984-training-footage.mp4',
+                caption: 'Training footage from advanced first aid courses',
+                thumbnail: 'assets/images/thumbs/1984-training-footage-thumb.jpg'
+            },
+            {
+                src: 'assets/videos/1984-response-demonstration.mp4',
+                caption: 'Emergency response demonstration and procedures',
+                thumbnail: 'assets/images/thumbs/1984-response-demo-thumb.jpg'
+            }
+        ]
+    },
+    // Add more chapters as needed...
+    42: {
+        images: [
+            {
+                src: 'assets/images/2024-modern-service.jpg',
+                caption: 'Modern emergency response service in 2024',
+                thumbnail: 'assets/images/thumbs/2024-modern-service-thumb.jpg'
+            },
+            {
+                src: 'assets/images/2024-philip-legacy.jpg',
+                caption: 'Philip Hull - 42 years of dedicated service',
+                thumbnail: 'assets/images/thumbs/2024-philip-legacy-thumb.jpg'
+            },
+            {
+                src: 'assets/images/2024-volunteer-team.jpg',
+                caption: 'Current volunteer team carrying forward the mission',
+                thumbnail: 'assets/images/thumbs/2024-volunteer-team-thumb.jpg'
+            },
+            {
+                src: 'assets/images/2024-equipment-modern.jpg',
+                caption: 'State-of-the-art emergency equipment and vehicles',
+                thumbnail: 'assets/images/thumbs/2024-equipment-modern-thumb.jpg'
+            }
+        ],
+        videos: [
+            {
+                src: 'assets/videos/2024-legacy-documentary.mp4',
+                caption: '42 Years of Service - Complete documentary',
+                thumbnail: 'assets/images/thumbs/2024-legacy-documentary-thumb.jpg'
+            },
+            {
+                src: 'assets/videos/2024-modern-response.mp4',
+                caption: 'Modern emergency response in action',
+                thumbnail: 'assets/images/thumbs/2024-modern-response-thumb.jpg'
+            }
+        ]
+    }
+};
+
+// Function to get fallback content for chapters without specific gallery data
+function getFallbackGalleryData(chapterNumber) {
+    const year = 1982 + chapterNumber;
+    // Using data URLs for placeholder images to avoid 404 errors
+    const placeholderImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23333'/%3E%3Ctext x='400' y='300' font-family='Arial, sans-serif' font-size='24' fill='%23fff' text-anchor='middle'%3E${year} - Van Reenens Pass%3C/text%3E%3C/svg%3E";
+    const placeholderThumbnail = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90' viewBox='0 0 120 90'%3E%3Crect width='120' height='90' fill='%23444'/%3E%3Ctext x='60' y='45' font-family='Arial, sans-serif' font-size='12' fill='%23fff' text-anchor='middle'%3E${year}%3C/text%3E%3C/svg%3E";
+    
+    return {
+        images: [
+            {
+                src: placeholderImage,
+                caption: `Van Reenens Pass emergency service - ${year}`,
+                thumbnail: placeholderThumbnail
+            },
+            {
+                src: placeholderImage,
+                caption: `Volunteer team in action - ${year}`,
+                thumbnail: placeholderThumbnail
+            },
+            {
+                src: placeholderImage,
+                caption: `Emergency equipment and vehicles - ${year}`,
+                thumbnail: placeholderThumbnail
+            },
+            {
+                src: placeholderImage,
+                caption: `Life-saving response on the mountain - ${year}`,
+                thumbnail: placeholderThumbnail
+            }
+        ],
+        videos: [
+            {
+                src: '', // Empty for now, will show message
+                caption: `Emergency response footage - ${year} (Coming Soon)`,
+                thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90' viewBox='0 0 120 90'%3E%3Crect width='120' height='90' fill='%23222'/%3E%3Ctext x='60' y='35' font-family='Arial, sans-serif' font-size='10' fill='%23fff' text-anchor='middle'%3EVideo%3C/text%3E%3Ctext x='60' y='55' font-family='Arial, sans-serif' font-size='10' fill='%23fff' text-anchor='middle'%3EComing Soon%3C/text%3E%3C/svg%3E"
+            }
+        ]
+    };
+}
+
+// Image Gallery Functions
+function openImageGallery(chapterNumber) {
+    const modal = document.getElementById('imageGalleryModal');
+    const title = document.getElementById('imageGalleryTitle');
+    
+    // Get gallery data for this chapter
+    const data = galleryData[chapterNumber] || getFallbackGalleryData(chapterNumber);
+    currentImageGallery = data.images || [];
+    
+    if (currentImageGallery.length === 0) {
+        alert('No images available for this chapter yet.');
+        return;
+    }
+    
+    currentImageIndex = 0;
+    title.textContent = `Chapter ${chapterNumber} - Images`;
+    
+    // Generate thumbnails
+    generateImageThumbnails();
+    
+    // Show first image
+    displayCurrentImage();
+    
+    // Show modal
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageGallery() {
+    const modal = document.getElementById('imageGalleryModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+    currentImageGallery = [];
+    currentImageIndex = 0;
+}
+
+function displayCurrentImage() {
+    if (currentImageGallery.length === 0) return;
+    
+    const img = document.getElementById('galleryImage');
+    const counter = document.getElementById('imageCounter');
+    const caption = document.getElementById('imageCaption');
+    const leftNav = document.querySelector('.gallery-nav-left');
+    const rightNav = document.querySelector('.gallery-nav-right');
+    
+    const currentImage = currentImageGallery[currentImageIndex];
+    
+    // Add error handling for image loading
+    img.onerror = function() {
+        this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23333'/%3E%3Ctext x='400' y='280' font-family='Arial, sans-serif' font-size='24' fill='%23fff' text-anchor='middle'%3EImage Not Available%3C/text%3E%3Ctext x='400' y='320' font-family='Arial, sans-serif' font-size='16' fill='%23ccc' text-anchor='middle'%3EContent coming soon%3C/text%3E%3C/svg%3E";
+        this.onerror = null; // Prevent infinite loop
+    };
+    
+    img.src = currentImage.src;
+    img.alt = currentImage.caption;
+    counter.textContent = `${currentImageIndex + 1} / ${currentImageGallery.length}`;
+    caption.textContent = currentImage.caption;
+    
+    // Update navigation buttons
+    leftNav.disabled = currentImageIndex === 0;
+    rightNav.disabled = currentImageIndex === currentImageGallery.length - 1;
+    
+    // Update thumbnail active state
+    updateImageThumbnailsActive();
+}
+
+function generateImageThumbnails() {
+    const container = document.getElementById('imageThumbnails');
+    container.innerHTML = '';
+    
+    currentImageGallery.forEach((image, index) => {
+        const img = document.createElement('img');
+        img.src = image.thumbnail || image.src;
+        img.alt = image.caption;
+        img.className = 'gallery-thumbnail';
+        if (index === 0) img.classList.add('active');
+        
+        img.addEventListener('click', () => {
+            currentImageIndex = index;
+            displayCurrentImage();
+        });
+        
+        container.appendChild(img);
+    });
+}
+
+function updateImageThumbnailsActive() {
+    const thumbnails = document.querySelectorAll('#imageThumbnails .gallery-thumbnail');
+    thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+    });
+}
+
+function previousImage() {
+    if (currentImageIndex > 0) {
+        currentImageIndex--;
+        displayCurrentImage();
+    }
+}
+
+function nextImage() {
+    if (currentImageIndex < currentImageGallery.length - 1) {
+        currentImageIndex++;
+        displayCurrentImage();
+    }
+}
+
+// Video Gallery Functions
+function openVideoGallery(chapterNumber) {
+    const modal = document.getElementById('videoGalleryModal');
+    const title = document.getElementById('videoGalleryTitle');
+    
+    // Get gallery data for this chapter
+    const data = galleryData[chapterNumber] || getFallbackGalleryData(chapterNumber);
+    currentVideoGallery = data.videos || [];
+    
+    if (currentVideoGallery.length === 0) {
+        alert('No videos available for this chapter yet.');
+        return;
+    }
+    
+    currentVideoIndex = 0;
+    title.textContent = `Chapter ${chapterNumber} - Videos`;
+    
+    // Generate thumbnails
+    generateVideoThumbnails();
+    
+    // Show first video
+    displayCurrentVideo();
+    
+    // Show modal
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeVideoGallery() {
+    const modal = document.getElementById('videoGalleryModal');
+    const video = document.getElementById('galleryVideo');
+    
+    // Pause video when closing
+    video.pause();
+    
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+    currentVideoGallery = [];
+    currentVideoIndex = 0;
+}
+
+function displayCurrentVideo() {
+    if (currentVideoGallery.length === 0) return;
+    
+    const video = document.getElementById('galleryVideo');
+    const counter = document.getElementById('videoCounter');
+    const caption = document.getElementById('videoCaption');
+    const leftNav = document.querySelector('#videoGalleryModal .gallery-nav-left');
+    const rightNav = document.querySelector('#videoGalleryModal .gallery-nav-right');
+    
+    const currentVideo = currentVideoGallery[currentVideoIndex];
+    
+    // Pause current video before switching
+    video.pause();
+    
+    // Handle empty video sources (coming soon content)
+    if (!currentVideo.src || currentVideo.src === '') {
+        video.style.display = 'none';
+        // Show a "coming soon" message instead
+        let messageDiv = document.querySelector('.video-coming-soon-message');
+        if (!messageDiv) {
+            messageDiv = document.createElement('div');
+            messageDiv.className = 'video-coming-soon-message';
+            messageDiv.style.cssText = `
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #222;
+                color: #fff;
+                font-size: 1.2rem;
+                text-align: center;
+                border-radius: 8px;
+                width: 100%;
+                height: 400px;
+                margin: 20px 0;
+            `;
+            video.parentNode.insertBefore(messageDiv, video);
+        }
+        messageDiv.style.display = 'flex';
+        messageDiv.innerHTML = `
+            <div>
+                <i class="fas fa-video" style="font-size: 3rem; margin-bottom: 20px; color: #ff8800;"></i>
+                <br>
+                Video content for this chapter<br>
+                will be available soon
+            </div>
+        `;
+    } else {
+        // Hide coming soon message and show video
+        const messageDiv = document.querySelector('.video-coming-soon-message');
+        if (messageDiv) messageDiv.style.display = 'none';
+        
+        video.style.display = 'block';
+        
+        // Update video source
+        const source = video.querySelector('source');
+        source.src = currentVideo.src;
+        video.load(); // Reload the video element
+    }
+    
+    counter.textContent = `${currentVideoIndex + 1} / ${currentVideoGallery.length}`;
+    caption.textContent = currentVideo.caption;
+    
+    // Update navigation buttons
+    leftNav.disabled = currentVideoIndex === 0;
+    rightNav.disabled = currentVideoIndex === currentVideoGallery.length - 1;
+    
+    // Update thumbnail active state
+    updateVideoThumbnailsActive();
+}
+
+function generateVideoThumbnails() {
+    const container = document.getElementById('videoThumbnails');
+    container.innerHTML = '';
+    
+    currentVideoGallery.forEach((video, index) => {
+        const div = document.createElement('div');
+        div.className = 'video-thumbnail';
+        if (index === 0) div.classList.add('active');
+        
+        div.addEventListener('click', () => {
+            currentVideoIndex = index;
+            displayCurrentVideo();
+        });
+        
+        container.appendChild(div);
+    });
+}
+
+function updateVideoThumbnailsActive() {
+    const thumbnails = document.querySelectorAll('#videoThumbnails .video-thumbnail');
+    thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentVideoIndex);
+    });
+}
+
+function previousVideo() {
+    if (currentVideoIndex > 0) {
+        currentVideoIndex--;
+        displayCurrentVideo();
+    }
+}
+
+function nextVideo() {
+    if (currentVideoIndex < currentVideoGallery.length - 1) {
+        currentVideoIndex++;
+        displayCurrentVideo();
+    }
+}
+
+// Keyboard navigation for galleries
+document.addEventListener('keydown', function(e) {
+    // Image gallery navigation
+    if (document.getElementById('imageGalleryModal').classList.contains('show')) {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            previousImage();
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            nextImage();
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeImageGallery();
+        }
+    }
+    
+    // Video gallery navigation
+    if (document.getElementById('videoGalleryModal').classList.contains('show')) {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            previousVideo();
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            nextVideo();
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeVideoGallery();
+        }
+    }
+});
+
+// Close gallery modals when clicking outside content
+document.getElementById('imageGalleryModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeImageGallery();
+    }
+});
+
+document.getElementById('videoGalleryModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeVideoGallery();
+    }
+});
+
+// Phone number anti-scraping
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+
+// ElevenLabs Configuration
+</script>
+
+</body>
+</html>

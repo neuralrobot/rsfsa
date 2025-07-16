@@ -1,0 +1,5 @@
+// Placeholder Image for Testing
+// This would normally be a proper image file
+// For now, we'll use a data URL as a placeholder
+
+const placeholderImageDataURL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23333'/%3E%3Ctext x='400' y='300' font-family='Arial, sans-serif' font-size='24' fill='%23fff' text-anchor='middle'%3EPlaceholder Image%3C/text%3E%3C/svg%3E";

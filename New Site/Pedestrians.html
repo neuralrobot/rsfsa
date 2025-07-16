@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Pedestrian Safety - Essential information for pedestrians and drivers to share the road safely">
+  <title>Pedestrians - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      padding-top: 80px;
+    }
+
+    /* Static Navigation Styles */
+    .modern-nav {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+
+    .navbar-brand {
+      font-size: 1.1rem;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .navbar-nav {
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-item {
+      margin: 0;
+    }
+
+    .nav-link {
+      padding: 0.75rem 1rem !important;
+      border-radius: 0;
+      transition: all 0.3s ease;
+      position: relative;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      background: rgba(42, 159, 214, 0.1);
+      border-bottom-color: var(--primary-color);
+      color: var(--text-light) !important;
+    }
+
+    .nav-link.active {
+      background: rgba(42, 159, 214, 0.15);
+      color: var(--primary-color) !important;
+      border-bottom-color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 1400px) {
+      .nav-link {
+        padding: 0.6rem 0.8rem !important;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .nav-link {
+        padding: 0.5rem 0.6rem !important;
+        font-size: 0.8rem;
+      }
+
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .navbar-brand img {
+        height: 35px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .nav-link {
+        padding: 0.4rem 0.5rem !important;
+        font-size: 0.75rem;
+      }
+
+      .navbar-brand {
+        font-size: 0.9rem;
+      }
+
+      .navbar-brand img {
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-link {
+        padding: 0.3rem 0.4rem !important;
+        font-size: 0.7rem;
+      }
+
+      .navbar-brand span {
+        display: none;
+      }
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(153, 51, 204, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .pedestrian-card, .safety-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .pedestrian-card:hover, .safety-card:hover {
+      transform: translateY(-5px);
+      border-color: #2a9fd6 !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .competition-box {
+      background: rgba(119, 179, 0, 0.1) !important;
+      border: 1px solid #77b300 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .statistics-box {
+      background: rgba(220, 53, 69, 0.1) !important;
+      border: 1px solid #dc3545 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .quote-box {
+      background: rgba(42, 159, 214, 0.1) !important;
+      border-left: 4px solid #2a9fd6 !important;
+      border-radius: 4px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .category-item {
+      background: rgba(255, 136, 0, 0.1) !important;
+      border: 1px solid #ff8800 !important;
+      border-radius: 6px;
+      padding: 15px;
+      margin: 0.5rem 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      overflow: hidden;
+      border-radius: 0.5rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+<header>
+    <nav class="modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                    <span class="fw-bold text-primary">Road Safety Foundation</span>
+                </a>
+
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Videos.html">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="legislation.html">Legislation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PetSafety.html">Motor Vehicles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="DriverWellness.html">Driver Wellness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Pedestrians.html">Pedestrians</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Trucking.html">Trucking</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Partners
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="founding-partners.html">Founding</a></li>
+                            <li><a class="dropdown-item" href="associate-partners.html">Associates</a></li>
+                            <li><a class="dropdown-item" href="operational-partners.html">Operational</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="News.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Torque</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="BLOG.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Vulnerable Road Users
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Pedestrian <span style="color: #ff8800; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Safety</span></h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Is this your father, mother, child or just someone else on the road? Every pedestrian deserves to reach their destination safely.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Competition Timeline Section -->
+<section class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card safety-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-4" style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Competition Timeline & Process
+                        </h3>
+
+                        <div style="color: #f8f9fa; font-size: 1.05rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The Competition will be launched into all the schools during October, in conjunction with the various Provincial Department of Transport Road Safety Officers as well as key N3TC personnel.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Individual school judging will take place during the first week of November, following which the finalists' posters will be sent to N3TC's head office for the final judging by N3TC's management team and the Road Safety Foundation's directors.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The winners should be announced by the end of November 2008 and an exhibition of the winning posters will be set up at the THINK! Kidz initiative, which will take place at the Engen Vaal One-Stop on the 12th and 13th of December 2008.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics & Challenges Section -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card pedestrian-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-4" style="color: #dc3545; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2"/>
+                                <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            The Harsh Reality of Pedestrian Accidents
+                        </h3>
+
+                        <div style="color: #f8f9fa; font-size: 1.05rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Many of the fatal accidents recorded on the N3 Toll Route are as a result of accidents involving pedestrians, most could have been prevented by applying basic road safety principles through education and awareness.</p>
+
+                            <div class="statistics-box">
+                                <h5 style="color: #dc3545; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">Critical Statistics:</h5>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-size: 1.2rem; font-weight: 600;">N3TC records, on average, <span style="color: #dc3545;">four pedestrian fatalities</span> on the N3 Toll Route per month.</p>
+                                <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">The twist in this tale, however, is that pedestrians are, by law, not permitted to be on a National Route and this poses major challenges for community leaders and law enforcement authorities.</p>
+                            </div>
+
+                            <div class="quote-box">
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-style: italic; font-size: 1.1rem; margin-bottom: 1rem;">"These fatalities could be avoided if local community members truly understood the dangers of crossing a national route and the high speeds of the vehicles travelling on this road."</p>
+                                <footer style="color: #2a9fd6; font-weight: 600;">— Con Roux, Commercial Manager of N3TC</footer>
+                            </div>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The problem is further aggravated by the high volumes of heavy vehicles making use of the N3. It is common to see trucks stopping along the route (which is illegal) and picking up pedestrians/passengers and dropping them off again further along the N3. While economic pressures are most often the reason for pedestrian activity and hitchhiking, lives are being compromised as a result.</p>
+
+                            <div class="quote-box">
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-style: italic; font-size: 1.1rem; margin-bottom: 0;">"N3TC believes that through continuous education efforts, such as this Competition, and consistent messaging we will be able to make a difference in the lives of those that hold the future of South Africa in their hands."</p>
+                                <footer style="color: #2a9fd6; font-weight: 600; margin-top: 1rem;">— Con Roux, Commercial Manager of N3TC</footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Section -->
+<section class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="card safety-card">
+                    <div class="card-body p-4">
+                        <h3 class="fw-semibold mb-4" style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <polygon points="23 7 16 12 23 17 23 7" stroke="currentColor" stroke-width="2"/>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Respect Everyone's Journey
+                        </h3>
+                        <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); line-height: 1.6;">Watch this important video about respecting all road users and understanding the shared responsibility we have for pedestrian safety on our roads.</p>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 0.95rem;">Every journey matters, whether you're walking, driving, or cycling. Together, we can make our roads safer for everyone.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/o-Ai5AGLgLM?rel=0&showinfo=0&autoplay=0&loop=0"
+                            title="Respect Everyone's Journey - Pedestrian Safety Video"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="card" style="background: linear-gradient(135deg, #ff8800 0%, #cc6600 100%); border: none;">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Protect Our Most Vulnerable Road Users</h3>
+                        <p class="mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem; opacity: 0.95;">Pedestrian safety is everyone's responsibility. Through education, awareness, and mutual respect, we can prevent tragic accidents and save lives.</p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="DriverWellness.html" class="btn btn-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Driver Safety Tips
+                            </a>
+                            <a href="ContactUs.html" class="btn btn-outline-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Get Involved
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="mb-4">
+                    <a href="https://www.youtube.com/@RoadMatters-r8b" target="_blank" class="text-info me-3" title="YouTube">
+                        <i class="fab fa-youtube fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-info me-3" title="Facebook">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-info" title="Twitter">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </div>
+                <p class="text-light mb-2">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+                <p class="text-muted small">Making South African roads safer through education, research, and partnerships.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Markerboards - Learn how to use road marker boards for emergency location identification">
+  <title>Markerboards - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      padding-top: 80px;
+    }
+
+    /* Static Navigation Styles */
+    .modern-nav {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+
+    .navbar-brand {
+      font-size: 1.1rem;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .navbar-nav {
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-item {
+      margin: 0;
+    }
+
+    .nav-link {
+      padding: 0.75rem 1rem !important;
+      border-radius: 0;
+      transition: all 0.3s ease;
+      position: relative;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      background: rgba(42, 159, 214, 0.1);
+      border-bottom-color: var(--primary-color);
+      color: var(--text-light) !important;
+    }
+
+    .nav-link.active {
+      background: rgba(42, 159, 214, 0.15);
+      color: var(--primary-color) !important;
+      border-bottom-color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 1400px) {
+      .nav-link {
+        padding: 0.6rem 0.8rem !important;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .nav-link {
+        padding: 0.5rem 0.6rem !important;
+        font-size: 0.8rem;
+      }
+
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .navbar-brand img {
+        height: 35px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .nav-link {
+        padding: 0.4rem 0.5rem !important;
+        font-size: 0.75rem;
+      }
+
+      .navbar-brand {
+        font-size: 0.9rem;
+      }
+
+      .navbar-brand img {
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-link {
+        padding: 0.3rem 0.4rem !important;
+        font-size: 0.7rem;
+      }
+
+      .navbar-brand span {
+        display: none;
+      }
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(153, 51, 204, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .marker-card, .info-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .marker-card:hover, .info-card:hover {
+      transform: translateY(-5px);
+      border-color: #2a9fd6 !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .marker-card img, .info-card img {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .emergency-box {
+      background: rgba(220, 53, 69, 0.1) !important;
+      border: 1px solid #dc3545 !important;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .info-box {
+      background: rgba(42, 159, 214, 0.1) !important;
+      border: 1px solid #2a9fd6 !important;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .step-box {
+      background: rgba(119, 179, 0, 0.1) !important;
+      border: 1px solid #77b300 !important;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 1rem 0;
+    }
+
+    .marker-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+<header>
+    <nav class="modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                    <span class="fw-bold text-primary">Road Safety Foundation</span>
+                </a>
+
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Videos.html">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="legislation.html">Legislation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PetSafety.html">Motor Vehicles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="DriverWellness.html">Driver Wellness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Pedestrians.html">Pedestrians</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Trucking.html">Trucking</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Partners
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="founding-partners.html">Founding</a></li>
+                            <li><a class="dropdown-item" href="associate-partners.html">Associates</a></li>
+                            <li><a class="dropdown-item" href="operational-partners.html">Operational</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="News.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Torque</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="BLOG.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <span class="badge bg-info text-dark px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                        <path d="M21 15l-5-5L5 21l5-5" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Emergency Navigation
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Road <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Markerboards</span></h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Those "pesky" little boards every 200m on your journey could be lifesavers in an emergency.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="card marker-card">
+                    <div class="card-body p-5">
+                        <h2 class="fw-semibold mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Why Markerboards Matter</h2>
+
+                        <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The time has come. The year is over. Sunny beaches and blue water here we come !!</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">We have anywhere between 600km's and 1400 km's to reach your destination - depending where you are going. If all goes well you will drive there and back without any incidents.</p>
+
+                            <div class="emergency-box">
+                                <h4 style="color: #dc3545; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    BUT
+                                </h4>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-weight: 600;">What happens if you are involved in an incident (or are witness to one) and you need to get help to an exact location fast?</p>
+                            </div>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Every 200m's on our national roads, there these pesky little blue boards that could be a life saver if used properly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <img src="assets/images/bdh3crpcaaap2ng-1400x1297-30.png" alt="Markerboard Example" class="marker-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency Scenario Section -->
+<section class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card info-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-4" style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Emergency Communication Scenario
+                        </h3>
+
+                        <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Imagine if you are a control centre operator and you receive a phone call for a medical emergency. The quickest and easiest way to get someone to you is for that person to know exactly where you are.</p>
+
+                            <div class="info-box">
+                                <h5 style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">❌ This Won't Work:</h5>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-style: italic; font-size: 1.2rem;">"Somewhere between Colesberg and Bloemfontein - about 60 kilos from Bloem"</p>
+                                <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">This vague description just won't cut it in an emergency situation.</p>
+                            </div>
+
+                            <h4 style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-top: 2rem; margin-bottom: 1rem;">So what to do?</h4>
+
+                            <div class="step-box">
+                                <h6 style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        <polyline points="16,12 12,8 8,12" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="12" y1="16" x2="12" y2="8" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Step 1: Find the Nearest Marker Board
+                                </h6>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Look for your nearest marker board. It has vital location information on it.</p>
+                            </div>
+
+                            <div class="step-box">
+                                <h6 style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                        <path d="M14 9V5a3 3 0 0 0-6 0v4" stroke="currentColor" stroke-width="2"/>
+                                        <rect x="2" y="9" width="20" height="12" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Step 2: Read the Information Clearly
+                                </h6>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Read it to the Call Centre operator <strong style="color: #ff8800;">from top to bottom slowly and in a clear voice</strong>.</p>
+                            </div>
+
+                            <div class="step-box">
+                                <h6 style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                        <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Step 3: Help is Dispatched
+                                </h6>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">As soon as the person has this information, they will dispatch someone immediately.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Markerboard Explanation Section -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="card marker-card">
+                    <div class="card-body p-4">
+                        <h3 class="fw-semibold mb-4" style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">What the Board Indicates</h3>
+
+                        <div style="color: #f8f9fa; font-size: 1.05rem; line-height: 1.8;">
+                            <div class="mb-4">
+                                <h5 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">From top left:</h5>
+                            </div>
+
+                            <div class="mb-3">
+                                <span style="color: #ff8800; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">1.</span>
+                                <span style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"> You are on the N3</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <span style="color: #ff8800; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">2.</span>
+                                <span style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"> You are in section 5 (this helps to allocate the responsible resource correctly)</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <span style="color: #ff8800; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">3.</span>
+                                <span style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"> The kilometers into the above section - in other words - you have travelled 14 kilometres into section 5 (in this case)</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <span style="color: #ff8800; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">4.</span>
+                                <span style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"> The direction you are travelling in - in this case "North"</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <span style="color: #ff8800; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">5.</span>
+                                <span style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);"> On the N3, every "0" board has the N3TC help number on it.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="text-center">
+                    <img src="assets/images/n3-blue-route-marker-board-1400x2970-21.jpg" alt="N3 Markerboard Detail" class="marker-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="card" style="background: linear-gradient(135deg, #2a9fd6 0%, #1a7aa8 100%); border: none;">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Remember: Markerboards Save Lives</h3>
+                        <p class="mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem; opacity: 0.95;">In an emergency, every second counts. Knowing how to read markerboards can mean the difference between life and death.</p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="DriverWellness.html" class="btn btn-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Driver Safety Tips
+                            </a>
+                            <a href="ContactUs.html" class="btn btn-outline-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Emergency Support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="mb-4">
+                    <a href="https://www.youtube.com/@RoadMatters-r8b" target="_blank" class="text-info me-3" title="YouTube">
+                        <i class="fab fa-youtube fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-info me-3" title="Facebook">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-info" title="Twitter">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </div>
+                <p class="text-light mb-2">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+                <p class="text-muted small">Making South African roads safer through education, research, and partnerships.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
