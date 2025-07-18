@@ -22,6 +22,10 @@
 
   <!-- Custom Styles -->
   <style>
+    body, main, .page-header, .container, .content-section {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
     :root {
       /* Cyborg Theme Colors */
       --primary-color: #2a9fd6;
@@ -275,141 +279,15 @@
       font-family: "Font Awesome 6 Free" !important;
       font-weight: 900 !important;
     }
+
+    /* Add text shadow for better visibility of 'Our Directors' heading */
+    .leadership-title-shadow {
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 1px 0 #222;
+    }
   </style>
 </head>
 <body>
-<!-- Navigation -->
-<header>
-    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
-                <span>Road Safety Foundation</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            About Us
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
-                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
-                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
-                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
-                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="partners.html">Partners</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Adoptions
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
-                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Videos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
-                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Driver
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="General.html">General</a></li>
-                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
-                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
-                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Projects
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://ominsurecoty.co.za/isipho-sami/" target="_blank">My Gift</a></li>
-                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
-                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
-                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
-                            <li><a class="dropdown-item" href="https://fleetwatch.co.za/" target="_blank">Fleet Watch</a></li>
-                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
-                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
-                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Vehicles
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
-                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
-                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
-                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
-                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
-                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            News worthy
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
-                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
-                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Did You Know
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
-                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
-                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Forums.html">Let's Talk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+<!-- Top navigation bar removed. Only the main content remains. -->
 
 <!-- Page Header -->
 <section class="page-header">
@@ -505,13 +383,24 @@
                 <span class="badge text-bg-success px-3 py-2 rounded-pill mb-3">
                     Leadership Team
                 </span>
-                <h2 class="display-5 fw-light mb-4 text-light">
+                <h2 class="display-5 fw-light mb-4 text-light leadership-title-shadow">
                     Our <span class="text-success fw-normal">Directors</span>
                 </h2>
                 <p class="lead text-light mb-0">Experienced leaders guiding our road safety initiatives</p>
             </div>
         </div>
         <div class="row g-4">
+            <!-- Petro Kruger card update -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card director-card h-100">
+                    <img src="assets/images/Petro_Director.png" class="card-img-top" alt="Petro Kruger">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-light fw-semibold">Petro Kruger</h5>
+                        <p class="card-text text-info mb-2">Founder Member and Director</p>
+                        <p class="card-text text-light small">Focusing on Legal Issues and child and infant transportation safety.</p>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-3 col-md-6">
                 <div class="card director-card h-100">
                     <img src="assets/images/Phil_Director.png" class="card-img-top" alt="Philip Hull">
@@ -522,23 +411,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="card director-card h-100">
-                    <img src="assets/images/Petro_Director.png" class="card-img-top" alt="Petro Kruger">
-                    <div class="card-body text-center">
-                        <h5 class="card-title text-light fw-semibold">Petro Kruger</h5>
-                        <p class="card-text text-info mb-2">Founder Member and Director</p>
-                        <p class="card-text text-light small">Driving educational programs and community outreach initiatives to promote road safety awareness.</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Eugene Herbert card update -->
             <div class="col-lg-3 col-md-6">
                 <div class="card director-card h-100">
                     <img src="assets/images/Eugene_Director.png" class="card-img-top" alt="Eugene Herbert">
                     <div class="card-body text-center">
                         <h5 class="card-title text-light fw-semibold">Eugene Herbert</h5>
                         <p class="card-text text-success mb-2">Director</p>
-                        <p class="card-text text-light small">Overseeing research and development of innovative road safety solutions and technologies.</p>
+                        <p class="card-text text-light small">Overseeing research and development of innovative road safety solutions and technologies, with special focus on driver training and networking.</p>
                     </div>
                 </div>
             </div>
@@ -614,7 +494,7 @@
                             </div>
                         </div>
                         <p class="card-text" style="line-height: 1.7; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">
-                            The other founding partner of the RSFSA, Philip has accumulated over 40 years of road safety experience. As a Director of one of the largest retail motor groups and as a qualified paramedic, Philip has been able to combine two of his passions. 'Walking in the blood' at crash scenes gives Philip a unique motivation to make our roads safer by reducing the number of crashes on our roads.
+                            The other founding partner of the RSFSA, Philip has accumulated over 40 years of road safety experience. As a Past Director of one of the largest retail motor groups and as a qualified paramedic, Philip has been able to combine two of his passions. 'Walking in the blood' at crash scenes gives Philip a unique motivation to make our roads safer by reducing the number of crashes on our roads.
                         </p>
                     </div>
                 </div>

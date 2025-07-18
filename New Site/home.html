@@ -1,3 +1,9 @@
+<style>
+html, body, .page-header, main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +93,7 @@
 
     /* Ensure main content doesn't get hidden behind fixed nav */
     main {
-      padding-top: 60px;
+      padding-top: 0;
     }
 
     .navbar-brand {
@@ -110,13 +116,13 @@
     .modern-hero {
       background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
                   url('assets/images/MainPic.jpg') center/cover;
-      min-height: calc(100vh - 300px);
+      min-height: calc(99vh - 275px);
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
-      padding-top: 37px;
       padding-bottom: 17px;
+      /* border removed */
     }
 
     .modern-hero::before {
@@ -691,146 +697,15 @@
       min-height: 120px;
     }
   </style>
+  <style>
+#cardOldMutual .hover-banner img {
+  pointer-events: none;
+}
+</style>
 </head>
 <body>
 
-<!-- Navigation -->
-<header>
-    <!-- Copied from aboutus.html for full menu compatibility -->
-    <nav class="navbar navbar-expand-lg modern-nav fixed-top" id="mainNav">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
-                <span>Road Safety Foundation</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            About Us
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="aboutus.html">Road Safety Foundation</a></li>
-                            <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
-                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
-                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
-                            <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="partners.html">Partners</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="merchandise.html">Merchandise</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Adoptions
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
-                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Videos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
-                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Driver
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="General.html">General</a></li>
-                            <li><a class="dropdown-item" href="Trucking.html">Truckers</a></li>
-                            <li><a class="dropdown-item" href="Motorists.html">Motorists</a></li>
-                            <li><a class="dropdown-item" href="Bikers.html">Bikers</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Projects
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" id="showMyGiftInline">My Gift</a></li>
-                            <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
-                            <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
-                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
-                            <li><a class="dropdown-item" href="#" id="showFleetWatchInline">Fleet Watch</a></li>
-                            <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
-                            <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
-                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Vehicles
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
-                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
-                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
-                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
-                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
-                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            News
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="live-traffic.html">Live Traffic</a></li>
-                            <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
-                            <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
-                            <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Did You Know
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
-                            <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
-                            <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Forums.html">Let's Talk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+<!-- The Home button is removed. Only the Mahindra card and its script remain. -->
 
 <main>
     <!-- Hero Section -->
@@ -896,16 +771,12 @@
                     <div class="row g-3">
                         <!-- Image Placeholder 1 - Mahindra -->
                         <div class="col-lg col-md-4 col-6">
-                            <div class="gallery-placeholder mahindra-card" data-placeholder="1">
-                                <a href="https://mahindra.co.za/" target="_blank" rel="noopener noreferrer">
-                                    <img src="assets/images/Mahindra-logo.png" alt="Mahindra" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                                    <div class="placeholder-overlay">
-                                        <span class="badge bg-primary">Mahindra</span>
-                                    </div>
-                                    <div class="hover-banner">
-                                        RSFSA - Driven by Mahindra
-                                    </div>
-                                </a>
+                            <div class="gallery-placeholder mahindra-card" data-placeholder="1" id="cardMahindra">
+                                <img src="assets/images/Mahindra-Logo.png" alt="Mahindra" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                <div class="placeholder-overlay">
+                                    <span class="badge bg-primary">Mahindra</span>
+                                </div>
+                                <div class="hover-banner">RSFSA - Driven by Mahindra</div>
                             </div>
                         </div>
                         <!-- Image Placeholder 2 - Michelin -->
@@ -923,15 +794,13 @@
                         <!-- Image Placeholder 3 - Peugeot -->
                         <div class="col-lg col-md-4 col-6">
                             <div class="gallery-placeholder peugeot-card" data-placeholder="3" id="cardPeugeot">
-                                <a href="https://www.peugeot.co.za/our-models/landtrek.html" target="_blank" rel="noopener noreferrer">
-                                    <img src="assets/images/Peugeot%20Logo.png" alt="Peugeot" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                                    <div class="placeholder-overlay">
-                                        <span class="badge bg-primary">Peugeot</span>
-                                    </div>
-                                    <div class="hover-banner">
-                                        RSFSA - Powered by Peugeot
-                                    </div>
-                                </a>
+                                <img src="assets/images/Peugeot%20Logo.png" alt="Peugeot" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                <div class="placeholder-overlay">
+                                    <span class="badge bg-primary">Peugeot</span>
+                                </div>
+                                <div class="hover-banner">
+                                    RSFSA - Powered by Peugeot
+                                </div>
                             </div>
                         </div>
                         <!-- Image Placeholder 7 - Amber Card (Moved here) -->
@@ -951,15 +820,13 @@
         <!-- Image Placeholder - Old Mutual Insure -->
         <div class="col-lg col-md-4 col-6">
             <div class="gallery-placeholder old-mutual-card" data-placeholder="6" id="cardOldMutual">
-                <a href="https://www.oldmutual.co.za/about/old-mutual-insure/" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/images/Old-Mutual-Insure-Logo.png" alt="Old Mutual Insure" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                    <div class="placeholder-overlay">
-                        <span class="badge bg-success">Old Mutual Insure</span>
-                    </div>
-                    <div class="hover-banner" style="background: transparent; box-shadow: none; padding: 0;">
-                        <img src="assets/images/MyGift.png" alt="My Gift Logo" style="max-width: 174px; max-height: 87px; display: block; margin: 0 auto; background: #000; padding: 14px 18px; border-radius: 10px;">
-                    </div>
-                </a>
+                <img src="assets/images/Old-Mutual-Insure-Logo.png" alt="Old Mutual Insure" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                <div class="placeholder-overlay">
+                    <span class="badge bg-success">Old Mutual Insure</span>
+                </div>
+                <div class="hover-banner" style="background: transparent; box-shadow: none; padding: 0;">
+                    <img src="assets/images/MyGift.png" alt="My Gift Logo" style="max-width: 174px; max-height: 87px; display: block; margin: 0 auto; background: #000; padding: 14px 18px; border-radius: 10px;">
+                </div>
             </div>
         </div>
                         <!-- Image Placeholder 4 - FleetWatch -->
@@ -1132,15 +999,13 @@
                         <!-- Image Placeholder 5 - N3TC -->
                         <div class="col-lg col-md-4 col-6">
                             <div class="gallery-placeholder n3tc-card" data-placeholder="5" id="cardN3TC">
-                                <a href="http://www.n3tc.co.za/" target="_blank" rel="noopener noreferrer">
-                                    <img src="assets/images/N3TC%20Logo.png" alt="N3TC" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                                    <div class="placeholder-overlay">
-                                        <span class="badge bg-primary">N3TC</span>
-                                    </div>
-                                    <div class="hover-banner n3tc-hover-banner">
-                                        Safety. Convenience. Mobility.
-                                    </div>
-                                </a>
+                                <img src="assets/images/N3TC%20Logo.png" alt="N3TC" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                <div class="placeholder-overlay">
+                                    <span class="badge bg-primary">N3TC</span>
+                                </div>
+                                <div class="hover-banner n3tc-hover-banner">
+                                    Safety. Convenience. Mobility.
+                                </div>
                             </div>
                         </div>
 
@@ -1372,20 +1237,33 @@ document.addEventListener('DOMContentLoaded', function() {
         cardMahindra: 'https://mahindra.co.za/',
         cardMichelin: 'https://www.michelin.co.za/',
         cardPeugeot: 'https://www.peugeot.co.za/our-models/landtrek.html',
+        cardJetour: 'https://www.jetour.co.za/',
         cardFleetWatch: 'https://fleetwatch.co.za/',
         cardN3TC: 'http://www.n3tc.co.za/',
         cardOldMutual: 'https://www.oldmutual.co.za/about/old-mutual-insure/'
     };
+    // List of sites that block iframing
+    const openInNewTab = ['cardMichelin'];
     Object.keys(cardUrls).forEach(function(cardId) {
+        if (cardId === 'cardMahindra' || cardId === 'cardPeugeot' || cardId === 'cardFleetWatch' || cardId === 'cardN3TC' || cardId === 'cardOldMutual') return; // Skip these, use direct handlers below
         const card = document.getElementById(cardId);
         if (card) {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                // For Michelin, Old Mutual, N3TC: open in new tab
-                if (cardId === 'cardMichelin' || cardId === 'cardOldMutual' || cardId === 'cardN3TC') {
+                if (openInNewTab.includes(cardId)) {
+                    // Open directly in new tab
                     window.open(cardUrls[cardId], '_blank');
+                    // If inside an iframe, tell parent to reload home.html
+                    if (window.parent !== window) {
+                        window.parent.postMessage({ type: 'loadInMainContainer', url: 'home.html' }, '*');
+                    }
+                } else if (cardId === 'cardJetour') {
+                    // Post message to parent to load in main-container of index.html
+                    if (window.parent !== window) {
+                        window.parent.postMessage({ type: 'loadInMainContainer', url: cardUrls[cardId] }, '*');
+                    }
                 } else if (mainContainer && myGiftInlineIframe) {
                     mainContainer.style.display = 'block';
                     myGiftInlineIframe.src = cardUrls[cardId];
@@ -1393,7 +1271,74 @@ document.addEventListener('DOMContentLoaded', function() {
             }, true);
         }
     });
-    // --- Remove separate Michelin logic (now handled above) ---
+
+    // Dedicated click handlers for Mahindra, Peugeot, FleetWatch, N3TC
+    const mahindraCard = document.getElementById('cardMahindra');
+    if (mahindraCard) {
+      mahindraCard.style.cursor = 'pointer';
+      mahindraCard.addEventListener('click', function() {
+        window.parent.postMessage({ action: 'openMahindra' }, '*');
+      });
+      const hoverBanner = mahindraCard.querySelector('.hover-banner');
+      if (hoverBanner) {
+        hoverBanner.addEventListener('click', function() {
+          window.parent.postMessage({ action: 'openMahindra' }, '*');
+        });
+      }
+    }
+    const peugeotCard = document.getElementById('cardPeugeot');
+    if (peugeotCard) {
+      peugeotCard.style.cursor = 'pointer';
+      peugeotCard.addEventListener('click', function() {
+        window.parent.postMessage({ action: 'openPeugeot' }, '*');
+      });
+      const hoverBanner = peugeotCard.querySelector('.hover-banner');
+      if (hoverBanner) {
+        hoverBanner.addEventListener('click', function() {
+          window.parent.postMessage({ action: 'openPeugeot' }, '*');
+        });
+      }
+    }
+    const fleetWatchCard = document.getElementById('cardFleetWatch');
+    if (fleetWatchCard) {
+      fleetWatchCard.style.cursor = 'pointer';
+      fleetWatchCard.addEventListener('click', function() {
+        window.parent.postMessage({ action: 'openFleetWatch' }, '*');
+      });
+      const hoverBanner = fleetWatchCard.querySelector('.hover-banner, .fleetwatch-hover-banner');
+      if (hoverBanner) {
+        hoverBanner.addEventListener('click', function() {
+          window.parent.postMessage({ action: 'openFleetWatch' }, '*');
+        });
+      }
+    }
+    const n3tcCard = document.getElementById('cardN3TC');
+    if (n3tcCard) {
+      n3tcCard.style.cursor = 'pointer';
+      n3tcCard.addEventListener('click', function() {
+        window.parent.postMessage({ action: 'openN3TC' }, '*');
+      });
+      const hoverBanner = n3tcCard.querySelector('.hover-banner, .n3tc-hover-banner');
+      if (hoverBanner) {
+        hoverBanner.addEventListener('click', function() {
+          window.parent.postMessage({ action: 'openN3TC' }, '*');
+        });
+      }
+    }
+    const oldMutualCard = document.getElementById('cardOldMutual');
+    if (oldMutualCard) {
+      oldMutualCard.style.cursor = 'pointer';
+      oldMutualCard.addEventListener('click', function() {
+        window.open('https://www.oldmutual.co.za/about/old-mutual-insure/', '_blank');
+      });
+      const hoverBanner = oldMutualCard.querySelector('.hover-banner');
+      if (hoverBanner) {
+        hoverBanner.addEventListener('click', function() {
+          window.open('https://www.oldmutual.co.za/about/old-mutual-insure/', '_blank');
+        });
+      }
+    }
+
     // Navbar scroll effect
     const navbar = document.getElementById('mainNav');
     window.addEventListener('scroll', function() {
@@ -1482,6 +1427,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // ...existing code for statistics counter...
     // ...existing code for observing stat numbers...
 });
+
+// Home button: reload home.html in parent iframe
+const homeBtn = document.getElementById('homeBtn');
+if (homeBtn && window.parent && window.parent !== window) {
+  homeBtn.addEventListener('click', function() {
+    if (window.parent.document && window.parent.document.getElementById('mainContentIframe')) {
+      window.parent.document.getElementById('mainContentIframe').src = 'home.html';
+    }
+  });
+}
+
+const oldMutualBannerImg = document.querySelector('#cardOldMutual .hover-banner img');
+if (oldMutualBannerImg) {
+  oldMutualBannerImg.addEventListener('click', function() {
+    window.parent.postMessage({ action: 'openOldMutual' }, '*');
+  });
+}
+
 </script>
 </body>
 </html>

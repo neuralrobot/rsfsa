@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Traffic | Road Safety Foundation of South Africa</title>
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <style>
+    body { background: #060606; color: #fff; font-family: 'Raleway', sans-serif; }
+    .container { margin-top: 0; }
+    h1 { font-weight: 800; }
+    .traffic-section { background: #1a1a1a; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.4); padding: 2rem; }
+    .traffic-icon { font-size: 2.5rem; color: #2a9fd6; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <!-- Header and top navbar removed as per user request -->
+  <main>
+    <section id="traffic-updates" style="background: var(--bg-primary); padding-top:20px; padding-bottom:3rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold text-white mb-4">Live Traffic Updates</h2>
+                    <p class="lead text-white mb-4" style="opacity: 0.9;">Real-time traffic information from major South African routes</p>
+                </div>
+            </div>
+
+            <!-- Row 1: Full width N3Route -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="card bg-dark border-primary">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0"><i class="fab fa-twitter me-2"></i>@N3Route - Primary Updates</h5>
+                        </div>
+                        <div class="card-body p-3" style="height: 300px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-1" class="text-center py-4">
+                                <div class="spinner-border text-primary mb-3" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <h6 class="text-white">Loading N3 Route updates...</h6>
+                                <p class="text-muted small">Real-time traffic information</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Two columns TRAC and iTraffic -->
+            <div class="row g-4 mt-4">
+                <!-- TRAC N4Route -->
+                <div class="col-lg-6">
+                    <div class="card bg-dark border-info">
+                        <div class="card-header bg-info text-white py-2">
+                            <h6 class="mb-0"><i class="fab fa-twitter me-2"></i>@TRACN4Route - Updates</h6>
+                        </div>
+                        <div class="card-body p-3" style="height: 200px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-2" class="text-center py-3">
+                                <div class="spinner-border text-info mb-2" role="status"></div>
+                                <h6 class="text-white">Loading N4 updates...</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iTraffic GP -->
+                <div class="col-lg-6">
+                    <div class="card bg-dark border-warning">
+                        <div class="card-header bg-warning text-dark py-2">
+                            <h6 class="mb-0"><i class="fab fa-twitter me-2"></i>@itrafficgp - Gauteng Updates</h6>
+                        </div>
+                        <div class="card-body p-3" style="height: 200px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-3" class="text-center py-3">
+                                <div class="spinner-border text-warning mb-2" role="status"></div>
+                                <h6 class="text-white">Loading GP updates...</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Two columns Arrive Alive and Traffic SA -->
+            <div class="row g-4 mt-4">
+                <!-- Arrive Alive -->
+                <div class="col-lg-6">
+                    <div class="card bg-dark border-success">
+                        <div class="card-header bg-success text-white py-2">
+                            <h6 class="mb-0"><i class="fab fa-twitter me-2"></i>@_ArriveAlive - Safety Tips</h6>
+                        </div>
+                        <div class="card-body p-3" style="height: 200px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-4" class="text-center py-3">
+                                <div class="spinner-border text-success mb-2" role="status"></div>
+                                <h6 class="text-white">Loading safety updates...</h6>
+                                <p class="text-muted small">Road safety awareness</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Traffic SA -->
+                <div class="col-lg-6">
+                    <div class="card bg-dark border-danger">
+                        <div class="card-header bg-danger text-white py-2">
+                            <h6 class="mb-0"><i class="fab fa-twitter me-2"></i>@TrafficSA - National Updates</h6>
+                        </div>
+                        <div class="card-body p-3" style="height: 200px; overflow-y: auto; background: #1a1a1a;">
+                            <div id="twitter-feed-5" class="text-center py-3">
+                                <div class="spinner-border text-danger mb-2" role="status"></div>
+                                <h6 class="text-white">Loading national traffic...</h6>
+                                <p class="text-muted small">Nationwide updates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Refresh Button -->
+            <div class="row mt-4">
+                <div class="col-lg-12 text-center">
+                    <button id="refreshFeeds" class="btn btn-outline-info">
+                        <i class="fas fa-sync-alt me-2"></i>Refresh All Feeds
+                    </button>
+                    <p class="text-muted mt-2 small">
+                        Last updated: <span id="lastUpdated">Loading...</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+  <footer class="py-4 mt-5 text-center text-muted" style="background:#0a0a0a;">
+    &copy; 2024 Road Safety Foundation of South Africa. All rights reserved.
+  </footer>
+
+  <!-- WhatsApp Subscription Section (moved from index.html) -->
+  <section id="whatsapp-subscription" class="py-5" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center mb-5">
+                  <span class="badge bg-light text-success px-3 py-2 rounded-pill mb-3 fw-semibold">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      WhatsApp Alerts
+                  </span>
+                  <h2 class="display-4 fw-bold text-white mb-4">Get Real-Time Traffic Alerts</h2>
+                  <p class="lead text-white mb-4" style="opacity: 0.95;">Subscribe to receive instant WhatsApp notifications about traffic conditions, incidents, and road closures on your favorite routes.</p>
+              </div>
+          </div>
+
+          <div class="row justify-content-center">
+              <div class="col-lg-8">
+                  <div class="card border-0 shadow-lg" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+                      <div class="card-body p-5">
+                          <form id="whatsappForm" class="needs-validation" novalidate>
+                              <div class="row">
+                                  <div class="col-md-6 mb-3">
+                                      <label for="whatsappName" class="form-label">Name</label>
+                                      <input type="text" class="form-control" id="whatsappName" name="whatsappName" placeholder="Your Name" required>
+                                      <div class="invalid-feedback">Please enter your name.</div>
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <label for="whatsappSurname" class="form-label">Surname</label>
+                                      <input type="text" class="form-control" id="whatsappSurname" name="whatsappSurname" placeholder="Your Surname" required>
+                                      <div class="invalid-feedback">Please enter your surname.</div>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="whatsappNumber" class="form-label">WhatsApp Number</label>
+                                  <div class="input-group">
+                                      <span class="input-group-text">+27</span>
+                                      <input type="tel" class="form-control" id="whatsappNumber" name="whatsappNumber" placeholder="82 123 4567" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required>
+                                      <div class="invalid-feedback">Please enter a valid WhatsApp number (e.g. 82 123 4567).</div>
+                                  </div>
+                              </div>
+                              <div class="mb-4">
+                                  <label for="routeSelect" class="form-label">Preferred Route</label>
+                                  <select class="form-select" id="routeSelect" name="routeSelect" required>
+                                      <option value="">Select a route...</option>
+                                      <option value="N1">N1</option>
+                                      <option value="N2">N2</option>
+                                      <option value="N3">N3</option>
+                                      <option value="N4">N4</option>
+                                      <option value="N12">N12</option>
+                                      <option value="N14">N14</option>
+                                      <option value="R21">R21</option>
+                                      <option value="Other">Other</option>
+                                  </select>
+                                  <div class="invalid-feedback">Please select a route.</div>
+                              </div>
+                              <div class="mb-4">
+                                  <label for="whatsappConsent" class="form-label">Consent</label>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="1" id="whatsappConsent" name="whatsappConsent" required>
+                                      <label class="form-check-label" for="whatsappConsent">
+                                          I consent to receive WhatsApp traffic alerts and updates.
+                                      </label>
+                                      <div class="invalid-feedback">You must provide consent to subscribe.</div>
+                                  </div>
+                              </div>
+                              <div class="d-grid">
+                                  <button type="submit" class="btn btn-success btn-lg">
+                                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                      Subscribe to FREE WhatsApp Alerts
+                                  </button>
+                              </div>
+                          </form>
+                          <!-- Success Message -->
+                          <div id="subscriptionSuccess" class="alert alert-success mt-3 d-none">
+                              Thank you for subscribing! You will now receive WhatsApp traffic alerts.
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- WhatsApp Form JS (moved from index.html) -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // WhatsApp Alerts form logic
+      const whatsappForm = document.getElementById('whatsappForm');
+      const subscriptionSuccess = document.getElementById('subscriptionSuccess');
+      if (whatsappForm) {
+          whatsappForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              if (!whatsappForm.checkValidity()) {
+                  whatsappForm.classList.add('was-validated');
+                  return;
+              }
+              // Simulate successful subscription
+              whatsappForm.classList.remove('was-validated');
+              whatsappForm.reset();
+              subscriptionSuccess.classList.remove('d-none');
+              setTimeout(() => {
+                  subscriptionSuccess.classList.add('d-none');
+              }, 5000);
+          });
+      }
+
+      // Live Traffic Updates: Refresh button logic
+      const refreshButton = document.getElementById('refreshFeeds');
+      if (refreshButton) {
+          refreshButton.addEventListener('click', function() {
+              location.reload();
+          });
+      }
+
+      // Live Traffic Updates: Last updated time
+      const lastUpdated = document.getElementById('lastUpdated');
+      if (lastUpdated) {
+          const now = new Date();
+          const formatted = now.toLocaleString('en-ZA', {
+              year: 'numeric', month: 'short', day: '2-digit',
+              hour: '2-digit', minute: '2-digit', second: '2-digit'
+          });
+          lastUpdated.textContent = formatted;
+      }
+  });
+  </script>
+</body>
+</html>
