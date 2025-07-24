@@ -56,9 +56,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="partners.html" id="partnersNavLink">Partners</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="merchandise.html">Merchandise</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                             Adoptions
@@ -145,6 +142,7 @@
                             <li><a class="dropdown-item" href="BLOG.html">Stories</a></li>
                             <li><a class="dropdown-item" href="safety-facts.html">Safety Facts - View and Comments</a></li>
                             <li><a class="dropdown-item" href="road-statistics.html">Road Statistics - View and Comments</a></li>
+                            <li><a class="dropdown-item" href="Markerboards.html">Markerboards</a></li>
                             <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
                         </ul>
                     </li>
@@ -279,14 +277,6 @@ document.addEventListener('DOMContentLoaded', function() {
       mainContentIframe.src = 'partners.html';
     });
   }
-  // Merchandise nav logic: load merchandise.html in iframe
-  const merchandiseNavLink = document.querySelector('.navbar-nav .nav-link[href="merchandise.html"]');
-  if (merchandiseNavLink && mainContentIframe) {
-    merchandiseNavLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      mainContentIframe.src = 'merchandise.html';
-    });
-  }
   // Projects menu logic: open all submenu items in iframe
   const projectsMenuLinks = [
     { selector: '.dropdown-menu a[href="#"]#showMyGiftInline', page: 'https://ominsurecoty.co.za/isipho-sami/' },
@@ -329,6 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'BLOG.html',
     'safety-facts.html',
     'road-statistics.html',
+    'Markerboards.html',
     'safety-tips-submission.html'
   ];
   didYouKnowPages.forEach(function(page) {

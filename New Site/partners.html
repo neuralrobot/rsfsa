@@ -377,6 +377,111 @@
       border-color: #cc0000; 
       color: white; 
     }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 60px 0;
+      }
+      
+      .display-3 {
+        font-size: 2.5rem !important;
+      }
+      
+      .display-4 {
+        font-size: 2rem !important;
+      }
+      
+      h2 {
+        font-size: 1.8rem !important;
+      }
+      
+      .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+      
+      .partnership-box,
+      .benefits-box,
+      .contact-box {
+        padding: 20px;
+        margin: 1.5rem 0;
+      }
+      
+      .partner-logo {
+        height: 70px;
+      }
+      
+      .partner-logo img {
+        max-height: 50px;
+      }
+      
+      .category-badge {
+        font-size: 0.75rem !important;
+        padding: 0.3rem 0.6rem !important;
+      }
+      
+      .lead {
+        font-size: 1rem !important;
+      }
+      
+      .social-links {
+        justify-content: center !important;
+      }
+      
+      .social-links a {
+        font-size: 1.3rem !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-header {
+        padding: 40px 0;
+      }
+      
+      .display-3 {
+        font-size: 2rem !important;
+      }
+      
+      .display-4 {
+        font-size: 1.8rem !important;
+      }
+      
+      h2 {
+        font-size: 1.5rem !important;
+      }
+      
+      .py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+      }
+      
+      .card-body {
+        padding: 1rem !important;
+      }
+      
+      .partnership-box,
+      .benefits-box,
+      .contact-box {
+        padding: 15px;
+        margin: 1rem 0;
+      }
+      
+      .btn {
+        font-size: 0.875rem;
+        padding: 0.375rem 0.75rem;
+      }
+      
+      .btn-lg {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+      
+      .col-md-6.text-md-end {
+        text-align: center !important;
+        margin-top: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -390,23 +495,25 @@
             <!-- Cards moved to partners grid below -->
         </div>
         <div class="row">
-            <!-- Cards removed as requested -->
-            <div class="col-lg-10 mx-auto d-flex align-items-center justify-content-center">
-                <div class="me-4 text-center">
-                    <span class="badge bg-info text-white px-3 py-2 rounded-pill mb-3 fw-semibold">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Strategic Partnerships
-                    </span>
-                    <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Our <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Partners</span></h1>
-                    <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Building collaborative relationships with industry leaders to advance road safety across South Africa.</p>
-                </div>
-                <div class="ms-4 d-flex align-items-center">
-                    <img src="assets/images/partners.webp" alt="Partners" style="width: 375px; height: auto; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); background: rgba(255,255,255,0.03);" />
+            <!-- Responsive header layout -->
+            <div class="col-lg-10 mx-auto">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-6 text-center text-md-start mb-4 mb-md-0">
+                        <span class="badge bg-info text-white px-3 py-2 rounded-pill mb-3 fw-semibold">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Strategic Partnerships
+                        </span>
+                        <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Our <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Partners</span></h1>
+                        <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Building collaborative relationships with industry leaders to advance road safety across South Africa.</p>
+                    </div>
+                    <div class="col-lg-5 col-md-6 text-center">
+                        <img src="assets/images/partners.webp" alt="Partners" class="img-fluid" style="max-width: 375px; width: 100%; height: auto; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); background: rgba(255,255,255,0.03);" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -420,7 +527,7 @@
             <div class="col-lg-10 mx-auto">
                 <div class="card partner-card">
                     <div class="card-body p-5">
-                        <h2 class="fw-semibold mb-4" style="color: #ffffff; text-shadow: 0 4px 16px #2a9fd6, 1px 1px 2px rgba(0,0,0,0.8); font-size: 2.5rem; white-space: nowrap;">Building Strategic Partnerships for Road Safety</h2>
+                        <h2 class="fw-semibold mb-4" style="color: #ffffff; text-shadow: 0 4px 16px #2a9fd6, 1px 1px 2px rgba(0,0,0,0.8); font-size: 2.5rem;">Building Strategic Partnerships for Road Safety</h2>
 
                         <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
                             <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The Road Safety Foundation of South Africa believes that meaningful change can only be achieved through collaborative partnerships with industry leaders, government agencies, and community organizations.</p>
@@ -466,7 +573,7 @@
 
         <div class="row">
         <!-- Mahindra Card (ID: mahindra) -->
-        <div class="col-lg-4 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
             <div class="card partner-card h-100 gradient-success">
                 <div class="card-body p-4 text-center d-flex flex-column h-100">
                     <span class="category-badge" style="background: rgba(225,112,85,0.2); color: #fffbe7; border: 1px solid #e17055; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block;">Automotive</span>
@@ -474,17 +581,22 @@
                         <img src="assets/images/Mahindra-Logo.png" alt="Mahindra" style="max-height: 60px;">
                     </div>
                     <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Mahindra</h5>
-                    <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Indian automotive leader focusing on utility vehicles and commercial transportation safety, supporting rural and urban road safety initiatives.</p>
+                    <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Indian automotive leader focusing on safe utility, passenger and commercial transportation, supporting rural and community road safety initiatives.</p>
                     <div class="mt-auto pt-3">
-                        <a href="index.html" onclick="event.preventDefault(); if(window.parent && window.parent.document){ var iframe = window.parent.document.getElementById('main-content'); if(iframe){ iframe.src='https://www.mahindra.co.za/'; } else { window.open('https://www.mahindra.co.za/', '_blank'); } } else { window.open('https://www.mahindra.co.za/', '_blank'); }" class="btn btn-outline-success btn-sm">
-                            <i class="fas fa-globe me-2"></i>Visit Website
-                        </a>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <a href="index.html" onclick="event.preventDefault(); if(window.parent && window.parent.document){ var iframe = window.parent.document.getElementById('main-content'); if(iframe){ iframe.src='https://www.mahindra.co.za/'; } else { window.open('https://www.mahindra.co.za/', '_blank'); } } else { window.open('https://www.mahindra.co.za/', '_blank'); }" class="btn btn-outline-success btn-sm">
+                                <i class="fas fa-globe me-2"></i>Visit Website
+                            </a>
+                            <a href="mahindra-album.html" class="btn btn-outline-success btn-sm">
+                                <i class="fas fa-bookmark me-2"></i>Remember
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- MasterDrive Card 2 (Placeholder) -->
-        <div class="col-lg-4 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
             <div class="card partner-card h-100 gradient-warning">
                 <div class="card-body p-4 text-center d-flex flex-column h-100">
                     <span class="category-badge" style="background: rgba(0,184,148,0.2); color: #fff; border: 1px solid #00b894; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block;">Automotive</span>
@@ -494,15 +606,20 @@
                     <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Jetour</h5>
                     <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Jetour is a new-generation automotive brand designed for adventure and safety, bringing innovative technology and robust performance to South African roads.</p>
                     <div class="mt-auto pt-3">
-                        <a href="https://jetour.co.za" target="_blank" class="btn btn-outline-warning btn-sm">
-                            <i class="fas fa-globe me-2"></i>Visit Website
-                        </a>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <a href="https://jetour.co.za" target="_blank" class="btn btn-outline-warning btn-sm disabled">
+                                <i class="fas fa-globe me-2"></i>Visit Website
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm disabled">
+                                <i class="fas fa-bookmark me-2"></i>Remember
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Peugeot Card (from Expanding Partnership Network) -->
-        <div class="col-lg-4 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
             <div class="card partner-card h-100 gradient-info">
                 <div class="card-body p-4 text-center d-flex flex-column h-100">
                     <span class="category-badge" style="background: rgba(253,203,110,0.2); color: #fff; border: 1px solid #fdcb6e; font-size: 0.8rem; font-weight: 700; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">Automotive</span>
@@ -510,17 +627,22 @@
                         <img src="assets/images/Peugeot-Logo.png" alt="Peugeot" style="max-height: 60px;">
                     </div>
                     <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Peugeot</h5>
-                    <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">French automotive manufacturer bringing advanced safety technologies and sustainable mobility solutions to South African roads.</p>
+                    <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">French automotive manufacturer bringing advanced safety technologies and sustainable mobility solutions to South African roads and communities.</p>
                     <div class="mt-auto pt-3">
-                        <a href="https://www.peugeot.co.za/" target="_blank" class="btn btn-outline-info btn-sm">
-                            <i class="fas fa-globe me-2"></i>Visit Website
-                        </a>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <a href="https://www.peugeot.co.za/" target="_blank" class="btn btn-outline-info btn-sm">
+                                <i class="fas fa-globe me-2"></i>Visit Website
+                            </a>
+                            <a href="peugeot-album.html" class="btn btn-outline-info btn-sm">
+                                <i class="fas fa-bookmark me-2"></i>Remember
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
             <!-- Fleet Watch -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                 <div class="card partner-card h-100 gradient-primary">
                     <div class="card-body p-4 text-center d-flex flex-column h-100">
                         <span class="category-badge media" style="background: rgba(42,159,214,0.2); color: #fff; border: 1px solid #2a9fd6; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block;">Media</span>
@@ -528,18 +650,23 @@
                             <img src="assets/images/Fleetwatch-Logo.png" alt="Fleet Watch Logo" style="max-height: 60px;">
                         </div>
                         <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Fleet Watch</h5>
-                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Launched in 1994, FleetWatch has, over the years, grown into one of the most respected trucking magazines in the market winning over 60 awards since inception.</p>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Launched in 1994, FleetWatch has, over the years, grown into one of the most respected trucking magazines in the market winning over 60 awards since inception, and arguably hosts one of the most effective Road Safety campaigns, via it's brake & tyre watch project.</p>
                         <div class="mt-auto pt-3">
-                            <a href="https://www.facebook.com/onlineFW/" target="_blank" class="btn btn-outline-primary btn-sm">
-                                <i class="fab fa-facebook me-2"></i>Visit Page
-                            </a>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://fleetwatch.co.za/" target="_blank" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="fleetwatch-album.html" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Old Mutual Insure (moved up) -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                 <div class="card partner-card h-100 gradient-warning">
                     <div class="card-body p-4 text-center d-flex flex-column h-100">
                         <span class="category-badge automotive" style="background: rgba(211,84,0,0.2); color: #fff; border: 1px solid #d35400; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block;">Insurance</span>
@@ -547,18 +674,23 @@
                             <img src="assets/images/Old-Mutual-Logo.png" alt="Old Mutual Insure Logo" style="max-height: 60px;">
                         </div>
                         <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Old Mutual Insure</h5>
-                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Leading insurance provider committed to road safety through comprehensive vehicle insurance solutions and driver safety education programs.</p>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Leading insurance provider committed to road safety through comprehensive vehicle insurance solutions and driver and community safety education programs.</p>
                         <div class="mt-auto pt-3">
-                            <a href="https://www.oldmutual.co.za/" target="_blank" class="btn btn-outline-warning btn-sm">
-                                <i class="fas fa-globe me-2"></i>Visit Website
-                            </a>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://www.oldmutual.co.za/" target="_blank" class="btn btn-outline-warning btn-sm">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="omi-album.html" class="btn btn-outline-warning btn-sm">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- FleetMax Africa -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                 <div class="card partner-card h-100 gradient-info">
                     <div class="card-body p-4 text-center d-flex flex-column h-100">
                         <span class="category-badge automotive" style="background: rgba(253,121,168,0.2); color: #fff; border: 1px solid #fd79a8; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block;">Automotive</span>
@@ -566,37 +698,47 @@
                             <img src="assets/images/dastek.png" alt="Dastek Logo" style="max-height: 60px;">
                         </div>
                         <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">DASTEK I.V.M.</h5>
-                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Fleet management in the past has been a non‐stop nightmare of reactive attempts to stop something that already happened. The IVM can offer an unrivaled solution to vehicle owners and fleets proactively.</p>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Fleet management in the past has been a non‐stop nightmare of reactive attempts to stop something that already happened. The IVM can offer an unrivaled solution to vehicle owners and fleets and thereby vastly improving safety on our roads.</p>
                         <div class="mt-auto pt-3">
-                            <a href="https://dastekivm.co.za/" target="_blank" class="btn btn-outline-info btn-sm">
-                                <i class="fas fa-globe me-2"></i>Visit Page
-                            </a>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://dastekivm.co.za/" target="_blank" class="btn btn-outline-info btn-sm disabled">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm disabled">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- N3TC -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card partner-card h-100 gradient-warning">
+            <!-- UNICEF -->
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                <div class="card partner-card h-100 gradient-success">
                     <div class="card-body p-4 text-center d-flex flex-column h-100">
-                        <span class="category-badge infrastructure" style="background: rgba(255,136,0,0.2); color: #fff; border: 1px solid #ff8800; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block; width: auto; white-space: nowrap;">Infrastructure</span>
+                        <span class="category-badge institution" style="background: rgba(119,179,0,0.2); color: #fff; border: 1px solid #77b300; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block; width: auto; white-space: nowrap;">Institution</span>
                         <div class="partner-logo">
-                            <img src="assets/images/N3TC-Logo.png" alt="N3TC Logo" style="max-height: 60px;">
+                            <img src="assets/images/unicef-logo.png" alt="UNICEF Logo" style="max-height: 60px;">
                         </div>
-                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">N3 Toll Concession</h5>
-                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Operates and maintains the N3 Toll Route, connecting major provinces and promoting road safety along one of South Africa's busiest transport corridors.</p>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">UNICEF</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">UNICEF, the United Nations agency for children, works to protect the rights of every child, especially the most disadvantaged and those hardest to reach. Across more than 190 countries and territories, we do whatever it takes to help children survive, thrive and fulfil their potential</p>
                         <div class="mt-auto pt-3">
-                            <a href="http://www.n3tc.co.za/" target="_blank" class="btn btn-outline-warning btn-sm">
-                                <i class="fas fa-globe me-2"></i>Visit Website
-                            </a>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://www.unicef.org/" target="_blank" class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- SANRAL -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                 <div class="card partner-card h-100 gradient-danger">
                     <div class="card-body p-4 text-center d-flex flex-column h-100">
                         <span class="category-badge government" style="background: rgba(99,110,114,0.2); color: #fff; border: 1px solid #636e72; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block; width: auto; white-space: nowrap;">Government</span>
@@ -604,18 +746,23 @@
                             <img src="assets/images/Sanral.jpg" alt="SANRAL Logo" style="max-height: 60px;">
                         </div>
                         <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">SANRAL</h5>
-                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">South African National Roads Agency responsible for the planning, design, construction, maintenance and management of the national road network.</p>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">South African National Roads Agency responsible for the planning, design, construction, maintenance and management of the national road network with Road Safety being an important criteria.</p>
                         <div class="mt-auto pt-3">
-                            <a href="https://www.nra.co.za/" target="_blank" class="btn btn-outline-danger btn-sm">
-                                <i class="fas fa-globe me-2"></i>Visit Website
-                            </a>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://www.nra.co.za/" target="_blank" class="btn btn-outline-danger btn-sm disabled">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm disabled">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- RTMC -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                 <div class="card partner-card h-100 gradient-primary">
                     <div class="card-body p-4 text-center d-flex flex-column h-100">
                         <span class="category-badge road-management" style="background: rgba(0,206,201,0.2); color: #fff; border: 1px solid #00cec9; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block; width: 40%; max-width: none; white-space: nowrap;">Road Management</span>
@@ -625,16 +772,21 @@
                         <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">RTMC</h5>
                         <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Road Traffic Management Corporation - the lead road safety agency in South Africa, coordinating strategic planning and law enforcement across all levels of government.</p>
                         <div class="mt-auto pt-3">
-                            <a href="https://www.rtmc.co.za/" target="_blank" class="btn btn-outline-primary btn-sm">
-                                <i class="fas fa-globe me-2"></i>Visit Website
-                            </a>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://www.rtmc.co.za/" target="_blank" class="btn btn-outline-primary btn-sm disabled">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm disabled">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Mercedes-Benz SA -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                 <div class="card partner-card h-100 gradient-primary">
                     <div class="card-body p-4 text-center d-flex flex-column h-100">
                         <span class="category-badge automotive" style="background: rgba(42,159,214,0.2); color: #2a9fd6; border: 1px solid #2a9fd6; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block;">Automotive</span>
@@ -644,16 +796,21 @@
                         <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Mercedes-Benz SA</h5>
                         <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Leading luxury automotive manufacturer committed to advancing vehicle safety technologies and supporting road safety initiatives across South Africa.</p>
                         <div class="mt-auto pt-3">
-                            <a href="https://www.mercedes-benz.co.za/" target="_blank" class="btn btn-outline-primary btn-sm">
-                                <i class="fas fa-globe me-2"></i>Visit Website
-                            </a>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://www.mercedes-benz.co.za/" target="_blank" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Master Drive (moved down) -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                 <div class="card partner-card h-100 gradient-success">
                     <div class="card-body p-4 text-center d-flex flex-column h-100">
                         <span class="category-badge automotive" style="background: rgba(0,188,212,0.2); color: #fff; border: 1px solid #00bcd4; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block;">Automotive</span>
@@ -661,18 +818,23 @@
                             <img src="assets/images/MasterDrive.png" alt="MasterDrive Logo" style="max-height: 75px;">
                         </div>
                         <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">MasterDrive</h5>
-                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Leading provider of advanced driver training programs including defensive driving, truck roll-over prevention, and motorcycle safety training across South Africa.</p>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">A leading provider of advanced driver training programs including defensive driving, truck roll-over prevention, and motorcycle safety training across South Africa.</p>
                         <div class="mt-auto pt-3">
-                            <a href="https://www.masterdrive.co.za/" target="_blank" class="btn btn-outline-success btn-sm">
-                                <i class="fas fa-globe me-2"></i>Visit Website
-                            </a>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://www.masterdrive.co.za/" target="_blank" class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Michelin -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                 <div class="card partner-card h-100 gradient-info">
                     <div class="card-body p-4 text-center d-flex flex-column h-100">
                         <span class="category-badge automotive" style="background: rgba(232,67,147,0.2); color: #fff; border: 1px solid #e84393; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block;">Automotive</span>
@@ -680,11 +842,89 @@
                         <img src="assets/images/michelin-logo.png" alt="Michelin Logo" style="max-height: 180px;">
                         </div>
                         <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Michelin</h5>
-                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Global tire manufacturer focused on mobility safety, providing high-quality tires and supporting road safety education worldwide.</p>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Global tyre manufacturer focused on mobility safety, providing high-quality tyres and actively supporting road safety education worldwide.</p>
                         <div class="mt-auto pt-3">
-                            <a href="https://www.michelin.com/en/" target="_blank" class="btn btn-outline-info btn-sm">
-                                <i class="fas fa-globe me-2"></i>Visit Website
-                            </a>
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://www.michelin.com/en/" target="_blank" class="btn btn-outline-info btn-sm disabled">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm disabled">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- N3TC -->
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                <div class="card partner-card h-100 gradient-warning">
+                    <div class="card-body p-4 text-center d-flex flex-column h-100">
+                        <span class="category-badge infrastructure" style="background: rgba(255,136,0,0.2); color: #fff; border: 1px solid #ff8800; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block; width: auto; white-space: nowrap;">Infrastructure</span>
+                        <div class="partner-logo">
+                            <img src="assets/images/N3TC-Logo.png" alt="N3TC Logo" style="max-height: 60px;">
+                        </div>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">N3 Toll Concession</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Operates and maintains the N3 Toll Route, connecting major provinces and promoting road safety along South Africa's busiest transport corridor.</p>
+                        <div class="mt-auto pt-3">
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="http://www.n3tc.co.za/" target="_blank" class="btn btn-outline-warning btn-sm">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-warning btn-sm">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRAC -->
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                <div class="card partner-card h-100 gradient-warning">
+                    <div class="card-body p-4 text-center d-flex flex-column h-100">
+                        <span class="category-badge infrastructure" style="background: rgba(255,136,0,0.2); color: #fff; border: 1px solid #ff8800; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block; width: auto; white-space: nowrap;">Infrastructure</span>
+                        <div class="partner-logo">
+                            <img src="assets/images/trac-logo.png" alt="TRAC Logo" style="max-height: 60px;">
+                        </div>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Trans African Concessions</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Trans African Concessions (TRAC) is an international, privately-owned company that manages the N4 Toll Route from the Solomon Mahlangu Drive Interchange in Tshwane (formerly Pretoria), Gauteng, to the Maputo Port in Mozambique. TRAC's vision is to connect people, places and countries quickly, conveniently and safely and this is the motto that the company lives by.</p>
+                        <div class="mt-auto pt-3">
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://tracn4.co.za/" target="_blank" class="btn btn-outline-warning btn-sm disabled">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm disabled">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bakwena -->
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                <div class="card partner-card h-100 gradient-primary">
+                    <div class="card-body p-4 text-center d-flex flex-column h-100">
+                        <span class="category-badge infrastructure" style="background: rgba(255,136,0,0.2); color: #fff; border: 1px solid #ff8800; font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; display: inline-block; width: auto; white-space: nowrap;">Infrastructure</span>
+                        <div class="partner-logo">
+                            <img src="assets/images/bakwena-logo.png" alt="Bakwena Logo" style="max-height: 60px;">
+                        </div>
+                        <h5 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Bakwena N1 N4</h5>
+                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">Keeping you Safe
+Road safety lies at the heart of our construction and CSI activities. Bakwena prides itself on being top of mind in terms of safety on our roads, keeping our road users safe and guarding against crashes.</p>
+                        <div class="mt-auto pt-3">
+                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                <a href="https://www.bakwena.co.za/" target="_blank" class="btn btn-outline-primary btn-sm disabled">
+                                    <i class="fas fa-globe me-2"></i>Visit Website
+                                </a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm disabled">
+                                    <i class="fas fa-bookmark me-2"></i>Remember
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
