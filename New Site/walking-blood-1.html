@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking in the Blood - 1 | Road Safety Foundation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark-primary: #060606;
+            --bg-dark-secondary: #1a1a1a;
+            --bg-dark-tertiary: #2d2d2d;
+            --text-light: #ffffff;
+            --text-muted: #adb5bd;
+            --accent-blue: #2a9fd6;
+            --accent-orange: #f97316;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--bg-dark-primary) 0%, var(--bg-dark-secondary) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .video-container {
+            background: var(--bg-dark-secondary);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--bg-dark-tertiary);
+        }
+        
+        .video-player {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .song-info {
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-orange));
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .song-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .song-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        .back-button {
+            background: linear-gradient(45deg, var(--accent-blue), #1e7ba8);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(42, 159, 214, 0.3);
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 159, 214, 0.4);
+            color: white;
+        }
+        
+        .audio-controls {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        .audio-controls p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="video-container">
+                    <div class="song-info">
+                        <h1 class="song-title">
+                            <i class="fas fa-music me-2"></i>
+                            Walking in the Blood - 1
+                        </h1>
+                        <p class="song-subtitle">A special song written for the Road Safety Foundation of South Africa</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <video class="video-player" controls preload="metadata">
+                            <source src="assets/videos/Walking in the Blood - 1.mp4" type="video/mp4">
+                            <p>Your browser does not support the video element. <a href="assets/videos/Walking in the Blood - 1.mp4" download>Download the song</a> instead.</p>
+                        </video>
+                        
+                        <div class="audio-controls">
+                            <p><i class="fas fa-info-circle me-1"></i> Use the video controls to play, pause, and adjust volume</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="javascript:history.back()" class="back-button">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Navigation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

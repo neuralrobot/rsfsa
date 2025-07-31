@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page - Road Safety Foundation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #222; color: #fff; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #555; }
+        .error { color: #ff6b6b; }
+        .success { color: #51cf66; }
+        iframe { width: 100%; height: 400px; border: 1px solid #555; }
+    </style>
+</head>
+<body>
+    <h1>Road Safety Foundation - Diagnostic Test</h1>
+    
+    <div class="test-section">
+        <h2>1. File Existence Test</h2>
+        <div id="file-test">Testing file paths...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. CSS Loading Test</h2>
+        <div id="css-test">Testing CSS loading...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. JavaScript Test</h2>
+        <div id="js-test">Testing JavaScript...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. Home.html Loading Test</h2>
+        <iframe src="home.html" id="test-iframe"></iframe>
+        <div id="iframe-test">Testing iframe loading...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>5. Main Index Loading Test</h2>
+        <iframe src="index.html" id="main-iframe"></iframe>
+        <div id="main-test">Testing main page loading...</div>
+    </div>
+    
+    <script>
+        // Test JavaScript functionality
+        document.getElementById('js-test').innerHTML = '<span class="success">✓ JavaScript is working</span>';
+        
+        // Test iframe loading
+        document.getElementById('test-iframe').onload = function() {
+            document.getElementById('iframe-test').innerHTML = '<span class="success">✓ home.html loaded successfully</span>';
+        };
+        
+        document.getElementById('test-iframe').onerror = function() {
+            document.getElementById('iframe-test').innerHTML = '<span class="error">✗ home.html failed to load</span>';
+        };
+        
+        document.getElementById('main-iframe').onload = function() {
+            document.getElementById('main-test').innerHTML = '<span class="success">✓ index.html loaded successfully</span>';
+        };
+        
+        document.getElementById('main-iframe').onerror = function() {
+            document.getElementById('main-test').innerHTML = '<span class="error">✗ index.html failed to load</span>';
+        };
+        
+        // Test CSS loading
+        const testCss = document.createElement('link');
+        testCss.rel = 'stylesheet';
+        testCss.href = 'assets/theme/css/responsive-modern.css';
+        testCss.onload = function() {
+            document.getElementById('css-test').innerHTML = '<span class="success">✓ responsive-modern.css loaded successfully</span>';
+        };
+        testCss.onerror = function() {
+            document.getElementById('css-test').innerHTML = '<span class="error">✗ responsive-modern.css failed to load</span>';
+        };
+        document.head.appendChild(testCss);
+        
+        // Test file paths
+        const files = [
+            'assets/images/rsfsa-140x128-1.png',
+            'assets/images/SA-Flag.webp',
+            'assets/theme/js/modern-custom.js'
+        ];
+        
+        let fileTestResults = [];
+        let completedTests = 0;
+        
+        files.forEach((file, index) => {
+            const img = new Image();
+            img.onload = function() {
+                fileTestResults[index] = `<span class="success">✓ ${file}</span>`;
+                completedTests++;
+                if (completedTests === files.length) {
+                    document.getElementById('file-test').innerHTML = fileTestResults.join('<br>');
+                }
+            };
+            img.onerror = function() {
+                fileTestResults[index] = `<span class="error">✗ ${file}</span>`;
+                completedTests++;
+                if (completedTests === files.length) {
+                    document.getElementById('file-test').innerHTML = fileTestResults.join('<br>');
+                }
+            };
+            img.src = file;
+        });
+        
+        // Check for console errors
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript Error:', e.error);
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'test-section';
+            errorDiv.innerHTML = `<h2>JavaScript Error Detected</h2><div class="error">Error: ${e.message}<br>File: ${e.filename}<br>Line: ${e.lineno}</div>`;
+            document.body.appendChild(errorDiv);
+        });
+    </script>
+</body>
+</html>

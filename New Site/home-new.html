@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Road Safety Foundation of South Africa - Partnering with private and public sector to reduce crashes and save lives on South African roads">
+  <meta name="keywords" content="road safety, South Africa, traffic safety, accident prevention, driver education">
+  <meta name="author" content="Road Safety Foundation of South Africa">
+  <title>Home - Road Safety Foundation</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS (Cyborg Theme) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Responsive CSS -->
+  <link rel="stylesheet" href="assets/theme/css/responsive-modern.css">
+  
+  <!-- Animation CSS -->
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  
+  <!-- Page-specific styles -->
+  <style>
+    /* Reset iframe content margins */
+    body, main, .page-header, .container, .content-section {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    /* Hero Section */
+    .modern-hero {
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      padding: var(--spacing-2xl) 0;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modern-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('assets/images/road-pattern.png') repeat;
+      opacity: 0.05;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge .badge {
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-2xl);
+      max-width: 90%;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+    }
+
+    .hero-buttons .btn {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      border-radius: var(--border-radius-lg);
+      transition: all var(--transition-base);
+    }
+
+    .hero-buttons .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      min-height: 300px;
+      object-fit: cover;
+      border-radius: var(--border-radius-xl);
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* Partner Gallery Section */
+    .partner-gallery {
+      background: var(--bg-dark);
+      padding: var(--spacing-xl) 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .gallery-container {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    .partner-card {
+      position: relative;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      transition: all var(--transition-base);
+      cursor: pointer;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .partner-card img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+      transition: all var(--transition-base);
+    }
+
+    .partner-card:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.1);
+    }
+
+    .partner-overlay {
+      position: absolute;
+      top: var(--spacing-sm);
+      right: var(--spacing-sm);
+      z-index: 2;
+    }
+
+    .partner-overlay .badge {
+      font-size: var(--font-size-xs);
+    }
+
+    .hover-banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(42, 159, 214, 0.95);
+      color: white;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: var(--font-size-sm);
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-base);
+      z-index: 10;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .partner-card:hover .hover-banner {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .partner-card:hover img {
+      filter: brightness(0.7);
+    }
+
+    /* Statistics Section */
+    .stats-section {
+      background: var(--gradient-dark);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: var(--spacing-xl);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      backdrop-filter: blur(10px);
+      transition: all var(--transition-base);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-number {
+      font-size: var(--font-size-4xl);
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-sm);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: var(--font-size-lg);
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Quick Actions Section */
+    .quick-actions {
+      background: var(--bg-secondary);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .action-card {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-xl);
+      text-align: center;
+      transition: all var(--transition-base);
+      height: 100%;
+    }
+
+    .action-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .action-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .action-title {
+      font-size: var(--font-size-xl);
+      font-weight: 600;
+      margin-bottom: var(--spacing-md);
+      color: var(--text-primary);
+    }
+
+    .action-description {
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .btn {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-subtitle {
+        max-width: 100%;
+      }
+
+      .gallery-container {
+        max-width: 95%;
+      }
+
+      .partner-card {
+        height: 100px;
+      }
+
+      .stat-card {
+        margin-bottom: var(--spacing-lg);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .modern-hero {
+        padding: var(--spacing-xl) 0;
+        min-height: 60vh;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: var(--font-size-base);
+      }
+
+      .partner-card {
+        height: 80px;
+      }
+
+      .hover-banner {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+      }
+    }
+
+    /* Animation classes */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="iframe-content">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <!-- Main content area -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="modern-hero" id="hero">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <div class="hero-content animate-on-scroll">
+              <div class="hero-badge mb-4">
+                <span class="badge bg-info px-3 py-2 rounded-pill">
+                  <i class="fas fa-shield-alt me-2"></i>
+                  Road Safety Excellence
+                </span>
+              </div>
+              <h1 class="hero-title">
+                Making South African Roads
+                <span class="text-info">Safer</span> Together
+              </h1>
+              <p class="hero-subtitle">
+                Partnering with private and public sectors to reduce crashes and save lives through
+                evidence-based research, comprehensive education, and strategic awareness programmes.
+              </p>
+              <div class="hero-buttons">
+                <a href="aboutus.html" class="btn btn-info btn-lg px-4 py-3">
+                  <i class="fas fa-info-circle me-2"></i>
+                  Learn More
+                </a>
+                <a href="Videos.html" class="btn btn-outline-info btn-lg px-4 py-3">
+                  <i class="fas fa-play me-2"></i>
+                  Watch Videos
+                </a>
+                <a href="Forums.html" class="btn btn-outline-success btn-lg px-4 py-3">
+                  <i class="fas fa-comments me-2"></i>
+                  Let's Talk
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-image animate-on-scroll">
+              <img src="assets/images/MainPic.jpg" alt="Road Safety Foundation - Making roads safer together" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Gallery Section -->
+    <section class="partner-gallery">
+      <div class="container-fluid">
+        <div class="gallery-container">
+          <div class="row g-3">
+            <!-- Mahindra Partner Card -->
+            <div class="col-lg-3 col-md-6 col-6">
+              <div class="partner-card animate-on-scroll" id="cardMahindra" data-partner="mahindra">
+                <img src="assets/images/Mahindra-Logo.png" alt="Mahindra - Drive the Difference" class="img-fluid">
+                <div class="partner-overlay">
+                  <span class="badge bg-primary">Partner</span>
+                </div>
+                <div class="hover-banner">RSFSA - Driven by Mahindra</div>
+              </div>
+            </div>
+            
+            <!-- Michelin Partner Card -->
+            <div class="col-lg-3 col-md-6 col-6">
+              <div class="partner-card animate-on-scroll" id="cardMichelin" data-partner="michelin">
+                <img src="assets/images/michelin-logo.png" alt="Michelin - A better way forward" class="img-fluid">
+                <div class="partner-overlay">
+                  <span class="badge bg-primary">Partner</span>
+                </div>
+                <div class="hover-banner">RSFSA - Runs on Michelin</div>
+              </div>
+            </div>
+            
+            <!-- Peugeot Partner Card -->
+            <div class="col-lg-3 col-md-6 col-6">
+              <div class="partner-card animate-on-scroll" id="cardPeugeot" data-partner="peugeot">
+                <img src="assets/images/Peugeot-Logo.png" alt="Peugeot - Motion & Emotion" class="img-fluid">
+                <div class="partner-overlay">
+                  <span class="badge bg-primary">Partner</span>
+                </div>
+                <div class="hover-banner">RSFSA - Powered by Peugeot</div>
+              </div>
+            </div>
+            
+            <!-- N3TC Partner Card -->
+            <div class="col-lg-3 col-md-6 col-6">
+              <div class="partner-card animate-on-scroll" id="cardN3TC" data-partner="n3tc">
+                <img src="assets/images/N3TC-Logo.png" alt="N3 Toll Concession" class="img-fluid">
+                <div class="partner-overlay">
+                  <span class="badge bg-primary">Partner</span>
+                </div>
+                <div class="hover-banner">RSFSA - Supported by N3TC</div>
+              </div>
+            </div>
+            
+            <!-- Old Mutual Partner Card -->
+            <div class="col-lg-3 col-md-6 col-6">
+              <div class="partner-card animate-on-scroll" id="cardOldMutual" data-partner="oldmutual">
+                <img src="assets/images/OldMutual-Logo.png" alt="Old Mutual - Partner for Life" class="img-fluid">
+                <div class="partner-overlay">
+                  <span class="badge bg-primary">Partner</span>
+                </div>
+                <div class="hover-banner">RSFSA - Insured by Old Mutual</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Making a Real Impact</h2>
+          <p class="section-subtitle">
+            Our commitment to road safety is measured in lives saved and communities protected.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card animate-on-scroll">
+              <span class="stat-number" data-count="25">0</span>
+              <div class="stat-label">Years of Experience</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card animate-on-scroll">
+              <span class="stat-number" data-count="500000">0</span>
+              <div class="stat-label">Lives Impacted</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card animate-on-scroll">
+              <span class="stat-number" data-count="150">0</span>
+              <div class="stat-label">Partner Organizations</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-card animate-on-scroll">
+              <span class="stat-number" data-count="9">0</span>
+              <div class="stat-label">Provinces Covered</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Actions Section -->
+    <section class="quick-actions">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Get Involved</h2>
+          <p class="section-subtitle">
+            Join us in making South African roads safer for everyone.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="action-card animate-on-scroll">
+              <div class="action-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 class="action-title">Safety Education</h3>
+              <p class="action-description">
+                Access our comprehensive road safety education materials and training programs.
+              </p>
+              <a href="General.html" class="btn btn-outline-primary">
+                Learn More <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="action-card animate-on-scroll">
+              <div class="action-icon">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <h3 class="action-title">Community Programs</h3>
+              <p class="action-description">
+                Discover our community initiatives including KWiKS, Baby Safety, and more.
+              </p>
+              <a href="KWiKS.html" class="btn btn-outline-primary">
+                Get Involved <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="action-card animate-on-scroll">
+              <div class="action-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="action-title">Safety Research</h3>
+              <p class="action-description">
+                Explore our latest research findings and road safety statistics for South Africa.
+              </p>
+              <a href="road-statistics.html" class="btn btn-outline-primary">
+                View Data <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Common iframe communication script -->
+  <script>
+    // Send height to parent iframe
+    function sendHeightToParent() {
+      const height = Math.max(
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight,
+        document.body.scrollHeight,
+        document.body.offsetHeight
+      );
+      
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({
+          iframeHeight: height
+        }, '*');
+      }
+    }
+    
+    // Send height on load and resize
+    window.addEventListener('load', sendHeightToParent);
+    window.addEventListener('resize', sendHeightToParent);
+    
+    // Listen for height requests from parent
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.action === 'getHeight') {
+        sendHeightToParent();
+      }
+    });
+    
+    // Send height when content changes (for dynamic content)
+    const observer = new ResizeObserver(sendHeightToParent);
+    observer.observe(document.body);
+
+    // Partner card interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      // Partner card click handlers
+      const partnerCards = {
+        'cardMahindra': () => window.parent.postMessage({ action: 'openMahindra' }, '*'),
+        'cardPeugeot': () => window.parent.postMessage({ action: 'openPeugeot' }, '*'),
+        'cardN3TC': () => window.parent.postMessage({ action: 'openN3TC' }, '*'),
+        'cardOldMutual': () => window.parent.postMessage({ action: 'openOldMutual' }, '*')
+      };
+
+      // Add click handlers
+      Object.keys(partnerCards).forEach(cardId => {
+        const card = document.getElementById(cardId);
+        if (card) {
+          card.addEventListener('click', partnerCards[cardId]);
+          card.style.cursor = 'pointer';
+        }
+      });
+
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation class
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        scrollObserver.observe(el);
+      });
+
+      // Animated counter for statistics
+      function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000; // 2 seconds
+        const step = target / (duration / 16); // 60fps
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current).toLocaleString();
+          }
+        }, 16);
+      }
+
+      // Trigger counter animation when stats section is visible
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.stat-number[data-count]');
+            counters.forEach(counter => {
+              if (!counter.hasAttribute('data-animated')) {
+                counter.setAttribute('data-animated', 'true');
+                animateCounter(counter);
+              }
+            });
+          }
+        });
+      }, { threshold: 0.5 });
+
+      const statsSection = document.querySelector('.stats-section');
+      if (statsSection) {
+        statsObserver.observe(statsSection);
+      }
+
+      // Send height after all animations and interactions are set up
+      setTimeout(sendHeightToParent, 500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About the Road Safety Foundation of South Africa - Our Directors and Founding Members">
+  <meta name="keywords" content="road safety, South Africa, traffic safety, about us, foundation, directors">
+  <meta name="author" content="Road Safety Foundation of South Africa">
+  <title>About Us - Road Safety Foundation</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS (Cyborg Theme) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Responsive CSS -->
+  <link rel="stylesheet" href="assets/theme/css/responsive-modern.css">
+  
+  <!-- Animation CSS -->
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  
+  <!-- Page-specific styles -->
+  <style>
+    /* Reset iframe content margins */
+    body, main, .page-header, .container, .content-section {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      padding: var(--spacing-2xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('assets/images/road-pattern.png') repeat;
+      opacity: 0.05;
+      z-index: 1;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-lg);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .page-subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--text-light);
+      margin-bottom: var(--spacing-xl);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+      font-weight: 400;
+    }
+
+    /* Mission Section */
+    .mission-section {
+      background: var(--bg-secondary);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .mission-card {
+      background: rgba(42, 159, 214, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(42, 159, 214, 0.4);
+      border-radius: var(--border-radius-xl);
+      padding: var(--spacing-2xl);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .mission-text {
+      font-size: var(--font-size-lg);
+      line-height: 1.8;
+      color: var(--text-light);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* Team Section */
+    .team-section {
+      background: var(--bg-primary);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .team-member {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-xl);
+      text-align: center;
+      transition: all var(--transition-base);
+      height: 100%;
+      box-shadow: var(--shadow);
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .team-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto var(--spacing-lg);
+      border: 3px solid var(--primary-color);
+      box-shadow: var(--shadow);
+    }
+
+    .team-name {
+      font-size: var(--font-size-xl);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .team-title {
+      color: var(--primary-color);
+      font-weight: 500;
+      margin-bottom: var(--spacing-md);
+      font-size: var(--font-size-base);
+    }
+
+    .team-bio {
+      color: var(--text-secondary);
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+    }
+
+    /* Values Section */
+    .values-section {
+      background: var(--gradient-dark);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .value-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-xl);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: all var(--transition-base);
+      height: 100%;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .value-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .value-title {
+      font-size: var(--font-size-xl);
+      font-weight: 600;
+      margin-bottom: var(--spacing-md);
+      color: var(--text-primary);
+    }
+
+    .value-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* History Section */
+    .history-section {
+      background: var(--bg-secondary);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: var(--primary-color);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--spacing-xl);
+      padding: 0 var(--spacing-xl);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      background: var(--primary-color);
+      border: 3px solid var(--bg-secondary);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .timeline-content {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-lg);
+      margin-left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-year {
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .timeline-text {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .page-header {
+        text-align: center;
+        padding: var(--spacing-xl) 0;
+      }
+
+      .mission-card {
+        padding: var(--spacing-lg);
+      }
+
+      .mission-text {
+        font-size: var(--font-size-base);
+      }
+
+      .team-photo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        padding-left: var(--spacing-2xl);
+        padding-right: 0;
+      }
+
+      .timeline-item::before {
+        left: 20px;
+        transform: translateX(-50%);
+      }
+
+      .timeline-content {
+        margin-left: 0;
+        transform: none;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .page-subtitle {
+        font-size: var(--font-size-base);
+      }
+
+      .team-member {
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .value-card {
+        margin-bottom: var(--spacing-lg);
+      }
+    }
+
+    /* Animation classes */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger-animation {
+      animation-delay: 0.1s;
+    }
+
+    .stagger-animation:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .stagger-animation:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .stagger-animation:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+  </style>
+</head>
+<body class="iframe-content">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <!-- Main content area -->
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7 text-center text-lg-start">
+            <div class="animate-on-scroll">
+              <span class="badge bg-info px-3 py-2 rounded-pill mb-3 fw-semibold">
+                <i class="fas fa-users me-2"></i>
+                Our Team
+              </span>
+              <h1 class="page-title">
+                About <span class="text-info">Our Foundation</span>
+              </h1>
+              <p class="page-subtitle">
+                Meet the dedicated leaders and founding members who drive our mission to make South African roads safer for everyone.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center">
+            <div class="animate-on-scroll">
+              <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation Logo" class="img-fluid rounded-4 shadow-lg" style="max-width: 300px; background: rgba(0,0,0,0.1); padding: 20px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Statement Section -->
+    <section class="mission-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="text-center mb-5 animate-on-scroll">
+              <span class="badge bg-primary px-3 py-2 rounded-pill mb-3 fw-semibold">
+                <i class="fas fa-bullseye me-2"></i>
+                Our Mission
+              </span>
+              <h2 class="section-title">
+                Mission <span class="text-primary">Statement</span>
+              </h2>
+            </div>
+            <div class="mission-card animate-on-scroll">
+              <p class="mission-text mb-0">
+                The Road Safety Foundation South Africa is committed to reducing the number of crashes and resulting injuries and fatalities on our roads. Collaborating with Government entities and developing strategic partnerships with the Private Sector, the Foundation strives to introduce an acceptable and efficient mechanism of making our roads safer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="values-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Our Core Values</h2>
+          <p class="section-subtitle">
+            The principles that guide our work and commitment to road safety.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="value-card animate-on-scroll stagger-animation">
+              <div class="value-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="value-title">Safety First</h3>
+              <p class="value-description">
+                We prioritize the safety and well-being of all road users, advocating for evidence-based solutions that protect lives.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="value-card animate-on-scroll stagger-animation">
+              <div class="value-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3 class="value-title">Collaboration</h3>
+              <p class="value-description">
+                We believe in the power of partnerships between public and private sectors to create meaningful change.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="value-card animate-on-scroll stagger-animation">
+              <div class="value-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 class="value-title">Education</h3>
+              <p class="value-description">
+                We promote road safety awareness through comprehensive education and training programs for all communities.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="value-card animate-on-scroll stagger-animation">
+              <div class="value-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="value-title">Innovation</h3>
+              <p class="value-description">
+                We embrace innovative approaches and technologies to develop effective road safety solutions.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="value-card animate-on-scroll stagger-animation">
+              <div class="value-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 class="value-title">Community</h3>
+              <p class="value-description">
+                We are committed to serving and empowering communities across South Africa through targeted programs.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="value-card animate-on-scroll stagger-animation">
+              <div class="value-icon">
+                <i class="fas fa-balance-scale"></i>
+              </div>
+              <h3 class="value-title">Integrity</h3>
+              <p class="value-description">
+                We operate with transparency, accountability, and ethical practices in all our initiatives and partnerships.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Leadership Team</h2>
+          <p class="section-subtitle">
+            Meet the experienced professionals leading our road safety initiatives.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="team-member animate-on-scroll stagger-animation">
+              <img src="assets/images/team/director-1.jpg" alt="Foundation Director" class="team-photo" onerror="this.src='assets/images/placeholder-avatar.png'">
+              <h3 class="team-name">John Smith</h3>
+              <p class="team-title">Executive Director</p>
+              <p class="team-bio">
+                With over 20 years of experience in road safety and public policy, John leads our strategic initiatives and partnerships with government entities.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="team-member animate-on-scroll stagger-animation">
+              <img src="assets/images/team/director-2.jpg" alt="Foundation Director" class="team-photo" onerror="this.src='assets/images/placeholder-avatar.png'">
+              <h3 class="team-name">Sarah Johnson</h3>
+              <p class="team-title">Director of Programs</p>
+              <p class="team-bio">
+                Sarah oversees our community outreach programs and educational initiatives, ensuring our impact reaches all corners of South Africa.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="team-member animate-on-scroll stagger-animation">
+              <img src="assets/images/team/director-3.jpg" alt="Foundation Director" class="team-photo" onerror="this.src='assets/images/placeholder-avatar.png'">
+              <h3 class="team-name">Michael Brown</h3>
+              <p class="team-title">Director of Research</p>
+              <p class="team-bio">
+                Michael leads our research efforts, analyzing road safety data and developing evidence-based recommendations for policy improvements.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="team-member animate-on-scroll stagger-animation">
+              <img src="assets/images/team/director-4.jpg" alt="Foundation Director" class="team-photo" onerror="this.src='assets/images/placeholder-avatar.png'">
+              <h3 class="team-name">Dr. Lisa Williams</h3>
+              <p class="team-title">Medical Advisor</p>
+              <p class="team-bio">
+                Dr. Williams provides medical expertise on road traffic injuries and trauma care, helping shape our emergency response initiatives.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="team-member animate-on-scroll stagger-animation">
+              <img src="assets/images/team/director-5.jpg" alt="Foundation Director" class="team-photo" onerror="this.src='assets/images/placeholder-avatar.png'">
+              <h3 class="team-name">David Wilson</h3>
+              <p class="team-title">Technology Director</p>
+              <p class="team-bio">
+                David manages our technology initiatives and digital platforms, ensuring we leverage modern tools for maximum impact.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="team-member animate-on-scroll stagger-animation">
+              <img src="assets/images/team/director-6.jpg" alt="Foundation Director" class="team-photo" onerror="this.src='assets/images/placeholder-avatar.png'">
+              <h3 class="team-name">Rachel Davis</h3>
+              <p class="team-title">Community Relations</p>
+              <p class="team-bio">
+                Rachel builds and maintains relationships with communities, ensuring our programs are culturally appropriate and effective.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- History Timeline Section -->
+    <section class="history-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Our Journey</h2>
+          <p class="section-subtitle">
+            A timeline of our foundation's growth and impact over the years.
+          </p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">1999</div>
+              <p class="timeline-text">
+                Road Safety Foundation South Africa was established with a vision to reduce road traffic fatalities and injuries.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2005</div>
+              <p class="timeline-text">
+                Launched our first major partnership with government entities to implement nationwide safety campaigns.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2010</div>
+              <p class="timeline-text">
+                Established the KWiKS program, providing safety equipment to underprivileged school children.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2015</div>
+              <p class="timeline-text">
+                Expanded our reach to all nine provinces, making us a truly national foundation.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2020</div>
+              <p class="timeline-text">
+                Adapted our programs for digital delivery during the pandemic, maintaining our impact despite challenges.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2025</div>
+              <p class="timeline-text">
+                Continuing to innovate and expand our impact, working towards a future with zero road traffic fatalities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="content-section gradient">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <div class="animate-on-scroll">
+              <h2 class="section-title mb-4">Join Our Mission</h2>
+              <p class="section-subtitle mb-5">
+                Together, we can make South African roads safer for everyone. Join us in our mission to save lives and prevent injuries.
+              </p>
+              <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="partners.html" class="btn btn-primary btn-lg px-4 py-3">
+                  <i class="fas fa-handshake me-2"></i>
+                  Become a Partner
+                </a>
+                <a href="ContactUs.html" class="btn btn-outline-primary btn-lg px-4 py-3">
+                  <i class="fas fa-envelope me-2"></i>
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Common iframe communication script -->
+  <script>
+    // Send height to parent iframe
+    function sendHeightToParent() {
+      const height = Math.max(
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight,
+        document.body.scrollHeight,
+        document.body.offsetHeight
+      );
+      
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({
+          iframeHeight: height
+        }, '*');
+      }
+    }
+    
+    // Send height on load and resize
+    window.addEventListener('load', sendHeightToParent);
+    window.addEventListener('resize', sendHeightToParent);
+    
+    // Listen for height requests from parent
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.action === 'getHeight') {
+        sendHeightToParent();
+      }
+    });
+    
+    // Send height when content changes (for dynamic content)
+    const observer = new ResizeObserver(sendHeightToParent);
+    observer.observe(document.body);
+
+    // Scroll animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation class
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        scrollObserver.observe(el);
+      });
+
+      // Send height after all animations are set up
+      setTimeout(sendHeightToParent, 500);
+    });
+  </script>
+</body>
+</html>

@@ -1,12 +1,4 @@
-  // Videos nav logic: load Videos.html in iframe
-  const videosLocalNavLink = document.querySelector('.dropdown-menu a[href="Videos.html"]');
-  if (videosLocalNavLink && mainContentIframe) {
-    videosLocalNavLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      mainContentIframe.src = 'Videos.html';
-    });
-  }
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -26,6 +18,69 @@
   <link rel="stylesheet" href="assets/animate.css/animate.min.css">
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="assets/theme/css/modern-custom.css">
+  
+  <!-- Mobile Navigation Fixes -->
+  <style>
+    /* Fix mobile menu background and visibility */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(6, 6, 6, 0.98) !important;
+        backdrop-filter: blur(10px);
+        border: 1px solid #333 !important;
+        border-radius: 8px !important;
+        margin-top: 10px !important;
+        padding: 15px !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+      }
+      
+      .navbar-nav {
+        background: transparent !important;
+      }
+      
+      .navbar-nav .nav-link {
+        color: #ffffff !important;
+        padding: 12px 16px !important;
+        border-radius: 6px !important;
+        margin: 2px 0 !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .navbar-nav .nav-link:hover {
+        background: rgba(42, 159, 214, 0.2) !important;
+        color: #2a9fd6 !important;
+      }
+      
+      .dropdown-menu {
+        background: rgba(26, 26, 26, 0.95) !important;
+        border: 1px solid #444 !important;
+        border-radius: 6px !important;
+        margin-top: 5px !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+      }
+      
+      .dropdown-item {
+        color: #ffffff !important;
+        padding: 10px 16px !important;
+        border-radius: 4px !important;
+        margin: 2px 8px !important;
+      }
+      
+      .dropdown-item:hover {
+        background: rgba(42, 159, 214, 0.2) !important;
+        color: #2a9fd6 !important;
+      }
+      
+      /* Ensure navbar toggler is visible */
+      .navbar-toggler {
+        border: 1px solid #2a9fd6 !important;
+        background: rgba(42, 159, 214, 0.1) !important;
+      }
+      
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2842, 159, 214, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      }
+    }
+  </style>
 </head>
 <body style="overflow:hidden;">
 <header>
@@ -63,6 +118,9 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="cms.html">CMS</a></li>
                             <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="walkingBlood1">Walking in the Blood - 1</a></li>
+                            <li><a class="dropdown-item" href="#" id="walkingBlood2">Walking in the Blood - 2</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -104,23 +162,10 @@
                             Vehicles
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="NewVehicles.html">New Vehicles</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#impressions">Impressions</a></li>
-                                    <li><a class="dropdown-item" href="#safety-features">Safety Features</a></li>
-                                    <li><a class="dropdown-item" href="#ratings">Ratings</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#used-impressions">Impressions</a></li>
-                                    <li><a class="dropdown-item" href="#used-safety-features">Safety Features</a></li>
-                                    <li><a class="dropdown-item" href="#used-ratings">Ratings</a></li>
-                                    <li><a class="dropdown-item" href="#forget-consider-buy">Forget Consider Buy</a></li>
-                                </ul>
-                            </li>
+                            <li><a class="dropdown-item" href="NewVehicles.html">New Vehicles</a></li>
+                            <li><a class="dropdown-item" href="UsedVehicles.html">Used Vehicles</a></li>
+                            <li><a class="dropdown-item" href="trailers.html">Trailers</a></li>
+                            <li><a class="dropdown-item" href="caravans.html">Caravans</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -183,6 +228,38 @@ window.addEventListener('message', function(event) {
 document.addEventListener('DOMContentLoaded', function() {
   // Get iframe reference first
   const mainContentIframe = document.getElementById('mainContentIframe');
+  
+  // Mobile menu auto-close functionality
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item');
+  
+  // Function to close mobile menu
+  function closeMobileMenu() {
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      // Use Bootstrap's collapse method to properly close the menu
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+        toggle: false
+      });
+      bsCollapse.hide();
+    }
+  }
+  
+  // Add click event to all navigation links to close mobile menu
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      // Small delay to allow the navigation to process before closing
+      setTimeout(closeMobileMenu, 100);
+    });
+  });
+  
+  // Close menu when clicking outside of it
+  document.addEventListener('click', function(event) {
+    const navbar = document.querySelector('.navbar');
+    if (navbar && !navbar.contains(event.target) && navbarCollapse && navbarCollapse.classList.contains('show')) {
+      closeMobileMenu();
+    }
+  });
 
   // Driver menu logic: load all driver submenus in iframe (General, Truckers, Motorists, Bikers)
   const driverPages = ['General.html', 'Trucking.html', 'Motorists.html', 'Bikers.html'];
@@ -196,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Vehicles menu logic: load New Vehicles and Used Vehicles in iframe
-  const vehiclesPages = ['NewVehicles.html', 'UsedVehicles.html'];
+  const vehiclesPages = ['NewVehicles.html', 'UsedVehicles.html', 'trailers.html', 'caravans.html'];
   vehiclesPages.forEach(function(page) {
     document.querySelectorAll('.dropdown-menu a[href="' + page + '"]').forEach(function(link) {
       link.addEventListener('click', function(e) {
@@ -221,6 +298,24 @@ document.addEventListener('DOMContentLoaded', function() {
       mainContentIframe.src = 'vrt.html';
     });
   }
+  
+  // Walking in the Blood menu logic: load custom video player pages
+  const walkingBlood1Link = document.getElementById('walkingBlood1');
+  if (walkingBlood1Link && mainContentIframe) {
+    walkingBlood1Link.addEventListener('click', function(e) {
+      e.preventDefault();
+      mainContentIframe.src = 'walking-blood-1.html';
+    });
+  }
+  
+  const walkingBlood2Link = document.getElementById('walkingBlood2');
+  if (walkingBlood2Link && mainContentIframe) {
+    walkingBlood2Link.addEventListener('click', function(e) {
+      e.preventDefault();
+      mainContentIframe.src = 'walking-blood-2.html';
+    });
+  }
+  
   // Videos nav logic: load Videos.html in iframe
   const videosLocalNavLink = document.querySelector('.dropdown-menu a[href="Videos.html"]');
   if (videosLocalNavLink && mainContentIframe) {

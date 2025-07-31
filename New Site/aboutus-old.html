@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="About the Road Safety Foundation of South Africa - Our Directors and Founder Members">
+  <title>About Us - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body, main, .page-header, .container, .content-section {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    body {
+      padding-top: 60px;
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    /* Ensure main content doesn't get hidden behind fixed nav */
+    main {
+      padding-top: 60px;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.98) 0%, rgba(10, 10, 10, 0.98) 100%),
+                  url('assets/images/rsfsa-140x128-1.png') center/cover;
+      padding: 75px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(153, 51, 204, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+    .page-header .display-3,
+    .page-header h1,
+    .page-header .lead {
+      color: #fffbe8 !important;
+      text-shadow: 0 0 8px rgba(42,159,214,0.25), 2px 2px 6px rgba(0,0,0,0.8);
+    }
+    .page-header .badge {
+      background: linear-gradient(90deg, #2a9fd6 0%, #fffbe8 100%);
+      color: #222 !important;
+      box-shadow: 0 2px 8px rgba(42,159,214,0.15);
+    }
+
+    .director-card, .founder-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .director-card:hover, .founder-card:hover {
+      transform: translateY(-5px);
+      border-color: #2a9fd6 !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .director-card img, .founder-card img {
+      border-radius: 0.5rem 0.5rem 0 0;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .director-card .card-body, .founder-card .card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 200px;
+    }
+
+    .director-card .card-body .card-text:last-child {
+      margin-top: auto;
+    }
+
+    /* Traffic Alerts Marquee */
+    .traffic-marquee {
+      background: #ff8800;
+      color: #000;
+      padding: 8px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      border-top: 2px solid #ff6600;
+    }
+
+    .traffic-marquee-content {
+      display: inline-block;
+      animation: scroll-left 60s linear infinite;
+      padding-left: 100%;
+    }
+
+    .traffic-alert-item {
+      display: inline-block;
+      margin-right: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .traffic-alert-item i {
+      margin-right: 8px;
+      color: #cc0000;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .traffic-marquee-content {
+        animation: scroll-left 40s linear infinite;
+      }
+
+      .traffic-alert-item {
+        font-size: 0.8rem;
+        margin-right: 30px;
+      }
+    }
+
+    /* Form Styles */
+    .form-control {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .form-control:focus {
+      background: var(--bg-secondary);
+      border-color: var(--primary-color);
+      color: var(--text-primary);
+      box-shadow: 0 0 0 0.2rem rgba(42, 159, 214, 0.25);
+    }
+
+    /* Social Media Icons */
+    .social-links a {
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    .social-links i {
+      display: inline-block;
+      width: 1.5em;
+      text-align: center;
+    }
+
+    /* Ensure FontAwesome icons load properly */
+    .fab {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+
+    /* Add text shadow for better visibility of 'Our Directors' heading */
+    .leadership-title-shadow {
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 1px 0 #222;
+    }
+  </style>
+</head>
+<body>
+<!-- Top navigation bar removed. Only the main content remains. -->
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-center text-lg-start">
+                <span class="badge bg-info text-dark px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Our Team
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">About <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Our Foundation</span></h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">Meet the dedicated leaders and founding members who drive our mission to make South African roads safer for everyone.</p>
+            </div>
+            <div class="col-lg-5 text-center">
+                <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation Logo" class="img-fluid rounded-4 shadow-lg" style="width: 300px; height: auto; object-fit: contain; background: rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Statement Section -->
+<section class="py-5" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-5">
+                    <span class="badge text-bg-primary px-3 py-2 rounded-pill mb-3 fw-semibold">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Our Mission
+                    </span>
+                    <h2 class="display-5 fw-light mb-4 text-white">
+                        Mission <span class="text-primary fw-normal">Statement</span>
+                    </h2>
+                </div>
+                <div class="card border-0 shadow-lg" style="background: rgba(42, 159, 214, 0.15); backdrop-filter: blur(10px); border: 1px solid rgba(42, 159, 214, 0.4) !important;">
+                    <div class="card-body p-5">
+                        <p class="lead mb-0 text-center" style="line-height: 1.8; font-size: 1.2rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">
+                            The Road Safety Foundation South Africa is committed to reducing the number of crashes and resulting injuries and fatalities on our roads. Collaborating with Government entities and developing strategic partnerships with the Private Sector, the Foundation strives to introduce an acceptable and efficient mechanism of making our roads safer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section class="py-5" style="background: var(--bg-primary);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-5">
+                    <span class="badge text-bg-info px-3 py-2 rounded-pill mb-3 fw-semibold">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Our Story
+                    </span>
+                    <h2 class="display-5 fw-light mb-4 text-white">
+                        About <span class="text-info fw-normal">Us</span>
+                    </h2>
+                </div>
+                <div class="card border-0 shadow-lg" style="background: rgba(153, 51, 204, 0.15); backdrop-filter: blur(10px); border: 1px solid rgba(153, 51, 204, 0.4) !important;">
+                    <div class="card-body p-5">
+                        <p class="mb-4" style="line-height: 1.8; font-size: 1.1rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">
+                            The Road Safety Foundation South Africa was formed back in 2007 by Petro Kruger and Philip Hull, both of whom had more than 20 years of road safety experience. With a number of entities being continuously critical of Government policies and general lack of effective efficiency amongst traffic officers, we decided to try doing things differently. This brought both success and failure.
+                        </p>
+                        <p class="mb-4" style="line-height: 1.8; font-size: 1.1rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">
+                            The positive communication with Government at Ministerial level to local authorities which for us was a priority, was made impossible by the frequent, ongoing changes of these individuals. Compounding the problem, was the fact that in most cases, the appointed individuals had very little or no experience in road safety, often resulting in decisions based on very little fact. (dropping the blood alcohol limit to a zero base as an example).
+                        </p>
+                        <p class="mb-0" style="line-height: 1.8; font-size: 1.1rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">
+                            We hold a unique position within the road safety arena, in that three of the four Directors hold, or have held medical qualifications and have 'walked in the blood' at various crashes over the years. Attending to the injured with both the physical and emotional impact, reinforces our strategy and determination to making a difference on our roads.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Directors Section -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-12 text-center">
+                <span class="badge text-bg-success px-3 py-2 rounded-pill mb-3">
+                    Leadership Team
+                </span>
+                <h2 class="display-5 fw-light mb-4 text-light leadership-title-shadow">
+                    Our <span class="text-success fw-normal">Directors</span>
+                </h2>
+                <p class="lead text-light mb-0">Experienced leaders guiding our road safety initiatives</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <!-- Petro Kruger card update -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card director-card h-100">
+                    <img src="assets/images/Petro_Director.png" class="card-img-top" alt="Petro Kruger">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-light fw-semibold">Petro Kruger</h5>
+                        <p class="card-text text-info mb-2">Founder Member and Director</p>
+                        <p class="card-text text-light small">Focusing on Legal Issues and child and infant transportation safety.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card director-card h-100">
+                    <img src="assets/images/Phil_Director.png" class="card-img-top" alt="Philip Hull">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-light fw-semibold">Philip Hull</h5>
+                        <p class="card-text text-info mb-2">Founder Member and Director</p>
+                        <p class="card-text text-light small">Leading our strategic vision and road safety initiatives with decades of experience in transportation safety.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Eugene Herbert card update -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card director-card h-100">
+                    <img src="assets/images/Eugene_Director.png" class="card-img-top" alt="Eugene Herbert">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-light fw-semibold">Eugene Herbert</h5>
+                        <p class="card-text text-success mb-2">Director</p>
+                        <p class="card-text text-light small">Overseeing research and development of innovative road safety solutions and technologies, with special focus on driver training and networking.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card director-card h-100">
+                    <img src="assets/images/Doctor Sharon Kay.png" class="card-img-top" alt="Dr. Sharon Kay">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-light fw-semibold">Dr. Sharon Kay</h5>
+                        <p class="card-text text-warning mb-2">Medical Director</p>
+                        <p class="card-text text-light small">Providing medical expertise and insights into road safety from a healthcare perspective, focusing on injury prevention and trauma response protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Director Profiles Section -->
+<section class="py-5" style="background: var(--bg-tertiary);">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-12 text-center">
+                <span class="badge text-bg-warning px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Leadership Profiles
+                </span>
+                <h2 class="display-5 fw-light mb-4 text-white">
+                    Director <span class="text-warning fw-normal">Profiles</span>
+                </h2>
+                <p class="lead mb-0" style="color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 400;">Detailed backgrounds of our experienced leadership team</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Petro Kruger Profile -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100" style="background: rgba(42, 159, 214, 0.1); border: 1px solid rgba(42, 159, 214, 0.3);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="me-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: var(--info-color);">
+                                    <i class="fas fa-user-tie text-white fs-4"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="card-title text-info fw-bold mb-1">PETRO KRUGER</h5>
+                                <p class="text-muted mb-0">Founding Partner & Director</p>
+                            </div>
+                        </div>
+                        <p class="card-text" style="line-height: 1.7; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">
+                            A founding partner of the RSFSA, Petro is a practising attorney who also up until recently was registered with the Health Professions Council of South Africa. Specialising in infant and child transportation as well as legislation, Petro brings a wealth of passion and knowledge to the road safety arena.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philip Hull Profile -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100" style="background: rgba(119, 179, 0, 0.1); border: 1px solid rgba(119, 179, 0, 0.3);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="me-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: var(--success-color);">
+                                    <i class="fas fa-user-md text-white fs-4"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="card-title text-success fw-bold mb-1">PHILIP HULL</h5>
+                                <p class="text-muted mb-0">Founding Partner & Director</p>
+                            </div>
+                        </div>
+                        <p class="card-text" style="line-height: 1.7; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">
+                            The other founding partner of the RSFSA, Philip has accumulated over 40 years of road safety experience. As a Past Director of one of the largest retail motor groups and as a qualified paramedic, Philip has been able to combine two of his passions. 'Walking in the blood' at crash scenes gives Philip a unique motivation to make our roads safer by reducing the number of crashes on our roads.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dr Sharon Kay Profile -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100" style="background: rgba(255, 136, 0, 0.1); border: 1px solid rgba(255, 136, 0, 0.3);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="me-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: var(--warning-color);">
+                                    <i class="fas fa-stethoscope text-white fs-4"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="card-title text-warning fw-bold mb-1">DR SHARON KAY</h5>
+                                <p class="text-muted mb-0">Medical Director</p>
+                            </div>
+                        </div>
+                        <p class="card-text" style="line-height: 1.7; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">
+                            A recent addition to the RSFSA team, Sharon is a Doctor who also has spent too much time 'Walking in the blood' and thus passionate about making a difference. Focused on driver health and related issues, Sharon's intuitive and enquiring mind lends itself to exciting and ground breaking research into these topics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eugene Herbert Profile -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100" style="background: rgba(204, 0, 0, 0.1); border: 1px solid rgba(204, 0, 0, 0.3);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="me-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: var(--danger-color);">
+                                    <i class="fas fa-graduation-cap text-white fs-4"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="card-title text-danger fw-bold mb-1">EUGENE HERBERT</h5>
+                                <p class="text-muted mb-0">Director - Driver Training</p>
+                            </div>
+                        </div>
+                        <p class="card-text" style="line-height: 1.7; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">
+                            With a core focus on driver training, Eugene has been in the road safety space for over 20 years. MASTERDRIVE, one of Eugene's companies, offers preliminary, defensive and advanced driver training on all vehicles from motorcycles to heavy commercial vehicles. On various transport and road safety boards, Eugene brings a wide spectrum of knowledge and experience on all aspects of road safety.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Traffic Alerts Marquee -->
+<div class="traffic-marquee">
+    <div class="traffic-marquee-content">
+        <span class="traffic-alert-item">
+            <i class="fas fa-exclamation-triangle"></i>
+            TRAFFIC ALERT: Heavy congestion on N1 North between Johannesburg and Pretoria due to ongoing roadworks
+        </span>
+        <span class="traffic-alert-item">
+            <i class="fas fa-car-crash"></i>
+            ACCIDENT: Multi-vehicle collision on M1 South, emergency services on scene - expect delays
+        </span>
+        <span class="traffic-alert-item">
+            <i class="fas fa-road"></i>
+            ROAD CLOSURE: R21 eastbound closed between Kempton Park and OR Tambo for maintenance until 18:00
+        </span>
+        <span class="traffic-alert-item">
+            <i class="fas fa-weather-rain"></i>
+            WEATHER WARNING: Heavy rain affecting visibility on N3 between Durban and Pietermaritzburg - drive carefully
+        </span>
+        <span class="traffic-alert-item">
+            <i class="fas fa-construction"></i>
+            CONSTRUCTION: Lane restrictions on N2 near Cape Town CBD - reduce speed and merge safely
+        </span>
+        <span class="traffic-alert-item">
+            <i class="fas fa-traffic-light"></i>
+            TRAFFIC LIGHTS: Signal failure at intersection of William Nicol and Sandton Drive - police directing traffic
+        </span>
+        <span class="traffic-alert-item">
+            <i class="fas fa-truck"></i>
+            HEAVY VEHICLES: Abnormal load transport on N4 between Pretoria and Rustenburg - exercise caution
+        </span>
+        <span class="traffic-alert-item">
+            <i class="fas fa-bicycle"></i>
+            CYCLIST SAFETY: Annual Cape Town Cycle Tour this Sunday - road closures in CBD and Atlantic Seaboard
+        </span>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Modern JavaScript for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Phone number reveal functionality
+    const phoneElement = document.getElementById('phone-number');
+    if (phoneElement) {
+        let revealed = false;
+        phoneElement.addEventListener('click', function() {
+            if (!revealed) {
+                const phoneNumber = this.dataset.number;
+                this.textContent = phoneNumber;
+                this.style.cursor = 'default';
+                this.title = 'Phone number';
+                revealed = true;
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

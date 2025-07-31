@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<!-- PAGE_DESCRIPTION -->">
+  <meta name="keywords" content="road safety, South Africa, traffic safety, accident prevention, driver education">
+  <meta name="author" content="Road Safety Foundation of South Africa">
+  <title><!-- PAGE_TITLE --> - Road Safety Foundation</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS (Cyborg Theme) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Responsive CSS -->
+  <link rel="stylesheet" href="assets/theme/css/responsive-modern.css">
+  
+  <!-- Animation CSS (only load if needed) -->
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  
+  <!-- Page-specific CSS can be added here -->
+  <!-- PAGE_SPECIFIC_CSS -->
+</head>
+<body class="iframe-content">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <!-- Main content area -->
+  <main id="main-content" class="content-section">
+    <!-- PAGE_CONTENT -->
+  </main>
+  
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Page-specific JavaScript can be added here -->
+  <!-- PAGE_SPECIFIC_JS -->
+  
+  <!-- Common iframe communication script -->
+  <script>
+    // Send height to parent iframe
+    function sendHeightToParent() {
+      const height = Math.max(
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight,
+        document.body.scrollHeight,
+        document.body.offsetHeight
+      );
+      
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({
+          iframeHeight: height
+        }, '*');
+      }
+    }
+    
+    // Send height on load and resize
+    window.addEventListener('load', sendHeightToParent);
+    window.addEventListener('resize', sendHeightToParent);
+    
+    // Listen for height requests from parent
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.action === 'getHeight') {
+        sendHeightToParent();
+      }
+    });
+    
+    // Send height when content changes (for dynamic content)
+    const observer = new ResizeObserver(sendHeightToParent);
+    observer.observe(document.body);
+  </script>
+</body>
+</html>

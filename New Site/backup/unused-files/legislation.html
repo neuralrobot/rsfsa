@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Road Traffic Legislation - Stay informed about South African road traffic laws and regulations">
+  <title>Road Traffic Legislation - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      padding-top: 80px;
+    }
+
+    /* Static Navigation Styles */
+    .modern-nav {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+
+    .navbar-brand {
+      font-size: 1.1rem;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .navbar-nav {
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-item {
+      margin: 0;
+    }
+
+    .nav-link {
+      padding: 0.75rem 1rem !important;
+      border-radius: 0;
+      transition: all 0.3s ease;
+      position: relative;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      background: rgba(42, 159, 214, 0.1);
+      border-bottom-color: var(--primary-color);
+      color: var(--text-light) !important;
+    }
+
+    .nav-link.active {
+      background: rgba(42, 159, 214, 0.15);
+      color: var(--primary-color) !important;
+      border-bottom-color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 1400px) {
+      .nav-link {
+        padding: 0.6rem 0.8rem !important;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .nav-link {
+        padding: 0.5rem 0.6rem !important;
+        font-size: 0.8rem;
+      }
+
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .navbar-brand img {
+        height: 35px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .nav-link {
+        padding: 0.4rem 0.5rem !important;
+        font-size: 0.75rem;
+      }
+
+      .navbar-brand {
+        font-size: 0.9rem;
+      }
+
+      .navbar-brand img {
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-link {
+        padding: 0.3rem 0.4rem !important;
+        font-size: 0.7rem;
+      }
+
+      .navbar-brand span {
+        display: none;
+      }
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(153, 51, 204, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .legislation-card, .update-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .legislation-card:hover, .update-card:hover {
+      transform: translateY(-5px);
+      border-color: #2a9fd6 !important;
+      box-shadow: 0 10px 30px rgba(42, 159, 214, 0.2);
+    }
+
+    .highlight-box {
+      background: rgba(255, 136, 0, 0.1) !important;
+      border: 1px solid #ff8800 !important;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .implementation-box {
+      background: rgba(119, 179, 0, 0.1) !important;
+      border: 1px solid #77b300 !important;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .pending-box {
+      background: rgba(220, 53, 69, 0.1) !important;
+      border: 1px solid #dc3545 !important;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .contact-box {
+      background: rgba(42, 159, 214, 0.1) !important;
+      border: 1px solid #2a9fd6 !important;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+<header>
+    <nav class="modern-nav fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="40" class="me-2">
+                    <span class="fw-bold text-primary">Road Safety Foundation</span>
+                </a>
+
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Videos.html">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="legislation.html">Legislation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PetSafety.html">Motor Vehicles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="DriverWellness.html">Driver Wellness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Pedestrians.html">Pedestrians</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Trucking.html">Trucking</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Partners
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="founding-partners.html">Founding</a></li>
+                            <li><a class="dropdown-item" href="associate-partners.html">Associates</a></li>
+                            <li><a class="dropdown-item" href="operational-partners.html">Operational</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="News.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Forums.html">Let's Torque</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="BLOG.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <span class="badge bg-danger text-light px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Legal Framework
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Road Traffic <span style="color: #dc3545; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Legislation</span></h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">Stay informed about the latest updates to South African road traffic laws and regulations that affect all road users.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Legislation Content -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card legislation-card">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-5">
+                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3 fw-semibold">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Latest Update
+                            </span>
+                            <h2 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">National Road Traffic Act - 22nd Amendment</h2>
+                            <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem;">03 November 2014 | Department of Transport</p>
+                        </div>
+
+                        <div style="color: #f8f9fa; font-size: 1.05rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The National Department of Transport has published the long awaited Twenty Second Regulation Amendment (previously referred to as the Twenty First Amendment) to the National Road Traffic Regulations. The Government Gazette is No 38142 published on 31 October 2014.</p>
+
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Most of the provisions that were covered in the draft notice that was published on 8 June 2012 have been included in the amendment. Schedule 1 to the Regulations contains all the forms that must be used for purposes of the legislation. Many forms have been added or amended.</p>
+
+                            <div class="highlight-box">
+                                <h4 style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Important Notice
+                                </h4>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">The amendment legislation covers many topics and the document is 144 pages. It is available from the Government Printers at www.gpwonline.co.za.</p>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-weight: 600;">PLEASE NOTE the implementation clause on page 142 of the gazette - Regulation 78 is the provision with the implementation dates. The numbers in regulation 78 refer to the amendment gazette numbers and not to the numbers of the regulations once they are inserted in the main gazette.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Implementation Details Section -->
+<section class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Implemented Regulations -->
+            <div class="col-lg-6">
+                <div class="card update-card h-100">
+                    <div class="card-body p-4">
+                        <h3 class="fw-semibold mb-4" style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <polyline points="9,11 12,14 22,4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M21,12v7a2,2,0,0,1-2,2H5a2,2,0,0,1-2-2V5A2,2,0,0,1,5,3H16" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Implemented on 31 October 2014
+                        </h3>
+
+                        <div class="implementation-box">
+                            <ul style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.8;">
+                                <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Haulage tractors</strong> – various provisions relating to licences, roadworthiness, loading, etc.</li>
+                                <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Verification of address particulars</strong> for NaTIS users (excluding the provision on website updates)</li>
+                                <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Children under three years</strong> must be seated in a child restraint when transported in a motor vehicle (not applicable to minibuses and buses used for reward)</li>
+                                <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">The 80-sign</strong> on the back of a goods vehicle over 9000 kg GVM is now compulsory</li>
+                                <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Management Representatives</strong> of Testing Stations may now test 150 vehicles a month instead of 5 a day</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Implementation -->
+            <div class="col-lg-6">
+                <div class="card update-card h-100">
+                    <div class="card-body p-4">
+                        <h3 class="fw-semibold mb-4" style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Scheduled Implementation
+                        </h3>
+
+                        <div class="highlight-box">
+                            <h5 style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">31 January 2015</h5>
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">The provisions on <strong>Consignor and Consignee requirements</strong> – regulations 330A to 330D. The regulations stipulate that a consignor must determine that a vehicle is legally loaded (axles and total mass). A goods declaration is also required in terms of regulation 330C on goods vehicles.</p>
+
+                            <h5 style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">30 April 2015</h5>
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The amendment to regulation 215 that requires <strong>speed governors on certain vehicles</strong> will be implemented.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pending Provisions Section -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card legislation-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-4" style="color: #dc3545; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <line x1="15" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="2"/>
+                                <line x1="9" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Provisions Not Yet Implemented
+                        </h3>
+
+                        <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-size: 1.05rem; margin-bottom: 2rem;">Many provisions contained in the amendment gazette have not been implemented yet and require a further notice to be published, announcing the implementation date(s). The following are some of the provisions that are not implemented yet:</p>
+
+                        <div class="pending-box">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <ul style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.8;">
+                                        <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Requirements for driving hours</strong> – regulations 272A to 272E</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Requirements for provisional driving licences</strong> – Regulations 107, 107A -107C, 108 – 108A, 109</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Regulations on driving schools</strong> – regulations 114G to 114Q</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.8;">
+                                        <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Vehicle roadworthiness testing</strong> – amendment to regulation 138 requiring vehicles 10 years and older to be tested every 24 months</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Vehicle directional stability control devices</strong> (VDSCD) – requirement in regulation 139</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong style="color: #ffffff;">Parking provisions</strong> for persons with a disability</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255, 136, 0, 0.1); border-left: 4px solid #ff8800; padding: 20px; margin-top: 2rem; border-radius: 4px;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-weight: 600; margin-bottom: 0;">Please be aware that this is not a complete list of all the amendments and only highlights some of the more major changes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Workshop Information Section -->
+<section class="py-5" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card update-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-4" style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="me-2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/>
+                                <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
+                                <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Sixteenth Annual Road Transport Legislation Workshop 2015
+                        </h3>
+
+                        <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-size: 1.05rem; margin-bottom: 2rem;">Please note the dates for our Sixteenth Annual Road Transport Legislation Workshop 2015. Bookings will open on 1 February 2015.</p>
+
+                        <div class="contact-box">
+                            <h5 style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1.5rem;">Workshop Venues:</h5>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div style="background: rgba(42, 159, 214, 0.1); padding: 15px; border-radius: 6px;">
+                                        <h6 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">26 May 2015</h6>
+                                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); margin-bottom: 0;">Stellenbosch (Spier)</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div style="background: rgba(42, 159, 214, 0.1); padding: 15px; border-radius: 6px;">
+                                        <h6 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">28 May 2015</h6>
+                                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); margin-bottom: 0;">Durban (Garden Court Marine Parade)</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div style="background: rgba(42, 159, 214, 0.1); padding: 15px; border-radius: 6px;">
+                                        <h6 style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">9 June 2015</h6>
+                                        <p style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); margin-bottom: 0;">Pretoria (CSIR)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(42, 159, 214, 0.05); padding: 20px; border-radius: 8px; margin-top: 2rem;">
+                            <h6 style="color: #2a9fd6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1rem;">Contact Information:</h6>
+                            <div style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); line-height: 1.6;">
+                                <p style="margin-bottom: 0.5rem;"><strong style="color: #ffffff;">Alta Swanepoel & Associates</strong></p>
+                                <p style="margin-bottom: 0.5rem;">1266 Starkey Avenue, Waverley, Pretoria</p>
+                                <p style="margin-bottom: 0.5rem;">Tel: +2712 332 2186/9 | Fax: +2786 672 0469</p>
+                                <p style="margin-bottom: 0;">Website: www.altaswanepoel.co.za</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="card" style="background: linear-gradient(135deg, #dc3545 0%, #a02834 100%); border: none;">
+                    <div class="card-body p-5">
+                        <h3 class="fw-semibold mb-3" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Stay Informed About Legal Changes</h3>
+                        <p class="mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem; opacity: 0.95;">Road traffic legislation affects every road user. Stay updated with the latest changes and ensure compliance with South African road laws.</p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="ContactUs.html" class="btn btn-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Get Legal Guidance
+                            </a>
+                            <a href="News.html" class="btn btn-outline-light btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M6 12h8" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M6 8h8" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Latest News
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="mb-4">
+                    <a href="https://www.youtube.com/@RoadMatters-r8b" target="_blank" class="text-info me-3" title="YouTube">
+                        <i class="fab fa-youtube fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-info me-3" title="Facebook">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-info" title="Twitter">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </div>
+                <p class="text-light mb-2">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+                <p class="text-muted small">Making South African roads safer through education, research, and partnerships.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

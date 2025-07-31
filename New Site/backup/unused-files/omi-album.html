@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Old Mutual Insure Album - Road Safety Foundation partnership showcase with Old Mutual Insure insurance excellence and road safety commitment">
+  <title>Old Mutual Insure Album - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+      --omi-green: #00a651;
+      --omi-green-dark: #008a44;
+      --omi-blue: #003d82;
+      --omi-blue-dark: #002a5c;
+    }
+
+    body {
+      padding-top: 0px;
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.85) 0%, rgba(0, 166, 81, 0.15) 50%, rgba(26, 26, 26, 0.85) 100%),
+                  url('assets/images/Old-Mutual-Logo.png') center/contain no-repeat, 
+                  linear-gradient(45deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      padding: 120px 0 80px 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 70vh;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(0, 166, 81, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 61, 130, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+
+    .hero-section .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .omi-logo-hero {
+      max-width: 300px;
+      filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+      margin-bottom: 2rem;
+    }
+
+    /* Content Cards */
+    .content-card {
+      background: #222 !important;
+      border: 1px solid #444 !important;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .content-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--omi-green) !important;
+      box-shadow: 0 0 25px rgba(0, 166, 81, 0.3);
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--omi-green);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Video Thumbnails */
+    .video-thumbnail {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .video-thumbnail:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(0, 166, 81, 0.4);
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .video-thumbnail:hover img {
+      filter: brightness(1.1);
+    }
+
+    .video-play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 166, 81, 0.9);
+      color: white;
+      border: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .video-thumbnail:hover .video-play-button {
+      background: var(--omi-green);
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 6px 25px rgba(0, 166, 81, 0.5);
+    }
+
+    .video-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 20px 15px 15px;
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      width: 90%;
+      height: 80%;
+      max-width: 1200px;
+      max-height: 800px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-content video {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -50px;
+      right: -10px;
+      background: rgba(0, 166, 81, 0.9);
+      border: 2px solid var(--omi-green);
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    .lightbox-close:hover {
+      background: var(--omi-green);
+      transform: scale(1.1);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 166, 81, 0.8);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-nav:hover {
+      background: var(--omi-green);
+    }
+
+    .lightbox-nav.prev {
+      left: -80px;
+    }
+
+    .lightbox-nav.next {
+      right: -80px;
+    }
+
+    /* Back Button */
+    .btn-back {
+      background: linear-gradient(135deg, var(--omi-green) 0%, var(--omi-green-dark) 100%);
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 166, 81, 0.3);
+    }
+
+    .btn-back:hover {
+      background: var(--omi-green);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 166, 81, 0.4);
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0 60px 0;
+        min-height: 60vh;
+      }
+      
+      .omi-logo-hero {
+        max-width: 200px;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem !important;
+      }
+      
+      .video-thumbnail img {
+        height: 150px;
+      }
+      
+      .video-play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+      
+      .lightbox {
+        padding: 10px;
+      }
+      
+      .lightbox-content {
+        width: 95%;
+        height: 70%;
+      }
+      
+      .lightbox-close {
+        top: -40px;
+        right: 0;
+      }
+      
+      .lightbox-nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 60px 0 40px 0;
+        min-height: 50vh;
+      }
+      
+      .section-header h2 {
+        font-size: 1.8rem !important;
+      }
+      
+      .video-thumbnail img {
+        height: 120px;
+      }
+    }
+
+    /* Font Awesome icon fix */
+    .fas, .far, .fab, .fa {
+      font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands', 'Font Awesome 5 Free' !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+                <img src="assets/images/Old-Mutual-Logo.png" alt="Old Mutual Insure Logo" class="omi-logo-hero">
+                <h1 class="display-3 fw-bold mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                    Old Mutual <span style="color: var(--omi-green);">Insure</span>
+                </h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-size: 1.3rem;">
+                    Insurance Excellence & Road Safety Partnership
+                </p>
+                <div class="text-center">
+                    <a href="partners.html" class="btn-back me-3">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Partners
+                    </a>
+                    <a href="https://www.oldmutual.co.za/" target="_blank" class="btn-back">
+                        <i class="fas fa-external-link-alt me-2"></i>Visit Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Gallery Section -->
+<section class="py-5" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-header">
+            <h2>Insurance & Safety Videos</h2>
+            <p>Discover our collaboration through exclusive videos showcasing Old Mutual Insure's commitment to road safety and insurance excellence.</p>
+        </div>
+        
+        <div class="row" id="videoGallery">
+            <!-- Videos will be dynamically loaded here -->
+        </div>
+    </div>
+</section>
+
+<!-- Partnership Information Section -->
+<section class="py-5" style="background: var(--bg-primary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="content-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-bold mb-4 text-center" style="color: var(--omi-green);">
+                            <i class="fas fa-shield-alt me-3"></i>
+                            About Our Partnership
+                        </h3>
+                        
+                        <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
+                            <p class="text-center mb-4" style="color: #ffffff; font-size: 1.2rem;">
+                                Old Mutual Insure is a leading South African insurance provider committed to protecting lives and property while actively promoting road safety through comprehensive insurance solutions and community education programs.
+                            </p>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <h5 style="color: var(--omi-green); margin-bottom: 1rem;">
+                                        <i class="fas fa-car me-2"></i>Vehicle Insurance Excellence
+                                    </h5>
+                                    <p>Comprehensive vehicle insurance solutions that protect South African motorists while promoting responsible driving and road safety awareness through innovative coverage options and risk management programs.</p>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <h5 style="color: var(--omi-blue); margin-bottom: 1rem;">
+                                        <i class="fas fa-graduation-cap me-2"></i>Safety Education Programs
+                                    </h5>
+                                    <p>Educational initiatives focused on driver safety training, accident prevention, and community outreach programs that help reduce road incidents and promote safer driving practices across South Africa.</p>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <h5 style="color: var(--omi-green); margin-bottom: 1rem;">
+                                        <i class="fas fa-users me-2"></i>Community Engagement
+                                    </h5>
+                                    <p>Active participation in road safety campaigns and community programs that support the Road Safety Foundation's mission to reduce road fatalities and create safer transportation environments.</p>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <h5 style="color: var(--omi-blue); margin-bottom: 1rem;">
+                                        <i class="fas fa-chart-line me-2"></i>Data-Driven Safety
+                                    </h5>
+                                    <p>Leveraging insurance data and analytics to identify risk patterns, support safety research, and develop evidence-based strategies for reducing road incidents and improving overall traffic safety.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4 p-4" style="background: rgba(0, 166, 81, 0.1); border-radius: 12px; border: 1px solid rgba(0, 166, 81, 0.3);">
+                                <h5 style="color: var(--omi-green); margin-bottom: 1rem;">
+                                    <i class="fas fa-handshake me-2"></i>Partnership Impact
+                                </h5>
+                                <p class="mb-0">Through our partnership with the Road Safety Foundation, Old Mutual Insure combines insurance expertise with road safety advocacy, creating comprehensive solutions that protect both individual motorists and the broader South African community.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="content-card" style="background: linear-gradient(135deg, var(--omi-green) 0%, var(--omi-blue) 100%); border: none;">
+                    <div class="card-body p-5">
+                        <h3 class="fw-bold mb-4" style="color: white;">
+                            <i class="fas fa-road me-3"></i>
+                            Join Our Road Safety Mission
+                        </h3>
+                        <p class="lead mb-4" style="color: rgba(255,255,255,0.9);">
+                            Partner with Old Mutual Insure and the Road Safety Foundation to create safer roads for all South Africans through comprehensive insurance protection and safety education.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 justify-content-center">
+                            <a href="https://www.oldmutual.co.za/" target="_blank" class="btn btn-light btn-lg">
+                                <i class="fas fa-shield-alt me-2"></i>Get Insurance Quote
+                            </a>
+                            <a href="ContactUs.html" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Lightbox -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav prev" id="lightboxPrev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav next" id="lightboxNext">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <video id="lightboxVideo" controls>
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// OMI video gallery data
+const galleryVideos = [
+    'assets/images/OMI/video001.mp4',
+    'assets/images/OMI/video002.mp4',
+    'assets/images/OMI/video003.mp4',
+    'assets/images/OMI/video004.mp4',
+    'assets/images/OMI/video005.mp4',
+    'assets/images/OMI/video006.mp4',
+    'assets/images/OMI/video007.mp4',
+    'assets/images/OMI/video008.mp4',
+    'assets/images/OMI/video009.mp4',
+    'assets/images/OMI/video010.mp4',
+    'assets/images/OMI/video011.mp4',
+    'assets/images/OMI/video012.mp4',
+    'assets/images/OMI/video013.mp4'
+];
+
+const videoTitles = [
+    'Insurance Protection Excellence',
+    'Road Safety Education Programs',
+    'Community Outreach Initiatives',
+    'Accident Prevention Strategies',
+    'Driver Training Programs',
+    'Insurance Claims & Safety',
+    'Risk Management Solutions',
+    'Safety Technology Integration',
+    'Community Partnership Impact',
+    'Insurance Innovation',
+    'Road Safety Advocacy',
+    'Customer Protection Stories',
+    'Future of Safe Driving'
+];
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initializeVideoGallery();
+    initializeLightbox();
+});
+
+function initializeVideoGallery() {
+    const gallery = document.getElementById('videoGallery');
+    
+    galleryVideos.forEach((video, index) => {
+        const col = document.createElement('div');
+        col.className = 'col-lg-4 col-md-6 mb-4';
+        
+        // Create video thumbnail using first frame
+        col.innerHTML = `
+            <div class="content-card">
+                <div class="video-thumbnail" data-video-index="${index}">
+                    <video muted preload="metadata" style="width: 100%; height: 200px; object-fit: cover;">
+                        <source src="${video}#t=0.1" type="video/mp4">
+                    </video>
+                    <div class="video-play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-title">
+                        ${videoTitles[index] || `OMI Video ${index + 1}`}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        gallery.appendChild(col);
+    });
+    
+    // Add click handlers for video thumbnails
+    document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            const videoIndex = parseInt(this.dataset.videoIndex);
+            openLightbox(videoIndex);
+        });
+    });
+}
+
+function initializeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxVideo = document.getElementById('lightboxVideo');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    
+    let currentVideoIndex = 0;
+    
+    // Close lightbox
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    
+    // Navigation
+    lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+    lightboxNext.addEventListener('click', () => navigateLightbox(1));
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowLeft':
+                navigateLightbox(-1);
+                break;
+            case 'ArrowRight':
+                navigateLightbox(1);
+                break;
+        }
+    });
+    
+    function navigateLightbox(direction) {
+        currentVideoIndex += direction;
+        
+        if (currentVideoIndex < 0) {
+            currentVideoIndex = galleryVideos.length - 1;
+        } else if (currentVideoIndex >= galleryVideos.length) {
+            currentVideoIndex = 0;
+        }
+        
+        lightboxVideo.src = galleryVideos[currentVideoIndex];
+        lightboxVideo.load();
+    }
+    
+    window.openLightbox = function(index) {
+        currentVideoIndex = index;
+        lightboxVideo.src = galleryVideos[index];
+        lightboxVideo.load();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.modern-nav');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+});
+</script>
+
+</body>
+</html>

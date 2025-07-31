@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Peugeot Album - Road Safety Foundation partnership showcase with Peugeot automotive excellence">
+  <title>Peugeot Album - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+      --peugeot-cyan: #00b4d8;
+      --peugeot-cyan-dark: #0090a8;
+      --peugeot-blue: #1565c0;
+      --peugeot-blue-dark: #0d47a1;
+    }
+
+    body {
+      padding-top: 0px;
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Navigation Styles */
+    .modern-nav {
+      background: rgba(6, 6, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      height: 60px !important;
+      min-height: 60px !important;
+    }
+
+    .modern-nav.scrolled {
+      background: rgba(6, 6, 6, 0.98);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.85) 0%, rgba(0, 180, 216, 0.15) 50%, rgba(26, 26, 26, 0.85) 100%),
+                  url('assets/images/Peugeot/peugeot-001.jpg') center/cover;
+      padding: 120px 0 80px 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 70vh;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(0, 180, 216, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(21, 101, 192, 0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+
+    .hero-section .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .peugeot-logo-hero {
+      max-width: 300px;
+      filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+      margin-bottom: 2rem;
+    }
+
+    /* Content Cards */
+    .content-card {
+      background: #222 !important;
+      border: 1px solid #444 !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .content-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--peugeot-cyan) !important;
+      box-shadow: 0 0 30px 8px rgba(0, 180, 216, 0.3), 0 15px 40px rgba(0, 180, 216, 0.2);
+    }
+
+    /* Video Gallery Styles */
+    .video-thumbnail {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #333;
+    }
+
+    .video-thumbnail:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 180, 216, 0.4);
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .video-thumbnail:hover img {
+      filter: brightness(1.1);
+    }
+
+    .video-play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 180, 216, 0.9);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .video-thumbnail:hover .video-play-button {
+      background: var(--peugeot-cyan);
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 6px 25px rgba(0, 180, 216, 0.5);
+    }
+
+    .video-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 20px 15px 15px;
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    /* Image Carousel Styles */
+    .image-carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 300px;
+      margin-right: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .carousel-slide:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 180, 216, 0.4);
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-slide:hover img {
+      filter: brightness(1.1);
+    }
+
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 180, 216, 0.9);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .carousel-nav:hover {
+      background: var(--peugeot-cyan);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-nav.prev {
+      left: 15px;
+    }
+
+    .carousel-nav.next {
+      right: 15px;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 50px rgba(0, 180, 216, 0.3);
+    }
+
+    .lightbox-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 180, 216, 0.9);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      background: var(--peugeot-cyan);
+      transform: scale(1.1);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 180, 216, 0.9);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-nav:hover {
+      background: var(--peugeot-cyan);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-nav.prev {
+      left: 30px;
+    }
+
+    .lightbox-nav.next {
+      right: 30px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      color: var(--peugeot-cyan);
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .section-header p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* Enhanced text contrast */
+    .text-light {
+      color: #ffffff !important;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .text-muted {
+      color: #e0e0e0 !important;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    }
+
+    /* Font Awesome Icon Fix */
+    .fas, .far, .fab, .fa {
+      font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
+      font-weight: 900 !important;
+      display: inline-block !important;
+    }
+
+    .fab {
+      font-weight: 400 !important;
+    }
+
+    /* Buttons */
+    .btn-peugeot {
+      background: linear-gradient(135deg, var(--peugeot-cyan) 0%, var(--peugeot-cyan-dark) 100%);
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-peugeot:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 180, 216, 0.4);
+      color: white;
+    }
+
+    .btn-outline-peugeot {
+      border: 2px solid var(--peugeot-cyan);
+      color: var(--peugeot-cyan);
+      background: transparent;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-outline-peugeot:hover {
+      background: var(--peugeot-cyan);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 180, 216, 0.4);
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0 60px 0;
+        min-height: 60vh;
+      }
+      
+      .peugeot-logo-hero {
+        max-width: 200px;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem !important;
+      }
+      
+      .carousel-slide {
+        min-width: 280px;
+      }
+      
+      .carousel-slide img {
+        height: 200px;
+      }
+      
+      .video-thumbnail img {
+        height: 150px;
+      }
+      
+      .video-play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 60px 0 40px 0;
+        min-height: 50vh;
+      }
+      
+      .section-header h2 {
+        font-size: 1.8rem !important;
+      }
+      
+      .carousel-slide {
+        min-width: 250px;
+      }
+      
+      .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+      
+      .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+                <img src="assets/images/Peugeot-Logo.png" alt="Peugeot Logo" class="peugeot-logo-hero img-fluid mb-4">
+                <h1 class="display-3 fw-bold mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                    <span style="color: var(--peugeot-cyan);">Peugeot</span> Partnership Gallery
+                </h1>
+                <p class="lead mb-5" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-size: 1.3rem; max-width: 700px; margin: 0 auto;">
+                    Exploring our strategic partnership with Peugeot - a leader in automotive innovation, design excellence, and advanced safety technologies across South Africa.
+                </p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="partners.html" class="btn btn-outline-peugeot">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Partners
+                    </a>
+                    <a href="https://www.peugeot.co.za/" target="_blank" class="btn btn-peugeot">
+                        <i class="fas fa-external-link-alt me-2"></i>Visit Peugeot
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Gallery Section -->
+<section class="py-5" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-header">
+            <h2>Partnership Videos</h2>
+            <p>Discover our collaboration through exclusive videos showcasing Peugeot's commitment to road safety and automotive excellence.</p>
+        </div>
+        
+        <div class="row">
+            <!-- Video Placeholder 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="content-card">
+                    <div class="video-thumbnail" data-video="peugeot-safety-features">
+                        <img src="assets/images/Peugeot/peugeot-002.jpg" alt="Peugeot Safety Features">
+                        <div class="video-play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title">
+                            Safety Innovation Excellence
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Placeholder 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="content-card">
+                    <div class="video-thumbnail" data-video="peugeot-partnership">
+                        <img src="assets/images/Peugeot/peugeot-003.jpg" alt="Partnership Highlights">
+                        <div class="video-play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title">
+                            Partnership Highlights
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Placeholder 3 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="content-card">
+                    <div class="video-thumbnail" data-video="peugeot-community">
+                        <img src="assets/images/Peugeot/peugeot-004.jpg" alt="Community Impact">
+                        <div class="video-play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title">
+                            Community Road Safety
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Gallery Section -->
+<section class="py-5" style="background: var(--bg-primary);">
+    <div class="container">
+        <div class="section-header">
+            <h2>Partnership Gallery</h2>
+            <p>Browse through our collection of partnership moments, vehicle showcases, and collaborative initiatives with Peugeot.</p>
+        </div>
+        
+        <div class="content-card p-4">
+            <div class="image-carousel" id="peugeotCarousel">
+                <button class="carousel-nav prev" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="carousel-container" id="carouselContainer">
+                    <!-- Images will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p class="text-muted">
+                <i class="fas fa-mouse-pointer me-2"></i>
+                Click on any image to view in full size
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Partnership Information Section -->
+<section class="py-5" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="content-card">
+                    <div class="card-body p-5">
+                        <h3 class="fw-bold mb-4 text-center" style="color: var(--peugeot-cyan);">
+                            <i class="fas fa-handshake me-3"></i>
+                            About Our Partnership
+                        </h3>
+                        
+                        <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
+                            <p class="text-center mb-4" style="color: #ffffff; font-size: 1.2rem;">
+                                Peugeot is a leading French automotive manufacturer with a strong presence in South Africa, committed to advancing road safety through innovative vehicle technologies, elegant design, and community engagement.
+                            </p>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <h5 style="color: var(--peugeot-cyan); margin-bottom: 1rem;">
+                                        <i class="fas fa-car me-2"></i>Vehicle Safety Innovation
+                                    </h5>
+                                    <p>Peugeot's commitment to incorporating advanced safety features in passenger cars, SUVs, and commercial vehicles that protect South African families with cutting-edge technology.</p>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <h5 style="color: var(--peugeot-cyan); margin-bottom: 1rem;">
+                                        <i class="fas fa-users me-2"></i>Community Engagement
+                                    </h5>
+                                    <p>Supporting urban and rural road safety initiatives, driver education programs, and awareness campaigns across South Africa with French precision and care.</p>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <h5 style="color: var(--peugeot-cyan); margin-bottom: 1rem;">
+                                        <i class="fas fa-leaf me-2"></i>Sustainable Mobility
+                                    </h5>
+                                    <p>Promoting environmentally responsible transportation solutions with electric and hybrid technologies while maintaining the highest safety standards.</p>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <h5 style="color: var(--peugeot-cyan); margin-bottom: 1rem;">
+                                        <i class="fas fa-award me-2"></i>Design Excellence
+                                    </h5>
+                                    <p>Delivering world-class vehicles that combine French elegance with international safety standards, contributing to reducing road accidents through superior engineering.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">
+        <i class="fas fa-times"></i>
+    </button>
+    <button class="lightbox-nav prev" id="lightboxPrev">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="lightbox-nav next" id="lightboxNext">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+    <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="Gallery Image">
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Image Gallery Data
+const galleryImages = [
+    'assets/images/Peugeot/peugeot-001.jpg',
+    'assets/images/Peugeot/peugeot-002.jpg',
+    'assets/images/Peugeot/peugeot-003.jpg',
+    'assets/images/Peugeot/peugeot-004.jpg',
+    'assets/images/Peugeot/peugeot-005.jpg',
+    'assets/images/Peugeot/peugeot-006.jpg',
+    'assets/images/Peugeot/peugeot-007.jpg',
+    'assets/images/Peugeot/peugeot-008.jpg',
+    'assets/images/Peugeot/peugeot-009.jpg',
+    'assets/images/Peugeot/peugeot-010.jpg',
+    'assets/images/Peugeot/peugeot-011.jpg',
+    'assets/images/Peugeot/peugeot-012.jpg',
+    'assets/images/Peugeot/peugeot-013.jpg',
+    'assets/images/Peugeot/peugeot-014.jpg',
+    'assets/images/Peugeot/peugeot-015.jpg',
+    'assets/images/Peugeot/peugeot-016.jpg',
+    'assets/images/Peugeot/peugeot-017.jpg',
+    'assets/images/Peugeot/peugeot-018.jpg',
+    'assets/images/Peugeot/peugeot-019.jpg',
+    'assets/images/Peugeot/peugeot-020.jpg',
+    'assets/images/Peugeot/peugeot-021.jpg',
+    'assets/images/Peugeot/peugeot-022.jpg',
+    'assets/images/Peugeot/peugeot-023.jpg',
+    'assets/images/Peugeot/peugeot-024.jpg',
+    'assets/images/Peugeot/peugeot-025.jpg'
+];
+
+// Carousel functionality
+let currentSlide = 0;
+const slideWidth = 320; // 300px + 20px margin
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize carousel
+    initializeCarousel();
+    
+    // Initialize lightbox
+    initializeLightbox();
+    
+    // Video thumbnail handlers
+    initializeVideoHandlers();
+});
+
+function initializeCarousel() {
+    const container = document.getElementById('carouselContainer');
+    
+    // Create carousel slides
+    galleryImages.forEach((imageSrc, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'carousel-slide';
+        slide.innerHTML = `<img src="${imageSrc}" alt="Peugeot Gallery Image ${index + 1}" data-index="${index}">`;
+        slide.addEventListener('click', () => openLightbox(index));
+        container.appendChild(slide);
+    });
+    
+    // Navigation handlers
+    document.getElementById('prevBtn').addEventListener('click', () => moveCarousel(-1));
+    document.getElementById('nextBtn').addEventListener('click', () => moveCarousel(1));
+}
+
+function moveCarousel(direction) {
+    const container = document.getElementById('carouselContainer');
+    const maxSlides = galleryImages.length;
+    const visibleSlides = Math.floor(container.parentElement.offsetWidth / slideWidth);
+    const maxSlide = maxSlides - visibleSlides;
+    
+    currentSlide += direction;
+    
+    if (currentSlide < 0) {
+        currentSlide = 0;
+    } else if (currentSlide > maxSlide) {
+        currentSlide = maxSlide;
+    }
+    
+    container.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
+function initializeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    
+    let currentLightboxIndex = 0;
+    
+    // Close lightbox
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    
+    // Navigation
+    lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+    lightboxNext.addEventListener('click', () => navigateLightbox(1));
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowLeft':
+                navigateLightbox(-1);
+                break;
+            case 'ArrowRight':
+                navigateLightbox(1);
+                break;
+        }
+    });
+    
+    function navigateLightbox(direction) {
+        currentLightboxIndex += direction;
+        
+        if (currentLightboxIndex < 0) {
+            currentLightboxIndex = galleryImages.length - 1;
+        } else if (currentLightboxIndex >= galleryImages.length) {
+            currentLightboxIndex = 0;
+        }
+        
+        lightboxImage.src = galleryImages[currentLightboxIndex];
+    }
+    
+    window.openLightbox = function(index) {
+        currentLightboxIndex = index;
+        lightboxImage.src = galleryImages[index];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function initializeVideoHandlers() {
+    const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+    
+    videoThumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            const videoId = this.dataset.video;
+            // For now, show an alert. In a real implementation, you would open a video modal
+            alert(`Video "${videoId}" would play here. You can integrate with YouTube, Vimeo, or host your own videos.`);
+        });
+    });
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.modern-nav');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+});
+</script>
+
+</body>
+</html>

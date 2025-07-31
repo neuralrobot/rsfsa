@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Partners - Road Safety Foundation partnerships with founding, associate, and operational organizations">
+  <meta name="keywords" content="road safety, South Africa, partners, founding members, associations, organizations">
+  <meta name="author" content="Road Safety Foundation of South Africa">
+  <title>Partners - Road Safety Foundation</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS (Cyborg Theme) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Responsive CSS -->
+  <link rel="stylesheet" href="assets/theme/css/responsive-modern.css">
+  
+  <!-- Animation CSS -->
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  
+  <!-- Page-specific styles -->
+  <style>
+    /* Reset iframe content margins */
+    body, main, .page-header, .container, .content-section {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      padding: var(--spacing-2xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('assets/images/road-pattern.png') repeat;
+      opacity: 0.05;
+      z-index: 1;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-lg);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .page-subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--text-light);
+      margin-bottom: var(--spacing-xl);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+      font-weight: 400;
+    }
+
+    /* Partner Cards */
+    .partner-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-xl);
+      text-align: center;
+      transition: all var(--transition-base);
+      height: 100%;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .partner-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(42, 159, 214, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .partner-card:hover::before {
+      left: 100%;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .partner-logo {
+      max-width: 100%;
+      max-height: 120px;
+      object-fit: contain;
+      margin-bottom: var(--spacing-lg);
+      transition: all var(--transition-base);
+      filter: brightness(0.9);
+    }
+
+    .partner-card:hover .partner-logo {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .partner-name {
+      font-size: var(--font-size-xl);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .partner-type {
+      color: var(--primary-color);
+      font-weight: 500;
+      margin-bottom: var(--spacing-md);
+      font-size: var(--font-size-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .partner-description {
+      color: var(--text-secondary);
+      font-size: var(--font-size-sm);
+      line-height: 1.6;
+    }
+
+    /* Partner Category Sections */
+    .partner-category {
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .category-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .category-title {
+      font-size: var(--font-size-2xl);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .category-description {
+      color: var(--text-secondary);
+      font-size: var(--font-size-base);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Interactive Partner Cards */
+    .interactive-partner {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .interactive-partner::after {
+      content: '\f35d'; /* Font Awesome external link icon */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      top: var(--spacing-md);
+      right: var(--spacing-md);
+      color: var(--primary-color);
+      opacity: 0;
+      transition: all var(--transition-base);
+    }
+
+    .interactive-partner:hover::after {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    /* Partnership Benefits Section */
+    .benefits-section {
+      background: var(--gradient-dark);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--spacing-lg);
+      padding: var(--spacing-lg);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--border-radius);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      transition: all var(--transition-base);
+    }
+
+    .benefit-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(10px);
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-right: var(--spacing-lg);
+      min-width: 60px;
+    }
+
+    .benefit-content h4 {
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-sm);
+      font-weight: 600;
+    }
+
+    .benefit-content p {
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .page-header {
+        text-align: center;
+        padding: var(--spacing-xl) 0;
+      }
+
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .page-subtitle {
+        font-size: var(--font-size-base);
+      }
+
+      .partner-card {
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .benefit-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .benefit-icon {
+        margin-right: 0;
+        margin-bottom: var(--spacing-md);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .partner-logo {
+        max-height: 80px;
+      }
+
+      .category-title {
+        font-size: var(--font-size-xl);
+      }
+    }
+
+    /* Animation classes */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger-animation {
+      animation-delay: 0.1s;
+    }
+
+    .stagger-animation:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .stagger-animation:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .stagger-animation:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+  </style>
+</head>
+<body class="iframe-content">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <!-- Main content area -->
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8 text-center text-lg-start">
+            <div class="animate-on-scroll">
+              <span class="badge bg-success px-3 py-2 rounded-pill mb-3 fw-semibold">
+                <i class="fas fa-handshake me-2"></i>
+                Our Network
+              </span>
+              <h1 class="page-title">
+                Our <span class="text-success">Partners</span>
+              </h1>
+              <p class="page-subtitle">
+                Discover the organizations and companies that share our commitment to making South African roads safer through collaboration and shared resources.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center">
+            <div class="animate-on-scroll">
+              <i class="fas fa-users" style="font-size: 8rem; color: var(--primary-color); opacity: 0.8;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founding Partners Section -->
+    <section class="content-section">
+      <div class="container">
+        <div class="partner-category">
+          <div class="category-header animate-on-scroll">
+            <h2 class="category-title">
+              <i class="fas fa-star text-warning me-2"></i>
+              Founding Partners
+            </h2>
+            <p class="category-description">
+              The visionary organizations that helped establish the Road Safety Foundation and continue to provide leadership and resources.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="partner-card interactive-partner animate-on-scroll stagger-animation" data-action="openMahindra">
+                <img src="assets/images/Mahindra-Logo.png" alt="Mahindra" class="partner-logo">
+                <h3 class="partner-name">Mahindra</h3>
+                <p class="partner-type">Founding Partner</p>
+                <p class="partner-description">
+                  A leading automotive manufacturer committed to sustainable mobility and road safety innovation.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="partner-card animate-on-scroll stagger-animation">
+                <img src="assets/images/michelin-logo.png" alt="Michelin" class="partner-logo">
+                <h3 class="partner-name">Michelin</h3>
+                <p class="partner-type">Founding Partner</p>
+                <p class="partner-description">
+                  Global tire manufacturer focused on sustainable mobility and road safety through advanced tire technology.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="partner-card interactive-partner animate-on-scroll stagger-animation" data-action="openPeugeot">
+                <img src="assets/images/Peugeot-Logo.png" alt="Peugeot" class="partner-logo">
+                <h3 class="partner-name">Peugeot</h3>
+                <p class="partner-type">Founding Partner</p>
+                <p class="partner-description">
+                  French automotive manufacturer dedicated to creating safer, more efficient vehicles for South African roads.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Associate Partners Section -->
+    <section class="content-section alternate">
+      <div class="container">
+        <div class="partner-category">
+          <div class="category-header animate-on-scroll">
+            <h2 class="category-title">
+              <i class="fas fa-hands-helping text-info me-2"></i>
+              Associate Partners
+            </h2>
+            <p class="category-description">
+              Organizations that provide specialized support and expertise to enhance our road safety initiatives.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="partner-card interactive-partner animate-on-scroll stagger-animation" data-action="openN3TC">
+                <img src="assets/images/N3TC-Logo.png" alt="N3 Toll Concession" class="partner-logo">
+                <h3 class="partner-name">N3 Toll Concession</h3>
+                <p class="partner-type">Associate Partner</p>
+                <p class="partner-description">
+                  Managing critical transport corridors and promoting safe travel practices on major South African highways.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="partner-card interactive-partner animate-on-scroll stagger-animation" data-action="openOldMutual">
+                <img src="assets/images/OldMutual-Logo.png" alt="Old Mutual" class="partner-logo">
+                <h3 class="partner-name">Old Mutual Insure</h3>
+                <p class="partner-type">Associate Partner</p>
+                <p class="partner-description">
+                  Leading insurance provider supporting road safety through risk management and claims prevention initiatives.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="partner-card animate-on-scroll stagger-animation">
+                <img src="assets/images/FleetWatch-Logo.png" alt="FleetWatch" class="partner-logo" onerror="this.src='assets/images/placeholder-logo.png'">
+                <h3 class="partner-name">FleetWatch</h3>
+                <p class="partner-type">Associate Partner</p>
+                <p class="partner-description">
+                  Commercial vehicle industry publication promoting professional driving standards and fleet safety.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operational Partners Section -->
+    <section class="content-section">
+      <div class="container">
+        <div class="partner-category">
+          <div class="category-header animate-on-scroll">
+            <h2 class="category-title">
+              <i class="fas fa-cogs text-warning me-2"></i>
+              Operational Partners
+            </h2>
+            <p class="category-description">
+              Government departments and agencies that work with us to implement road safety policies and programs.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="partner-card animate-on-scroll stagger-animation">
+                <img src="assets/images/DoT-Logo.png" alt="Department of Transport" class="partner-logo" onerror="this.src='assets/images/placeholder-logo.png'">
+                <h3 class="partner-name">Department of Transport</h3>
+                <p class="partner-type">Government Partner</p>
+                <p class="partner-description">
+                  National department responsible for transport policy and regulation.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="partner-card animate-on-scroll stagger-animation">
+                <img src="assets/images/RTMC-Logo.png" alt="Road Traffic Management Corporation" class="partner-logo" onerror="this.src='assets/images/placeholder-logo.png'">
+                <h3 class="partner-name">RTMC</h3>
+                <p class="partner-type">Government Partner</p>
+                <p class="partner-description">
+                  Road Traffic Management Corporation overseeing national road traffic law enforcement.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="partner-card animate-on-scroll stagger-animation">
+                <img src="assets/images/SAPS-Logo.png" alt="South African Police Service" class="partner-logo" onerror="this.src='assets/images/placeholder-logo.png'">
+                <h3 class="partner-name">SAPS</h3>
+                <p class="partner-type">Government Partner</p>
+                <p class="partner-description">
+                  South African Police Service traffic enforcement divisions.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="partner-card animate-on-scroll stagger-animation">
+                <img src="assets/images/Metro-Police.png" alt="Metro Police" class="partner-logo" onerror="this.src='assets/images/placeholder-logo.png'">
+                <h3 class="partner-name">Metro Police</h3>
+                <p class="partner-type">Government Partner</p>
+                <p class="partner-description">
+                  Metropolitan police departments across major South African cities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partnership Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Partnership Benefits</h2>
+          <p class="section-subtitle">
+            Join our network of committed organizations working together for safer roads.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="benefit-item animate-on-scroll">
+              <div class="benefit-icon">
+                <i class="fas fa-bullhorn"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>Increased Visibility</h4>
+                <p>Enhance your organization's profile through association with road safety initiatives and shared marketing opportunities.</p>
+              </div>
+            </div>
+            <div class="benefit-item animate-on-scroll">
+              <div class="benefit-icon">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>Networking Opportunities</h4>
+                <p>Connect with like-minded organizations and government agencies committed to road safety excellence.</p>
+              </div>
+            </div>
+            <div class="benefit-item animate-on-scroll">
+              <div class="benefit-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>Impact Measurement</h4>
+                <p>Access to comprehensive data and research to measure the effectiveness of road safety interventions.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="benefit-item animate-on-scroll">
+              <div class="benefit-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>Training & Development</h4>
+                <p>Access to specialized training programs and resources for your staff and stakeholders.</p>
+              </div>
+            </div>
+            <div class="benefit-item animate-on-scroll">
+              <div class="benefit-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>Brand Protection</h4>
+                <p>Demonstrate corporate social responsibility and commitment to community safety and well-being.</p>
+              </div>
+            </div>
+            <div class="benefit-item animate-on-scroll">
+              <div class="benefit-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>Collaborative Projects</h4>
+                <p>Participate in joint initiatives that leverage combined resources for maximum impact.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="content-section gradient">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <div class="animate-on-scroll">
+              <h2 class="section-title mb-4">Become a Partner</h2>
+              <p class="section-subtitle mb-5">
+                Join our mission to make South African roads safer. Together, we can create meaningful change and save lives.
+              </p>
+              <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="ContactUs.html" class="btn btn-primary btn-lg px-4 py-3">
+                  <i class="fas fa-envelope me-2"></i>
+                  Get in Touch
+                </a>
+                <a href="aboutus.html" class="btn btn-outline-primary btn-lg px-4 py-3">
+                  <i class="fas fa-info-circle me-2"></i>
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Common iframe communication script -->
+  <script>
+    // Send height to parent iframe
+    function sendHeightToParent() {
+      const height = Math.max(
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight,
+        document.body.scrollHeight,
+        document.body.offsetHeight
+      );
+      
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({
+          iframeHeight: height
+        }, '*');
+      }
+    }
+    
+    // Send height on load and resize
+    window.addEventListener('load', sendHeightToParent);
+    window.addEventListener('resize', sendHeightToParent);
+    
+    // Listen for height requests from parent
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.action === 'getHeight') {
+        sendHeightToParent();
+      }
+    });
+    
+    // Send height when content changes (for dynamic content)
+    const observer = new ResizeObserver(sendHeightToParent);
+    observer.observe(document.body);
+
+    // Partner interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      // Interactive partner card handlers
+      const partnerActions = {
+        'openMahindra': () => window.parent.postMessage({ action: 'openMahindra' }, '*'),
+        'openPeugeot': () => window.parent.postMessage({ action: 'openPeugeot' }, '*'),
+        'openN3TC': () => window.parent.postMessage({ action: 'openN3TC' }, '*'),
+        'openOldMutual': () => window.parent.postMessage({ action: 'openOldMutual' }, '*'),
+        'openFleetWatch': () => window.parent.postMessage({ action: 'openFleetWatch' }, '*')
+      };
+
+      // Add click handlers to interactive partner cards
+      document.querySelectorAll('.interactive-partner').forEach(card => {
+        const action = card.getAttribute('data-action');
+        if (action && partnerActions[action]) {
+          card.addEventListener('click', partnerActions[action]);
+          card.style.cursor = 'pointer';
+        }
+      });
+
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation class
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        scrollObserver.observe(el);
+      });
+
+      // Send height after all interactions are set up
+      setTimeout(sendHeightToParent, 500);
+    });
+  </script>
+</body>
+</html>
