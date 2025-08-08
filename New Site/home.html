@@ -114,15 +114,27 @@ html, body, .page-header, main {
       color: var(--primary-color) !important;
     }    /* Hero Section */
     .modern-hero {
-      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
-                  url('assets/images/MainPic.jpg') center/cover;
-      min-height: calc(99vh - 275px);
+      background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+      min-height: calc(99vh - 190px);
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
       padding-bottom: 17px;
       /* border removed */
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      /* Dimming effects */
+      filter: brightness(0.5) contrast(1.1);
+      opacity: 0.85;
     }
 
     .modern-hero::before {
@@ -133,6 +145,9 @@ html, body, .page-header, main {
       width: 100%;
       height: 100%;
       background: 
+          /* Dark overlay for additional dimming */
+          rgba(0, 0, 0, 0.25),
+          /* Gradient overlays for visual interest */
           radial-gradient(circle at 20% 80%, rgba(42, 159, 214, 0.15) 0%, transparent 50%),
           radial-gradient(circle at 80% 20%, rgba(119, 179, 0, 0.15) 0%, transparent 50%);
       z-index: 1;
@@ -153,6 +168,7 @@ html, body, .page-header, main {
       font-weight: 800;
       margin-bottom: 1.5rem;
       line-height: 1.1;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.6);
     }
 
     .hero-subtitle {
@@ -239,11 +255,6 @@ html, body, .page-header, main {
     /* Michelin Card: white gradient overlay instead of blue */
     .gallery-placeholder.michelin-card::after {
       background: linear-gradient(135deg, rgba(34,34,34,0) 60%, #fff 100%);
-    }
-
-    /* Fleetwatch Card: red gradient overlay instead of blue */
-    .gallery-placeholder.fleetwatch-card::after {
-      background: linear-gradient(135deg, rgba(34,34,34,0) 60%, #cc0000 100%);
     }
 
     .gallery-placeholder:hover::after {
@@ -506,6 +517,7 @@ html, body, .page-header, main {
       white-space: nowrap;
       position: relative;
       border-top: 2px solid #ff6600;
+      display: none; /* Hidden until traffic system is perfected */
     }
 
     .traffic-marquee-content {
@@ -650,200 +662,8 @@ html, body, .page-header, main {
       font-weight: 900 !important;
     }
 
-    /* Old Mutual Insure Card Styles */
-    .gallery-placeholder.old-mutual-card {
-      border: 2px solid #77b300 !important;
-      box-shadow: 0 0 8px rgba(119, 179, 0, 0.3);
-      position: relative;
-      transition: box-shadow 0.3s, border-color 0.3s;
-    }
-    .gallery-placeholder.old-mutual-card:hover {
-      box-shadow: 0 0 32px 8px #77b300, 0 0 8px rgba(119, 179, 0, 0.3);
-      border-color: #77b300 !important;
-    }
-    .gallery-placeholder.old-mutual-card .hover-banner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: linear-gradient(135deg, #77b300 0%, #77b300 100%);
-      color: #222;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      text-align: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 10;
-      box-shadow: 0 8px 25px rgba(119, 179, 0, 0.3);
-      border: 2px solid rgba(119, 179, 0, 0.2);
-      backdrop-filter: blur(10px);
-      white-space: nowrap;
-      max-width: 220px;
-    }
-    .gallery-placeholder.old-mutual-card:hover .hover-banner {
-      opacity: 1;
-      visibility: visible;
-      transform: translate(-50%, -50%) scale(1.05);
-    }
-    .gallery-placeholder.old-mutual-card .gallery-thumb {
-      object-fit: contain;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 6px;
-      width: 100%;
-      height: 100%;
-      min-height: 120px;
-    }
-  </style>
-  <style>
-#cardOldMutual .hover-banner img {
-  pointer-events: none;
-}
-</style>
-</head>
-<body>
-
-<!-- The Home button is removed. Only the Mahindra card and its script remain. -->
-
-<main>
-    <!-- Hero Section -->
-    <section class="modern-hero" id="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <div class="hero-badge mb-4">
-                            <span class="badge text-bg-info px-3 py-2 rounded-pill">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Road Safety Excellence
-                            </span>
-                        </div>
-                        <h1 class="hero-title mb-4">
-                            Making South African Roads
-                            <span class="text-info">Safer</span> Together
-                        </h1>
-                        <p class="hero-subtitle mb-5 text-white">
-                            Partnering with private and public sectors to reduce crashes and save lives through
-                            evidence-based research, comprehensive education, and strategic awareness programmes.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="aboutus.html" class="btn btn-info btn-lg px-4 py-3">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
-                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Learn More
-                            </a>
-                            <a href="Videos.html" class="btn btn-outline-info btn-lg px-4 py-3">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
-                                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
-                                </svg>
-                                Watch Videos
-                            </a>
-                            <a href="Forums.html" class="btn btn-outline-success btn-lg px-4 py-3">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="me-2">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Let's Talk
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="hero-image">
-                        <div class="hero-card">
-                            <img src="assets/images/MainPic.jpg" alt="Road Safety Foundation - Main Image" class="img-fluid rounded-4 shadow-lg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hero Image Gallery Section -->
-<section class="hero-gallery py-1" style="background: #000; width: 80vw; margin: 15px auto 15px auto; position: relative;">
-        <div class="container-fluid px-0">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row g-3">
-                        <!-- Image Placeholder 1 - Mahindra -->
-                        <div class="col-lg col-md-4 col-6">
-                            <div class="gallery-placeholder mahindra-card" data-placeholder="1" id="cardMahindra">
-                                <img src="assets/images/Mahindra-Logo.png" alt="Mahindra" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                                <div class="placeholder-overlay">
-                                    <span class="badge bg-primary">Mahindra</span>
-                                </div>
-                                <div class="hover-banner">RSFSA - Driven by Mahindra</div>
-                            </div>
-                        </div>
-                        <!-- Image Placeholder 2 - Michelin -->
-                        <div class="col-lg col-md-4 col-6">
-                            <div class="gallery-placeholder michelin-card" data-placeholder="2" id="cardMichelin">
-                                <img src="assets/images/michelin-logo.png" alt="Michelin" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                                <div class="placeholder-overlay">
-                                    <span class="badge bg-primary">Michelin</span>
-                                </div>
-                                <div class="hover-banner">
-                                    RSFSA - Runs on Michelin
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Image Placeholder 3 - Peugeot -->
-                        <div class="col-lg col-md-4 col-6">
-                            <div class="gallery-placeholder peugeot-card" data-placeholder="3" id="cardPeugeot">
-                                <img src="assets/images/Peugeot-Logo.png" alt="Peugeot" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                                <div class="placeholder-overlay">
-                                    <span class="badge bg-primary">Peugeot</span>
-                                </div>
-                                <div class="hover-banner">
-                                    RSFSA - Powered by Peugeot
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Image Placeholder 7 - Amber Card (Moved here) -->
-                        <div class="col-lg col-md-4 col-6">
-                            <div class="gallery-placeholder amber-card" id="cardAmber">
-                                <a href="https://jetour.co.za/jetour-unveils-cutting-edge-models-and-latest-innovations-at-auto-shanghai-2025/" target="_blank" rel="noopener noreferrer">
-                                    <img src="assets/images/logo-jetour.png" alt="Jetour" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                                    <div class="placeholder-overlay">
-                                        <span class="badge" style="background: gold; color: #222;">Jetour</span>
-                                    </div>
-                                    <div class="hover-banner jetour-hover-banner">
-                                        RSFSA - Jetour - Driving the Future
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-        <!-- Image Placeholder - Old Mutual Insure -->
-        <div class="col-lg col-md-4 col-6">
-            <div class="gallery-placeholder old-mutual-card" data-placeholder="6" id="cardOldMutual">
-                <img src="assets/images/Old-Mutual-Insure-Logo.png" alt="Old Mutual Insure" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                <div class="placeholder-overlay">
-                    <span class="badge bg-success">Old Mutual Insure</span>
-                </div>
-                <div class="hover-banner" style="background: transparent; box-shadow: none; padding: 0;">
-                    <img src="assets/images/MyGift.png" alt="My Gift Logo" style="max-width: 174px; max-height: 87px; display: block; margin: 0 auto; background: #000; padding: 14px 18px; border-radius: 10px;">
-                </div>
-            </div>
-        </div>
-                        <!-- Image Placeholder 4 - FleetWatch -->
-                        <div class="col-lg col-md-4 col-6">
-                            <div class="gallery-placeholder fleetwatch-card" data-placeholder="4" id="cardFleetWatch">
-                                <img src="assets/images/Fleetwatch-Logo.png" alt="Fleetwatch" class="img-fluid rounded-3 shadow-sm gallery-thumb">
-                                <div class="placeholder-overlay">
-                                    <span class="badge bg-primary">Fleetwatch</span>
-                                </div>
-                                <div class="hover-banner fleetwatch-hover-banner">
-                                    Southern Africa's Leading Online Trucking Magazine
-                                </div>
-                            </div>
-  <style>
-    /* FleetWatch hover banner - improved fit and typeface */
-    #cardFleetWatch .fleetwatch-hover-banner,
-    #cardAmber .jetour-hover-banner {
+    /* Jetour hover banner styling */
+    .jetour-hover-banner {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -870,61 +690,16 @@ html, body, .page-header, main {
       white-space: normal;
       pointer-events: none;
     }
-    #cardFleetWatch:hover .fleetwatch-hover-banner,
     #cardAmber:hover .jetour-hover-banner {
       opacity: 1 !important;
       visibility: visible !important;
       transform: translate(-50%, -50%) scale(1.05) !important;
     }
-    #cardFleetWatch:hover .gallery-thumb,
     #cardAmber:hover .gallery-thumb {
       filter: brightness(0.7);
     }
     @media (max-width: 768px) {
-      #cardFleetWatch .fleetwatch-hover-banner,
-      #cardAmber .jetour-hover-banner {
-        font-size: 0.425rem;
-        min-height: 24px;
-      }
-    }
-    /* N3TC hover banner - same as FleetWatch */
-    #cardN3TC .n3tc-hover-banner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 95%;
-      height: 25%;
-      min-height: 32px;
-      background: #000;
-      color: #fff;
-      padding: 0 10px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.525rem;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 10;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-      border: 2px solid rgba(255,255,255,0.2);
-      white-space: normal;
-      pointer-events: none;
-    }
-    #cardN3TC:hover .n3tc-hover-banner {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: translate(-50%, -50%) scale(1.05) !important;
-    }
-    #cardN3TC:hover .gallery-thumb {
-      filter: brightness(0.7);
-    }
-    @media (max-width: 768px) {
-      #cardN3TC .n3tc-hover-banner {
+      .jetour-hover-banner {
         font-size: 0.425rem;
         min-height: 24px;
       }
@@ -974,40 +749,241 @@ html, body, .page-header, main {
       border: 1px solid #00ffff !important;
       box-shadow: 0 0 8px rgba(0,255,255,0.10);
     }
-    /* Fleetwatch Card Azure Border */
-    .gallery-placeholder.fleetwatch-card {
-      border: 1.5px solid #cc0000 !important;
-      box-shadow: 0 0 8px rgba(204,0,0,0.10);
-      background: #000000 !important;
+
+    /* Old Mutual Insure Card Styles */
+    .gallery-placeholder.old-mutual-card {
+      border: 2px solid #77b300 !important;
+      box-shadow: 0 0 8px rgba(119, 179, 0, 0.3);
+      position: relative;
+      transition: box-shadow 0.3s, border-color 0.3s;
     }
-    .gallery-placeholder.fleetwatch-card:hover {
-      box-shadow: 0 0 24px 8px #cc0000, 0 0 8px rgba(204,0,0,0.25);
-      border-color: #cc0000 !important;
+    .gallery-placeholder.old-mutual-card:hover {
+      box-shadow: 0 0 32px 8px #77b300, 0 0 8px rgba(119, 179, 0, 0.3);
+      border-color: #77b300 !important;
     }
-    /* N3TC Card Light Grey Border */
-    .gallery-placeholder.n3tc-card {
-      border: 1px solid #ccc !important;
-      box-shadow: 0 0 8px rgba(204,204,204,0.10);
-      background: #222 !important;
+    .gallery-placeholder.old-mutual-card .hover-banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, #77b300 0%, #77b300 100%);
+      color: #222;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 8px 25px rgba(119, 179, 0, 0.3);
+      border: 2px solid rgba(119, 179, 0, 0.2);
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+      max-width: 220px;
     }
-    .gallery-placeholder.n3tc-card:hover {
-      box-shadow: 0 0 24px 8px #ccc, 0 0 8px rgba(204,204,204,0.25);
-      border-color: #ccc !important;
+    .gallery-placeholder.old-mutual-card:hover .hover-banner {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+    .gallery-placeholder.old-mutual-card .gallery-thumb {
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px;
+      width: 100%;
+      height: 100%;
+      min-height: 120px;
+    }
+
+    /* Urgent Airbag Recall Ribbon */
+    .urgent-ribbon {
+      position: absolute;
+      top: 80px;
+      left: -40px;
+      background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 8px 60px;
+      transform: rotate(-45deg);
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
+      border: 2px solid #ff3333;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      min-width: 180px;
+      white-space: nowrap;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .urgent-ribbon:hover {
+      background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+      color: #ffffff;
+      text-decoration: none;
+      transform: rotate(-45deg) scale(1.05);
+      box-shadow: 0 6px 20px rgba(204, 0, 0, 0.6);
+    }
+
+    .urgent-ribbon::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+      z-index: -1;
+      border-radius: inherit;
+    }
+
+    @media (max-width: 768px) {
+      .urgent-ribbon {
+        font-size: 0.7rem;
+        padding: 6px 45px;
+        top: 60px;
+        left: -35px;
+        min-width: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .urgent-ribbon {
+        font-size: 0.6rem;
+        padding: 5px 35px;
+        top: 45px;
+        left: -30px;
+        min-width: 120px;
+      }
     }
   </style>
+  <style>
+#cardOldMutual .hover-banner img {
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<!-- The Home button is removed. Only the Mahindra card and its script remain. -->
+
+<main>
+    <!-- Hero Section -->
+    <section class="modern-hero" id="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/videos/RHD-01.mp4" type="video/mp4">
+            <!-- Fallback image if video fails to load -->
+            Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content" style="position: relative;">
+                        <!-- Urgent Airbag Recall Ribbon - HIDDEN FOR NOW -->
+                        <!--
+                        <a href="#" onclick="loadAirbagRecall(); return false;" class="urgent-ribbon">
+                            URGENT - AIRBAG RECALL
+                        </a>
+                        -->
+                        
+                        <div class="hero-badge mb-4">
+                            <span class="badge text-bg-info px-3 py-2 rounded-pill">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Road Safety Excellence
+                            </span>
                         </div>
-                        <!-- Image Placeholder 5 - N3TC -->
-                        <div class="col-lg col-md-4 col-6">
-                            <div class="gallery-placeholder n3tc-card" data-placeholder="5" id="cardN3TC">
-                                <img src="assets/images/N3TC-Logo.png" alt="N3TC" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                        <h1 class="hero-title mb-4">
+                            Making South African Roads
+                            <span class="text-info">Safer</span> Together
+                        </h1>
+                        <p class="hero-subtitle mb-5 text-white">
+                            Partnering with private and public sectors to reduce crashes and save lives through
+                            evidence-based research, comprehensive education, and strategic awareness programmes.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="hero-card">
+                            <img src="assets/images/MainPic.jpg" alt="Road Safety Foundation - Main Image" class="img-fluid rounded-4 shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Image Gallery Section -->
+<section class="hero-gallery py-1" style="background: #000; width: 80vw; margin: 15px auto 15px auto; position: relative;">
+        <div class="container-fluid px-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row g-3 justify-content-center">
+                        <!-- Image Placeholder 1 - Mahindra -->
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                            <div class="gallery-placeholder mahindra-card" data-placeholder="1" id="cardMahindra">
+                                <img src="assets/images/Mahindra-Logo.png" alt="Mahindra" class="img-fluid rounded-3 shadow-sm gallery-thumb">
                                 <div class="placeholder-overlay">
-                                    <span class="badge bg-primary">N3TC</span>
+                                    <span class="badge bg-primary">Mahindra</span>
                                 </div>
-                                <div class="hover-banner n3tc-hover-banner">
-                                    Safety. Convenience. Mobility.
+                                <div class="hover-banner">RSFSA - Driven by Mahindra</div>
+                            </div>
+                        </div>
+                        <!-- Image Placeholder 2 - Michelin -->
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                            <div class="gallery-placeholder michelin-card" data-placeholder="2" id="cardMichelin">
+                                <img src="assets/images/michelin-logo.png" alt="Michelin" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                <div class="placeholder-overlay">
+                                    <span class="badge bg-primary">Michelin</span>
+                                </div>
+                                <div class="hover-banner">
+                                    RSFSA - Runs on Michelin
                                 </div>
                             </div>
                         </div>
+                        <!-- Image Placeholder 7 - Amber Card (Jetour) -->
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                            <div class="gallery-placeholder amber-card" id="cardAmber">
+                                <a href="https://jetour.co.za/jetour-unveils-cutting-edge-models-and-latest-innovations-at-auto-shanghai-2025/" target="_blank" rel="noopener noreferrer">
+                                    <img src="assets/images/logo-jetour.png" alt="Jetour" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                    <div class="placeholder-overlay">
+                                        <span class="badge" style="background: gold; color: #222;">Jetour</span>
+                                    </div>
+                                    <div class="hover-banner jetour-hover-banner">
+                                        RSFSA - Jetour - Driving the Future
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+        <!-- Image Placeholder - Old Mutual Insure -->
+        <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="gallery-placeholder old-mutual-card" data-placeholder="6" id="cardOldMutual">
+                <img src="assets/images/Old-Mutual-Insure-Logo.png" alt="Old Mutual Insure" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                <div class="placeholder-overlay">
+                    <span class="badge bg-success">Old Mutual Insure</span>
+                </div>
+                <div class="hover-banner" style="background: transparent; box-shadow: none; padding: 0;">
+                    <img src="assets/images/MyGift.png" alt="My Gift Logo" style="max-width: 174px; max-height: 87px; display: block; margin: 0 auto; background: #000; padding: 14px 18px; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+                        <!-- Image Placeholder 3 - Peugeot -->
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                            <div class="gallery-placeholder peugeot-card" data-placeholder="3" id="cardPeugeot">
+                                <img src="assets/images/Peugeot-Logo.png" alt="Peugeot" class="img-fluid rounded-3 shadow-sm gallery-thumb">
+                                <div class="placeholder-overlay">
+                                    <span class="badge bg-primary">Peugeot</span>
+                                </div>
+                                <div class="hover-banner">
+                                    RSFSA - Powered by Peugeot
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Image Placeholder 5 - N3TC -->
 
 
                     </div>
@@ -1238,14 +1214,12 @@ document.addEventListener('DOMContentLoaded', function() {
         cardMichelin: 'https://www.michelin.co.za/',
         cardPeugeot: 'https://www.peugeot.co.za/our-models/landtrek.html',
         cardJetour: 'https://www.jetour.co.za/',
-        cardFleetWatch: 'https://fleetwatch.co.za/',
-        cardN3TC: 'http://www.n3tc.co.za/',
         cardOldMutual: 'https://www.oldmutual.co.za/about/old-mutual-insure/'
     };
     // List of sites that block iframing
     const openInNewTab = ['cardMichelin'];
     Object.keys(cardUrls).forEach(function(cardId) {
-        if (cardId === 'cardMahindra' || cardId === 'cardPeugeot' || cardId === 'cardFleetWatch' || cardId === 'cardN3TC' || cardId === 'cardOldMutual') return; // Skip these, use direct handlers below
+        if (cardId === 'cardMahindra' || cardId === 'cardPeugeot' || cardId === 'cardOldMutual') return; // Skip these, use direct handlers below
         const card = document.getElementById(cardId);
         if (card) {
             card.style.cursor = 'pointer';
@@ -1296,32 +1270,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (hoverBanner) {
         hoverBanner.addEventListener('click', function() {
           window.parent.postMessage({ action: 'openPeugeot' }, '*');
-        });
-      }
-    }
-    const fleetWatchCard = document.getElementById('cardFleetWatch');
-    if (fleetWatchCard) {
-      fleetWatchCard.style.cursor = 'pointer';
-      fleetWatchCard.addEventListener('click', function() {
-        window.parent.postMessage({ action: 'openFleetWatch' }, '*');
-      });
-      const hoverBanner = fleetWatchCard.querySelector('.hover-banner, .fleetwatch-hover-banner');
-      if (hoverBanner) {
-        hoverBanner.addEventListener('click', function() {
-          window.parent.postMessage({ action: 'openFleetWatch' }, '*');
-        });
-      }
-    }
-    const n3tcCard = document.getElementById('cardN3TC');
-    if (n3tcCard) {
-      n3tcCard.style.cursor = 'pointer';
-      n3tcCard.addEventListener('click', function() {
-        window.parent.postMessage({ action: 'openN3TC' }, '*');
-      });
-      const hoverBanner = n3tcCard.querySelector('.hover-banner, .n3tc-hover-banner');
-      if (hoverBanner) {
-        hoverBanner.addEventListener('click', function() {
-          window.parent.postMessage({ action: 'openN3TC' }, '*');
         });
       }
     }
@@ -1443,6 +1391,17 @@ if (oldMutualBannerImg) {
   oldMutualBannerImg.addEventListener('click', function() {
     window.parent.postMessage({ action: 'openOldMutual' }, '*');
   });
+}
+
+// Function to load airbag recall page
+function loadAirbagRecall() {
+  if (window.parent && window.parent !== window) {
+    // We're in an iframe, send message to parent
+    window.parent.postMessage({ action: 'openAirbagRecall' }, '*');
+  } else {
+    // We're not in an iframe, navigate directly
+    window.location.href = 'airbag-recall.html';
+  }
 }
 
 </script>

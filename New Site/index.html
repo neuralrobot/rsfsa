@@ -116,21 +116,18 @@
                             Adoptions
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="cms.html">CMS</a></li>
-                            <li><a class="dropdown-item" href="vrt.html">VRT</a></li>
+                            <li><a class="dropdown-item" href="adoptions-story.html">The Story of CMS & VRT</a></li>
+                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li style="display: none;"><a class="dropdown-item" href="cms.html">CMS</a></li>
+                            <li style="display: none;"><a class="dropdown-item" href="vrt.html">VRT</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#" id="walkingBlood1">Walking in the Blood - 1</a></li>
                             <li><a class="dropdown-item" href="#" id="walkingBlood2">Walking in the Blood - 2</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-                            Videos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Videos.html">Local</a></li>
-                            <li><a class="dropdown-item" href="international-videos.html">International</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Videos.html" id="videosNavLink">Videos</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
@@ -150,11 +147,10 @@
                             <li><a class="dropdown-item" href="evolve.html">EVOLVE</a></li>
                             <li><a class="dropdown-item" href="TyreSafety.html">Tyre Safety</a></li>
                             <li><a class="dropdown-item" href="FireExtinguishers.html">Fire Extinguishers</a></li>
-                            <li><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
-                            <li><a class="dropdown-item" href="#" id="showFleetWatchInline">Fleet Watch</a></li>
+                            <li style="display: none;"><a class="dropdown-item" href="fire-blanket.html">Fire Blankets</a></li>
+                            <li style="display: none;"><a class="dropdown-item" href="#" id="showFleetWatchInline">Fleet Watch</a></li>
                             <li><a class="dropdown-item" href="BabySafety.html">Baby Safety</a></li>
                             <li><a class="dropdown-item" href="PetSafety.html">Pet Safety</a></li>
-                            <li><a class="dropdown-item" href="KWiKS.html" title="Keep Warm, Keep Safe - Providing poncho blankets and highly reflective poncho raincoats to underprivileged rural community school children">KWiKS</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -168,12 +164,12 @@
                             <li><a class="dropdown-item" href="caravans.html">Caravans</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" style="display: none;">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                             News
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="live-traffic.html">Live Traffic</a></li>
+                            <li style="display: none;"><a class="dropdown-item" href="live-traffic.html">Live Traffic</a></li>
                             <li><a class="dropdown-item" href="current-news.html">Current - View and Comments</a></li>
                             <li><a class="dropdown-item" href="nostalgia-news.html">Nostalgia - View and Comments</a></li>
                             <li><a class="dropdown-item" href="news-submission.html">Make a Submission</a></li>
@@ -191,7 +187,7 @@
                             <li><a class="dropdown-item" href="safety-tips-submission.html">Share Your Knowledge</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="display: none;">
                         <a class="nav-link" href="Forums.html">Let's Talk</a>
                     </li>
                     <li class="nav-item">
@@ -202,9 +198,9 @@
         </div>
     </nav>
 </header>
-<main style="height:100vh;overflow:hidden;padding-top:10px;">
-  <div id="main-contents" style="height:100%;margin:0;padding:0;">
-    <iframe id="mainContentIframe" title="Main Content" src="home.html" style="width:100vw;height:100vh;border:none;display:block;margin:0;padding:0;" onload="window.adjustIframeHeight && window.adjustIframeHeight()"></iframe>
+<main style="height:100vh;overflow:auto;padding-top:60px;">
+  <div id="main-contents" style="min-height:calc(100vh - 60px);margin:0;padding:0;">
+    <iframe id="mainContentIframe" title="Main Content" src="home.html" style="width:100%;min-height:calc(100vh - 60px);border:none;display:block;margin:0;padding:0;" onload="window.adjustIframeHeight && window.adjustIframeHeight()"></iframe>
   </div>
   <!-- gallery-section removed as per user request -->
 </main>
@@ -221,10 +217,25 @@ window.addEventListener('message', function(event) {
   if (event.data && event.data.iframeHeight) {
     var iframe = document.getElementById('mainContentIframe');
     if (iframe) {
-      iframe.style.height = event.data.iframeHeight + 'px';
+      // Set the iframe height to the content height to enable proper scrolling
+      // Account for navbar height (60px)
+      iframe.style.height = Math.max(event.data.iframeHeight, window.innerHeight - 60) + 'px';
     }
   }
 });
+
+// Function to reset iframe height when loading new content
+function resetIframeHeight() {
+  var iframe = document.getElementById('mainContentIframe');
+  if (iframe) {
+    // Reset to minimum height first, accounting for navbar height
+    iframe.style.height = (window.innerHeight - 60) + 'px';
+    // Then request proper height after a short delay
+    setTimeout(function() {
+      adjustIframeHeight();
+    }, 100);
+  }
+}
 document.addEventListener('DOMContentLoaded', function() {
   // Get iframe reference first
   const mainContentIframe = document.getElementById('mainContentIframe');
@@ -287,6 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (cmsNavLink && mainContentIframe) {
     cmsNavLink.addEventListener('click', function(e) {
       e.preventDefault();
+      resetIframeHeight();
       mainContentIframe.src = 'cms.html';
     });
   }
@@ -295,7 +307,27 @@ document.addEventListener('DOMContentLoaded', function() {
   if (vrtNavLink && mainContentIframe) {
     vrtNavLink.addEventListener('click', function(e) {
       e.preventDefault();
+      resetIframeHeight();
       mainContentIframe.src = 'vrt.html';
+    });
+  }
+  // Adoptions Story nav logic: load adoptions-story.html in iframe
+  const adoptionsStoryNavLink = document.querySelector('.dropdown-menu a[href="adoptions-story.html"]');
+  if (adoptionsStoryNavLink && mainContentIframe) {
+    adoptionsStoryNavLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      resetIframeHeight();
+      mainContentIframe.src = 'adoptions-story.html';
+    });
+  }
+  
+  // KWiKS nav logic: load KWiKS.html in iframe (now under Adoptions)
+  const kwikSNavLink = document.querySelector('.dropdown-menu a[href="KWiKS.html"]');
+  if (kwikSNavLink && mainContentIframe) {
+    kwikSNavLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      resetIframeHeight();
+      mainContentIframe.src = 'KWiKS.html';
     });
   }
   
@@ -317,26 +349,21 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Videos nav logic: load Videos.html in iframe
-  const videosLocalNavLink = document.querySelector('.dropdown-menu a[href="Videos.html"]');
-  if (videosLocalNavLink && mainContentIframe) {
-    videosLocalNavLink.addEventListener('click', function(e) {
+  const videosNavLink = document.getElementById('videosNavLink');
+  if (videosNavLink && mainContentIframe) {
+    videosNavLink.addEventListener('click', function(e) {
       e.preventDefault();
+      resetIframeHeight();
       mainContentIframe.src = 'Videos.html';
     });
   }
-  // Videos International nav logic: load international-videos.html in iframe
-  const videosInternationalNavLink = document.querySelector('.dropdown-menu a[href="international-videos.html"]');
-  if (videosInternationalNavLink && mainContentIframe) {
-    videosInternationalNavLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      mainContentIframe.src = 'international-videos.html';
-    });
-  }
+  
   // Home menu logic: always load home.html in iframe
   const homeMenuItem = document.querySelector('.navbar-nav .nav-link[data-home="true"]');
   if (homeMenuItem && mainContentIframe) {
     homeMenuItem.addEventListener('click', function(e) {
       e.preventDefault();
+      resetIframeHeight();
       mainContentIframe.src = 'home.html';
     });
   }
@@ -345,6 +372,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (rsfMenuItem && mainContentIframe) {
     rsfMenuItem.addEventListener('click', function(e) {
       e.preventDefault();
+      resetIframeHeight();
       mainContentIframe.src = 'aboutus.html';
     });
   }
@@ -381,8 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
     { selector: '.dropdown-menu a[href="fire-blanket.html"]', page: 'fire-blanket.html' },
     { selector: '.dropdown-menu a[href="#"]#showFleetWatchInline', page: 'https://fleetwatch.co.za/' },
     { selector: '.dropdown-menu a[href="BabySafety.html"]', page: 'BabySafety.html' },
-    { selector: '.dropdown-menu a[href="PetSafety.html"]', page: 'PetSafety.html' },
-    { selector: '.dropdown-menu a[href="KWiKS.html"]', page: 'KWiKS.html' }
+    { selector: '.dropdown-menu a[href="PetSafety.html"]', page: 'PetSafety.html' }
   ];
   projectsMenuLinks.forEach(function(linkObj) {
     const link = document.querySelector(linkObj.selector);
@@ -446,7 +473,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Listen for iframe src changes and adjust height
   if (mainContentIframe) {
     mainContentIframe.addEventListener('load', function() {
-      adjustIframeHeight();
+      // Small delay to ensure content is loaded
+      setTimeout(function() {
+        adjustIframeHeight();
+      }, 150);
     });
   }
 });
@@ -466,6 +496,8 @@ window.addEventListener('message', function(event) {
       iframe.src = 'http://www.n3tc.co.za/';
     } else if (event.data.action === 'openOldMutual') {
       iframe.src = 'https://www.oldmutual.co.za/about/old-mutual-insure/';
+    } else if (event.data.action === 'openAirbagRecall') {
+      iframe.src = 'airbag-recall.html';
     }
   }
 });

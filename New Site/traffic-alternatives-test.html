@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Data Alternatives - Road Safety Foundation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Raleway', sans-serif;
+        }
+        .traffic-card {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2a9fd6;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .traffic-incident {
+            border-left: 4px solid #dc3545;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #2a2a2a;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .traffic-loading {
+            text-align: center;
+            padding: 50px;
+        }
+        .traffic-error {
+            background: #3d1a1a;
+            border: 1px solid #5c2626;
+            color: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .traffic-success {
+            background: #1a3d1a;
+            border: 1px solid #265c26;
+            color: #d4edda;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .debug-info {
+            background: #1a2a3d;
+            border: 1px solid #26405c;
+            color: #d1ecf1;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .api-endpoint {
+            background: #2d2d2d;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            word-break: break-all;
+        }
+        .btn-custom {
+            background: #2a9fd6;
+            border-color: #2a9fd6;
+            color: white;
+        }
+        .btn-custom:hover {
+            background: #1e7aa3;
+            border-color: #1e7aa3;
+            color: white;
+        }
+        .provider-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        .route-badge {
+            background: #dc3545;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <h1><i class="fas fa-road"></i> South African Traffic Data Sources</h1>
+                <p class="text-muted">Testing alternative traffic data providers for the N3 and other major routes</p>
+                
+                <!-- N3 Route Focus -->
+                <div class="traffic-card">
+                    <h3><span class="route-badge">N3</span> Route Information</h3>
+                    <p>The N3 is one of South Africa's busiest highways, connecting Johannesburg to Durban via Pietermaritzburg. 
+                    Critical for freight and passenger transport - perfect for road safety monitoring.</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Key N3 Sections:</strong>
+                            <ul>
+                                <li>Johannesburg to Heidelberg</li>
+                                <li>Heidelberg to Harrismith</li>
+                                <li>Van Reenen's Pass</li>
+                                <li>Pietermaritzburg to Durban</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>High Risk Areas:</strong>
+                            <ul>
+                                <li>Van Reenen's Pass (weather)</li>
+                                <li>Mooi River Toll Plaza</li>
+                                <li>Tugela Plaza area</li>
+                                <li>Durban approaches</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Traffic Data Sources -->
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <h3>Available Traffic Data Sources</h3>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="traffic-card">
+                            <h5><i class="fas fa-satellite-dish"></i> Google Maps Traffic API</h5>
+                            <p>Real-time traffic conditions using Google's data</p>
+                            <button id="testGoogleTraffic" class="btn btn-custom">
+                                <i class="fas fa-play"></i> Test Google Traffic
+                            </button>
+                            <small class="text-muted d-block mt-2">Requires Google Maps API key</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="traffic-card">
+                            <h5><i class="fas fa-rss"></i> SA Traffic Live Feeds</h5>
+                            <p>South African traffic information aggregators</p>
+                            <button id="testSATraffic" class="btn btn-custom">
+                                <i class="fas fa-play"></i> Test SA Feeds
+                            </button>
+                            <small class="text-muted d-block mt-2">Public RSS/JSON feeds</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="traffic-card">
+                            <h5><i class="fas fa-shield-alt"></i> Provincial Traffic Centers</h5>
+                            <p>Official provincial traffic departments</p>
+                            <button id="testProvincialTraffic" class="btn btn-custom">
+                                <i class="fas fa-play"></i> Test Provincial APIs
+                            </button>
+                            <small class="text-muted d-block mt-2">Gauteng, KZN, Free State feeds</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="traffic-card">
+                            <h5><i class="fas fa-radio"></i> Traffic Radio Services</h5>
+                            <p>Web-scraped traffic reports from radio stations</p>
+                            <button id="testRadioTraffic" class="btn btn-custom">
+                                <i class="fas fa-play"></i> Test Radio Feeds
+                            </button>
+                            <small class="text-muted d-block mt-2">Traffic reports from major stations</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="traffic-card">
+                            <h5><i class="fas fa-map-marked-alt"></i> HERE Traffic API</h5>
+                            <p>Alternative to TomTom with better free tier</p>
+                            <button id="testHereTraffic" class="btn btn-custom">
+                                <i class="fas fa-play"></i> Test HERE API
+                            </button>
+                            <small class="text-muted d-block mt-2">Free tier available</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="traffic-card">
+                            <h5><i class="fas fa-users"></i> Community Reports</h5>
+                            <p>User-submitted traffic incidents</p>
+                            <button id="testCommunityReports" class="btn btn-custom">
+                                <i class="fas fa-play"></i> Show Community System
+                            </button>
+                            <small class="text-muted d-block mt-2">Build your own reporting system</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Area -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div id="trafficResults">
+                            <div class="alert alert-info">
+                                <h5><i class="fas fa-info-circle"></i> Traffic Data Sources Ready</h5>
+                                <p>Click any of the test buttons above to explore alternative traffic data sources for South African roads.</p>
+                                <div class="mt-3">
+                                    <strong>Why these alternatives?</strong>
+                                    <ul>
+                                        <li><strong>Waze API:</strong> Discontinued public access in 2020</li>
+                                        <li><strong>TomTom:</strong> Traffic incidents require enterprise plan</li>
+                                        <li><strong>Google:</strong> Good alternative with reasonable free tier</li>
+                                        <li><strong>HERE:</strong> Better free tier than TomTom</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="debugInfo" class="debug-info">
+                            <h6><i class="fas fa-bug"></i> Debug Log:</h6>
+                            <div id="debugContent">Ready for testing alternative traffic sources...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        class TrafficAlternatives {
+            constructor() {
+                this.debugContent = document.getElementById('debugContent');
+            }
+
+            log(message) {
+                const timestamp = new Date().toLocaleTimeString();
+                this.debugContent.innerHTML += `<div>${timestamp}: ${message}</div>`;
+                this.debugContent.scrollTop = this.debugContent.scrollHeight;
+                console.log(`Traffic Alternatives: ${message}`);
+            }
+
+            showResults(title, content, type = 'info') {
+                const resultsDiv = document.getElementById('trafficResults');
+                const alertClass = type === 'success' ? 'traffic-success' : 
+                                  type === 'error' ? 'traffic-error' : 'alert-info';
+                
+                resultsDiv.innerHTML = `
+                    <div class="${alertClass}">
+                        <h5><i class="fas fa-${type === 'success' ? 'check-circle' : 
+                                                type === 'error' ? 'exclamation-triangle' : 
+                                                'info-circle'}"></i> ${title}</h5>
+                        <div>${content}</div>
+                    </div>
+                `;
+            }
+
+            async testGoogleTraffic() {
+                this.log('Testing Google Maps Traffic API...');
+                
+                // Google Maps doesn't allow direct API calls from browser without CORS proxy
+                // Show implementation example instead
+                this.showResults('Google Traffic API Implementation', `
+                    <p><strong>Google Maps Traffic API</strong> requires server-side implementation due to CORS restrictions.</p>
+                    
+                    <h6>Implementation approach:</h6>
+                    <div class="api-endpoint">
+                        // Server-side proxy needed
+                        const googleTrafficUrl = 'https://maps.googleapis.com/maps/api/directions/json';
+                        
+                        // Example for N3 route
+                        const params = {
+                            origin: '-26.2041,28.0473',  // Johannesburg
+                            destination: '-29.8587,31.0218',  // Durban
+                            waypoints: 'via:-28.7282,29.4258|via:-29.3696,30.3952',  // Harrismith, PMB
+                            departure_time: 'now',
+                            traffic_model: 'best_guess',
+                            key: 'YOUR_GOOGLE_API_KEY'
+                        };
+                    </div>
+                    
+                    <div class="mt-3">
+                        <strong>Benefits:</strong>
+                        <ul>
+                            <li>Real-time traffic conditions</li>
+                            <li>Route duration with traffic</li>
+                            <li>Alternative route suggestions</li>
+                            <li>Comprehensive global coverage</li>
+                        </ul>
+                        
+                        <strong>Cost:</strong> $5 per 1,000 requests (free tier: $200/month)
+                    </div>
+                `, 'success');
+                
+                this.log('✅ Google Traffic API information displayed');
+            }
+
+            async testSATraffic() {
+                this.log('Testing South African traffic feeds...');
+                
+                // Simulate testing various SA traffic sources
+                const saTrafficSources = [
+                    { name: 'Arrive Alive', url: 'https://www.arrivealive.mobi', status: 'Available' },
+                    { name: 'AA Traffic', url: 'https://www.aa.co.za/traffic', status: 'Web scraping possible' },
+                    { name: 'N3TC (N3 Toll Concession)', url: 'https://www.n3tc.co.za', status: 'Limited API' },
+                    { name: 'SANRAL Traffic', url: 'https://www.sanral.co.za', status: 'No public API' },
+                    { name: 'TrafficSA', url: 'https://www.traffic.co.za', status: 'RSS feeds available' }
+                ];
+
+                this.showResults('South African Traffic Sources Analysis', `
+                    <p>Analysis of available South African traffic information sources:</p>
+                    
+                    <div class="mt-3">
+                        ${saTrafficSources.map(source => `
+                            <div class="traffic-incident">
+                                <strong>${source.name}</strong><br>
+                                <small>URL: ${source.url}</small><br>
+                                <span class="badge ${source.status.includes('Available') || source.status.includes('RSS') ? 'bg-success' : 'bg-warning'}">${source.status}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="mt-3">
+                        <h6>Best Options for N3 Route:</h6>
+                        <ul>
+                            <li><strong>N3TC Website:</strong> Official N3 toll route information</li>
+                            <li><strong>Arrive Alive:</strong> General traffic reports</li>
+                            <li><strong>AA Traffic:</strong> Comprehensive SA traffic data</li>
+                        </ul>
+                    </div>
+                `, 'success');
+                
+                this.log('✅ SA traffic sources analyzed');
+            }
+
+            async testProvincialTraffic() {
+                this.log('Testing provincial traffic department APIs...');
+                
+                this.showResults('Provincial Traffic Department APIs', `
+                    <p>Official traffic information from provincial departments:</p>
+                    
+                    <div class="traffic-incident">
+                        <strong>Gauteng Provincial Traffic</strong><br>
+                        <small>Covers: Johannesburg to Heidelberg section of N3</small><br>
+                        <span class="badge bg-warning">Limited public access</span>
+                    </div>
+                    
+                    <div class="traffic-incident">
+                        <strong>KwaZulu-Natal Traffic</strong><br>
+                        <small>Covers: Van Reenen's Pass to Durban</small><br>
+                        <span class="badge bg-success">Some RSS feeds available</span>
+                    </div>
+                    
+                    <div class="traffic-incident">
+                        <strong>Free State Traffic</strong><br>
+                        <small>Covers: Heidelberg to Van Reenen's Pass</small><br>
+                        <span class="badge bg-warning">Manual reports only</span>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <h6>Recommended Approach:</h6>
+                        <ul>
+                            <li>Web scraping from official traffic department websites</li>
+                            <li>RSS feed aggregation where available</li>
+                            <li>Manual curation of critical incidents</li>
+                            <li>Community reporting system</li>
+                        </ul>
+                    </div>
+                `, 'success');
+                
+                this.log('✅ Provincial traffic APIs analyzed');
+            }
+
+            async testRadioTraffic() {
+                this.log('Testing traffic radio service feeds...');
+                
+                this.showResults('Traffic Radio Services', `
+                    <p>Web scraping traffic reports from major radio stations:</p>
+                    
+                    <div class="traffic-incident">
+                        <strong>702 Traffic</strong><br>
+                        <small>Johannesburg-focused, good N3 coverage</small><br>
+                        <span class="badge bg-success">Web scraping possible</span>
+                    </div>
+                    
+                    <div class="traffic-incident">
+                        <strong>94.7 Cycle Tour</strong><br>
+                        <small>Regular traffic updates</small><br>
+                        <span class="badge bg-success">RSS available</span>
+                    </div>
+                    
+                    <div class="traffic-incident">
+                        <strong>East Coast Radio</strong><br>
+                        <small>KZN traffic, good for Durban end of N3</small><br>
+                        <span class="badge bg-warning">Limited web access</span>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <h6>Implementation Strategy:</h6>
+                        <div class="api-endpoint">
+                            // Example scraping approach
+                            const radioFeeds = [
+                                'http://www.702.co.za/traffic',
+                                'http://www.947.co.za/traffic',
+                                'http://www.eastcoastradio.co.za/traffic'
+                            ];
+                            
+                            // Server-side scraping needed
+                            async function scrapeRadioTraffic() {
+                                // Use puppeteer or cheerio for scraping
+                                // Parse traffic reports
+                                // Extract N3-relevant information
+                            }
+                        </div>
+                    </div>
+                `, 'success');
+                
+                this.log('✅ Radio traffic services analyzed');
+            }
+
+            async testHereTraffic() {
+                this.log('Testing HERE Traffic API...');
+                
+                this.showResults('HERE Traffic API Alternative', `
+                    <p><strong>HERE Traffic API</strong> offers better free tier than TomTom:</p>
+                    
+                    <div class="mt-3">
+                        <h6>HERE API Benefits:</h6>
+                        <ul>
+                            <li><strong>Free Tier:</strong> 250,000 requests/month</li>
+                            <li><strong>Traffic Flow:</strong> Real-time speed data</li>
+                            <li><strong>Incident API:</strong> Available on free tier</li>
+                            <li><strong>Route Traffic:</strong> Traffic-aware routing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        // HERE Traffic API example for N3
+                        const hereApiKey = 'YOUR_HERE_API_KEY';
+                        const n3bbox = '28.0,-26.5,30.5,-29.5';  // N3 corridor
+                        
+                        const trafficUrl = \`https://traffic.ls.hereapi.com/traffic/6.3/incidents.json?bbox=\${n3bbox}&apikey=\${hereApiKey}\`;
+                        
+                        // Flow API for speed data
+                        const flowUrl = \`https://traffic.ls.hereapi.com/traffic/6.1/flow.json?bbox=\${n3bbox}&apikey=\${hereApiKey}\`;
+                    </div>
+                    
+                    <div class="mt-3">
+                        <strong>Sign up:</strong> <a href="https://developer.here.com" target="_blank" class="text-primary">developer.here.com</a><br>
+                        <strong>Cost:</strong> Free up to 250k requests/month, then $1 per 1k requests
+                    </div>
+                `, 'success');
+                
+                this.log('✅ HERE Traffic API information displayed');
+            }
+
+            async testCommunityReports() {
+                this.log('Showing community reporting system concept...');
+                
+                this.showResults('Community Traffic Reporting System', `
+                    <p>Build your own traffic incident reporting system for Road Safety Foundation:</p>
+                    
+                    <div class="mt-3">
+                        <h6>System Components:</h6>
+                        <ul>
+                            <li><strong>User Reporting:</strong> Web form for incident submission</li>
+                            <li><strong>Verification:</strong> Moderator approval process</li>
+                            <li><strong>Mapping:</strong> Visual incident display</li>
+                            <li><strong>Notifications:</strong> Real-time alerts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        // Community reporting database structure
+                        CREATE TABLE traffic_incidents (
+                            id INT PRIMARY KEY,
+                            route VARCHAR(10),  -- 'N3', 'N1', etc.
+                            location VARCHAR(255),
+                            latitude DECIMAL(10,8),
+                            longitude DECIMAL(11,8),
+                            incident_type VARCHAR(50),  -- 'accident', 'roadwork', 'weather'
+                            description TEXT,
+                            severity INT,  -- 1-5 scale
+                            reported_by VARCHAR(100),
+                            reported_at TIMESTAMP,
+                            verified BOOLEAN DEFAULT FALSE,
+                            resolved BOOLEAN DEFAULT FALSE
+                        );
+                    </div>
+                    
+                    <div class="mt-3">
+                        <h6>Integration with Road Safety Foundation:</h6>
+                        <ul>
+                            <li>Partner with insurance companies for verified reports</li>
+                            <li>Connect with emergency services</li>
+                            <li>Integration with existing RSF databases</li>
+                            <li>Mobile app for real-time reporting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <strong>Benefits:</strong> Complete control, no API costs, community engagement<br>
+                        <strong>Challenges:</strong> Requires moderation, slower initial data
+                    </div>
+                `, 'success');
+                
+                this.log('✅ Community reporting system outlined');
+            }
+        }
+
+        // Initialize the service
+        const trafficAlt = new TrafficAlternatives();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Bind all test buttons
+            document.getElementById('testGoogleTraffic').addEventListener('click', () => trafficAlt.testGoogleTraffic());
+            document.getElementById('testSATraffic').addEventListener('click', () => trafficAlt.testSATraffic());
+            document.getElementById('testProvincialTraffic').addEventListener('click', () => trafficAlt.testProvincialTraffic());
+            document.getElementById('testRadioTraffic').addEventListener('click', () => trafficAlt.testRadioTraffic());
+            document.getElementById('testHereTraffic').addEventListener('click', () => trafficAlt.testHereTraffic());
+            document.getElementById('testCommunityReports').addEventListener('click', () => trafficAlt.testCommunityReports());
+        });
+    </script>
+</body>
+</html>

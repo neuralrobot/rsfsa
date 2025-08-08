@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="Urgent Airbag Recall Information - Road Safety Foundation">
+  <title>Urgent Airbag Recall - Road Safety Foundation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+  <!-- Backup FontAwesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" crossorigin="anonymous">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+      --gradient-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+      --border-radius: 0.375rem;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.95) 0%, rgba(153, 0, 0, 0.95) 100%),
+                  url('assets/images/airbag-recall-bg.jpg') center/cover;
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(204, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .article-content {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .article-meta {
+      background: var(--bg-tertiary);
+      border-left: 4px solid var(--danger-color);
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .urgent-notice {
+      background: linear-gradient(135deg, var(--danger-color) 0%, #990000 100%);
+      border: 2px solid #ff6666;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(204, 0, 0, 0.3);
+    }
+
+    .urgent-notice h3 {
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      margin-bottom: 1rem;
+    }
+
+    .urgent-notice p {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .check-btn {
+      background: #fff;
+      color: var(--danger-color);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .check-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      color: var(--danger-color);
+    }
+
+    .attribution {
+      background: var(--bg-tertiary);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .attribution h6 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .attribution a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .attribution a:hover {
+      text-decoration: underline;
+    }
+
+    /* VIN Check Modal Styles */
+    .modal-content {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .modal-header {
+      border-bottom: 1px solid var(--border-color);
+      background: linear-gradient(135deg, var(--danger-color) 0%, #990000 100%);
+    }
+
+    .modal-header .modal-title {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .modal-header .btn-close {
+      filter: invert(1);
+    }
+
+    .modal-body {
+      background: var(--bg-secondary);
+    }
+
+    .modal-body h5 {
+      color: var(--primary-color);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .modal-body h5:first-child {
+      margin-top: 0;
+    }
+
+    .modal-body .alert {
+      background: rgba(42, 159, 214, 0.15);
+      border: 1px solid var(--primary-color);
+      color: var(--text-primary);
+    }
+
+    .modal-body .alert-danger {
+      background: rgba(204, 0, 0, 0.15);
+      border: 1px solid var(--danger-color);
+      color: var(--text-primary);
+    }
+
+    .manufacturer-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .manufacturer-item {
+      background: var(--bg-tertiary);
+      padding: 0.5rem;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 500;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+    }
+
+    .hotline-number {
+      background: var(--bg-tertiary);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      margin: 1rem 0;
+      border: 2px solid var(--primary-color);
+    }
+
+    .hotline-number h6 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .hotline-number .phone {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* FontAwesome Icon Fixes */
+    .fas, .fab, .far {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 6 Pro" !important;
+      font-weight: 900;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+
+    .fab {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400;
+    }
+
+    /* Fallback for missing icons */
+    .fas:before, .fab:before, .far:before {
+      content: attr(data-fallback);
+    }
+
+    /* Unicode fallbacks for specific icons if FontAwesome fails */
+    .fa-exclamation-triangle:before { content: "⚠️"; }
+    .fa-shield-alt:before { content: "🛡️"; }
+    .fa-search:before { content: "🔍"; }
+    .fa-car:before { content: "🚗"; }
+    .fa-list-ol:before { content: "📋"; }
+    .fa-building:before { content: "🏢"; }
+    .fa-lightbulb:before { content: "💡"; }
+    .fa-phone:before { content: "📞"; }
+    .fa-info-circle:before { content: "ℹ️"; }
+    .fa-envelope:before { content: "✉️"; }
+    .fa-external-link-alt:before { content: "🔗"; }
+    .fa-facebook:before { content: "📘"; }
+    .fa-twitter:before { content: "🐦"; }
+    .fa-share:before { content: "📤"; }
+    .fa-linkedin:before { content: "💼"; }
+  </style>
+</head>
+<body>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="mb-4">
+                    <i class="fas fa-exclamation-triangle fa-3x mb-3" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);"></i>
+                </div>
+                <h1 class="display-3 fw-bold mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">URGENT: <span style="color: #ffcccc;">Airbag Recall</span></h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400;">Critical Safety Information About Vehicle Recalls</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Urgent Notice -->
+<section class="py-3">
+    <div class="container">
+        <div class="urgent-notice">
+            <h3><i class="fas fa-shield-alt me-2"></i>IMMEDIATE ACTION REQUIRED</h3>
+            <p>If your vehicle is affected by the Takata airbag recall, your life may be at risk. Check your vehicle's VIN number immediately and contact your dealer to schedule repairs.</p>
+            <button type="button" class="check-btn" data-bs-toggle="modal" data-bs-target="#vinCheckModal">
+                <i class="fas fa-search me-2"></i>Check Your Vehicle Now
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Article Content -->
+<section class="article-content py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                
+                <!-- Article Meta -->
+                <div class="article-meta">
+                    <h4 class="mb-2" style="color: #ffffff;">What You Need to Know About Vehicle Recalls</h4>
+                    <p class="mb-1"><strong>News</strong> • Posted July 25, 2025</p>
+                    <p class="mb-0"><strong>By:</strong> Graham Eagle</p>
+                    <div class="mt-3">
+                        <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-facebook me-1"></i>Share</a>
+                        <a href="#" class="btn btn-outline-info btn-sm me-2"><i class="fab fa-twitter me-1"></i>Tweet</a>
+                        <a href="#" class="btn btn-outline-warning btn-sm me-2"><i class="fas fa-share me-1"></i>Share</a>
+                        <a href="#" class="btn btn-outline-success btn-sm"><i class="fab fa-linkedin me-1"></i>LinkedIn</a>
+                    </div>
+                </div>
+
+                <!-- Article Body -->
+                <div class="article-body">
+                    <p>Has the increased frequency of vehicle recalls resulted in owners becoming complacent and ignoring them – with potentially fatal results? We detail what you need to know about vehicle recalls…</p>
+
+                    <img src="assets/images/Recall/FleetCars.jpg" alt="Fleet of parked vehicles" class="img-fluid">
+                    <p class="text-muted small">Image: Supplied</p>
+
+                    <p>It seems that barely a week goes by before news of another safety-related vehicle recall appears in the international headlines. In the context of vehicle recalls, the definition of "safety-related" can be quite broad. It includes problems or failures that pose an immediate threat of severe injury or fatality, through to those which might only lead to a breakdown but are deemed safety-critical as they could result in the vehicle stopping in a dangerous position or location. Fortunately, the latter are in the majority, but conversely this has contributed to a situation where the sheer number of recalls combined with this perceived over-cautious approach has led to many motorists not taking such matters as seriously as they should.</p>
+
+                    <p>The first question many of us ask is why there are so many recalls and whether this indicates a decline in vehicle quality. Rather than a drop in quality, the reason for the increase is due to a combination of increased vehicle complexity and more stringent consumer protection legislation. The growth in vehicle feature levels has significantly increased the number of parts and systems, and hence the potential defect or failure points. Driver assistance safety features like ADAS require additional wiring, sensors and software. These are provided by an increasing pool of suppliers utilising different software which needs to be consolidated by the vehicle manufacturer, again increasing the potential for faults and recalls. To confirm this, while software issues accounted for only 15% of all recalls in the US in 2023, this increased to 41% of recalls in 2024.</p>
+
+                    <p>Governments worldwide have introduced stricter consumer protection laws which have enhanced regulatory oversight and generally require manufacturers to report potential defects and safety hazards to regulatory bodies. Agencies are also empowered to demand recalls and, if these are not initiated by manufacturers, to impose fines and other penalties. Manufacturers also have their own motivation to manage their reputational risk and limit potential liability by proactively implementing recalls. These stricter legal requirements and increased caution by the vehicle manufacturers have resulted in a short-term increase in the number of recalls, but we can expect these to become less frequent in the future through improvements in product design, testing and quality controls.</p>
+
+                    <img src="assets/images/Recall/Diagnostics.jpg" alt="Diagnostic equipment for a car" class="img-fluid">
+                    <p class="text-muted small">Image: Pexels</p>
+
+                    <h3 class="mt-5 mb-3" style="color: var(--primary-color);">The recall process</h3>
+
+                    <p>In South Africa, where Ford Motor Company of Southern Africa issued vehicle safety recalls in July 2025, the safety recall process is controlled and managed by National Consumer Commission (NCC) Recall Guidelines in terms of procedures defined in the Consumer Protection Act (CPA). Should the NCC become aware of and determine that a vehicle poses a potential safety risk, it is empowered to instruct the manufacturer to implement a compulsory recall.</p>
+
+                    <p>However, most recalls are initiated by the vehicle manufacturer which, in most cases, would be alerted to a potential problem by their overseas parent which has the benefit of receiving feedback from of their international markets. In addition, most local manufacturers may be alerted to an issue through their own quality control checks, checks on supplier quality, and warranty data.</p>
+
+                    <p>Once a problem is identified, the manufacturer assesses the level of risk and potential harm, while identifying and determining the number of units potentially affected. If the defective parts are still in production, production is halted until a modified part can be introduced. At this point the manufacturer consults with the NCC, outlining the problem and submitting a detailed recall plan which will include a timeline through to expected completion as well as details of the communication plan to customers.</p>
+
+                    <p>In many cases this will start with a public announcement followed by direct communication from the manufacturer to the affected customers, informing them what steps they should follow. Typically, this will require the customer to contact a dealer to arrange an urgent appointment for their vehicle to be repaired. During this recall process, the NCC and manufacturer will liaise to monitor the progress of the recall against the planned timeline.</p>
+
+                    <img src="assets/images/Recall/Seatbelt.jpg" alt="A person putting on a car seat belt" class="img-fluid">
+                    <p class="text-muted small">Image: Supplied</p>
+
+                    <p>If the recall affects vehicles with active service or maintenance plans, the process generally proceeds as planned, with manufacturers often using their call centres to contact affected customers directly. Most of these customers will still be servicing their vehicle at the franchised dealer, which will generally have their current contact details and be able to arrange the appointment without difficulty. It's when the vehicle is out of a service or maintenance plan, and the owner has opted to move to non-franchised servicing, that difficulties arise. Manufacturers try registered mail to the last known address, but even if this is still valid, the mail is often not collected in the belief that it might be a traffic fine. Some vehicle owners will have changed their contact details, while other vehicles will have been sold; in neither case is the dealer or manufacturer informed.</p>
+
+                    <p>At this point, the manufacturer has very little option but to resort to social or other media to appeal to owners of potentially affected vehicles to contact the manufacturer or dealer to have their vehicle's VIN number checked against the affected vehicle list. Unfortunately, despite these efforts, some owners still ignore these appeals, presumably with an attitude along the lines of, "they're just being overly cautious, it won't happen to me."</p>
+
+                    <h3 class="mt-5 mb-3" style="color: var(--danger-color);">Takata airbag recall</h3>
+
+                    <p>Undoubtedly the most serious and widespread recall in recent years was that involving Takata airbags. The origins of the recall date back to a decision by Takata in the late 1990s to use ammonium nitrate as the propellant in airbag inflators. The benefits were reduced cost and the fact that a reduced quantity of propellant was required, allowing more compact packaging – particularly useful for steering wheel-mounted driver airbags. Unfortunately, initial testing was inadequate and failed to detect that after an extended period of being subjected to cycles of heat and humidity, the solid propellant became unstable, developing phase separation, crystallisation, and changes in its microstructure.</p>
+
+                    <p>Normally, after being triggered, the propellant combusts at a controlled burn rate, fully inflating the airbag in approximately 30 milliseconds before the occupant contacts it. In the case of degraded propellant, combustion occurs more rapidly and violently, with the rapid spike in peak combustion pressure exceeding the design limit of the metal inflator housing, causing it to rupture and send metal fragments towards the vehicle occupants.</p>
+
+                    <p>The first failure was reported in 2004, but subsequent failures were attributed to specific production quality issues and only resulted in limited vehicle batch recalls. It wasn't until 2014 that the degrading effect of heat and moisture level cycling was officially acknowledged, and the recalls were expanded, focusing initially on high temperature and humidity areas before expanding worldwide. The recall has become the largest in automotive history, covering more than 100 million vehicles internationally from more than 20 of the world's major manufacturers, with approximately 35 deaths and hundreds of injuries being reported. It is still ongoing, with the inclusion of another 2.5 million vehicles in France added as recently as June following another death.</p>
+
+                    <img src="assets/images/Recall/Deployed.jpg" alt="An airbag deploying" class="img-fluid">
+                    <p class="text-muted small">Image: Supplied</p>
+
+                    <p>By 2024 it was estimated that approximately 88% of affected vehicles had been repaired, using inflators from other suppliers which utilise a different propellant. This leaves millions of vehicle users still at risk that even a relatively minor accident, which might just only meet the threshold to trigger the airbags, could become fatal or at least result in significant injuries. In fact, the nature of these injuries is such that an A & E doctor on examining a victim, initially suspected a frenzied knife attack rather than an airbag deployment.</p>
+
+                    <p>The situation in South African is no different to the international one, with vehicles from numerous manufacturers affected, and despite their best efforts, many owners proving virtually impossible to contact or not taking the recall seriously enough to take their vehicles in for repair. Volkswagen is one of the affected manufacturers and recently shared their efforts to contact customers as well as their concern with the apathy of some customers contacted.</p>
+
+                    <p>Their process to alert affected customers and advise them of repairs has included media announcements, registered letters to affected consumers, a call centre to handle recall-related queries, prominently positioning a "VIN checker" on their website to allow owners to easily check whether they are affected, and alerting dealers to check every potentially affected vehicle coming in for service or repair.</p>
+
+                    <p>In addition, where they do not have current owner details, they have worked with the RTMC to obtain these details and make contact via WhatsApp and other social media. They have also arranged that warnings are flagged at the annual licence renewal of affected vehicles. Unfortunately, many licence renewals are done by agents, some of which use their own instead of customer contact details, while some may not forward any warnings flagged when processing the renewal.</p>
+
+                    <p>Other affected manufacturers in South Africa have followed similar processes and there is little they can do to reach out to affected owners and persuade them to have their vehicles rectified. We have a hot climate with large areas also experiencing high humidity – the conditions which exacerbate the problem. While there are currently no known local reports of injuries or fatalities due to defective Takata airbags, the risk remains very real. Surely the five minutes it would take to check the website of your vehicle's manufacturer is worth ensuring that a faulty airbag will not explode and send shards of sharp metal into your vehicle's passenger space?</p>
+
+                    <!-- Attribution -->
+                    <div class="attribution">
+                        <h6>Original Article Source:</h6>
+                        <p class="mb-2"><strong>What You Need to Know About Vehicle Recalls</strong></p>
+                        <p class="mb-2">News • Posted July 25, 2025</p>
+                        <p class="mb-2">By: Graham Eagle</p>
+                        <p class="mb-0">
+                            <a href="https://www.carmag.co.za/news/what-you-need-to-know-about-vehicle-recalls/" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>
+                                https://www.carmag.co.za/news/what-you-need-to-know-about-vehicle-recalls/
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5" style="background: var(--bg-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h3 class="mb-4" style="color: var(--danger-color);">Don't Wait - Check Your Vehicle Today</h3>
+                <p class="mb-4" style="color: var(--text-secondary);">Your safety and the safety of your passengers depends on taking immediate action if your vehicle is affected by a recall.</p>
+                <button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#vinCheckModal">
+                    <i class="fas fa-search me-2"></i>Check Your VIN Now
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIN Check Information Modal -->
+<div class="modal fade" id="vinCheckModal" tabindex="-1" aria-labelledby="vinCheckModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="vinCheckModalLabel">
+          <i class="fas fa-car me-2"></i>How to Check Your Vehicle for Airbag Recalls
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="alert alert-danger" role="alert">
+          <i class="fas fa-exclamation-triangle me-2"></i>
+          <strong>Important:</strong> To check for airbag recalls in South Africa using a VIN, you'll need to visit the specific manufacturer's website for your vehicle. There isn't a central database for recalls in South Africa, so checking with the manufacturer is the most reliable method.
+        </div>
+
+        <h5><i class="fas fa-list-ol me-2"></i>General Steps:</h5>
+        <ol>
+          <li><strong>Locate your VIN:</strong> This is a 17-character code found on your vehicle's registration document, under the hood, or on the driver's side doorjamb.</li>
+          <li><strong>Find the manufacturer's website:</strong> Go to the official website for your vehicle's brand.</li>
+          <li><strong>Navigate to the recalls section:</strong> Look for "Recalls," "Technical Campaigns," or similar terms under the "Owners," "Service," or "Support" sections.</li>
+          <li><strong>Enter your VIN:</strong> Follow the instructions on the recall page to input your VIN.</li>
+          <li><strong>Check the results:</strong> The system will indicate if your vehicle is affected by any recalls.</li>
+        </ol>
+
+        <h5><i class="fas fa-building me-2"></i>Supported Manufacturers:</h5>
+        <p>Check the recall pages for these major brands:</p>
+        <div class="manufacturer-list">
+          <div class="manufacturer-item">Nissan</div>
+          <div class="manufacturer-item">BMW</div>
+          <div class="manufacturer-item">Land Rover</div>
+          <div class="manufacturer-item">Audi</div>
+          <div class="manufacturer-item">Toyota</div>
+          <div class="manufacturer-item">Honda</div>
+          <div class="manufacturer-item">Mazda</div>
+          <div class="manufacturer-item">Mitsubishi</div>
+          <div class="manufacturer-item">Opel</div>
+          <div class="manufacturer-item">Volkswagen</div>
+        </div>
+
+        <h5><i class="fas fa-lightbulb me-2"></i>Additional Tips:</h5>
+        <ul>
+          <li><strong>Keep checking:</strong> Some recalls are updated regularly, so it's a good idea to check periodically, according to automotive publications.</li>
+          <li><strong>Contact the manufacturer directly:</strong> If you can't find the recall information online or if you have questions, contact the manufacturer's customer service or call center.</li>
+        </ul>
+
+        <div class="hotline-number">
+          <h6><i class="fas fa-phone me-2"></i>NRCS Recall Hotline</h6>
+          <p class="mb-2">The National Regulator for Compulsory Specifications (NRCS) also has a hotline for recall information:</p>
+          <div class="phone">080 111 999</div>
+          <small class="text-muted">Free call from any phone in South Africa</small>
+        </div>
+
+        <div class="alert alert-info" role="alert">
+          <i class="fas fa-info-circle me-2"></i>
+          <strong>Remember:</strong> If your vehicle is affected by a recall, contact your dealer immediately to schedule the necessary repairs. These repairs are typically done at no cost to you.
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Auto-height script for iframe -->
+<script>
+window.addEventListener('message', function(event) {
+  if (event.data && event.data.action === 'getHeight') {
+    const height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    event.source.postMessage({ iframeHeight: height }, '*');
+  }
+});
+
+// Send initial height
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    if (window.parent && window.parent !== window) {
+      const height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+      window.parent.postMessage({ iframeHeight: height }, '*');
+    }
+  }, 100);
+});
+</script>
+
+</body>
+</html>

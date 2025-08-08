@@ -1,0 +1,574 @@
+<style>
+html, body, .page-header, main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/rsfsa-140x128-1.png" type="image/x-icon">
+  <meta name="description" content="The Story of Road Safety Foundation's Adoption of CMS and VRT - A partnership journey">
+  <title>The Story - Road Safety Foundation Adoptions</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/cyborg/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/theme/css/cyborg-raleway.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Cyborg Theme Colors */
+      --primary-color: #2a9fd6;
+      --secondary-color: #77b300;
+      --success-color: #77b300;
+      --info-color: #9933cc;
+      --warning-color: #ff8800;
+      --danger-color: #cc0000;
+      --light-color: #222;
+      --dark-color: #adafae;
+      --bg-primary: #060606;
+      --bg-secondary: #222;
+      --bg-tertiary: #333;
+      --bg-dark: #1a1a1a;
+      --bg-dark-secondary: #0a0a0a;
+      --bg-dark-tertiary: #2a2a2a;
+      --text-primary: #fff;
+      --text-secondary: #adafae;
+      --text-muted: #888;
+      --text-light: #f8f9fa;
+      --border-color: #333;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, #1a7aa8 100%);
+    }
+
+    /* Page styles */
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, rgba(42, 159, 214, 0.8) 0%, rgba(26, 122, 168, 0.9) 100%), 
+                  url('assets/images/n3-route.jpg') center center/cover no-repeat;
+      padding: 79px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+    }
+
+    .page-header .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .story-card {
+      background: #222 !important;
+      border: 1px solid #333 !important;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+    }
+
+    .story-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary-color) !important;
+      box-shadow: 0 8px 25px rgba(42, 159, 214, 0.15);
+    }
+
+    .highlight-box {
+      background: rgba(42, 159, 214, 0.1) !important;
+      border: 1px solid var(--primary-color) !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .cms-highlight {
+      background: rgba(204, 0, 0, 0.1) !important;
+      border: 1px solid #cc0000 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .vrt-highlight {
+      background: rgba(255, 136, 0, 0.1) !important;
+      border: 1px solid #ff8800 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .partnership-box {
+      background: rgba(119, 179, 0, 0.1) !important;
+      border: 1px solid #77b300 !important;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 2rem 0;
+    }
+
+    .timeline-item {
+      border-left: 3px solid var(--primary-color);
+      padding-left: 20px;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary-color);
+    }
+
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+      margin: 3rem 0;
+    }
+
+    /* Fix overlapping issues */
+    section {
+      position: relative;
+      z-index: 1;
+      clear: both;
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-body {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Ensure proper spacing between sections */
+    .py-5 {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    /* Statistics styling */
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Font Awesome Icon Fix - Override global font-family rule */
+    .fas, .far, .fal, .fab, .fa {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", FontAwesome !important;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .fab {
+      font-family: "Font Awesome 6 Brands", "Font Awesome 5 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    .fas {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+
+    /* Social Media Icons */
+    .social-links a {
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    .social-links i {
+      display: inline-block;
+      width: 1.5em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start">
+                <span class="badge bg-light text-primary px-3 py-2 rounded-pill mb-3 fw-semibold">
+                    <i class="fas fa-heart me-2"></i>
+                    Adoption Story
+                </span>
+                <h1 class="display-3 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">The <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Adoption</span> Story</h1>
+                <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: 400; font-size: 1.2rem;">How the Road Safety Foundation embraced CMS and VRT as family, creating a powerful partnership for road safety on South Africa's busiest route.</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <img src="assets/images/coworkers.jpg" alt="Road Safety Foundation Team Partnership" class="img-fluid rounded-4 shadow-lg" style="max-width: 300px; height: auto; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Story Introduction -->
+<section class="py-5 bg-dark clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card story-card">
+                    <div class="card-body p-5">
+                        <h2 class="fw-semibold mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">A Decision That Changed Everything</h2>
+
+                        <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-size: 1.3rem; margin-bottom: 2rem;">In 2022, the Road Safety Foundation Directors made a landmark decision that would strengthen road safety on South Africa's most critical highway - they chose to adopt both Community Medical Services (CMS) and Volunteer Rescue Team (VRT).</p>
+
+                            <div class="highlight-box">
+                                <h4 style="color: var(--primary-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1.5rem;">
+                                    <i class="fas fa-handshake me-2"></i>
+                                    The Foundation of Partnership
+                                </h4>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">This wasn't just a business decision - it was a recognition of shared values, common goals, and the understanding that saving lives on South African roads requires dedicated collaboration between organizations that truly care.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Teams We Adopted -->
+<section class="py-5 clearfix" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="display-4 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">The Heroes We <span style="color: #2a9fd6; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Adopted</span></h2>
+                <p class="lead" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-size: 1.1rem;">Two extraordinary teams with decades of dedication to saving lives</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <!-- CMS Story -->
+            <div class="col-lg-6">
+                <div class="cms-highlight">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-ambulance" style="font-size: 3rem; color: #cc0000;"></i>
+                    </div>
+                    <h3 style="color: #cc0000; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); text-align: center; margin-bottom: 2rem;">Community Medical Services</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="stat-number" style="color: #cc0000;">42</div>
+                        <div class="stat-label">Years of Service</div>
+                        <p style="color: #ffffff; margin-top: 10px;">Four decades of unwavering commitment to emergency medical care on the N3 route during peak traffic periods.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h5 style="color: #cc0000;">Van Reenens Pass Base</h5>
+                        <p style="color: #ffffff;">Strategically positioned at one of South Africa's most challenging and historically high-incident areas.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h5 style="color: #cc0000;">All-Volunteer Team</h5>
+                        <p style="color: #ffffff;">Every member volunteers their time, providing medical services completely free of charge to all road users.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VRT Story -->
+            <div class="col-lg-6">
+                <div class="vrt-highlight">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-life-ring" style="font-size: 3rem; color: #ff8800;"></i>
+                    </div>
+                    <h3 style="color: #ff8800; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); text-align: center; margin-bottom: 2rem;">Volunteer Rescue Team</h3>
+                    
+                    <div class="timeline-item" style="border-left-color: #ff8800;">
+                        <div class="stat-number" style="color: #ff8800;">19</div>
+                        <div class="stat-label">Years of Service</div>
+                        <p style="color: #ffffff; margin-top: 10px;">Nearly two decades of professional medical rescue operations during peak traffic periods.</p>
+                    </div>
+
+                    <div class="timeline-item" style="border-left-color: #ff8800;">
+                        <h5 style="color: #ff8800;">Warden Base</h5>
+                        <p style="color: #ffffff;">Operating from another critical high-incident area, providing comprehensive medical rescue services.</p>
+                    </div>
+
+                    <div class="timeline-item" style="border-left-color: #ff8800;">
+                        <h5 style="color: #ff8800;">Rescue Specialists</h5>
+                        <p style="color: #ffffff;">Highly trained medical rescue professionals offering their expertise as volunteers during the most dangerous peak traffic periods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why We Made This Decision -->
+<section class="py-5 bg-dark clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card story-card">
+                    <div class="card-body p-5">
+                        <h2 class="fw-semibold mb-4" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The Decision Behind the Adoption</h2>
+
+                        <div style="color: #f8f9fa; font-size: 1.1rem; line-height: 1.8;">
+                            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Three of the Road Safety Foundation Directors had been actively involved with both CMS and VRT, witnessing firsthand the incredible work these teams were doing. They understood the financial pressures these volunteer organizations faced - covering their own fuel, accommodation, meals, and medical supplies while providing life-saving services for free.</p>
+
+                            <div class="section-divider"></div>
+
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="highlight-box">
+                                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
+                                            <i class="fas fa-dollar-sign me-2"></i>
+                                            Financial Recognition
+                                        </h4>
+                                        <p style="color: #ffffff;">Understanding that running these operations had become increasingly expensive, we recognized the need to support these essential services financially.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="highlight-box">
+                                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
+                                            <i class="fas fa-shield-alt me-2"></i>
+                                            Road Safety Component
+                                        </h4>
+                                        <p style="color: #ffffff;">These teams directly contribute to road safety through scene safety management, early incident warnings, and high-visibility patrols during peak traffic.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="partnership-box">
+                                <h4 style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 1.5rem;">
+                                    <i class="fas fa-network-wired me-2"></i>
+                                    Leveraging Our Partner Network
+                                </h4>
+                                <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The Road Safety Foundation believed that with our extensive partner base, we could provide the funding support these two worthy operations needed to continue their life-saving work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Impact and Future -->
+<section class="py-5 clearfix" style="background: #222;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="display-4 fw-normal mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Beyond <span style="color: #77b300; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Emergency Response</span></h2>
+                <p class="lead" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-size: 1.1rem;">Community impact that extends far beyond the roadside</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="card story-card">
+                    <div class="card-body p-4">
+                        <h4 style="color: #77b300; margin-bottom: 1.5rem;">
+                            <i class="fas fa-heart me-2"></i>
+                            Community Outreach
+                        </h4>
+                        <p style="color: #ffffff; line-height: 1.7;">Both teams actively work with local communities, providing essential support including food, blankets, clothing, and educational resources to those in need.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card story-card">
+                    <div class="card-body p-4">
+                        <h4 style="color: #77b300; margin-bottom: 1.5rem;">
+                            <i class="fas fa-users me-2"></i>
+                            Collaborative Operations
+                        </h4>
+                        <p style="color: #ffffff; line-height: 1.7;">Working closely with local traffic authorities and route patrol services, our adopted teams perform essential services that help keep the N3 route safe for all travelers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="partnership-box text-center">
+                    <h3 style="color: #77b300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-bottom: 2rem;">A Partnership Built on Shared Values</h3>
+                    <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); font-size: 1.2rem; line-height: 1.8;">This adoption represents more than financial support - it's a commitment to the shared mission of making South African roads safer. By bringing CMS and VRT into the Road Safety Foundation family, we've created a powerful alliance dedicated to saving lives, supporting communities, and ensuring that help is always available when it's needed most.</p>
+                    
+                    <div class="mt-4" style="display: none;">
+                        <a href="cms.html" class="btn btn-outline-danger me-3" style="border-width: 2px;">
+                            <i class="fas fa-ambulance me-2"></i>
+                            Learn About CMS
+                        </a>
+                        <a href="vrt.html" class="btn btn-outline-warning" style="border-width: 2px;">
+                            <i class="fas fa-life-ring me-2"></i>
+                            Learn About VRT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5" style="background: var(--bg-dark-secondary); color: var(--text-light); border-top: 1px solid var(--bg-dark-tertiary);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/rsfsa-140x128-1.png" alt="Road Safety Foundation" height="50" class="me-3">
+                    <h5 class="mb-0">Road Safety Foundation</h5>
+                </div>
+                <p class="text-muted">
+                    Dedicated to making South African roads safer through research, education, and partnerships.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="aboutus.html" class="text-muted text-decoration-none">About Us</a></li>
+                    <li><a href="News.html" class="text-muted text-decoration-none">News</a></li>
+                    <li><a href="BLOG.html" class="text-muted text-decoration-none">Blog</a></li>
+                    <li><a href="ContactUs.html" class="text-muted text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li><a href="Videos.html" class="text-muted text-decoration-none">Videos</a></li>
+                    <li><a href="legislation.html" class="text-muted text-decoration-none">Legislation</a></li>
+                    <li><a href="Forums.html" class="text-muted text-decoration-none">Let's Talk</a></li>
+                    <li><a href="Markerboards.html" class="text-muted text-decoration-none">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-envelope me-2" style="color: #0ea5e9;"></i>
+                    info@rsfsa.co.za
+                </p>
+                <p class="text-muted mb-2">
+                    <i class="fas fa-phone me-2" style="color: #10b981;"></i>
+                    <span id="phone-number" data-number="+27 82 803 6363" style="cursor: pointer;" title="Click to reveal phone number">Click to show phone</span>
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-map-marker-alt me-2" style="color: #f97316;"></i>
+                    South Africa
+                </p>
+            </div>
+        </div>
+        
+        <!-- Social Media Icons Row -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="social-links d-flex justify-content-center flex-wrap gap-3">
+                    <a href="https://www.facebook.com/roadsafetyfoundationsa" target="_blank" title="Facebook 1" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.facebook.com/CommunityMedicalServices" target="_blank" title="Facebook 2" style="color: #1877f2; font-size: 1.5rem;">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@RoadMatters-r8b/videos" target="_blank" title="YouTube" style="color: #ff0000; font-size: 1.5rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" title="Instagram - Coming Soon" style="color: #e4405f; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-instagram"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                    <a href="#" title="WhatsApp - Coming Soon" style="color: #25d366; opacity: 0.6; font-size: 1.5rem;" class="d-flex flex-column align-items-center">
+                        <i class="fab fa-whatsapp"></i>
+                        <small style="font-size: 0.5em; color: var(--text-muted); margin-top: 2px;">Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted mb-0">&copy; 2024 Road Safety Foundation of South Africa. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="privacy-policy.html" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>    
+    </div>
+</footer>
+
+<script>
+// Phone number reveal functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const phoneSpan = document.getElementById('phone-number');
+  if (phoneSpan) {
+    phoneSpan.addEventListener('click', function() {
+      const phoneNumber = this.getAttribute('data-number');
+      if (phoneNumber) {
+        this.textContent = phoneNumber;
+        this.style.cursor = 'default';
+        this.removeAttribute('title');
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>

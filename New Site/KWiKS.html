@@ -1,42 +1,15 @@
+<style>
+html, body, .page-header, main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+</style>
 <!DOCTYPE html>
 <html lang="en">
-    </head>
-<body>
-    <!-- Hero Section -->
-    <section class="kwiks-hero">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <span class="badge bg-success px-3 py-2 rounded-pill mb-3">
-                <i class="fas fa-heart me-2"></i>
-                Community Impact Initiative
-              </span>
-              <h1 class="kwiks-logo mb-4" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">KWiKS</h1>
-              <h2 class="hero-subtitle mb-4" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Keep Warm, Keep Safe</h2>
-              <p class="lead text-white mb-4" style="font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Protecting South Africa's most vulnerable road users - rural school children who walk long distances to school in harsh weather conditions.</p>
-              <div class="d-flex flex-wrap gap-3 mb-4">
-                <a href="#donate" class="btn btn-kwiks btn-lg">
-                  <i class="fas fa-hand-holding-heart me-2"></i>
-                  Make a Donation
-                </a>
-                <a href="#how-it-works" class="btn btn-outline-primary btn-lg">
-                  <i class="fas fa-info-circle me-2"></i>
-                  Learn More
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="hero-image d-flex align-items-end h-100">
-                <div class="hero-card w-100 p-4">
-                  <img src="assets/images/KWIKS.jpg" alt="KWiKS Hero" class="img-fluid rounded-4 shadow-lg" style="width: 80%; height: auto; min-height: 96px; min-width: 280px; object-fit: contain;">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-
-<main>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="KWiKS - Keep Warm, Keep Safe initiative by Road Safety Foundation. Providing poncho blankets and highly reflective raincoats to underprivileged rural school children walking to school in harsh weather conditions.">
   <meta name="keywords" content="KWiKS, Keep Warm Keep Safe, school children safety, rural communities, poncho blankets, reflective raincoats, Road Safety Foundation">
   <meta name="author" content="Road Safety Foundation of South Africa">
@@ -89,10 +62,8 @@
       --border-radius: 0.375rem;
     }
 
-    /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
+    /* Global Styles - Updated for iframe compatibility */
+    .kwiks-content * {
       box-sizing: border-box;
     }
 
@@ -102,44 +73,6 @@
       color: var(--text-primary);
       background: var(--bg-primary);
       overflow-x: hidden;
-    }
-
-    /* Navigation Styles */
-    .modern-nav {
-      background: rgba(6, 6, 6, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-      z-index: 1000;
-      height: 60px !important;
-      min-height: 60px !important;
-    }
-
-    .modern-nav.scrolled {
-      background: rgba(6, 6, 6, 0.98);
-      box-shadow: var(--shadow-lg);
-    }
-
-    /* Remove main padding-top since nav is gone */
-    main {
-      padding-top: 0;
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--primary-color) !important;
-    }
-
-    .navbar-nav .nav-link {
-      color: var(--text-primary) !important;
-      font-weight: 500;
-      margin: 0 0.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: var(--primary-color) !important;
     }
 
     /* Hero Section */
@@ -380,8 +313,41 @@
 </head>
 <body>
 
+    <!-- Hero Section -->
+    <section class="kwiks-hero">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <span class="badge bg-success px-3 py-2 rounded-pill mb-3">
+                <i class="fas fa-heart me-2"></i>
+                Community Impact Initiative
+              </span>
+              <h1 class="kwiks-logo mb-4" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">KWiKS</h1>
+              <h2 class="hero-subtitle mb-4" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Keep Warm, Keep Safe</h2>
+              <p class="lead text-white mb-4" style="font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Protecting South Africa's most vulnerable road users - rural school children who walk long distances to school in harsh weather conditions.</p>
+              <div class="d-flex flex-wrap gap-3 mb-4" style="display: none !important;">
+                <a href="#donate" class="btn btn-kwiks btn-lg">
+                  <i class="fas fa-hand-holding-heart me-2"></i>
+                  Make a Donation
+                </a>
+                <a href="#how-it-works" class="btn btn-outline-primary btn-lg">
+                  <i class="fas fa-info-circle me-2"></i>
+                  Learn More
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="hero-image d-flex align-items-end h-100">
+                <div class="hero-card w-100 p-4">
+                  <img src="assets/images/KWIKS.jpg" alt="KWiKS Hero" class="img-fluid rounded-4 shadow-lg" style="width: 80%; height: auto; min-height: 96px; min-width: 280px; object-fit: contain;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
 
-
+<div class="kwiks-content">
 <main>
 
     <!-- Mission Statement -->
@@ -713,8 +679,8 @@
                         <div class="col-lg-8">
                             <div class="card bg-dark border-primary">
                                 <div class="card-body p-4">
-                                    <h5 class="text-white mb-3">2024 Goal Progress</h5>
-                                    <p class="mb-3" style="color: #f8f9fa;">Help us reach 20,000 children protected by December 2024</p>
+                                    <h5 class="text-white mb-3">2025 Goal Progress</h5>
+                                    <p class="mb-3" style="color: #f8f9fa;">Help us reach 20,000 children protected by December 2025</p>
                                     <div class="progress-kwiks mb-2">
                                         <div class="progress-bar-kwiks" style="width: 75%"></div>
                                     </div>
@@ -1046,5 +1012,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+</div>
 </body>
 </html>

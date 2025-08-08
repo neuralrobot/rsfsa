@@ -125,7 +125,7 @@
     .page-header {
       background: linear-gradient(135deg, rgba(6, 6, 6, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%),
                   url('assets/images/contact-us.webp') center/cover;
-      padding: 90px 0;
+      padding: 40px 0;
       position: relative;
       overflow: hidden;
     }
@@ -160,7 +160,7 @@
     }
 
     .contact-card, .info-card {
-      background: #222 !important;
+      background: #000000 !important;
       border: 1px solid #333 !important;
       transition: all 0.3s ease;
     }
@@ -214,6 +214,7 @@
       white-space: nowrap;
       position: relative;
       border-top: 2px solid #ff6600;
+      display: none; /* Hidden until traffic system is perfected */
     }
 
     .traffic-marquee-content {
@@ -294,7 +295,17 @@
                     <h2 class="display-5 fw-light mb-4" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
                         Subscribe to Our <span class="fw-normal" style="color: #ff8800; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Newsletter</span>
                     </h2>
-                    <p class="lead mb-5" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-size: 1.1rem;">Get the latest road safety news, research updates, and educational content delivered to your inbox.</p>
+                    <p class="lead mb-4" style="color: #f8f9fa; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-size: 1.1rem;">Get the latest road safety news, research updates, and educational content delivered to your inbox.</p>
+                    
+                    <div class="alert alert-info border-0 mb-4" style="background: rgba(42, 159, 214, 0.15); border-left: 4px solid #2a9fd6 !important;">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-rocket me-3" style="color: #2a9fd6; font-size: 1.2rem;"></i>
+                            <div>
+                                <h6 class="mb-1 fw-bold" style="color: #ffffff;">Newsletter Launching Soon!</h6>
+                                <p class="mb-0 small" style="color: #f8f9fa;">Our newsletter will launch soon, but in the meantime please leave your details so that you will be first in line to receive our jam-packed "Launch Edition".</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card contact-card">
@@ -322,7 +333,7 @@
 </section>
 
 <!-- Call to Action Section -->
-<section class="py-5 bg-dark">
+<section class="py-5 bg-dark" style="display: none;">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 mx-auto text-center">
@@ -465,7 +476,7 @@
                                         </div>
                                         <div>
                                             <h6 class="fw-semibold mb-1" style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Email</h6>
-                                            <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">info@roadsafetyfoundation.co.za</p>
+                                            <p class="small mb-0" style="color: #f8f9fa; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">info@rsfsa.co.za</p>
                                         </div>
                                     </div>
                                 </div>
@@ -566,7 +577,7 @@
                         <div class="about-website-content">
                             <div class="row">
                                 <div class="col-md-6 mb-4">
-                                    <div class="p-4 h-100" style="background: linear-gradient(135deg, #333 0%, #444 100%); border-radius: 12px; border: 2px solid rgba(42, 159, 214, 0.3); box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                                    <div class="p-4 h-100" style="background: #000000; border-radius: 12px; border: 2px solid rgba(42, 159, 214, 0.3); box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 30px rgba(42, 159, 214, 0.6), 0 8px 25px rgba(0,0,0,0.4)'" onmouseout="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.4)'">
                                         <h4 class="mb-3" style="color: #ffffff; font-weight: 600;">
                                             <i class="fas fa-heart me-2" style="color: var(--danger-color);"></i>
                                             Created with Passion
@@ -581,7 +592,7 @@
                                 </div>
                                 
                                 <div class="col-md-6 mb-4">
-                                    <div class="p-4 h-100" style="background: linear-gradient(135deg, #333 0%, #444 100%); border-radius: 12px; border: 2px solid rgba(119, 179, 0, 0.3); box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                                    <div class="p-4 h-100" style="background: #000000; border-radius: 12px; border: 2px solid rgba(119, 179, 0, 0.3); box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 30px rgba(119, 179, 0, 0.6), 0 8px 25px rgba(0,0,0,0.4)'" onmouseout="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.4)'">
                                         <h4 class="mb-3" style="color: #ffffff; font-weight: 600;">
                                             <i class="fas fa-history me-2" style="color: var(--success-color);"></i>
                                             Rich Heritage
@@ -597,7 +608,7 @@
                             </div>
                             
                             <div class="mt-4">
-                                <div class="p-4" style="background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%); border-radius: 12px; border: 2px solid rgba(255, 136, 0, 0.3); box-shadow: 0 8px 25px rgba(0,0,0,0.4);">
+                                <div class="p-4" style="background: #000000; border-radius: 12px; border: 2px solid rgba(255, 136, 0, 0.3); box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 30px rgba(255, 136, 0, 0.6), 0 8px 25px rgba(0,0,0,0.4)'" onmouseout="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.4)'">
                                     <h4 class="mb-4" style="color: #ffffff; font-weight: 600;">
                                         <i class="fas fa-code me-2" style="color: var(--warning-color);"></i>
                                         Beekon's Web Solutions
